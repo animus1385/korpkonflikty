@@ -59,7 +59,7 @@
                         <Icon class="footer__icon" name="svg:telegram" />
                     </li>
                     <li class="footer__social-elem">
-                        <Icon class="footer__icon" name="svg:whatsApp" />
+                        <Icon class="footer__icon" name="svg:whats-app" />
                     </li>
                     <li class="footer__social-elem">
                         <Icon class="footer__icon" name="svg:youtube" />

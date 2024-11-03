@@ -48,7 +48,7 @@
                     <Icon class="header__icon" name="svg:telegram" />
                 </li>
                 <li class="header__social-elem">
-                    <Icon class="header__icon" name="svg:whatsApp" />
+                    <Icon class="header__icon" name="svg:whats-app" />
                 </li>
                 <li class="header__social-elem">
                     <Icon class="header__icon" name="svg:youtube" />
