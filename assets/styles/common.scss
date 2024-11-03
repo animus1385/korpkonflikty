@@ -1,0 +1,31 @@
+* {
+    @apply m-0 p-0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    @apply h-full;
+}
+#__nuxt {
+    @apply w-full h-full;
+}
+body {
+    @apply bg-[#f6f5f9]  font-['Poppins'_sans-serif];
+}
+
+.btn {
+    box-shadow: 0 13px 20px 0 rgba(1, 115, 153, 0.2);
+    border-radius: 65px;
+    padding: 26px 52px;
+    font-size: 21px;
+    text-align: center;
+    font-family: var(--font-family);
+    font-weight: 600;
+    background: linear-gradient(127deg, #60bbee 0%, #0a72ad 100%);
+}
+
+.title-level-2 {
+    @apply font-bold text-[46px] text-[#242527];
+    font-family: var(--second-family);
+}

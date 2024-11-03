@@ -1,0 +1,44 @@
+.popular-blog {
+    @apply pt-[104px] pb-[95px];
+    &__title {
+        font-family: var(--second-family);
+        font-weight: 700;
+        font-size: 52px;
+        line-height: 119%;
+        letter-spacing: -0.04em;
+        text-align: center;
+        color: #090914;
+        @apply mb-[22px];
+    }
+    &__sub-title {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 167%;
+        text-align: center;
+        color: #52525b;
+        @apply mb-[68px] flex justify-center;
+    }
+    &__list {
+        @apply grid grid-cols-4 gap-[50px];
+    }
+    &__elem {
+        @apply min-h-[493px] flex flex-col p-[22px_24px] rounded-[16px];
+        background: #dbeafe;
+    }
+    &__elem-title {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 21px;
+        line-height: 152%;
+        letter-spacing: -0.01em;
+        color: #000;
+        @apply mb-[50px] mt-[20px];
+    }
+    &__img:deep() {
+        @apply rounded-[16px] overflow-hidden;
+        img {
+            @apply w-full h-full;
+        }
+    }
+}

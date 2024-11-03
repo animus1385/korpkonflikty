@@ -1,0 +1,10 @@
+.clients {
+    @apply bg-[#2387c0];
+    &__container {
+        @apply pt-[27px] pb-[85px];
+    }
+    &__title {
+        @apply text-center mb-[27px] text-white;
+        
+    }
+}

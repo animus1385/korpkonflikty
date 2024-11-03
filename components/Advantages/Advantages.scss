@@ -1,0 +1,20 @@
+.advantages {
+    @apply pt-[122px] pb-[88px];
+    &__title {
+        @apply mb-[95px];
+    }
+    &__list {
+        @apply grid grid-cols-4 gap-[113px];
+    }
+    &__elem-title {
+        font-family: var(--font-family);
+        @apply mb-[8px] text-[#242527] text-[24px] font-semibold;
+    }
+    &__elem-text {
+        font-family: var(--second-family);
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 130%;
+        color: #939393;
+    }
+}
