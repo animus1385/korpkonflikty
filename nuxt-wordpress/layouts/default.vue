@@ -1,8 +1,8 @@
 <template>
     <div>
-        <LayoutsHeader></LayoutsHeader>
+        <Header></Header>
         <slot />
-        <LayoutsFooter></LayoutsFooter>
+        <Footer></Footer>
     </div>
 </template>
 

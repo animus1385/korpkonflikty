@@ -1,0 +1,38 @@
+.cta-2 {
+    background: #2387c0;
+    @apply mb-[101px] mt-[64px];
+    &__container {
+        @apply pt-[95px] pb-[79px] grid grid-cols-[777px_1fr] gap-[50px];
+    }
+    &__title {
+        @apply mb-[33px];
+        font-family: var(--font4);
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 114%;
+        color: #fff;
+    }
+    &__sub-title {
+        @apply mb-[20px] px-[64px] flex ;
+        font-family: var(--second-family);
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 96%;
+        color: #fff;
+    }
+    &__list {
+        @apply list-decimal px-[75px];
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 145%;
+        color: #fff;
+    }
+    &__right {
+        @apply flex justify-end items-end;
+    }
+    &__btn {
+        @apply text-center min-w-[398px] justify-center  flex rounded-full p-[20px] text-[#242527] text-[18px] font-semibold;
+        font-family: var(--font-family);
+    }
+}
