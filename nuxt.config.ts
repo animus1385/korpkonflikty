@@ -33,7 +33,7 @@ export default defineNuxtConfig({
             },
         },
     },
-    app: {
-        baseURL: '/korpkonflikty/', // Укажите путь к подкаталогу
+    routeRules: {
+        '/': { prerender: false },
     },
 });
