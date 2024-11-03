@@ -34,6 +34,6 @@ export default defineNuxtConfig({
         },
     },
     app: {
-        baseURL: '/nuxt-wordpress/', // Укажите путь к подкаталогу
+        baseURL: '/korpkonflikty/', // Укажите путь к подкаталогу
     },
 });
