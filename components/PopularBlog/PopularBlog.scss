@@ -37,7 +37,7 @@
     }
     &__img:deep() {
         @apply rounded-[16px] overflow-hidden;
-        img {
+        NuxtPicture {
             @apply w-full h-full;
         }
     }

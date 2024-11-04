@@ -6,24 +6,24 @@ export default defineNuxtConfig({
         preference: 'system',
         fallback: 'light',
     },
-    ssr: true,
-    nitro: {
-        preset: 'node-server',
+    ssr: true, 
+    target: 'static', 
+    router: {
+        base: '/nuxt-wordpress/', // Базовый путь вашего проекта
     },
     css: ['@/assets/styles/styles.scss'],
     modules: ['@nuxt/devtools', '@nuxt/image', '@nuxt/ui', 'nuxt-swiper', '@nuxt/icon'],
-    runtimeConfig: {
-        public: {
-            wordpressUrl: 'http://korpkonflikty.ru/graphql',
-        },
-    },
+    // runtimeConfig: {
+    //     public: {
+    //         wordpressUrl: 'http://korpkonflikty.ru/graphql',
+    //     },
+    // },
     tailwindcss: {
         viewer: false,
     },
     image: {
-        provider: 'static',
-        staticFilename: '[publicPath]/images/[name]-[hash][ext]',
-        domains: [], // Пустой массив, если не используете внешние домены
+        inject: true,
+        dir: 'assets/img',
     },
     icon: {
         customCollections: [
@@ -32,14 +32,5 @@ export default defineNuxtConfig({
                 dir: './assets/svg',
             },
         ],
-    },
-    vite: {
-        css: {
-            preprocessorOptions: {
-                scss: {
-                    api: 'modern',
-                },
-            },
-        },
     },
 });

@@ -2,7 +2,7 @@
     <div class="corp-servies">
         <div class="corp-servies__container container">
             <h2 class="corp-servies__title title-level-2">Услуги по корпоративным спорам</h2>
-            <Swiper space-between="50"  :slides-per-view="2" class="corp-servies__swiper">
+            <Swiper space-between="50" :slides-per-view="2" class="corp-servies__swiper">
                 <SwiperSlide class="corp-servies__elem">
                     <div class="corp-servies__elem">
                         <NuxtPicture class="corp-servies__img" src="#"></NuxtPicture>

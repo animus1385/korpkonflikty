@@ -1,8 +1,8 @@
 .hero {
     background: linear-gradient(224deg, #474747 0%, #222 41.8%);
-    @apply relative ;
+    @apply relative;
     &__container {
-        @apply h-full min-h-[902px] flex items-center ;
+        @apply h-full min-h-[902px] flex items-center;
     }
     &__left {
         @apply max-w-[753px] h-full  flex-col;
@@ -16,7 +16,7 @@
         font-family: var(--second-family);
         @apply font-semibold text-[30px] text-[#c4c4c4] mb-[61px];
     }
-    &__img {
+    &__NuxtPicture {
         @apply absolute inset-0 w-full h-full flex justify-end pt-[111px];
     }
     &__info {

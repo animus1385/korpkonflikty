@@ -28,7 +28,7 @@
     }
     &__img:deep() {
         @apply absolute inset-0 w-full z-[-1];
-        img {
+        NuxtPicture {
             @apply w-full h-full;
         }
     }

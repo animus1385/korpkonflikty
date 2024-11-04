@@ -1,5 +1,5 @@
 .cta-telegram {
-    @apply pt-[95px] pb-[159px] ;
+    @apply pt-[95px] pb-[159px];
     &__container {
         @apply p-[72px_134px] min-h-[469px] grid grid-cols-[588px_1fr] relative;
         border-radius: 30px;
@@ -15,7 +15,7 @@
         color: #fff;
     }
     &__descr {
-         @apply mb-[38px];
+        @apply mb-[38px];
         font-family: var(--second-family);
         font-weight: 500;
         font-size: 25px;
@@ -26,7 +26,7 @@
         border-radius: 71px;
         padding: 20px 40px;
     }
-    &__img {
+    &__NuxtPicture {
         @apply absolute bottom-0 right-[10%] z-[1];
     }
 }
