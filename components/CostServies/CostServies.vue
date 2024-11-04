@@ -2,8 +2,8 @@
     <div class="cost-servies">
         <div class="cost-servies__container container">
             <div class="cost-servies__img-block">
-                <NuxtPicture class="cost-servies__img-left" src="/img/cost-2.png"></NuxtPicture>
-                <NuxtPicture class="cost-servies__img-right" src="/img/cost-1.png"></NuxtPicture>
+                <img class="cost-servies__img-left" src="/img/cost-2.png"></img>
+                <img class="cost-servies__img-right" src="/img/cost-1.png"></img>
             </div>
             <div class="cost-servies__info">
                 <h2 class="cost-servies__title title-level-2">Стоимость услуг при корпоративных спорах</h2>

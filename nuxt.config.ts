@@ -7,7 +7,7 @@ export default defineNuxtConfig({
         fallback: 'light',
     },
     ssr: true, 
-    target: 'static', 
+    target: 'static', // Указывает на использование статической генерации
     router: {
         base: '/nuxt-wordpress/', // Базовый путь вашего проекта
     },

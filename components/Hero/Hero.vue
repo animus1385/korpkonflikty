@@ -1,6 +1,6 @@
 <template>
     <div class="hero">
-        <NuxtPicture class="hero__img" src="/img/hero-1.png"></NuxtPicture>
+        <img class="hero__img" src="/img/hero-1.png" />
         <div class="hero__container container">
             <div class="hero__left">
                 <h1 class="hero__title">Корпоративные споры и конфликты</h1>

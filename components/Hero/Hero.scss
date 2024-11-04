@@ -16,7 +16,7 @@
         font-family: var(--second-family);
         @apply font-semibold text-[30px] text-[#c4c4c4] mb-[61px];
     }
-    &__NuxtPicture {
+    &__img {
         @apply absolute inset-0 w-full h-full flex justify-end pt-[111px];
     }
     &__info {

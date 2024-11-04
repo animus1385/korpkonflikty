@@ -1,7 +1,7 @@
 <template>
     <div class="cta">
         <div class="cta__container container">
-            <NuxtPicture class="cta__img" src="/img/CTA.png"></NuxtPicture>
+            <img class="cta__img" src="/img/CTA.png"></img>
             <div class="cta__left">
                 <h2 class="cta__title">Что вы получите в итоге</h2>
                 <p class="cta__descr">

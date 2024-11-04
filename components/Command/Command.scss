@@ -32,7 +32,7 @@
     }
     &__img:deep() {
         @apply absolute inset-0 z-[0];
-        NuxtPicture {
+        img {
             @apply w-full h-full object-cover;
         }
     }

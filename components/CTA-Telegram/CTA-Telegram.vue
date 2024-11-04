@@ -8,7 +8,7 @@
                 </p>
                 <UButton class="cta-telegram__btn btn">Подписаться</UButton>
             </div>
-            <NuxtPicture class="cta-telegram__img" src="/img/telegram.png"></NuxtPicture>
+            <img class="cta-telegram__img" src="/img/telegram.png"></img>
         </div>
     </div>
 </template>

@@ -6,20 +6,20 @@
             <ul class="popular-blog__list">
                 <li class="popular-blog__elem">
                     <h3 class="popular-blog__elem-title">Являясь всего лишь частью общей картины, многие известные личности и.</h3>
-                    <NuxtPicture class="popular-blog__img" src="/img/blog.png"></NuxtPicture>
+                    <img class="popular-blog__img" src="/img/blog.png"></img>
                 </li>
                 <li class="popular-blog__elem">
                     <h3 class="popular-blog__elem-title">Являясь всего лишь частью общей картины, многие известные личности и.</h3>
-                    <NuxtPicture class="popular-blog__img" src="/img/blog.png"></NuxtPicture>
+                    <img class="popular-blog__img" src="/img/blog.png"></img>
                 </li>
                 <li class="popular-blog__elem">
                     <h3 class="popular-blog__elem-title">Являясь всего лишь частью общей картины, многие известные личности и.</h3>
-                    <NuxtPicture class="popular-blog__img" src="/img/blog.png"></NuxtPicture>
+                    <img class="popular-blog__img" src="/img/blog.png"></img>
                 </li>
 
                 <li class="popular-blog__elem">
                     <h3 class="popular-blog__elem-title">Являясь всего лишь частью общей картины, многие известные личности и.</h3>
-                    <NuxtPicture class="popular-blog__img" src="/img/blog.png"></NuxtPicture>
+                    <img class="popular-blog__img" src="/img/blog.png"></img>
                 </li>
             </ul>
         </div>

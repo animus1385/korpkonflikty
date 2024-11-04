@@ -5,7 +5,7 @@
             <Swiper space-between="50" :slides-per-view="2" class="corp-servies__swiper">
                 <SwiperSlide class="corp-servies__elem">
                     <div class="corp-servies__elem">
-                        <NuxtPicture class="corp-servies__img" src="#"></NuxtPicture>
+                        <img class="corp-servies__img" src="#"></img>
                         <div class="corp-servies__elem-info">
                             <h3 class="corp-servies__elem-title">Юрист по корпоративным спорам</h3>
                             <p class="corp-servies__elem-descr">
@@ -20,7 +20,7 @@
                 </SwiperSlide>
                 <SwiperSlide>
                     <div class="corp-servies__elem">
-                        <NuxtPicture class="corp-servies__img" src="#"></NuxtPicture>
+                        <img class="corp-servies__img" src="#"></img>
                         <div class="corp-servies__elem-info">
                             <h3 class="corp-servies__elem-title">Конфликты в ООО</h3>
                             <p class="corp-servies__elem-descr">
@@ -35,7 +35,7 @@
                 </SwiperSlide>
                 <SwiperSlide>
                     <div class="corp-servies__elem">
-                        <NuxtPicture class="corp-servies__img" src="#"></NuxtPicture>
+                        <img class="corp-servies__img" src="#"></img>
                         <div class="corp-servies__elem-info">
                             <h3 class="corp-servies__elem-title">Конфликты в ООО</h3>
                             <p class="corp-servies__elem-descr">
