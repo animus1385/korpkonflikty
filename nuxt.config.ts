@@ -6,10 +6,16 @@ export default defineNuxtConfig({
         preference: 'system',
         fallback: 'light',
     },
-    ssr: true, 
-    target: 'static', // Указывает на использование статической генерации
+    ssr: true, // Включает серверный рендеринг. Для статической генерации используйте 'false'.
+    target: 'static', // Используйте 'static' для статической генерации
     router: {
-        base: '/nuxt-wordpress/', // Базовый путь вашего проекта
+        base: '/', // Базовый путь корня
+    },
+    app: {
+        baseURL: '/', // Базовый URL приложения
+    },
+    build: {
+        publicPath: '/_nuxt/', // Путь к статическим ресурсам
     },
     css: ['@/assets/styles/styles.scss'],
     modules: ['@nuxt/devtools', '@nuxt/image', '@nuxt/ui', 'nuxt-swiper', '@nuxt/icon'],
