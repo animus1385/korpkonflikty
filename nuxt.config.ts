@@ -6,21 +6,14 @@ export default defineNuxtConfig({
         preference: 'system',
         fallback: 'light',
     },
-    ssr: true, // Включает серверный рендеринг. Для статической генерации установите false.
-    target: 'static', // Используйте 'static' для статической генерации
-    app: {
-        baseURL: '/', // Базовый URL приложения
-    },
-    build: {
-        publicPath: '/_nuxt/', // Путь к статическим ресурсам
-    },
+    ssr: true,
     css: ['@/assets/styles/styles.scss'],
     modules: ['@nuxt/devtools', '@nuxt/image', '@nuxt/ui', 'nuxt-swiper', '@nuxt/icon'],
-    // runtimeConfig: {
-    //     public: {
-    //         wordpressUrl: 'http://korpkonflikty.ru/graphql',
-    //     },
-    // },
+    runtimeConfig: {
+        public: {
+            wordpressUrl: 'http://admin.korpkonflikty.ru/graphql',
+        },
+    },
     tailwindcss: {
         viewer: false,
     },
