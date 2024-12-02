@@ -8,6 +8,17 @@ export default defineNuxtConfig({
     },
     ssr: true,
     css: ['@/assets/styles/styles.scss'],
+    target: 'static',
+    build: {
+        publicPath: '/_nuxt/', // Путь к статическим ресурсам
+    },
+    app: {
+        baseURL: '/', // Базовый URL приложения
+    },
+    server: {
+        port: 10000,
+        host: '0.0.0.0',
+    },
     modules: ['@nuxt/devtools', '@nuxt/image', '@nuxt/ui', 'nuxt-swiper', '@nuxt/icon'],
     tailwindcss: {
         viewer: false,
