@@ -2,7 +2,7 @@
     background: linear-gradient(224deg, #474747 0%, #222 41.8%);
     @apply relative;
     &__container {
-        @apply h-full min-h-[902px] flex items-center;
+        @apply h-full min-h-[902px] flex items-center relative z-[1];
     }
     &__left {
         @apply max-w-[753px] h-full  flex-col;
@@ -17,7 +17,7 @@
         @apply font-semibold text-[30px] text-[#c4c4c4] mb-[61px];
     }
     &__img {
-        @apply absolute inset-0 w-full h-full flex justify-end pt-[111px];
+        @apply absolute inset-0 w-full h-full flex justify-end pt-[111px] z-[0];
     }
     &__info {
         @apply absolute bottom-[-10%] right-[10%] rounded-[35px] p-[23px_46px] max-w-[869px] flex justify-center;

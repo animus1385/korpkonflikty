@@ -5,6 +5,23 @@
     }
     &__title {
         @apply text-center mb-[27px] text-white;
-        
+    }
+    &__list:deep(.swiper) {
+        @apply h-full;
+    }
+    swiper-container::part(wrapper) {
+        @apply items-center;
+    }
+    &__elem {
+        @apply h-full;
+    }
+    &__img-block {
+        @apply h-full flex items-center justify-center;
+        picture {
+            @apply h-full flex;
+        }
+    }
+    &__img {
+        @apply w-full  h-full flex items-center justify-center;
     }
 }

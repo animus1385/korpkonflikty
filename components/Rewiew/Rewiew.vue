@@ -5,33 +5,33 @@
                 <UButton class="rewiew__btn btn">Отзывы</UButton>
                 <UButton class="rewiew__btn btn"> Видео отзывы</UButton>
             </ul>
-            <Swiper space-between="50" :slides-per-view="4">
-                <SwiperSlide>
+            <swiper-container space-between="50" :slides-per-view="4">
+                <swiper-slide>
                     <div class="rewiew__elem">
                         <Icon class="rewiew__icon" name="svg:img" />
                     </div>
-                </SwiperSlide>
-                <SwiperSlide>
+                </swiper-slide>
+                <swiper-slide>
                     <div class="rewiew__elem">
                         <Icon class="rewiew__icon" name="svg:img" />
                     </div>
-                </SwiperSlide>
-                <SwiperSlide>
+                </swiper-slide>
+                <swiper-slide>
                     <div class="rewiew__elem">
                         <Icon class="rewiew__icon" name="svg:img" />
                     </div>
-                </SwiperSlide>
-                <SwiperSlide>
+                </swiper-slide>
+                <swiper-slide>
                     <div class="rewiew__elem">
                         <Icon class="rewiew__icon" name="svg:img" />
                     </div>
-                </SwiperSlide>
-                <SwiperSlide>
+                </swiper-slide>
+                <swiper-slide>
                     <div class="rewiew__elem">
                         <Icon class="rewiew__icon" name="svg:img" />
                     </div>
-                </SwiperSlide>
-            </Swiper>
+                </swiper-slide>
+            </swiper-container>
         </div>
     </div>
 </template>

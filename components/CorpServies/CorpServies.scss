@@ -11,6 +11,9 @@
     &__elem-info {
         @apply p-[22px] flex flex-col w-full;
     }
+    &__btn {
+        @apply mt-auto ml-auto;
+    }
     &__img {
         @apply w-[254px];
         background: #dbeafe;

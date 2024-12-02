@@ -12,13 +12,17 @@
         line-height: 114%;
         color: #fff;
     }
+
     &__sub-title {
-        @apply mb-[20px] px-[64px] flex ;
+        @apply mb-[20px] px-[64px] flex;
         font-family: var(--second-family);
         font-weight: 600;
         font-size: 25px;
         line-height: 96%;
         color: #fff;
+    }
+    &__descr-block {
+        @apply px-[64px];
     }
     &__list {
         @apply list-decimal px-[75px];
@@ -28,11 +32,19 @@
         line-height: 145%;
         color: #fff;
     }
+    &__left:deep() {
+        ol,
+        ul {
+            color: #fff;
+            list-style: inherit;
+            padding-left: 20px;
+        }
+    }
     &__right {
         @apply flex justify-end items-end;
     }
     &__btn {
-        @apply text-center min-w-[398px] justify-center  flex rounded-full p-[20px] text-[#242527] text-[18px] font-semibold;
+        @apply text-center min-w-[398px] justify-center  flex rounded-full p-[20px] text-[#242527] text-[18px] font-semibold bg-white;
         font-family: var(--font-family);
     }
 }

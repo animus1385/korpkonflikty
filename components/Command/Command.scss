@@ -31,7 +31,7 @@
         }
     }
     &__img:deep() {
-        @apply absolute inset-0 z-[0];
+        @apply absolute inset-0 z-[0] w-full h-full;
         img {
             @apply w-full h-full object-cover;
         }

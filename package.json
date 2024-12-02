@@ -10,17 +10,21 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/devtools": "^1.6.0",
-    "@nuxt/icon": "^1.6.1",
+    "@nuxt/devtools": "^1.6.1",
+    "@nuxt/icon": "^1.9.0",
     "@nuxt/image": "^1.8.1",
-    "@nuxt/ui": "^2.18.7",
+    "@nuxt/ui": "^2.19.2",
     "@nuxtjs/tailwindcss": "^6.12.2",
-    "nuxt": "^3.13.2",
-    "nuxt-swiper": "^1.2.2",
-    "vue": "latest",
+    "axios": "^1.7.8",
+    "dompurify": "^3.2.2",
+    "graphql": "^16.9.0",
+    "graphql-request": "^7.1.2",
+    "graphql-tag": "^2.12.6",
+    "nuxt": "^3.14.1592",
+    "nuxt-swiper": "^2.0.0",
     "vue-router": "latest"
   },
   "devDependencies": {
-    "sass-embedded": "^1.80.6"
+    "sass-embedded": "^1.81.0"
   }
 }

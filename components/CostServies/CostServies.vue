@@ -2,23 +2,26 @@
     <div class="cost-servies">
         <div class="cost-servies__container container">
             <div class="cost-servies__img-block">
-                <img class="cost-servies__img-left" src="/img/cost-2.png"></img>
-                <img class="cost-servies__img-right" src="/img/cost-1.png"></img>
+                <NuxtImg class="cost-servies__img-left" :src="props.data.img1.node.sourceUrl"></NuxtImg>
+                <NuxtImg class="cost-servies__img-right" :src="props.data.img2.node.sourceUrl"></NuxtImg>
             </div>
             <div class="cost-servies__info">
-                <h2 class="cost-servies__title title-level-2">Стоимость услуг при корпоративных спорах</h2>
+                <h2 class="cost-servies__title title-level-2">{{ props.data.title }}</h2>
                 <p class="cost-servies__descr">
-                    Стоимость разрешения корпоративного конфликта всегда рассчитывается в индивидуальном порядке и зависит от многих
-                    факторов: масштаб бизнеса, количество участвующих сторон, стадия спора и т.д. Пройдите небольшой тест по кнопке ниже,
-                    чтобы определить стоимость услуг по разрешению конфликта в вашей ситуации!
+                  {{ props.data.descr }}
                 </p>
-                <UButton class="cost-servies__btn btn">Рассчитать стоимость</UButton>
+                <UButton class="cost-servies__btn btn"> {{ props.data.btn.title }}</UButton>
             </div>
         </div>
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps({
+    data: Object,
+});
+
+</script>
 
 <style scoped lang="scss">
 @forward './CostServies.scss';
