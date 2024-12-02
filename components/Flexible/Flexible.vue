@@ -1,5 +1,5 @@
 <template>
-    <div v-if="status == 'success'">
+    <div v-if="status == 'success' && data">
         <section v-for="section in data" class="section">
             <Hero v-if="section.name == 'HeroCustom'" :data="section.fields"></Hero>
             <Advantages v-if="section.name == 'AdvantagesCommon'" :data="section.fields"></Advantages>
@@ -35,7 +35,6 @@ const { data, status } = useAsyncData('getSettingsAll', async () => await $api.g
                 fields: current ? current[1] : x.fields,
             };
         });
-        console.log(difference);
         return difference;
     },
 });

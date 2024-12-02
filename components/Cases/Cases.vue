@@ -1,11 +1,11 @@
 <template>
     <div class="cases">
         <div class="cases__container container">
-            <h2 class="cases__title title-level-2">{{ props.data.title }}</h2>
+            <h2 class="cases__title title-level-2">{{ props?.data?.title }}</h2>
             <ul class="cases__btn-list">
                 <li
                     class="cases__btn-elem"
-                    v-for="(elem, index) in props.data.casesCommonList"
+                    v-for="(elem, index) in props?.data?.casesCommonList"
                     :key="`cases-btn-${index + 1}`"
                     @click="active = index"
                 >
@@ -42,7 +42,7 @@ const props = defineProps({
     data: Object,
 });
 const active = ref(0);
-const activeCases = computed(() => props.data.casesCommonList[active.value]);
+const activeCases = computed(() => props?.data?.casesCommonList[active.value]);
 </script>
 
 <style scoped lang="scss">

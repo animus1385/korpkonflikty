@@ -1,33 +1,24 @@
 <template>
-    <div class="hero"> 
-        <NuxtPicture v-if="props.data.img" class="hero__img" :src="props.data.img.node.sourceUrl" />
+    <div class="hero">
+        <NuxtPicture v-if="props?.data?.img" class="hero__img" :src="props?.data?.img.node.sourceUrl" />
         <div class="hero__container container">
             <div class="hero__left">
-                <h1 v-if="props.data.title" class="hero__title">{{ props.data.title }}</h1>
-                <p v-if="props.data.subtitle" class="hero__descr">{{ props.data.subtitle }}</p>
-                <NuxtLink v-if="props.data.btn.title && props.data.btn.url" class="hero__btn btn" :href="props.data.btn.url">{{
-                    props.data.btn.title
+                <h1 v-if="props?.data?.title" class="hero__title">{{ props?.data?.title }}</h1>
+                <p v-if="props?.data?.subtitle" class="hero__descr">{{ props?.data?.subtitle }}</p>
+                <NuxtLink v-if="props?.data?.btn.title && props?.data?.btn.url" class="hero__btn btn" :href="props?.data?.btn.url">{{
+                    props?.data?.btn.title
                 }}</NuxtLink>
             </div>
         </div>
         <div class="hero__info">
-            <span class="hero__info-text" v-if="props.data.message">{{ props.data.message }} </span>
+            <span class="hero__info-text" v-if="props?.data?.message">{{ props?.data?.message }} </span>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 const props = defineProps({
-    data: {
-        title: String,
-        subtitle: String,
-        btn: {
-            url: String,
-            title: String,
-        },
-        message: String,
-        img: Object,
-    },
+    data: Object,
 });
 </script>
 

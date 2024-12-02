@@ -2,13 +2,13 @@
     <div class="faq">
         <div class="faq__container container">
             <div class="faq__left">
-                <h2 class="faq__title title-level-2">{{ props.data.title }}</h2>
+                <h2 class="faq__title title-level-2">{{ props?.data?.title }}</h2>
                 <p class="faq__descr">
-                    {{ props.data.descr }}
+                    {{ props?.data?.descr }}
                 </p>
             </div>
             <div class="faq__right">
-                <UAccordion class="faq__accordion accordion" variant="ghost" size="xl" color="black" :items="props.data.list">
+                <UAccordion class="faq__accordion accordion" variant="ghost" size="xl" color="black" :items="props?.data?.list">
                     <template #default="{ item, open  }">
                         
                         <UButton color="gray" variant="ghost" class="accordion__btn">
