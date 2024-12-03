@@ -7,17 +7,24 @@ export default defineNuxtConfig({
         preference: 'light',
     },
     ssr: true,
-    css: ['@/assets/styles/styles.scss'],
-    target: 'static',
-    build: {
-        publicPath: '/_nuxt/', // Путь к статическим ресурсам
-    },
     app: {
+        head: {
+            htmlAttrs: {
+                lang: 'ru',
+            },
+            title: 'Template',
+            charset: 'utf-8',
+            meta: [],
+            link: [],
+        },
         baseURL: '/', // Базовый URL приложения
     },
-    server: {
-        port: 10000,
-        host: '0.0.0.0',
+
+    css: ['@/assets/styles/styles.scss'],
+
+    
+    typescript: {
+        typeCheck: true,
     },
     modules: ['@nuxt/devtools', '@nuxt/image', '@nuxt/ui', 'nuxt-swiper', '@nuxt/icon'],
     tailwindcss: {
@@ -50,4 +57,3 @@ export default defineNuxtConfig({
         ],
     },
 });
-

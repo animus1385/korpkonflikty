@@ -20,20 +20,20 @@
     </div>
 </template>
 <script setup lang="ts">
-const props = defineProps({
-    data: Array,
-});
+import type { IBlockFlexible } from '~/types/blockFlexible';
+
+const props = defineProps<{ data: IBlockFlexible[] | null }>();
 const { $api } = useNuxtApp();
 
 const { data, status } = useAsyncData('getSettingsAll', async () => await $api.getSettingsAll(), {
     transform: (e) => {
-        let difference = props?.data?.map((x) => {
+        let difference = props?.data?.map((x: any) => {
             const current = Object.entries(e).find((el) => x.name.toLowerCase().includes(el[0].toLowerCase()));
 
             return {
                 name: x.name,
                 fields: current ? current[1] : x.fields,
-            };
+            } as IBlockFlexible;
         });
         return difference;
     },

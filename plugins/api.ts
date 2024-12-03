@@ -1,18 +1,14 @@
 import axios from 'axios';
 import { allQuery } from '../gql/queries/getSettingsAll';
 import { pageQuery } from '../gql/queries/getIndexPage';
-
-interface Api {
-    getSettingsAll(): Promise<any>;
-    getPage(id: string): Promise<any>;
-}
+import type { Api } from '../types/api';
 
 export default defineNuxtPlugin(() => {
     const config = useRuntimeConfig();
-    const BASE_API: string = config.public.API as string;
+    const BASE_API: string = config.public.API;
 
     const api: Api = {
-        async getSettingsAll() {
+        getSettingsAll: async () => {
             let result = [];
 
             try {
@@ -28,7 +24,7 @@ export default defineNuxtPlugin(() => {
             }
             return result;
         },
-        async getPage(id: string) {
+        getPage: async (id: string) => {
             let result = [];
 
             try {
@@ -48,6 +44,6 @@ export default defineNuxtPlugin(() => {
     };
 
     return {
-        provide: { api: api as Api },
+        provide: { api: api },
     };
 });

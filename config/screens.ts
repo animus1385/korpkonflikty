@@ -1,4 +1,4 @@
-import type { IScreens } from '~/types';
+import type { IScreens } from '../types/common/screens';
 
 export const screens: IScreens = {
     mobile: '320px',

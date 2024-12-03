@@ -7,24 +7,31 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "start": "nuxt start"
   },
   "dependencies": {
-    "@nuxt/devtools": "^1.6.1",
+    "@nuxt/devtools": "^1.6.2",
     "@nuxt/icon": "^1.9.0",
-    "@nuxt/image": "^1.8.1",
     "@nuxt/ui": "^2.19.2",
     "@nuxtjs/tailwindcss": "^6.12.2",
     "axios": "^1.7.8",
-    "dompurify": "^3.2.2",
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.2",
     "graphql-tag": "^2.12.6",
     "nuxt": "^3.14.1592",
-    "nuxt-swiper": "^2.0.0",
-    "vue-router": "latest"
+    "nuxt-swiper": "^2.0.0"
   },
   "devDependencies": {
-    "sass-embedded": "^1.81.0"
+    "@nuxt/image": "^1.8.1",
+    "@nuxt/types": "^2.18.1",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.4.1",
+    "sass-embedded": "^1.81.1",
+    "typescript": "^5.7.2",
+    "vue-eslint-parser": "^9.4.3",
+    "vue-tsc": "^2.1.10"
   }
 }
