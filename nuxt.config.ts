@@ -22,9 +22,9 @@ export default defineNuxtConfig({
 
     css: ['@/assets/styles/styles.scss'],
 
-    
     typescript: {
-        typeCheck: true,
+        strict: true,
+        typeCheck: false,
     },
     modules: ['@nuxt/devtools', '@nuxt/image', '@nuxt/ui', 'nuxt-swiper', '@nuxt/icon'],
     tailwindcss: {

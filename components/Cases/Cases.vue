@@ -38,9 +38,7 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-    data: Object,
-});
+const props = defineProps<{ data: any }>();
 const active = ref(0);
 const activeCases = computed(() => props?.data?.casesCommonList[active.value]);
 </script>

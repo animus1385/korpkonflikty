@@ -13,9 +13,7 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-    data: Object,
-});
+const props = defineProps<{ data: any }>();
 </script>
 
 <style scoped lang="scss">

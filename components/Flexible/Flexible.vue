@@ -17,6 +17,7 @@
             <PopularBlog v-if="section.name == 'PopularBlogCommon'" :data="section.fields"></PopularBlog>
             <CTATelegram v-if="section.name == 'CtaTelegramCommon'" :data="section.fields"></CTATelegram>
         </section>
+        
     </div>
 </template>
 <script setup lang="ts">
@@ -37,6 +38,7 @@ const { data, status } = useAsyncData('getSettingsAll', async () => await $api.g
         });
         return difference;
     },
+    server: false,
 });
 </script>
 
