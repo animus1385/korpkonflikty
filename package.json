@@ -19,8 +19,10 @@
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.2",
     "graphql-tag": "^2.12.6",
+    "maska": "^3.0.4",
     "nuxt": "^3.14.1592",
-    "nuxt-swiper": "^2.0.0"
+    "nuxt-swiper": "^2.0.0",
+    "yup": "^1.5.0"
   },
   "devDependencies": {
     "@nuxt/image": "^1.8.1",

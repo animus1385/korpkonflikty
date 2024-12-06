@@ -8,7 +8,7 @@
             <div class="cost-servies__info">
                 <h2 class="cost-servies__title title-level-2">{{ props?.data?.title }}</h2>
                 <p class="cost-servies__descr">
-                  {{ props?.data?.descr }}
+                    {{ props?.data?.descr }}
                 </p>
                 <UButton class="cost-servies__btn btn"> {{ props?.data?.btn.title }}</UButton>
             </div>
@@ -18,7 +18,6 @@
 
 <script setup lang="ts">
 const props = defineProps<{ data: any }>();
-
 </script>
 
 <style scoped lang="scss">

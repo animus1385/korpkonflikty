@@ -1,4 +1,5 @@
 <template>
+
     <div v-if="status == 'success' && data">
         <section v-for="section in data" class="section">
             <Hero v-if="section.name == 'HeroCustom'" :data="section.fields"></Hero>
@@ -14,10 +15,18 @@
             <FAQ v-if="section.name == 'FaqCommon'" :data="section.fields"></FAQ>
             <CTA2 v-if="section.name == 'Cta2Common'" :data="section.fields"></CTA2>
             <Rewiew v-if="section.name == 'RewiewCommon'" :data="section.fields"></Rewiew>
-            <PopularBlog v-if="section.name == 'PopularBlogCommon'" :data="section.fields"></PopularBlog>
+            <!-- <PopularBlog v-if="section.name == 'PopularBlogCommon'" :data="section.fields"></PopularBlog> -->
+
             <CTATelegram v-if="section.name == 'CtaTelegramCommon'" :data="section.fields"></CTATelegram>
+            <BlogContent
+                v-if="section.name == 'BlogContentCustom'"
+                v-for="dataValue in section.fields.list"
+                :data="dataValue"
+            ></BlogContent>
+            <Form1 v-if="section.name == 'Form1Common'"></Form1>
+            <Form2 v-if="section.name == 'Form2Common'"></Form2>
+            <FormCommnent v-if="section.name == 'FormCommentCommon'" :data="section.fields" :pageId="section.pageId"></FormCommnent>
         </section>
-        
     </div>
 </template>
 <script setup lang="ts">
@@ -26,12 +35,13 @@ import type { IBlockFlexible } from '~/types/blockFlexible';
 const props = defineProps<{ data: IBlockFlexible[] | null }>();
 const { $api } = useNuxtApp();
 
-const { data, status } = useAsyncData('getSettingsAll', async () => await $api.getSettingsAll(), {
-    transform: (e) => {
+const { data, status, error } = useAsyncData('getSettingsAll',  () =>  $api.getSettingsAll(), {
+    transform: (e: any) => {
         let difference = props?.data?.map((x: any) => {
             const current = Object.entries(e).find((el) => x.name.toLowerCase().includes(el[0].toLowerCase()));
 
             return {
+                pageId: x.pageId,
                 name: x.name,
                 fields: current ? current[1] : x.fields,
             } as IBlockFlexible;

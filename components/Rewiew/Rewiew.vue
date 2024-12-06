@@ -5,7 +5,23 @@
                 <UButton class="rewiew__btn btn">Отзывы</UButton>
                 <UButton class="rewiew__btn btn"> Видео отзывы</UButton>
             </ul>
-            <swiper-container space-between="50" :slides-per-view="4">
+            <swiper-container
+                :slides-per-view="4"
+                :breakpoints="{
+                    320: {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    1280: {
+                        slidesPerView: 4,
+                        spaceBetween: 50,
+                    },
+                }"
+            >
                 <swiper-slide>
                     <div class="rewiew__elem">
                         <Icon class="rewiew__icon" name="svg:img" />

@@ -1,33 +1,29 @@
 .cta {
-    @apply pt-[48px] pb-[40px];
-    &__container {
-        @apply relative min-h-[520px] h-full grid grid-cols-[705px_1fr]  items-center w-full  p-[95px_128px];
+    @apply desktop:pt-[48px]  desktop:pb-[40px] mobile:py-[30px];
+    &__content {
+        @apply relative min-h-[600px] h-full grid desktop:grid-cols-[705px_1fr]  items-center w-full   desktop:p-[95px_128px] mobile:p-[45px_24px];
     }
     &__title {
         font-family: var(--font-family);
-        font-weight: 600;
-        font-size: 52px;
         line-height: 119%;
         letter-spacing: -0.04em;
-        color: #fff;
-        @apply mb-[6px];
+        @apply desktop:mb-[6px] mobile:mb-[30px] desktop:text-[52px] font-semibold mobile:text-[32px] text-white;
     }
     &__descr {
         font-family: var(--font-family);
-        font-weight: 400;
-        font-size: 18px;
         line-height: 167%;
         color: #fff;
-        @apply mb-[53px];
+        @apply desktop:mb-[53px] mobile:mb-[30px] desktop:text-[18px] font-normal mobile:text-[14px] text-white;
     }
     &__btn {
-        @apply text-[18px] max-w-max;
+        @apply desktop:text-[18px] max-w-max mobile:text-[14px];
     }
     &__left {
-        @apply w-full flex flex-col justify-center h-full;
+        @apply w-full flex flex-col desktop:justify-center h-full;
     }
     &__img:deep() {
-        @apply absolute inset-0 w-full z-[-1];
+        @apply absolute inset-0 w-full z-[-1] rounded-[20px] overflow-hidden h-full;
+        background: linear-gradient(333deg, #474747 0%, #222 53.8%);
         img {
             @apply w-full h-full;
         }

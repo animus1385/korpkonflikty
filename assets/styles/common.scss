@@ -17,15 +17,36 @@ body {
 .btn {
     box-shadow: 0 13px 20px 0 rgba(1, 115, 153, 0.2);
     border-radius: 65px;
-    padding: 26px 52px;
-    font-size: 21px;
     text-align: center;
     font-family: var(--font-family);
     font-weight: 600;
     background: linear-gradient(127deg, #60bbee 0%, #0a72ad 100%);
+    @apply tabletMedium:text-[21px] tabletMedium:p-[26px_52px] mobile:p-[15px_30px] mobile:text-[18px];
 }
 
 .title-level-2 {
-    @apply font-bold text-[46px] text-[#242527];
+    @apply font-bold desktop:text-[46px] text-[#242527] mobile:text-[30px];
     font-family: var(--second-family);
+}
+
+.input-field {
+    input {
+        height: 50px;
+        border-radius: 10px;
+        background: #fff;
+        &::placeholder {
+            font-family: var(--second-family);
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 179%;
+            letter-spacing: 0.06em;
+            color: #a5a5a5;
+        }
+        font-family: var(--second-family);
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 179%;
+        letter-spacing: 0.06em;
+        color: black;
+    }
 }

@@ -1,22 +1,22 @@
 .faq {
-    @apply pt-[59px] pb-[64px];
+    @apply desktop:pt-[59px] mobile:pt-[15px] desktop:pb-[64px] mobile:pb-[15px];
     &__container {
-        @apply grid grid-cols-2 gap-[51px];
+        @apply grid desktop:grid-cols-2 desktop:gap-[51px] mobile:gap-[20px];
     }
     &__left {
-        @apply p-[72px_80px];
+        @apply desktop:p-[72px_80px] mobile:p-[20px];
         background: #dbeafe;
         border-radius: 16px;
     }
     &__title {
-        @apply mb-[100px];
+        @apply desktop:mb-[100px] mobile:mb-[30px];
     }
     &__descr {
         font-family: var(--second-family);
         font-weight: 600;
-        font-size: 18px;
         line-height: 167%;
         color: #939393;
+        @apply desktop:text-[18px] mobile:text-[14px];
     }
 }
 
@@ -24,10 +24,9 @@
     &__text-body {
         font-family: var(--second-family);
         font-weight: 500;
-        font-size: 16px;
         line-height: 162%;
         color: #18181b;
-        @apply pb-[74px];
+        @apply desktop:pb-[74px] mobile:pb-[30px] desktop:text-[16px] mobile:text-[14px];
     }
     &__btn {
         @apply p-[15px_0px]  rounded-none;
@@ -39,10 +38,12 @@
         @apply border-b border-black;
     }
     &__btn-text {
+        @apply text-start;
         font-family: var(--second-family);
         font-weight: 700;
         font-size: 18px;
         line-height: 133%;
         color: #18181b;
+        @apply desktop:text-[18px] mobile:text-[16px];
     }
 }

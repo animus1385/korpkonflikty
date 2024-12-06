@@ -1,49 +1,47 @@
 .header {
-    @apply fixed top-0 z-[2] left-0 right-0;
+    @apply sticky top-0 z-[5] left-0 right-0;
+    background: linear-gradient(333deg, #474747 0%, #222 53.8%);
 
     &__contaniner {
-        @apply grid grid-cols-[max-content_1fr_repeat(3,max-content)] gap-[70px] py-[32px] items-center;
+        @apply grid desktopWide:grid-cols-[max-content_1fr_repeat(3,max-content)] laptopMedium:grid-cols-[max-content_1fr_repeat(2,max-content)] mobile:grid-cols-[repeat(2,max-content)] justify-between  desktopMedium:gap-[40px] py-[32px] items-center laptopMedium:gap-[20px];
+
     }
     &__list {
         @apply grid grid-cols-6 gap-[20px];
     }
     &__logo {
-        @apply w-[183px] h-[87px];
+        @apply desktopMedium:w-[183px] desktopMedium:h-[87px] mobile:w-[150px] mobile:h-[60px];
     }
     &__icon {
         @apply w-full h-full;
     }
+    &__nav {
+        @apply laptopMedium:flex mobile:hidden ;
+    }
     &__connect {
-        @apply grid grid-cols-2 gap-[30px];
+        @apply laptopMedium:grid desktopMedium:grid-cols-2 desktopMedium:gap-[30px] mobile:grid-cols-1 mobile:hidden mobile:gap-[10px];
     }
     &__email,
     &__tel {
-        @apply grid grid-cols-[20px_1fr] gap-[10px];
+        @apply grid desktopWide:grid-cols-[20px_1fr] gap-[10px]  desktopMedium:text-[18px] text-center font-semibold text-white desktopWide:text-[16px];
         font-family: var(--second-family);
-        font-weight: 600;
-        font-size: 18px;
-        text-align: center;
-        color: #fff;
     }
     &__social {
-        @apply grid grid-cols-[repeat(5,20px)] gap-[10px];
+        @apply grid grid-cols-[repeat(5,20px)] gap-[10px] mobile:hidden desktopWide:grid;
+      
+    }
+    &__elem {
+        @apply flex justify-center;
     }
     &__link {
+        @apply desktopMedium:text-[18px] font-bold text-center text-[#c4c4c4] laptopMedium:text-[16px];
         font-family: var(--second-family);
-        font-weight: 700;
-        font-size: 18px;
-        text-align: center;
-        color: #c4c4c4;
     }
     &__btn-call {
+        @apply font-semibold text-[16px] p-[15px_30px] text-center text-white justify-self-end justify-center laptopMedium:flex mobile:hidden;
         font-family: var(--font-family);
-        font-weight: 600;
-        font-size: 16px;
-        text-align: center;
-        color: #fff;
-        display: flex;
-        justify-self: end;
-        justify-content: flex-end;
-        padding: 15px 30px;
+    }
+    &__burger {
+        @apply text-white w-full h-full  laptopMedium:hidden mobile:flex ;
     }
 }

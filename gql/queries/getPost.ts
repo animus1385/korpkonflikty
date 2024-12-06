@@ -1,8 +1,13 @@
 import { gql } from 'graphql-request';
 
-export const pageQuery = gql`
-    query getPage($ID: ID!) {
-        page(idType: DATABASE_ID, id: $ID) {
+export const GET_POST = gql`
+    query getPost($ID: ID!) {
+        post(idType: SLUG, id: $ID) {
+            id
+            title
+            uri
+            postViews
+            postId
             pageBuilder {
                 fieldGroupName
                 flexible {
@@ -263,7 +268,7 @@ export const pageQuery = gql`
                             title
                         }
                     }
-                    ... on PageBuilderFlexibleBlogContentCustomCustomLayout {
+                    ... on PageBuilderFlexibleBlogContentCustomLayout {
                         fieldGroupName
                         blogContentCustom {
                             list {
@@ -280,6 +285,18 @@ export const pageQuery = gql`
                     }
                     ... on PageBuilderFlexibleFormCommentCommonLayout {
                         fieldGroupName
+                    }
+                }
+            }
+            comments {
+                edges {
+                    node {
+                        id
+                        content
+                        author {
+                            email
+                            name
+                        }
                     }
                 }
             }

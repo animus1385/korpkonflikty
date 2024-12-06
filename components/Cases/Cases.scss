@@ -1,27 +1,30 @@
 .cases {
-    @apply pt-[115px] pb-[59px];
+    @apply pt-[115px] pb-[59px] overflow-hidden;
     &__btn-list {
-        @apply flex flex-wrap justify-between mb-[85px];
+        @apply flex flex-wrap justify-between desktop:mb-[85px] mobile:mb-[30px];
+    }
+    swiper-container::part(container ) {
+        @apply overflow-visible;
     }
     &__title {
-        @apply text-center mb-[50px];
+        @apply desktop:text-center desktop:mb-[50px] mobile:mb-[20px];
     }
 }
 .info-case {
-    @apply grid grid-cols-2 gap-[210px];
+    @apply grid desktop:grid-cols-2 desktop:gap-[210px] mobile:gap-[30px];
     &__title {
         font-family: var(--second-family);
         line-height: 110%;
         letter-spacing: -0.03em;
-        @apply mb-[45px] text-[60px] font-bold text-[#0f172a];
+        @apply desktop:mb-[45px] mobile:mb-[20px]  desktop:text-[60px] font-bold text-[#0f172a] tablet:text-[45px] mobile:text-[30px];
     }
     &__descr {
-        @apply text-[18px] font-semibold text-[#939393];
+        @apply text-[18px] font-semibold text-[#939393] tablet:text-[16px] mobile:text-[14px];
         font-family: var(--second-family);
         line-height: 167%;
     }
     &__list-deep {
-        @apply p-[52px_89px] grid gap-[80px] rounded-[16px] bg-[#dbeafeaa];
+        @apply desktop:p-[52px_89px] mobile:p-[40px_30px] grid gap-[80px] rounded-[16px] bg-[#dbeafeaa];
     }
     &__elem-deep {
         @apply grid grid-cols-[60px_1fr]  gap-[23px];
@@ -42,11 +45,11 @@
         font-family: var(--second-family);
         line-height: 152%;
         letter-spacing: -0.01em;
-        @apply text-[#0f172a] text-[21px] font-extrabold;
+        @apply text-[#0f172a] desktop:text-[21px] mobile:text-[18px] font-extrabold;
     }
     &__elem-descr-deep {
         font-family: var(--second-family);
         line-height: 162%;
-        @apply text-[#212939] text-[16px] font-medium;
+        @apply text-[#212939] desktop:text-[16px] mobile:text-[14px] font-medium;
     }
 }

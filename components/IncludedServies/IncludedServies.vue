@@ -9,10 +9,12 @@
                     :key="`included-servies-${index + 1}`"
                 >
                     <div class="included-servies__icon">{{ index + 1 }}</div>
-                    <h3 class="included-servies__elem-title">{{ elem.title }}</h3>
-                    <p class="included-servies__elem-text">
-                        {{ elem.descr }}
-                    </p>
+                    <div class="included-servies__info-elem">
+                        <h3 class="included-servies__elem-title">{{ elem.title }}</h3>
+                        <p class="included-servies__elem-text">
+                            {{ elem.descr }}
+                        </p>
+                    </div>
                 </li>
             </ul>
         </div>

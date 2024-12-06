@@ -2,16 +2,29 @@
     <div class="cases">
         <div class="cases__container container">
             <h2 class="cases__title title-level-2">{{ props?.data?.title }}</h2>
-            <ul class="cases__btn-list">
-                <li
+            <swiper-container
+                class="cases__btn-list"
+                :breakpoints="{
+                    320: {
+                        slidesPerView: 2.5,
+                    },
+                    768: {
+                        slidesPerView: 4.5,
+                    },
+                    1280: {
+                        slidesPerView: 6,
+                    },
+                }"
+            >
+                <swiper-slide
                     class="cases__btn-elem"
                     v-for="(elem, index) in props?.data?.casesCommonList"
                     :key="`cases-btn-${index + 1}`"
                     @click="active = index"
                 >
                     <UButton class="btn">Кейс {{ index + 1 }}</UButton>
-                </li>
-            </ul>
+                </swiper-slide>
+            </swiper-container>
             <div class="info-case">
                 <div class="info-case__left">
                     <h3 class="info-case__title">{{ activeCases.title }}</h3>

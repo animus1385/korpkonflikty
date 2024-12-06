@@ -1,10 +1,10 @@
 .about {
-    @apply pt-[72px] pb-[90px];
+    @apply desktop:pt-[72px] pb-[90px] mobile:pt-[30px];
     &__title {
-        @apply mb-[45px] text-center;
+        @apply desktop:mb-[45px] text-center mobile:mb-[30px];
     }
     &__list {
-        @apply grid grid-cols-4 gap-[98px];
+        @apply grid desktop:grid-cols-4 desktop:gap-[98px] mobile:gap-[20px];
     }
     &__elem {
         @apply flex flex-col items-center;
@@ -13,11 +13,11 @@
         font-family: var(--font5);
         line-height: 138%;
         letter-spacing: 0em;
-        @apply text-[#2387c0] text-center text-[76px] font-extrabold;
+        @apply text-[#2387c0] text-center desktop:text-[76px] mobile:text-[73px] font-extrabold;
     }
     &__text-elem {
         font-family: var(--second-family);
         line-height: 130%;
-        @apply text-[#939393] text-center text-[20px] font-bold;
+        @apply text-[#939393] text-center desktop:text-[20px] mobile:text-[14px] font-bold;
     }
 }

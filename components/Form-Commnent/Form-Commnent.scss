@@ -1,0 +1,79 @@
+.form-commnent {
+    &__title {
+        font-family: var(--second-family);
+        font-weight: 700;
+        font-size: 52px;
+        color: #090914;
+    }
+    &__container {
+        display: grid;
+        gap: 38px;
+    }
+    &__block-enter {
+        display: grid;
+        gap: 40px;
+        background: #dbeafe;
+        border-radius: 40px;
+        padding: 60px 133px;
+    }
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr minmax(auto, 490px);
+        gap: 40px;
+    }
+    &__fileds-block {
+        display: grid;
+        gap: 20px;
+    }
+    &__bottom {
+        display: flex;
+        gap: 20px;
+    }
+    &__field-textarea {
+        height: 100%;
+    }
+    &__comment:deep() {
+        height: 100%;
+        div:nth-child(2) {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 20px;
+        }
+        textarea {
+            height: 100%;
+            background: #fff;
+            border-radius: 10px;
+        }
+    }
+    &__list {
+        display: grid;
+        gap: 20px;
+    }
+    &__elem {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        gap: 4px;
+    }
+    &__elem-info {
+        display: flex;
+        flex-direction: column;
+        background: #e6e6e6;
+        border-radius: 20px;
+        padding: 8px;
+    }
+    &__elem-name {
+        font-family: var(--font8);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 129%;
+        color: #64748b;
+    }
+    &__all-comments {
+        margin-bottom: 100px;
+    }
+    &__span {
+        display: flex;
+        margin-bottom: 10px;
+    }
+}

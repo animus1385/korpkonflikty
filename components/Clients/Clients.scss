@@ -1,16 +1,19 @@
 .clients {
-    @apply bg-[#2387c0];
-    &__container {
-        @apply pt-[27px] pb-[85px];
-    }
+    @apply bg-[#2387c0] overflow-hidden desktop:pt-[27px]   desktop:pb-[85px] mobile:pt-[44px] mobile:pb-[40px];
+
     &__title {
         @apply text-center mb-[27px] text-white;
     }
-    &__list:deep(.swiper) {
+    &__list {
         @apply h-full;
     }
-    swiper-container::part(wrapper) {
-        @apply items-center;
+    swiper-container {
+        &::part(container) {
+            @apply overflow-visible;
+        }
+        &::part(wrapper) {
+            @apply items-center;
+        }
     }
     &__elem {
         @apply h-full;

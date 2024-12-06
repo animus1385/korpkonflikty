@@ -2,7 +2,18 @@
     <div class="corp-servies">
         <div class="corp-servies__container container">
             <h2 class="corp-servies__title title-level-2">Услуги по корпоративным спорам</h2>
-            <swiper-container :space-between="50" :slides-per-view="2" class="corp-servies__swiper">
+            <swiper-container 
+            :space-between="50" 
+            :breakpoints="{
+                320: {
+                    slidesPerView: 1,
+                },
+                1024: {
+                    slidesPerView: 2,
+                }
+            }"  
+            class="corp-servies__swiper"
+            >
                 <swiper-slide class="corp-servies__elem" v-for="elem in props?.data?.corpServiesList.nodes">
                     <div class="corp-servies__elem">
                         <img class="corp-servies__img" src="#"></img>

@@ -1,12 +1,12 @@
 .rewiew {
-    @apply pt-[101px] pb-[91px];
+    @apply desktop:pt-[101px]  desktop:pb-[91px] mobile:py-[30px];
     &__btn-list {
-        @apply flex gap-[32px] mb-[84px];
+        @apply flex desktop:gap-[32px] mobile:gap-[11px] desktop:mb-[84px] mobile:mb-[30px];
     }
-    &__elem{
-        @apply w-full h-full bg-[#eaeaea] rounded-[16px] min-h-[243px] flex justify-center items-center;
+    &__elem {
+        @apply w-full h-full bg-[#eaeaea] rounded-[16px] desktop:h-[243px] mobile:h-[131px] flex justify-center items-center;
     }
     &__icon {
-        @apply w-[100px] h-[100px];
+        @apply desktop:w-[100px] mobile:w-[30px] desktop:h-[100px] mobile:h-[30px];
     }
 }

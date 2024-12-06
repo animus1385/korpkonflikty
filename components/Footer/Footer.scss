@@ -1,31 +1,32 @@
 .footer {
     background: #2387c0;
     &__container {
-        @apply pt-[68px] pb-[40px];
+        @apply desktop:pt-[68px] desktop:pb-[40px] mobile:py-[30px];
     }
     &__top {
-        @apply grid grid-cols-[200px_1fr_382px] justify-between gap-[100px] items-center border-b border-white pb-[20px];
+        @apply grid desktop:grid-cols-[max-content_1fr_max-content]  desktopMedium:gap-[30px] mobile:gap-[20px] items-center mobile:justify-center;
     }
-    &__left {
-        @apply flex flex-col;
-    }
+
     &__logo {
-        @apply w-[183px] h-[87px] mb-[19px];
+        @apply desktop:w-[183px] h-[87px] desktop:mb-[19px] mobile:mx-auto mobile:w-full order-1;
     }
     &__icon {
         @apply w-full h-full;
     }
-    &__bottom {
-        @apply pt-[35px] grid grid-cols-[max-content_1fr_382px] gap-[100px] justify-between;
-    }
     &__list {
-        @apply flex gap-[45px]  max-w-max  justify-self-center;
+        @apply desktop:flex gap-[45px]  max-w-max justify-self-center    mobile:hidden order-2;
     }
     &__social {
         @apply flex;
     }
     &__connect {
-        @apply flex justify-between;
+        @apply flex desktop:justify-between mobile:items-center desktop:col-start-3 desktop:items-start mobile:flex-col w-full desktop:order-5 mobile:order-4;
+    }
+    &__tel-text {
+        @apply text-[14px] col-span-2 text-end;
+    }
+    &__hr {
+        @apply desktop:col-span-full  order-6;
     }
     &__link {
         font-family: var(--second-family);
@@ -33,6 +34,7 @@
         font-size: 18px;
         text-align: center;
         color: #fff;
+        @apply desktop:text-[18px] mobile:text-[14px];
     }
     &__email,
     &__tel {
@@ -41,7 +43,7 @@
         font-size: 18px;
         text-align: center;
         color: #fff;
-        @apply grid grid-cols-[24px_1fr] gap-[10px];
+        @apply grid grid-cols-[24px_1fr] gap-[10px] items-start;
     }
     &__btn-call {
         box-shadow: 0 10px 15px 0 rgba(1, 115, 153, 0.2);
@@ -55,9 +57,10 @@
         padding: 20px 40px;
         display: flex;
         margin-left: auto;
-        margin-bottom: 27px;
+        @apply mobile:w-full flex justify-center desktop:order-[3] mobile:order-5 desktop:mb-0 mobile:mb-[30px];
     }
     &__address {
+        @apply grid grid-cols-[20px_1fr] items-center gap-[10px] w-full desktop:order-4 mobile:order-3;
         font-family: var(--font7);
         font-weight: 400;
         font-size: 14px;
@@ -73,9 +76,10 @@
         line-height: 157%;
         text-align: center;
         color: #fff;
+        @apply order-7;
     }
     &__social {
-        @apply grid gap-[9px] grid-cols-5 max-w-max justify-self-end ;
+        @apply grid gap-[9px] grid-cols-5 desktop:max-w-max desktop:justify-self-end desktop:order-8 mobile:order-4 w-full mobile:justify-center justify-items-center desktop:mb-0 mobile:mb-[30px];
     }
     &__social-elem {
         @apply h-[20px] w-[20px];

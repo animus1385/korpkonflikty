@@ -1,50 +1,42 @@
 .cta-2 {
     background: #2387c0;
-    @apply mb-[101px] mt-[64px];
+    @apply desktop:mb-[101px] desktop:mt-[64px] my-[30px];
     &__container {
-        @apply pt-[95px] pb-[79px] grid grid-cols-[777px_1fr] gap-[50px];
+        @apply desktop:pt-[95px] desktop:pb-[79px] grid desktop:grid-cols-[777px_1fr] gap-[50px] mobile:py-[45px];
     }
     &__title {
         @apply mb-[33px];
         font-family: var(--font4);
-        font-weight: 700;
-        font-size: 42px;
         line-height: 114%;
-        color: #fff;
+        @apply desktop:text-[42px] mobile:text-[30px] font-bold text-white;
     }
 
     &__sub-title {
-        @apply mb-[20px] px-[64px] flex;
+        @apply mb-[20px] desktop:px-[64px] flex desktop:text-[25px] mobile:text-[20px] font-semibold text-white;
         font-family: var(--second-family);
-        font-weight: 600;
-        font-size: 25px;
         line-height: 96%;
-        color: #fff;
     }
     &__descr-block {
-        @apply px-[64px];
+        @apply desktop:px-[64px];
     }
     &__list {
-        @apply list-decimal px-[75px];
+        @apply list-decimal desktop:px-[75px] text-[20px] text-white font-normal;
         font-family: var(--second-family);
-        font-weight: 400;
-        font-size: 20px;
         line-height: 145%;
-        color: #fff;
     }
     &__left:deep() {
         ol,
         ul {
-            color: #fff;
             list-style: inherit;
-            padding-left: 20px;
+            @apply pl-[20px] text-white;
         }
     }
     &__right {
         @apply flex justify-end items-end;
     }
     &__btn {
-        @apply text-center min-w-[398px] justify-center  flex rounded-full p-[20px] text-[#242527] text-[18px] font-semibold bg-white;
+        @apply text-center desktop:min-w-[398px] desktop:w-auto mobile:w-full justify-center  flex rounded-full p-[20px] text-[#242527] text-[18px] font-semibold;
         font-family: var(--font-family);
+        background: #fff;
     }
 }

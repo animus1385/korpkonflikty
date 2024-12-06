@@ -1,20 +1,27 @@
 .advantages {
-    @apply pt-[122px] pb-[88px];
+    @apply pt-[122px] desktop:pb-[84px] mobile:pb-[30px];
     &__title {
-        @apply mb-[95px];
+        @apply desktop:mb-[95px] mobile:mb-[40px];
     }
     &__list {
-        @apply grid grid-cols-5 gap-[113px];
+        @apply flex flex-wrap gap-[20px]   justify-between;
     }
     &__elem-title {
         font-family: var(--font-family);
-        @apply mb-[8px] text-[#242527] text-[24px] font-semibold;
+        @apply mb-[8px] text-[#242527] desktop:text-[24px] font-semibold desktop:text-center mobile:text-[20px];
+    }
+    &__info-elem {
+        @apply flex flex-col h-full; 
+    }
+    &__img {
+        @apply mx-auto;
+    }
+    &__elem {
+        @apply grid desktop:grid-cols-1 mobile:grid-cols-[78px_1fr]  desktop:grid-rows-[100px_1fr]  gap-[20px]   desktop:max-w-[15%] tablet:max-w-[45%] mobile:max-w-full;
     }
     &__elem-text {
+        @apply font-bold text-[20px] text-[#939393] desktop:text-center  mobile:text-[14px];
         font-family: var(--second-family);
-        font-weight: 700;
-        font-size: 20px;
         line-height: 130%;
-        color: #939393;
     }
 }

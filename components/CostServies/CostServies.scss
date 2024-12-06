@@ -1,24 +1,36 @@
 .cost-servies {
-    @apply pt-[63px] pb-[90px];
+    @apply desktop:pt-[63px] mobile:py-[30px] desktop:pb-[90px];
     &__container {
-        @apply grid grid-cols-2 gap-[185px];
+        @apply grid desktop:grid-cols-2 desktop:gap-[185px]  mobile:gap-[30px];
     }
     &__title {
         @apply mb-[29px];
     }
     &__descr {
-        @apply text-[18px] font-semibold text-[#939393] mb-[33px];
+        @apply desktop:text-[18px] mobile:text-[14px] font-semibold text-[#939393] mb-[33px];
         font-family: var(--font-family);
         line-height: 170%;
     }
     &__btn {
-        background: #0a72ad;
-        font-size: 18px;
+        @apply w-full bg-[#0a72ad] justify-center;
     }
-    &__img-block{
-        @apply relative;
+    &__info {
+        @apply desktop:order-2;
     }
-    &__img-right {
-        @apply absolute bottom-[10%] right-[15%];
+    &__img-block {
+        @apply relative desktop:order-1 mobile:order-1   h-full   mx-auto flex items-center w-full;
+    }
+
+    &__img-left:deep() {
+        @apply flex desktop:w-[120%] desktop:h-[120%] mobile:w-full mobile:h-full;
+        img {
+            @apply w-full h-full;
+        }
+    }
+    &__img-right:deep() {
+        @apply desktop:w-[80%] desktop:h-[80%] translate-x-[-80px] desktop:translate-y-[50px] mobile:w-[60%] mobile:h-[60%];
+        img {
+            @apply w-full h-full;
+        }
     }
 }

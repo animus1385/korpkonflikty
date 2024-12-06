@@ -1,33 +1,33 @@
 .command {
-    @apply py-[131px];
-    &__container {
-        @apply flex flex-col     auto-cols-max  bg-[#dbeafe] rounded-[16px] overflow-hidden p-0;
+    @apply desktop:py-[131px] mobile:py-[30px] mobile:bg-[#dbeafe] desktop:bg-white;
+    &__content {
+        @apply flex flex-col auto-cols-max  desktop:bg-[#dbeafe] rounded-[16px] overflow-hidden p-0;
     }
     &__title {
         @apply mb-[12px];
     }
     &__top {
-        @apply grid grid-cols-[1fr_700px];
+        @apply grid desktop:grid-cols-[1fr_700px];
     }
     &__descr {
         font-family: var(--second-family);
         line-height: 167%;
-        @apply max-w-[496px] text-[18px] font-medium text-[#52525b];
+        @apply desktop:max-w-[496px] text-[18px] font-medium text-[#52525b];
     }
     &__info {
-        @apply p-[57px_138px] w-full;
+        @apply desktopMedium:p-[57px_138px] mobile:pb-[20px]  w-full;
     }
     &__swiper {
         @apply w-full h-full col-span-full;
     }
     &__list {
-        @apply flex;
+        @apply desktop:flex mobile:grid tablet:grid-cols-3 tablet:auto-cols-[300px] laptop:auto-rows-[300px] tabletMedium:auto-rows-[240px]  mobile:grid-cols-2  mobile:auto-cols-[200px] mobileWide:auto-rows-[200px] mobileMedium:auto-rows-[163px] overflow-hidden desktop:rounded-none mobile:rounded-[20px];
     }
     &__elem {
-        @apply h-full w-full relative flex flex-col justify-end p-[33px_40px] min-h-[350px];
+        @apply h-full w-full relative flex flex-col justify-end desktop:p-[33px_40px] mobile:p-[15px_10px];
         &:before {
             content: '';
-            @apply absolute inset-0 bg-[#00000015] z-[2];
+            @apply absolute inset-0  z-[2] bg-gradient-to-b to-[#0000008f] from-transparent;
         }
     }
     &__img:deep() {
@@ -38,18 +38,14 @@
     }
     &__title-elem {
         font-family: var(--font-family);
-        font-weight: 600;
-        font-size: 18px;
         line-height: 133%;
         letter-spacing: -0.03em;
-        color: #fff;
+        @apply font-semibold desktop:text-[18px] mobile:text-[16px] text-white;
     }
     &__descr-elem {
         font-family: var(--font-family);
-        font-weight: 400;
-        font-size: 14px;
         line-height: 157%;
-        color: #e4e4e7;
+        @apply font-normal desktop:text-[14px] mobile:text-[10px] text-[#e4e4e7];
     }
     &__title-elem,
     &__descr-elem {

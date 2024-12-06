@@ -1,25 +1,28 @@
 .included-servies {
-    @apply pt-[90px] pb-[48px];
+    @apply desktop:pt-[90px] desktop:pb-[48px] py-[30px];
     &__title {
-        @apply text-center mb-[49px];
+        @apply desktop:text-center desktop:mb-[49px] mobile:mb-[40px];
     }
     &__list {
-        @apply flex flex-wrap gap-[50px] justify-center;
+        @apply flex flex-wrap desktop:gap-[50px] justify-center mobile:gap-[20px];
     }
     &__elem {
-        @apply min-h-[242px] max-w-[526px] rounded-[30px] bg-[#2387c0] shadow-[6px_2px_20px_0_#2425270d] p-[42px] flex flex-col items-center justify-center;
+        @apply desktop:min-h-[242px] desktop:max-w-[526px] rounded-[30px] bg-[#2387c0] shadow-[6px_2px_20px_0_#2425270d] p-[42px] grid desktop:grid-cols-1 desktop:items-center justify-center mobile:p-[20px]  mobile:grid-cols-[62px_1fr] auto-rows-max gap-[0_15px];
+    }
+    &__info-elem {
+        @apply flex flex-col;
     }
     &__icon {
-        @apply mb-[13px] rounded-full text-[#2387c0] min-w-[62px] font-extrabold text-[25px] min-h-[62px] bg-white text-center flex justify-center items-center;
+        @apply mb-[13px] mx-auto   rounded-full text-[#2387c0]  font-extrabold text-[25px] h-[62px] w-[62px] bg-white text-center flex justify-center items-center;
         box-shadow: 0 10px 15px 0 rgba(35, 135, 192, 0.15);
         font-family: var(--font-family);
     }
     &__elem-title {
-        @apply mb-[4px] font-semibold text-[16px] text-center text-white;
+        @apply mb-[4px] font-semibold text-[16px] desktop:text-center mobile:text-left text-white;
         font-family: var(--font-family);
     }
     &__elem-text {
-        @apply font-semibold text-[14px] text-center text-white;
+        @apply font-semibold text-[14px] desktop:text-center mobile:text-left text-white col-start-2;
         font-family: var(--second-family);
         line-height: 130%;
     }

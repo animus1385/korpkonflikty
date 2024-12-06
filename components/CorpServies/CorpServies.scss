@@ -1,36 +1,35 @@
 .corp-servies {
-    @apply pt-[88px] pb-[63px];
+    @apply desktop:pt-[88px] desktop:pb-[63px] mobile:py-[30px];
     &__swiper {
         @apply w-full h-full;
+    }
+    &__title{
+        @apply mb-[40px];
     }
     &__elem {
         background: #fff;
         border-radius: 30px;
-        @apply flex  w-full overflow-hidden min-h-[374px];
+        @apply flex desktop:flex-row mobile:flex-col  w-full overflow-hidden desktop:min-h-[374px];
     }
     &__elem-info {
         @apply p-[22px] flex flex-col w-full;
     }
     &__btn {
-        @apply mt-auto ml-auto;
+        @apply mt-auto desktop:ml-auto;
     }
     &__img {
-        @apply w-[254px];
+        @apply desktop:w-[254px] desktop:h-auto mobile:h-[170px];
         background: #dbeafe;
     }
     &__elem-title {
         font-family: var(--third-family);
-        font-weight: 700;
-        font-size: 21px;
         line-height: 152%;
         letter-spacing: -0.01em;
-        color: #0f172a;
+        @apply text-[#0f172a] text-[21px] font-bold mb-[20px];
     }
     &__elem-descr {
         font-family: var(--third-family);
-        font-weight: 400;
-        font-size: 15px;
         line-height: 173%;
-        color: #606571;
+        @apply text-[#606571] text-[15px] font-normal mb-[10px];
     }
 }

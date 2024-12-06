@@ -1,6 +1,5 @@
 <template>
     <div class="hero">
-        <NuxtPicture v-if="props?.data?.img" class="hero__img" :src="props?.data?.img.node.sourceUrl" />
         <div class="hero__container container">
             <div class="hero__left">
                 <h1 v-if="props?.data?.title" class="hero__title">{{ props?.data?.title }}</h1>
@@ -9,6 +8,7 @@
                     props?.data?.btn.title
                 }}</NuxtLink>
             </div>
+            <NuxtPicture v-if="props?.data?.img" class="hero__img" :src="props?.data?.img.node.sourceUrl" />
         </div>
         <div class="hero__info">
             <span class="hero__info-text" v-if="props?.data?.message">{{ props?.data?.message }} </span>

@@ -2,30 +2,36 @@
     background: linear-gradient(224deg, #474747 0%, #222 41.8%);
     @apply relative;
     &__container {
-        @apply h-full min-h-[902px] flex items-center relative z-[1];
+        @apply overflow-hidden h-full desktop:h-[902px] grid items-center relative z-[1]  desktop:grid-cols-2 desktop:grid-rows-1 mobile:grid-rows-[max-content_1fr];
     }
     &__left {
-        @apply max-w-[753px] h-full  flex-col;
+        @apply desktop:max-w-[753px] h-full flex  flex-col mobile:justify-start mobile:self-start mt-[141px] tablet:mt-[40px] mobile:mt-[20px];
+    }
+    &__btn {
+        @apply tabletMedium:max-w-max;
     }
     &__title {
         font-family: var(--second-family);
         line-height: 117%;
-        @apply font-extrabold text-[64px] text-white mb-[28px];
+        @apply font-extrabold desktop:text-[64px] text-white desktop:mb-[28px] mobile:mb-[20px] laptopMedium:text-[52px] tablet:text-[45px] mobile:text-[40px];
     }
     &__descr {
         font-family: var(--second-family);
-        @apply font-semibold text-[30px] text-[#c4c4c4] mb-[61px];
+        @apply font-semibold desktop:text-[30px] text-[#c4c4c4] desktop:mb-[61px] mobile:mb-[30px] laptop:text-[27px] tablet:text-[25px] mobile:text-[14px];
     }
-    &__img {
-        @apply absolute inset-0 w-full h-full flex justify-end pt-[111px] z-[0];
+    &__img:deep() {
+        @apply translate-y-[35px]  h-full w-full  flex desktop:items-stretch desktop:justify-end    z-[0] mobile:items-end  mobile:justify-center;
+        img {
+            @apply w-full h-full object-contain;
+        }
     }
     &__info {
-        @apply absolute bottom-[-10%] right-[10%] rounded-[35px] p-[23px_46px] max-w-[869px] flex justify-center;
+        @apply absolute bottom-[-5%] right-[5%] z-[2] laptop:left-auto mobile:left-[5%] rounded-[35px] tablet:p-[23px_46px] max-w-[869px] flex justify-center mobile:p-[20px];
         box-shadow: 0 12px 18px 0 rgba(1, 115, 153, 0.2);
         background: linear-gradient(127deg, #399fd8 0%, #0775b4 30.37%, #003756 99.44%);
     }
     &__info-text {
         font-family: var(--font-family);
-        @apply font-semibold text-[46px] text-center text-white;
+        @apply font-semibold desktop:text-[46px] text-[40px] text-center text-white tablet:text-[40px] mobile:text-[20px];
     }
 }
