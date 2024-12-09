@@ -7,7 +7,7 @@
         @apply mb-[12px];
     }
     &__top {
-        @apply grid desktop:grid-cols-[1fr_700px];
+        @apply grid desktop:grid-cols-[1fr_700px] desktop:grid-rows-[300px];
     }
     &__descr {
         font-family: var(--second-family);
@@ -15,10 +15,10 @@
         @apply desktop:max-w-[496px] text-[18px] font-medium text-[#52525b];
     }
     &__info {
-        @apply desktopMedium:p-[57px_138px] mobile:pb-[20px]  w-full;
+        @apply desktopMedium:p-[57px_138px] laptopMedium:p-[57px_50px] mobile:pb-[20px]  w-full;
     }
     &__swiper {
-        @apply w-full h-full col-span-full;
+        @apply w-full h-full col-span-full grid grid-rows-[300px];
     }
     &__list {
         @apply desktop:flex mobile:grid tablet:grid-cols-3 tablet:auto-cols-[300px] laptop:auto-rows-[300px] tabletMedium:auto-rows-[240px]  mobile:grid-cols-2  mobile:auto-cols-[200px] mobileWide:auto-rows-[200px] mobileMedium:auto-rows-[163px] overflow-hidden desktop:rounded-none mobile:rounded-[20px];

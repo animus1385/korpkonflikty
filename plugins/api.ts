@@ -4,6 +4,8 @@ import { pageQuery } from '../gql/queries/getIndexPage';
 import type { Api } from '../types/api';
 import { GET_POST } from '../gql/queries/getPost';
 import { CREATE_COMMENT } from '~/gql/mutations/createComment';
+import { GET_POSTS } from '~/gql/queries/getPosts';
+import { GET_POST_SERVICE } from '~/gql/queries/getService';
 
 export default defineNuxtPlugin(() => {
     const config = useRuntimeConfig();
@@ -44,6 +46,22 @@ export default defineNuxtPlugin(() => {
             return result;
         },
         post: {
+              getAll: async () => {
+                let result: any = {};
+
+                try {
+                    const res = await axios.post(BASE_API, {
+                        query: GET_POSTS,
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    });
+                    result = res.data.data;
+                } catch (e) {
+                    console.error(`текст ошибки ${e}`);
+                }
+                return result;
+            },
             getPost: async (slug: string) => {
                 let result: any = {};
 
@@ -83,6 +101,25 @@ export default defineNuxtPlugin(() => {
                 return result;
             },
         },
+        services: {
+           getService: async (slug: string) => {
+            let result = [];
+
+            try {
+                const res = await axios.post(BASE_API, {
+                    query: GET_POST_SERVICE,
+                    variables: { ID: slug },
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                result = res?.data.data.postService.pageBuilder.flexible;
+            } catch (e) {
+                console.error(`текст ошибки ${e}`);
+            }
+            return result;
+        },  
+        }
     };
 
     return {

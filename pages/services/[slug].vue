@@ -1,14 +1,15 @@
 <template>
-    <Flexible v-if="status == 'success' && data" :data="data" />
+    <Flexible :data="data" />
 </template>
 
 <script setup lang="ts">
 import type { IBlockFlexible } from '~/types/blockFlexible';
 
 const { $api } = useNuxtApp();
-
-const { data, status } = useAsyncData('getPage', async () => await $api.getPage('141'), {
-    server:false,
+const route = useRoute();
+const slug = route.params.slug as string;
+const { data, status } = useAsyncData('getService', async () => await $api.services.getService(slug), {
+    server: false,
     transform: (e) => {
         const transform = e.map((el: any) => {
             const name = el.fieldGroupName.replace(/(PageBuilderFlexible)(.*)(Layout)/g, '$2');

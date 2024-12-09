@@ -8,6 +8,11 @@ export const GET_POST = gql`
             uri
             postViews
             postId
+            featuredImage {
+                node {
+                    sourceUrl
+                }
+            }
             pageBuilder {
                 fieldGroupName
                 flexible {
@@ -285,6 +290,54 @@ export const GET_POST = gql`
                     }
                     ... on PageBuilderFlexibleFormCommentCommonLayout {
                         fieldGroupName
+                    }
+                    ... on PageBuilderFlexibleSuitableServicesCustomLayout {
+                      fieldGroupName
+                      suitableServicesCustom {
+                        suitableServicesList {
+                          edges {
+                            node {
+                              ... on PostService {
+                                id
+                                title
+                                uri
+                                pageBuilder {
+                                  flexible {
+                                    ... on PageBuilderFlexibleHeroCustomLayout {
+                                      fieldGroupName
+                                      heroCustom {
+                                        subtitle
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                    ... on PageBuilderFlexibleRelatedBlogCustomLayout {
+                      fieldGroupName
+                      relatedBlogCustom {
+                        relatedBlogList {
+                          edges {
+                            node {
+                              ... on Post {
+                                id
+                                title
+                                uri
+                                date
+                                author {
+                                  node {
+                                    name
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
                     }
                 }
             }

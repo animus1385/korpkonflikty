@@ -1,8 +1,16 @@
 import { gql } from 'graphql-request';
 
-export const pageQuery = gql`
-query getPage($ID: ID!) {
-  page(idType: DATABASE_ID, id: $ID) {
+export const GET_POST_SERVICE = gql`
+query getPostServices($ID: ID!)  {
+  postService(idType: SLUG, id: $ID) {
+    id
+    title
+    uri
+    featuredImage {
+      node {
+        sourceUrl
+      }
+    }
     pageBuilder {
       fieldGroupName
       flexible {
@@ -263,6 +271,15 @@ query getPage($ID: ID!) {
             title
           }
         }
+        ... on PageBuilderFlexibleBlogContentCustomLayout {
+          fieldGroupName
+          blogContentCustom {
+            list {
+              descr
+              title
+            }
+          }
+        }
         ... on PageBuilderFlexibleForm1CommonLayout {
           fieldGroupName
         }
@@ -272,24 +289,27 @@ query getPage($ID: ID!) {
         ... on PageBuilderFlexibleFormCommentCommonLayout {
           fieldGroupName
         }
-        ... on PageBuilderFlexibleBlogContentCustomLayout {
-          fieldGroupName
-          blogContentCustom {
-            list {
-              title
-              descr
-            }
-          }
-        }
         ... on PageBuilderFlexibleSuitableServicesCustomLayout {
           fieldGroupName
           suitableServicesCustom {
             suitableServicesList {
-              nodes {
-                ... on PostService {
-                  id
-                  title
-                  uri
+              edges {
+                node {
+                  ... on PostService {
+                    id
+                    title
+                    uri
+                    pageBuilder {
+                      flexible {
+                        ... on PageBuilderFlexibleHeroCustomLayout {
+                          fieldGroupName
+                          heroCustom {
+                            subtitle
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -303,14 +323,9 @@ query getPage($ID: ID!) {
                 node {
                   ... on Post {
                     id
-                    uri
                     title
-                    featuredImage {
-                      node {
-                        sourceUrl
-                        date
-                      }
-                    }
+                    uri
+                    date
                     author {
                       node {
                         name
