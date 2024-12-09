@@ -6,6 +6,9 @@
                 class="cases__btn-list"
                 :breakpoints="{
                     320: {
+                        slidesPerView: 2,
+                    },
+                    480: {
                         slidesPerView: 2.5,
                     },
                     768: {

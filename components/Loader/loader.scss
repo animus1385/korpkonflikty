@@ -1,0 +1,13 @@
+.loader {
+    position: absolute;
+    inset: 0;
+    z-index: 777;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f5f9;
+    &__svg {
+        width: 80px;
+        height: 80px;
+    }
+}

@@ -8,7 +8,7 @@ import type { IBlockFlexible } from '~/types/blockFlexible';
 const { $api } = useNuxtApp();
 
 const { data, status } = useAsyncData('getPage', async () => await $api.getPage('141'), {
-    server:false,
+    server: false,
     transform: (e) => {
         const transform = e.map((el: any) => {
             const name = el.fieldGroupName.replace(/(PageBuilderFlexible)(.*)(Layout)/g, '$2');
@@ -22,5 +22,6 @@ const { data, status } = useAsyncData('getPage', async () => await $api.getPage(
         return transform;
     },
 });
+
 </script>
 <style scoped></style>

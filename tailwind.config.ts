@@ -15,7 +15,13 @@ export default {
             padding: '24px',
         },
         screens: screens,
-        extend: {},
+        extend: {
+            colors: {
+                korpConflikty: {
+                    500: '#2387C0',
+                },
+            },
+        },
     },
 
     plugins: [],

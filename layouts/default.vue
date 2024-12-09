@@ -3,6 +3,7 @@
         <Header></Header>
         <slot />
         <Footer></Footer>
+        <!-- <loader></loader> -->
     </div>
 </template>
 

@@ -24,10 +24,10 @@
         line-height: 167%;
     }
     &__list-deep {
-        @apply desktop:p-[52px_89px] mobile:p-[40px_30px] grid gap-[80px] rounded-[16px] bg-[#dbeafeaa];
+        @apply tablet:p-[52px_89px] mobile:p-[40px_18px] grid tablet:gap-[80px] mobile:gap-[30px] rounded-[16px] bg-[#dbeafeaa];
     }
     &__elem-deep {
-        @apply grid grid-cols-[60px_1fr]  gap-[23px];
+        @apply grid tablet:grid-cols-[60px_1fr] mobile:grid-cols-[30px_1fr]  tablet:gap-[23px] mobile:gap-[15px];
     }
     &__elem-descr-deep {
         @apply col-start-2;
@@ -39,7 +39,7 @@
         font-family: var(--third-family);
         line-height: 133%;
         letter-spacing: -0.03em;
-        @apply flex justify-center items-center h-[60px] bg-[#2387c0] rounded-full text-white text-center text-[18px] font-bold;
+        @apply flex justify-center items-center tablet:h-[60px] mobile:h-[30px] bg-[#2387c0] rounded-full text-white text-center text-[18px] font-bold;
     }
     &__elem-title-deep {
         font-family: var(--second-family);

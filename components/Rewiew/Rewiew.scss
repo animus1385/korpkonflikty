@@ -1,7 +1,24 @@
 .rewiew {
-    @apply desktop:pt-[101px]  desktop:pb-[91px] mobile:py-[30px];
+    @apply desktop:pt-[101px]  desktop:pb-[91px] mobile:py-[30px] overflow-hidden;
     &__btn-list {
-        @apply flex desktop:gap-[32px] mobile:gap-[11px] desktop:mb-[84px] mobile:mb-[30px];
+        @apply flex desktop:gap-[32px] mobile:flex-col tablet:flex-row   mobile:w-full tablet:w-max mobile:gap-[11px] desktop:mb-[84px] mobile:mb-[30px];
+    }
+    &__btn {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 14px;
+        text-align: center;
+        color: #fff;
+        border-radius: 59px;
+        @apply desktop:p-[20px_40px] mobile:w-full tablet:w-max flex justify-center;
+    }
+    swiper-container {
+        &::part(container) {
+            @apply mobile:overflow-visible tablet:overflow-hidden;
+        }
+        &::part(wrapper) {
+            @apply items-center;
+        }
     }
     &__elem {
         @apply w-full h-full bg-[#eaeaea] rounded-[16px] desktop:h-[243px] mobile:h-[131px] flex justify-center items-center;

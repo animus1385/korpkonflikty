@@ -1,35 +1,27 @@
 .cta-telegram {
-    @apply desktop:pt-[95px] desktop:pb-[159px] mobile:pt-[30px] desktop:bg-transparent desktop:to-inherit mobile:bg-gradient-to-r mobile:to-[#474747] mobile:from-[#222];
+    @apply overflow-hidden desktop:pt-[95px] desktop:pb-[159px] mobile:pt-[30px] desktop:bg-transparent desktop:to-inherit mobile:bg-gradient-to-r mobile:to-[#474747] mobile:from-[#222];
     &__container {
-        @apply desktop:p-[72px_134px] mobile:p-[60px_0px_0px] min-h-[469px] grid desktop:grid-cols-[588px_1fr] relative gap-[60px]  desktop:bg-gradient-to-r desktop:to-[#474747]  desktop:from-[#222];
+        @apply desktop:p-[72px_134px] mobile:p-[60px_0px_0px] desktop:min-h-[469px] mobile:max-h-[766px] grid desktop:grid-cols-[588px_1fr] relative gap-[60px]  desktop:bg-gradient-to-r desktop:to-[#474747]  desktop:from-[#222];
         border-radius: 30px;
 
         @media (max-width: de) {
-            
         }
     }
     &__title {
-        @apply mb-[20px];
+        @apply mb-[20px] desktop:text-[52px] font-bold text-white mobile:text-[40px];
         font-family: var(--second-family);
-        font-weight: 700;
-        font-size: 52px;
         line-height: 119%;
         letter-spacing: -0.04em;
-        color: #fff;
     }
     &__descr {
-        @apply mb-[38px];
+        @apply mb-[38px] desktop:text-[25px] text-[18px] font-medium text-white;
         font-family: var(--second-family);
-        font-weight: 500;
-        font-size: 25px;
         line-height: 120%;
-        color: #fff;
     }
     &__btn {
-        border-radius: 71px;
-        padding: 20px 40px;
+        @apply p-[20px_40px] rounded-[71px] mobile:w-full desktop:w-auto flex justify-center;
     }
     &__img {
-        @apply desktop:absolute desktop:mx-auto bottom-0 right-[10%] z-[1];
+        @apply desktop:absolute mobile:mx-auto bottom-0 right-[10%] z-[1];
     }
 }

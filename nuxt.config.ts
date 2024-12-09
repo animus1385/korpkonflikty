@@ -26,7 +26,7 @@ export default defineNuxtConfig({
         strict: true,
         typeCheck: false,
     },
-    modules: ['@nuxt/devtools', '@nuxt/image', '@nuxt/ui', 'nuxt-swiper', '@nuxt/icon'],
+    modules: ['@nuxt/devtools', '@nuxt/image', '@nuxt/ui', 'nuxt-swiper', '@nuxt/icon', '@pinia/nuxt'],
     tailwindcss: {
         viewer: false,
     },

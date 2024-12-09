@@ -7,8 +7,11 @@
         @apply grid desktop:grid-cols-[max-content_1fr_max-content]  desktopMedium:gap-[30px] mobile:gap-[20px] items-center mobile:justify-center;
     }
 
-    &__logo {
+    &__logo:deep() {
         @apply desktop:w-[183px] h-[87px] desktop:mb-[19px] mobile:mx-auto mobile:w-full order-1;
+        img {
+            @apply mx-auto;
+        }
     }
     &__icon {
         @apply w-full h-full;
@@ -19,8 +22,13 @@
     &__social {
         @apply flex;
     }
+    &__social-link:deep() {
+        img {
+            @apply w-full h-full;
+        }
+    }
     &__connect {
-        @apply flex desktop:justify-between mobile:items-center desktop:col-start-3 desktop:items-start mobile:flex-col w-full desktop:order-5 mobile:order-4;
+        @apply flex mobile:flex-col desktop:flex-row gap-[20px] desktop:justify-between mobile:items-center desktop:col-start-3 desktop:items-start  w-full desktop:order-5 mobile:order-4;
     }
     &__tel-text {
         @apply text-[14px] col-span-2 text-end;
@@ -56,8 +64,7 @@
         color: #242527;
         padding: 20px 40px;
         display: flex;
-        margin-left: auto;
-        @apply mobile:w-full flex justify-center desktop:order-[3] mobile:order-5 desktop:mb-0 mobile:mb-[30px];
+        @apply mobile:w-full flex  desktop:order-[3] mobile:order-5  justify-center desktop:max-w-max desktop:ml-auto desktop:mr-0  mobile:mb-[30px] mx-0;
     }
     &__address {
         @apply grid grid-cols-[20px_1fr] items-center gap-[10px] w-full desktop:order-4 mobile:order-3;

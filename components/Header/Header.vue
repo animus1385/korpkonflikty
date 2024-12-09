@@ -2,59 +2,34 @@
     <header class="header">
         <div class="header__contaniner container">
             <NuxtLink class="header__logo" to="/">
-                <Icon class="header__icon" name="svg:logo" />
+                <NuxtPicture :src="menuStore.logo"></NuxtPicture>
             </NuxtLink>
             <nav class="header__nav">
                 <ul class="header__list">
-                    <li class="header__elem">
-                        <NuxtLink class="header__link" to="/">О нас</NuxtLink>
-                    </li>
-                    <li class="header__elem">
-                        <NuxtLink class="header__link" to="/">Услуги</NuxtLink>
-                    </li>
-                    <li class="header__elem">
-                        <NuxtLink class="header__link" to="/">Кейсы</NuxtLink>
-                    </li>
-                    <li class="header__elem">
-                        <NuxtLink class="header__link" to="/">Вопросы</NuxtLink>
-                    </li>
-                    <li class="header__elem">
-                        <NuxtLink class="header__link" to="/">Блог</NuxtLink>
-                    </li>
-                    <li class="header__elem">
-                        <NuxtLink class="header__link" to="/">Контакты</NuxtLink>
+                    <li class="header__elem" v-for="elem in menuStore.items" :key="elem.node.id">
+                        <NuxtLink class="header__link" :to="elem.node.uri">{{ elem.node.label }}</NuxtLink>
                     </li>
                 </ul>
             </nav>
 
             <div class="header__connect">
-                <NuxtLink class="header__email" to="mailto:company@mail.ru">
+                <NuxtLink class="header__email" :to="menuStore.mail.url">
                     <Icon class="header__icon" name="svg:mail" />
-                    <span> company@mail.ru</span>
+                    <span> {{ menuStore.mail.title }}</span>
                 </NuxtLink>
-                <NuxtLink class="header__tel" to="mailto:company@mail.ru">
+                <NuxtLink class="header__tel" :to="menuStore.tel.url">
                     <Icon class="header__icon" name="svg:tel" />
-                    <span>8 894 045 65 03</span>
+                    <span>{{ menuStore.tel.title }}</span>
                 </NuxtLink>
             </div>
             <ul class="header__social">
-                <li class="header__social-elem">
-                    <Icon class="header__icon" name="svg:dzen" />
-                </li>
-                <li class="header__social-elem">
-                    <Icon class="header__icon" name="svg:vk" />
-                </li>
-                <li class="header__social-elem">
-                    <Icon class="header__icon" name="svg:telegram" />
-                </li>
-                <li class="header__social-elem">
-                    <Icon class="header__icon" name="svg:whats-app" />
-                </li>
-                <li class="header__social-elem">
-                    <Icon class="header__icon" name="svg:youtube" />
+                <li class="header__social-elem" v-for="elem in menuStore.social">
+                    <NuxtLink :to="elem.link.url">
+                        <NuxtPicture :src="elem.img.node.sourceUrl"></NuxtPicture>
+                    </NuxtLink>
                 </li>
             </ul>
-            <UButton class="header__btn-call btn">Консультация</UButton>
+            <NuxtLink class="header__btn-call btn" :to="menuStore.link.url">{{ menuStore.link.title }}</NuxtLink>
             <UButton
                 class="header__burger"
                 variant="ghost"
@@ -84,6 +59,10 @@
 
 <script setup lang="ts">
 const isOpen = ref(false);
+const menuStore = useMenuStore();
+onMounted(() => {
+    menuStore.getHeader();
+});
 </script>
 
 <style scoped lang="scss">

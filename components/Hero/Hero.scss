@@ -8,12 +8,12 @@
         @apply desktop:max-w-[753px] h-full flex  flex-col mobile:justify-start mobile:self-start mt-[141px] tablet:mt-[40px] mobile:mt-[20px];
     }
     &__btn {
-        @apply tabletMedium:max-w-max;
+        @apply tabletMedium:max-w-max mobile:p-[10px];
     }
     &__title {
         font-family: var(--second-family);
         line-height: 117%;
-        @apply font-extrabold desktop:text-[64px] text-white desktop:mb-[28px] mobile:mb-[20px] laptopMedium:text-[52px] tablet:text-[45px] mobile:text-[40px];
+        @apply font-extrabold desktop:text-[64px] text-white desktop:mb-[28px] mobile:mb-[20px] laptopMedium:text-[52px] tablet:text-[45px] mobile:text-[30px];
     }
     &__descr {
         font-family: var(--second-family);
