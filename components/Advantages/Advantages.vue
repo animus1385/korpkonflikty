@@ -1,15 +1,16 @@
 <template>
-    <div class="advantages" id="advantages">
+    <div class="advantages" id="advantages" v-if="props?.data?.advantagesList">
         <div class="advantages__container container">
             <h2 class="advantages__title title-level-2">{{ props?.data?.title }}</h2>
             <ul class="advantages__list">
-                <div class="advantages__elem" v-for="elem in props?.data?.advantagesList">
-                    <NuxtPicture class="advantages__img" :src="elem.icon.node.sourceUrl"></NuxtPicture>
+                <li class="advantages__elem" v-for="elem in props?.data?.advantagesList">
+                    <NuxtPicture class="advantages__img" :src="elem.icon.node.sourceUrl" :alt="props?.data?.title">
+                    </NuxtPicture>
                     <div class="advantages__info-elem">
                         <h3 class="advantages__elem-title">{{ elem.title }}</h3>
                         <p class="advantages__elem-text">{{ elem.subtitle }}</p>
                     </div>
-                </div>
+                </li>
             </ul>
         </div>
     </div>

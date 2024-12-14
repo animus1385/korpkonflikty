@@ -1,11 +1,12 @@
 <template>
-    <div class="blog-list" id="blog-list">
+    <div class="blog-list" id="blog-list" v-if="storeBlog.items">
         <div class="blog-list__container container">
             <h1 class="blog-list__title">Блог</h1>
             <ul class="blog-list__list">
                 <li class="blog-list__elem" v-for="elem in storeBlog.items">
                     <NuxtLink :to="elem.node.uri" class="blog-list__image-blog">
-                        <NuxtPicture class="blog-list__picture" :src="elem.node.featuredImage.node.sourceUrl">
+                        <NuxtPicture class="blog-list__picture" :src="elem.node.featuredImage.node.sourceUrl"
+                            :alt="elem.node.title">
                         </NuxtPicture>
                         <div class="blog-list__top">
                             <div class="blog-list__name-block">

@@ -1,5 +1,5 @@
 <template>
-    <div class="included-servies"  id="included-servies">
+    <div class="included-servies"  id="included-servies" v-if="props?.data.includedServiesList">
         <div class="included-servies__container container">
             <h2 class="included-servies__title title-level-2">{{ props?.data?.title }}</h2>
             <ul class="included-servies__list">

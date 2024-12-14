@@ -20,7 +20,7 @@
         @apply grid desktop:grid-cols-1 mobile:grid-cols-[78px_1fr]  desktop:grid-rows-[100px_1fr]  gap-[20px]   desktop:max-w-[15%] tablet:max-w-[45%] mobile:max-w-full;
     }
     &__elem-text {
-        @apply font-bold text-[20px] text-[#939393] desktop:text-center  mobile:text-[14px];
+        @apply font-bold text-[20px] text-[#675656] desktop:text-center  mobile:text-[14px];
         font-family: var(--second-family);
         line-height: 130%;
     }

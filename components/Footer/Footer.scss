@@ -1,5 +1,5 @@
 .footer {
-    background: #2387c0;
+    @apply bg-[#207CB1];
     &__container {
         @apply desktop:pt-[68px] desktop:pb-[40px] mobile:py-[30px];
     }

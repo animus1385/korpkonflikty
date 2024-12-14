@@ -1,5 +1,5 @@
 <template>
-  <div class="suitable-services" id="suitable-services">
+  <div class="suitable-services" id="suitable-services" v-if="props.data.suitableServicesList.edges">
     <div class="suitable-services__container container">
       <h2 class="suitable-services__title">Подходящие услуги</h2>
       <swiper-container

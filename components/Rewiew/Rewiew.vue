@@ -2,8 +2,13 @@
     <div class="rewiew" id="rewiew">
         <div class="rewiew__container container">
             <ul class="rewiew__btn-list">
-                <UButton class="rewiew__btn btn">Отзывы</UButton>
-                <UButton class="rewiew__btn btn"> Видео отзывы</UButton>
+                <li class="rewiew__list-elem">
+                    <UButton class="rewiew__btn btn">Отзывы</UButton>
+                </li>
+                <li class="rewiew__list-elem">
+                    <UButton class="rewiew__btn btn"> Видео отзывы</UButton>
+                </li>
+
             </ul>
             <swiper-container :slides-per-view="4" :breakpoints="{
                 320: {

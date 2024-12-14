@@ -10,9 +10,6 @@
 
 <script setup>
 import { onMounted } from 'vue';
-
-const mapInstance = ref(null);
-
 onMounted(() => {
     // Инициализация карты при монтировании компонента
     if (typeof ymaps !== 'undefined') {

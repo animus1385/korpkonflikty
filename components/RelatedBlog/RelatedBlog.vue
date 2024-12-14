@@ -1,5 +1,5 @@
 <template>
-    <div class="related-blog" id="related-blog">
+    <div class="related-blog" id="related-blog" v-if="props.data.relatedBlogList.edges">
         <div class="related-blog__container container">
             <h2 class="related-blog__title title-level-2">Популярные статьи по корпоративному праву</h2>
             <span class="related-blog__subtitle">Вам может понравиться</span>
@@ -30,7 +30,7 @@
                     :key="elem.node.id">
                     <NuxtLink :to="elem.node.uri" class="related-blog__elem-link">
                         <h3 class="related-blog__title-elem">{{ elem.node.title }}</h3>
-                        <NuxtPicture class="related-blog__img" :src="elem.node.featuredImage.node.sourceUrl">
+                        <NuxtPicture class="related-blog__img" :src="elem.node.featuredImage.node.sourceUrl" :alt="elem.node.title">
                         </NuxtPicture>
                         <div class="related-blog__date">{{ elem.node.date }}</div>
                         <div class="related-blog__name">{{ elem.node.contentPost.contentPost.authorPost }}</div>
