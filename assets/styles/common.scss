@@ -11,9 +11,16 @@ body {
     @apply w-full h-full;
 }
 body {
-    @apply bg-[#f6f5f9]  font-['Poppins'_sans-serif];
+    @apply bg-[#f6f5f9]  font-['Poppins'_sans-serif] h-full;
 }
-
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.content {
+    flex: 1 0 auto;
+}
 .btn {
     box-shadow: 0 13px 20px 0 rgba(1, 115, 153, 0.2);
     border-radius: 65px;

@@ -1,5 +1,6 @@
 .footer {
     @apply bg-[#207CB1];
+    flex: 0 0 auto;
     &__container {
         @apply desktop:pt-[68px] desktop:pb-[40px] mobile:py-[30px];
     }

@@ -1,10 +1,12 @@
 <template>
-    <Header></Header>
-    <div class="block-404">
-        <h1 class="block-404__title">{{ props?.error?.statusCode }}</h1>
-        <p class="block-404__descr">{{ props?.error?.message }}</p>
+    <div class="wrapper">
+        <Header></Header>
+        <div class="block-404 content">
+            <h1 class="block-404__title">{{ props?.error?.statusCode }}</h1>
+            <p class="block-404__descr">{{ props?.error?.message }}</p>
+        </div>
+        <Footer></Footer>
     </div>
-    <Footer></Footer>
 </template>
 
 <script setup lang="ts">
@@ -16,7 +18,6 @@ const props = defineProps({
 </script>
 
 <style scoped lang="scss">
-
 .block-404 {
     display: flex;
     flex-direction: column;
