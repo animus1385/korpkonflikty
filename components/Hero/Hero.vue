@@ -1,19 +1,19 @@
 <template>
-    <div class="hero" id="hero" v-if="props?.data">
+    <div class="hero" id="hero" v-if="props.data.name == 'HeroCustom' && props.data.fields">
         <div class="hero__container container">
             <div class="hero__left">
-                <h1 v-if="props?.data?.title" class="hero__title">{{ props?.data?.title }}</h1>
-                <p v-if="props?.data?.subtitle" class="hero__descr">{{ props?.data?.subtitle }}</p>
-                <NuxtLink v-if="props?.data?.btn.title && props?.data?.btn.url" class="hero__btn btn"
-                    :href="props?.data?.btn.url">{{
-                        props?.data?.btn.title
+                <h1 v-if="props?.data?.fields?.title" class="hero__title">{{ props?.data?.fields?.title }}</h1>
+                <p v-if="props?.data?.fields?.subtitle" class="hero__descr">{{ props?.data?.fields?.subtitle }}</p>
+                <NuxtLink v-if="props?.data?.fields?.btn.title && props?.data?.fields?.btn.url" class="hero__btn btn"
+                    :href="props?.data?.fields?.btn.url">{{
+                        props?.data?.fields?.btn.title
                     }}</NuxtLink>
             </div>
-            <NuxtPicture v-if="props?.data?.img" class="hero__img" :src="props?.data?.img.node.sourceUrl"
-                :alt="props?.data?.title" />
+            <NuxtPicture v-if="props?.data?.fields?.img" class="hero__img" :src="props?.data?.fields?.img.node.sourceUrl"
+                :alt="props?.data?.fields?.title" />
         </div>
         <div class="hero__info">
-            <span class="hero__info-text" v-if="props?.data?.message">{{ props?.data?.message }} </span>
+            <span class="hero__info-text" v-if="props?.data?.fields?.message">{{ props?.data?.fields?.message }} </span>
         </div>
     </div>
 </template>

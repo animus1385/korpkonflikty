@@ -1,5 +1,5 @@
 <template>
-  <div class="suitable-services" id="suitable-services" v-if="props.data.suitableServicesList.edges">
+  <div class="suitable-services" id="suitable-services" v-if="props?.data.name == 'SuitableServicesCustom' && props?.data.fields">
     <div class="suitable-services__container container">
       <h2 class="suitable-services__title">Подходящие услуги</h2>
       <swiper-container
@@ -22,7 +22,7 @@
       >
         <swiper-slide
           class="suitable-services__elem"
-          v-for="elem in props.data.suitableServicesList.edges"
+          v-for="elem in props?.data?.fields.suitableServicesList.edges"
           :key="elem.node.id"
         >
           <NuxtLink :to="elem.node.link" class="suitable-services__elem-link">

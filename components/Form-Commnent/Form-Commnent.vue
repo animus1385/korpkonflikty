@@ -1,5 +1,5 @@
 <template>
-    <div class="form-commnent" id="form-commnent">
+    <div class="form-commnent" id="form-commnent" v-if="props?.data?.name == 'FormCommentCommon' && props?.data?.fields">
         <div class="form-commnent__container container">
             <div class="form-commnent__block-enter">
                 <h2 class="form-commnent__title">Оставьте комментарий</h2>
@@ -34,7 +34,7 @@
             <div class="form-commnent__all-comments">
                 <span class="form-commnent__span">Комментарии</span>
                 <ul class="form-commnent__list">
-                    <li class="form-commnent__elem" v-for="comment in props.data" :key="comment.node.id">
+                    <li class="form-commnent__elem" v-for="comment in props?.data?.fields" :key="comment.node.id">
                         <UAvatar class="form-commnent__elem-avatar"
                             src="https://avatars.githubusercontent.com/u/739984?v=4" alt="Avatar" />
                         <div class="form-commnent__elem-info">
@@ -49,7 +49,7 @@
 </template>
 
 <script setup lang="ts">
-import { object, string, type InferType, boolean } from 'yup';
+import { object, string, boolean } from 'yup';
 const props = defineProps<{ data: any; pageId: number | undefined }>();
 const { $api } = useNuxtApp();
 const toast = useToast()

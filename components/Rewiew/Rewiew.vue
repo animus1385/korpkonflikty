@@ -1,5 +1,5 @@
 <template>
-    <div class="rewiew" id="rewiew">
+    <div class="rewiew" id="rewiew" v-if="props?.data.name == 'RewiewCommon' && props?.data.fields">
         <div class="rewiew__container container">
             <ul class="rewiew__btn-list">
                 <li class="rewiew__list-elem">

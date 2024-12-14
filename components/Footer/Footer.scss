@@ -55,16 +55,8 @@
     }
     &__btn-call {
         box-shadow: 0 10px 15px 0 rgba(1, 115, 153, 0.2);
-        background: #fff;
-        border-radius: 59px;
         font-family: var(--font-family);
-        font-weight: 600;
-        font-size: 16px;
-        text-align: center;
-        color: #242527;
-        padding: 20px 40px;
-        display: flex;
-        @apply mobile:w-full flex  desktop:order-[3] mobile:order-5  justify-center desktop:max-w-max desktop:ml-auto desktop:mr-0  mobile:mb-[30px] mx-0;
+        @apply p-[20px_40px] bg-[#fff] text-[#242527] rounded-[59px] text-[16px] font-semibold  text-center mobile:w-full flex  desktop:order-[3] mobile:order-5  justify-self-end desktop:max-w-max;
     }
     &__address {
         @apply grid grid-cols-[20px_1fr] items-center gap-[10px] w-full desktop:order-4 mobile:order-3;

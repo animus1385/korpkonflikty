@@ -1,5 +1,5 @@
 <template>
-    <div class="cta-telegram" id="cta-telegram">
+    <div class="cta-telegram" id="cta-telegram" v-if="props?.data.name == 'CtaTelegramCommon' && props?.data.fields">
         <div class="cta-telegram__container container">
             <div class="cta-telegram__left">
                 <h2 class="cta-telegram__title">Подпишитесь на наш Телеграм-канал,</h2>
@@ -13,7 +13,9 @@
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps<{ data: any }>();
+</script>
 
 <style scoped lang="scss">
 @forward './CTA-Telegram.scss';

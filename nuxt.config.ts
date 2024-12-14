@@ -16,14 +16,6 @@ export default defineNuxtConfig({
             charset: 'utf-8',
             meta: [],
             link: [],
-            script: [
-                {
-                    src: 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=3bfc6cb2-7479-477e-9638-a52995b5b67d',
-                    type: 'text/javascript',
-                    async: true,
-                    defer: true,
-                },
-            ],
         },
         baseURL: '/', // Базовый URL приложения
     },
@@ -34,9 +26,12 @@ export default defineNuxtConfig({
         strict: true,
         typeCheck: false,
     },
-    modules: ['@nuxt/devtools', '@nuxt/image', '@nuxt/ui', 'nuxt-swiper', '@nuxt/icon', '@pinia/nuxt'],
+    modules: ['@nuxt/devtools', '@nuxt/image', '@nuxt/ui', 'nuxt-swiper', '@nuxt/icon', '@pinia/nuxt', 'vue-yandex-maps/nuxt'],
     tailwindcss: {
         viewer: false,
+    },
+    yandexMaps: {
+        apikey: '3bfc6cb2-7479-477e-9638-a52995b5b67d',
     },
     runtimeConfig: {
         public: {

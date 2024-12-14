@@ -1,16 +1,16 @@
 <template>
-  <div class="command" id="command" v-if="props?.data.list">
+  <div class="command" id="command" v-if="props?.data.name == 'CommandCommon' && props?.data.fields">
     <div class="command__container container">
       <div class="command__content">
         <div class="command__top">
           <div class="command__info">
-            <h2 class="command__title title-level-2">{{ props?.data?.title }}</h2>
+            <h2 class="command__title title-level-2">{{ props?.data?.fields?.title }}</h2>
             <p class="command__descr">
-              {{ props?.data?.descr }}
+              {{ props?.data?.fields?.descr }}
             </p>
           </div>
           <ul class="command__list" v-if="isDesktop">
-            <li class="command__elem" v-for="(elem, index) in props?.data?.list.slice(0, 2)"
+            <li class="command__elem" v-for="(elem, index) in props?.data?.fields?.list.slice(0, 2)"
               :key="`${elem.title}-${index}`">
               <NuxtPicture class="command__img" :src="elem.img.node.sourceUrl" :alt="elem.title"></NuxtPicture>
               <h3 class="command__title-elem">{{ elem.title }}</h3>
@@ -19,17 +19,17 @@
           </ul>
         </div>
         <swiper-container class="command__swiper" :breakpoints="{
-            1280: {
-              slidesPerView: 3.5,
-            },
-            1440: {
-              slidesPerView: 5,
-            },
-            1600: {
-              slidesPerView: 5,
-            },
-          }" v-if="isDesktop">
-          <swiper-slide v-for="(elem, index) in props?.data?.list.slice(2)" :key="`${elem.title}-${index}`">
+          1280: {
+            slidesPerView: 3.5,
+          },
+          1440: {
+            slidesPerView: 5,
+          },
+          1600: {
+            slidesPerView: 5,
+          },
+        }" v-if="isDesktop">
+          <swiper-slide v-for="(elem, index) in props?.data?.fields?.list.slice(2)" :key="`${elem.title}-${index}`">
             <div class="command__elem">
               <NuxtPicture class="command__img" :src="elem.img.node.sourceUrl" :alt="elem.title"></NuxtPicture>
               <h3 class="command__title-elem">{{ elem.title }}</h3>
@@ -38,7 +38,7 @@
           </swiper-slide>
         </swiper-container>
         <ul v-else class="command__list">
-          <li class="command__elem" v-for="(elem, index) in props?.data?.list" :key="`${elem.title}-${index}`">
+          <li class="command__elem" v-for="(elem, index) in props?.data?.fields?.list" :key="`${elem.title}-${index}`">
             <NuxtPicture class="command__img" :src="elem.img.node.sourceUrl" :alt="elem.title"></NuxtPicture>
             <h3 class="command__title-elem">{{ elem.title }}</h3>
             <p class="command__descr-elem">{{ elem.position }}</p>

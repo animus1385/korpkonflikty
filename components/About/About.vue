@@ -1,9 +1,9 @@
 <template>
-    <div class="about" is="about" v-if="props?.data?.aboutList">
+    <div class="about" is="about" v-if="props?.data.name == 'AboutCommon' && props?.data.fields">
         <div class="about__container container">
-            <h2 class="about__title title-level-2">{{ props?.data?.title }}</h2>
+            <h2 class="about__title title-level-2">{{ props?.data?.fields?.title }}</h2>
             <ul class="about__list">
-                <li class="about__elem" v-for="elem in props?.data?.aboutList">
+                <li class="about__elem" v-for="elem in props?.data?.fields?.aboutList">
                     <h3 class="about__title-elem">{{ elem.title }}</h3>
                     <span class="about__text-elem">{{ elem.descr }}</span>
                 </li>

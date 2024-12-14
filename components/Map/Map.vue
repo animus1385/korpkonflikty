@@ -1,33 +1,32 @@
 <template>
-    <div class="map">
+    <div class="map" v-if="props?.data.name == 'MapCommon' && props?.data.fields">
         <div class="map__container container">
             <div class="map__content">
-                <div id="map"></div>
+
+                <yandex-map :settings="{
+                    location: {
+                        center: [37.617644, 55.755819],
+                        zoom: 9,
+                    },
+                }" height="100vh">
+                    <yandex-map-default-scheme-layer :settings="{ theme: 'dark' }" />
+                    <yandex-map-controls :settings="{ position: 'right' }">
+                        <yandex-map-zoom-control />
+                    </yandex-map-controls>
+                </yandex-map>
             </div>
         </div>
     </div>
 </template>
 
-<script setup>
-import { onMounted } from 'vue';
-onMounted(() => {
-    // Инициализация карты при монтировании компонента
-    if (typeof ymaps !== 'undefined') {
-        ymaps.ready(() => {
-            const map = new ymaps.Map('map', {
-                center: [55.76, 37.64], // Москва
-                zoom: 10, // Уровень приближения
-                controls: [], // Убираем все элементы управления
-            });
-
-            // Добавление метки на карту
-            const placemark = new ymaps.Placemark([55.76, 37.64], {
-                balloonContent: 'Москва, Россия',
-            });
-            map.geoObjects.add(placemark);
-        });
-    }
-});
+<script setup lang="ts">
+const props = defineProps<{ data: any }>();
+import {
+    YandexMap,
+    YandexMapControls,
+    YandexMapDefaultSchemeLayer,
+    YandexMapZoomControl,
+} from "vue-yandex-maps";
 </script>
 
 <style scoped lang="scss">

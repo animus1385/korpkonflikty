@@ -1,61 +1,82 @@
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins ExtraLight'), local('Poppins-ExtraLight'), url('../fonts/Poppins-ExtraLight.woff2') format('woff2'),
+    src:
+        local('Poppins ExtraLight'),
+        local('Poppins-ExtraLight'),
+        url('../fonts/Poppins-ExtraLight.woff2') format('woff2'),
         url('../fonts/Poppins-ExtraLight.woff') format('woff');
     font-weight: 200;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins Medium'), local('Poppins-Medium'), url('../fonts/Poppins-Medium.woff2') format('woff2'),
+    src:
+        local('Poppins Medium'),
+        local('Poppins-Medium'),
+        url('../fonts/Poppins-Medium.woff2') format('woff2'),
         url('../fonts/Poppins-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins Light Italic'), local('Poppins-LightItalic'), url('../fonts/Poppins-LightItalic.woff2') format('woff2'),
+    src:
+        local('Poppins Light Italic'),
+        local('Poppins-LightItalic'),
+        url('../fonts/Poppins-LightItalic.woff2') format('woff2'),
         url('../fonts/Poppins-LightItalic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins ExtraLight Italic'), local('Poppins-ExtraLightItalic'),
-        url('../fonts/Poppins-ExtraLightItalic.woff2') format('woff2'), url('../fonts/Poppins-ExtraLightItalic.woff') format('woff');
+    src:
+        local('Poppins ExtraLight Italic'),
+        local('Poppins-ExtraLightItalic'),
+        url('../fonts/Poppins-ExtraLightItalic.woff2') format('woff2'),
+        url('../fonts/Poppins-ExtraLightItalic.woff') format('woff');
     font-weight: 200;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins Regular'), local('Poppins-Regular'), url('../fonts/Poppins-Regular.woff2') format('woff2'),
+    src:
+        local('Poppins Regular'),
+        local('Poppins-Regular'),
+        url('../fonts/Poppins-Regular.woff2') format('woff2'),
         url('../fonts/Poppins-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins SemiBold'), local('Poppins-SemiBold'), url('../fonts/Poppins-SemiBold.woff2') format('woff2'),
+    src:
+        local('Poppins SemiBold'),
+        local('Poppins-SemiBold'),
+        url('../fonts/Poppins-SemiBold.woff2') format('woff2'),
         url('../fonts/Poppins-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins Black'), local('Poppins-Black'), url('../fonts/Poppins-Black.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Poppins Black'),
+        local('Poppins-Black'),
+        url('../fonts/Poppins-Black.woff2') format('woff2'),
         url('../fonts/Poppins-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
@@ -63,8 +84,11 @@
 
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins ExtraBold Italic'), local('Poppins-ExtraBoldItalic'), url('../fonts/Poppins-ExtraBoldItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Poppins ExtraBold Italic'),
+        local('Poppins-ExtraBoldItalic'),
+        url('../fonts/Poppins-ExtraBoldItalic.woff2') format('woff2'),
         url('../fonts/Poppins-ExtraBoldItalic.woff') format('woff');
     font-weight: 800;
     font-style: italic;
@@ -72,8 +96,11 @@
 
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins Medium Italic'), local('Poppins-MediumItalic'), url('../fonts/Poppins-MediumItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Poppins Medium Italic'),
+        local('Poppins-MediumItalic'),
+        url('../fonts/Poppins-MediumItalic.woff2') format('woff2'),
         url('../fonts/Poppins-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
@@ -81,8 +108,11 @@
 
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins Light'), local('Poppins-Light'), url('../fonts/Poppins-Light.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Poppins Light'),
+        local('Poppins-Light'),
+        url('../fonts/Poppins-Light.woff2') format('woff2'),
         url('../fonts/Poppins-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
@@ -90,8 +120,11 @@
 
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins Bold'), local('Poppins-Bold'), url('../fonts/Poppins-Bold.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Poppins Bold'),
+        local('Poppins-Bold'),
+        url('../fonts/Poppins-Bold.woff2') format('woff2'),
         url('../fonts/Poppins-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
@@ -99,8 +132,11 @@
 
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins Thin'), local('Poppins-Thin'), url('../fonts/Poppins-Thin.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Poppins Thin'),
+        local('Poppins-Thin'),
+        url('../fonts/Poppins-Thin.woff2') format('woff2'),
         url('../fonts/Poppins-Thin.woff') format('woff');
     font-weight: 100;
     font-style: normal;
@@ -108,8 +144,11 @@
 
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins Italic'), local('Poppins-Italic'), url('../fonts/Poppins-Italic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Poppins Italic'),
+        local('Poppins-Italic'),
+        url('../fonts/Poppins-Italic.woff2') format('woff2'),
         url('../fonts/Poppins-Italic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
@@ -117,8 +156,11 @@
 
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins Thin Italic'), local('Poppins-ThinItalic'), url('../fonts/Poppins-ThinItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Poppins Thin Italic'),
+        local('Poppins-ThinItalic'),
+        url('../fonts/Poppins-ThinItalic.woff2') format('woff2'),
         url('../fonts/Poppins-ThinItalic.woff') format('woff');
     font-weight: 100;
     font-style: italic;
@@ -126,8 +168,11 @@
 
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins Black Italic'), local('Poppins-BlackItalic'), url('../fonts/Poppins-BlackItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Poppins Black Italic'),
+        local('Poppins-BlackItalic'),
+        url('../fonts/Poppins-BlackItalic.woff2') format('woff2'),
         url('../fonts/Poppins-BlackItalic.woff') format('woff');
     font-weight: 900;
     font-style: italic;
@@ -135,8 +180,11 @@
 
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins Bold Italic'), local('Poppins-BoldItalic'), url('../fonts/Poppins-BoldItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Poppins Bold Italic'),
+        local('Poppins-BoldItalic'),
+        url('../fonts/Poppins-BoldItalic.woff2') format('woff2'),
         url('../fonts/Poppins-BoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
@@ -144,8 +192,11 @@
 
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins SemiBold Italic'), local('Poppins-SemiBoldItalic'), url('../fonts/Poppins-SemiBoldItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Poppins SemiBold Italic'),
+        local('Poppins-SemiBoldItalic'),
+        url('../fonts/Poppins-SemiBoldItalic.woff2') format('woff2'),
         url('../fonts/Poppins-SemiBoldItalic.woff') format('woff');
     font-weight: 600;
     font-style: italic;
@@ -153,8 +204,11 @@
 
 @font-face {
     font-family: 'Poppins';
-
-    src: local('Poppins ExtraBold'), local('Poppins-ExtraBold'), url('../fonts/Poppins-ExtraBold.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Poppins ExtraBold'),
+        local('Poppins-ExtraBold'),
+        url('../fonts/Poppins-ExtraBold.woff2') format('woff2'),
         url('../fonts/Poppins-ExtraBold.woff') format('woff');
     font-weight: 800;
     font-style: normal;
@@ -162,8 +216,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Regular'), local('Gilroy-Regular'), url('../fonts/Gilroy-Regular.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Regular'),
+        local('Gilroy-Regular'),
+        url('../fonts/Gilroy-Regular.woff2') format('woff2'),
         url('../fonts/Gilroy-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -171,8 +228,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Extrabold Italic'), local('Gilroy-ExtraboldItalic'), url('../fonts/Gilroy-ExtraboldItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Extrabold Italic'),
+        local('Gilroy-ExtraboldItalic'),
+        url('../fonts/Gilroy-ExtraboldItalic.woff2') format('woff2'),
         url('../fonts/Gilroy-ExtraboldItalic.woff') format('woff');
     font-weight: 800;
     font-style: italic;
@@ -180,8 +240,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Bold'), local('Gilroy-Bold'), url('../fonts/Gilroy-Bold.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Bold'),
+        local('Gilroy-Bold'),
+        url('../fonts/Gilroy-Bold.woff2') format('woff2'),
         url('../fonts/Gilroy-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
@@ -189,8 +252,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Black'), local('Gilroy-Black'), url('../fonts/Gilroy-Black.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Black'),
+        local('Gilroy-Black'),
+        url('../fonts/Gilroy-Black.woff2') format('woff2'),
         url('../fonts/Gilroy-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
@@ -198,8 +264,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Light'), local('Gilroy-Light'), url('../fonts/Gilroy-Light.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Light'),
+        local('Gilroy-Light'),
+        url('../fonts/Gilroy-Light.woff2') format('woff2'),
         url('../fonts/Gilroy-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
@@ -207,8 +276,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Semibold'), local('Gilroy-Semibold'), url('../fonts/Gilroy-Semibold.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Semibold'),
+        local('Gilroy-Semibold'),
+        url('../fonts/Gilroy-Semibold.woff2') format('woff2'),
         url('../fonts/Gilroy-Semibold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
@@ -216,8 +288,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Medium'), local('Gilroy-Medium'), url('../fonts/Gilroy-Medium.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Medium'),
+        local('Gilroy-Medium'),
+        url('../fonts/Gilroy-Medium.woff2') format('woff2'),
         url('../fonts/Gilroy-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
@@ -225,8 +300,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Medium Italic'), local('Gilroy-MediumItalic'), url('../fonts/Gilroy-MediumItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Medium Italic'),
+        local('Gilroy-MediumItalic'),
+        url('../fonts/Gilroy-MediumItalic.woff2') format('woff2'),
         url('../fonts/Gilroy-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
@@ -234,8 +312,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Black Italic'), local('Gilroy-BlackItalic'), url('../fonts/Gilroy-BlackItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Black Italic'),
+        local('Gilroy-BlackItalic'),
+        url('../fonts/Gilroy-BlackItalic.woff2') format('woff2'),
         url('../fonts/Gilroy-BlackItalic.woff') format('woff');
     font-weight: 900;
     font-style: italic;
@@ -243,8 +324,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy UltraLight'), local('Gilroy-UltraLight'), url('../fonts/Gilroy-UltraLight.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy UltraLight'),
+        local('Gilroy-UltraLight'),
+        url('../fonts/Gilroy-UltraLight.woff2') format('woff2'),
         url('../fonts/Gilroy-UltraLight.woff') format('woff');
     font-weight: 200;
     font-style: normal;
@@ -252,8 +336,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Regular Italic'), local('Gilroy-RegularItalic'), url('../fonts/Gilroy-RegularItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Regular Italic'),
+        local('Gilroy-RegularItalic'),
+        url('../fonts/Gilroy-RegularItalic.woff2') format('woff2'),
         url('../fonts/Gilroy-RegularItalic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
@@ -261,8 +348,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Semibold Italic'), local('Gilroy-SemiboldItalic'), url('../fonts/Gilroy-SemiboldItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Semibold Italic'),
+        local('Gilroy-SemiboldItalic'),
+        url('../fonts/Gilroy-SemiboldItalic.woff2') format('woff2'),
         url('../fonts/Gilroy-SemiboldItalic.woff') format('woff');
     font-weight: 600;
     font-style: italic;
@@ -270,8 +360,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Heavy Italic'), local('Gilroy-HeavyItalic'), url('../fonts/Gilroy-HeavyItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Heavy Italic'),
+        local('Gilroy-HeavyItalic'),
+        url('../fonts/Gilroy-HeavyItalic.woff2') format('woff2'),
         url('../fonts/Gilroy-HeavyItalic.woff') format('woff');
     font-weight: 900;
     font-style: italic;
@@ -279,8 +372,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Extrabold'), local('Gilroy-Extrabold'), url('../fonts/Gilroy-Extrabold.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Extrabold'),
+        local('Gilroy-Extrabold'),
+        url('../fonts/Gilroy-Extrabold.woff2') format('woff2'),
         url('../fonts/Gilroy-Extrabold.woff') format('woff');
     font-weight: 800;
     font-style: normal;
@@ -288,8 +384,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Bold Italic'), local('Gilroy-BoldItalic'), url('../fonts/Gilroy-BoldItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Bold Italic'),
+        local('Gilroy-BoldItalic'),
+        url('../fonts/Gilroy-BoldItalic.woff2') format('woff2'),
         url('../fonts/Gilroy-BoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
@@ -297,8 +396,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy UltraLight Italic'), local('Gilroy-UltraLightItalic'), url('../fonts/Gilroy-UltraLightItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy UltraLight Italic'),
+        local('Gilroy-UltraLightItalic'),
+        url('../fonts/Gilroy-UltraLightItalic.woff2') format('woff2'),
         url('../fonts/Gilroy-UltraLightItalic.woff') format('woff');
     font-weight: 200;
     font-style: italic;
@@ -306,8 +408,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Light Italic'), local('Gilroy-LightItalic'), url('../fonts/Gilroy-LightItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Light Italic'),
+        local('Gilroy-LightItalic'),
+        url('../fonts/Gilroy-LightItalic.woff2') format('woff2'),
         url('../fonts/Gilroy-LightItalic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
@@ -315,8 +420,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Heavy'), local('Gilroy-Heavy'), url('../fonts/Gilroy-Heavy.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Heavy'),
+        local('Gilroy-Heavy'),
+        url('../fonts/Gilroy-Heavy.woff2') format('woff2'),
         url('../fonts/Gilroy-Heavy.woff') format('woff');
     font-weight: 900;
     font-style: normal;
@@ -324,8 +432,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Thin'), local('Gilroy-Thin'), url('../fonts/Gilroy-Thin.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Thin'),
+        local('Gilroy-Thin'),
+        url('../fonts/Gilroy-Thin.woff2') format('woff2'),
         url('../fonts/Gilroy-Thin.woff') format('woff');
     font-weight: 100;
     font-style: normal;
@@ -333,8 +444,11 @@
 
 @font-face {
     font-family: 'Gilroy';
-
-    src: local('Gilroy Thin Italic'), local('Gilroy-ThinItalic'), url('../fonts/Gilroy-ThinItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Gilroy Thin Italic'),
+        local('Gilroy-ThinItalic'),
+        url('../fonts/Gilroy-ThinItalic.woff2') format('woff2'),
         url('../fonts/Gilroy-ThinItalic.woff') format('woff');
     font-weight: 100;
     font-style: italic;
@@ -342,8 +456,11 @@
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Bold Italic'), local('Inter-BoldItalic'), url('../fonts/Inter-BoldItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Inter Bold Italic'),
+        local('Inter-BoldItalic'),
+        url('../fonts/Inter-BoldItalic.woff2') format('woff2'),
         url('../fonts/Inter-BoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
@@ -351,8 +468,11 @@
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Medium Italic'), local('Inter-MediumItalic'), url('../fonts/Inter-MediumItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Inter Medium Italic'),
+        local('Inter-MediumItalic'),
+        url('../fonts/Inter-MediumItalic.woff2') format('woff2'),
         url('../fonts/Inter-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
@@ -360,8 +480,11 @@
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Thin Italic BETA'), local('Inter-ThinItalicBETA'), url('../fonts/Inter-ThinItalicBETA.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Inter Thin Italic BETA'),
+        local('Inter-ThinItalicBETA'),
+        url('../fonts/Inter-ThinItalicBETA.woff2') format('woff2'),
         url('../fonts/Inter-ThinItalicBETA.woff') format('woff');
     font-weight: 100;
     font-style: italic;
@@ -369,8 +492,11 @@
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Regular'), local('Inter-Regular'), url('../fonts/Inter-Regular.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Inter Regular'),
+        local('Inter-Regular'),
+        url('../fonts/Inter-Regular.woff2') format('woff2'),
         url('../fonts/Inter-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -378,8 +504,11 @@
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Black'), local('Inter-Black'), url('../fonts/Inter-Black.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Inter Black'),
+        local('Inter-Black'),
+        url('../fonts/Inter-Black.woff2') format('woff2'),
         url('../fonts/Inter-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
@@ -387,8 +516,11 @@
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Black Italic'), local('Inter-BlackItalic'), url('../fonts/Inter-BlackItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Inter Black Italic'),
+        local('Inter-BlackItalic'),
+        url('../fonts/Inter-BlackItalic.woff2') format('woff2'),
         url('../fonts/Inter-BlackItalic.woff') format('woff');
     font-weight: 900;
     font-style: italic;
@@ -396,8 +528,11 @@
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Light BETA'), local('Inter-LightBETA'), url('../fonts/Inter-LightBETA.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Inter Light BETA'),
+        local('Inter-LightBETA'),
+        url('../fonts/Inter-LightBETA.woff2') format('woff2'),
         url('../fonts/Inter-LightBETA.woff') format('woff');
     font-weight: 300;
     font-style: normal;
@@ -405,8 +540,11 @@
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Semi Bold'), local('Inter-SemiBold'), url('../fonts/Inter-SemiBold.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Inter Semi Bold'),
+        local('Inter-SemiBold'),
+        url('../fonts/Inter-SemiBold.woff2') format('woff2'),
         url('../fonts/Inter-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
@@ -414,8 +552,11 @@
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Extra Bold Italic'), local('Inter-ExtraBoldItalic'), url('../fonts/Inter-ExtraBoldItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Inter Extra Bold Italic'),
+        local('Inter-ExtraBoldItalic'),
+        url('../fonts/Inter-ExtraBoldItalic.woff2') format('woff2'),
         url('../fonts/Inter-ExtraBoldItalic.woff') format('woff');
     font-weight: 800;
     font-style: italic;
@@ -423,8 +564,11 @@
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Bold'), local('Inter-Bold'), url('../fonts/Inter-Bold.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Inter Bold'),
+        local('Inter-Bold'),
+        url('../fonts/Inter-Bold.woff2') format('woff2'),
         url('../fonts/Inter-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
@@ -432,17 +576,23 @@
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Extra Light Italic BETA'), local('Inter-ExtraLightItalicBETA'),
-        url('../fonts/Inter-ExtraLightItalicBETA.woff2') format('woff2'), url('../fonts/Inter-ExtraLightItalicBETA.woff') format('woff');
+    font-display: swap;
+    src:
+        local('Inter Extra Light Italic BETA'),
+        local('Inter-ExtraLightItalicBETA'),
+        url('../fonts/Inter-ExtraLightItalicBETA.woff2') format('woff2'),
+        url('../fonts/Inter-ExtraLightItalicBETA.woff') format('woff');
     font-weight: 200;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Extra Light BETA'), local('Inter-ExtraLightBETA'), url('../fonts/Inter-ExtraLightBETA.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Inter Extra Light BETA'),
+        local('Inter-ExtraLightBETA'),
+        url('../fonts/Inter-ExtraLightBETA.woff2') format('woff2'),
         url('../fonts/Inter-ExtraLightBETA.woff') format('woff');
     font-weight: 200;
     font-style: normal;
@@ -450,8 +600,11 @@
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Extra Bold'), local('Inter-ExtraBold'), url('../fonts/Inter-ExtraBold.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Inter Extra Bold'),
+        local('Inter-ExtraBold'),
+        url('../fonts/Inter-ExtraBold.woff2') format('woff2'),
         url('../fonts/Inter-ExtraBold.woff') format('woff');
     font-weight: 800;
     font-style: normal;
@@ -459,8 +612,11 @@
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Thin BETA'), local('Inter-ThinBETA'), url('../fonts/Inter-ThinBETA.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Inter Thin BETA'),
+        local('Inter-ThinBETA'),
+        url('../fonts/Inter-ThinBETA.woff2') format('woff2'),
         url('../fonts/Inter-ThinBETA.woff') format('woff');
     font-weight: 100;
     font-style: normal;
@@ -468,8 +624,11 @@
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Light Italic BETA'), local('Inter-LightItalicBETA'), url('../fonts/Inter-LightItalicBETA.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Inter Light Italic BETA'),
+        local('Inter-LightItalicBETA'),
+        url('../fonts/Inter-LightItalicBETA.woff2') format('woff2'),
         url('../fonts/Inter-LightItalicBETA.woff') format('woff');
     font-weight: 300;
     font-style: italic;
@@ -477,8 +636,11 @@
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Italic'), local('Inter-Italic'), url('../fonts/Inter-Italic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Inter Italic'),
+        local('Inter-Italic'),
+        url('../fonts/Inter-Italic.woff2') format('woff2'),
         url('../fonts/Inter-Italic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
@@ -486,8 +648,11 @@
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Semi Bold Italic'), local('Inter-SemiBoldItalic'), url('../fonts/Inter-SemiBoldItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Inter Semi Bold Italic'),
+        local('Inter-SemiBoldItalic'),
+        url('../fonts/Inter-SemiBoldItalic.woff2') format('woff2'),
         url('../fonts/Inter-SemiBoldItalic.woff') format('woff');
     font-weight: 600;
     font-style: italic;
@@ -495,8 +660,11 @@
 
 @font-face {
     font-family: 'Inter';
-
-    src: local('Inter Medium'), local('Inter-Medium'), url('../fonts/Inter-Medium.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Inter Medium'),
+        local('Inter-Medium'),
+        url('../fonts/Inter-Medium.woff2') format('woff2'),
         url('../fonts/Inter-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
@@ -504,8 +672,11 @@
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'), url('../fonts/Montserrat-ExtraLight.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Montserrat ExtraLight'),
+        local('Montserrat-ExtraLight'),
+        url('../fonts/Montserrat-ExtraLight.woff2') format('woff2'),
         url('../fonts/Montserrat-ExtraLight.woff') format('woff');
     font-weight: 200;
     font-style: normal;
@@ -513,8 +684,11 @@
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat Medium Italic'), local('Montserrat-MediumItalic'), url('../fonts/Montserrat-MediumItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Montserrat Medium Italic'),
+        local('Montserrat-MediumItalic'),
+        url('../fonts/Montserrat-MediumItalic.woff2') format('woff2'),
         url('../fonts/Montserrat-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
@@ -522,8 +696,11 @@
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat Italic'), local('Montserrat-Italic'), url('../fonts/Montserrat-Italic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Montserrat Italic'),
+        local('Montserrat-Italic'),
+        url('../fonts/Montserrat-Italic.woff2') format('woff2'),
         url('../fonts/Montserrat-Italic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
@@ -531,8 +708,11 @@
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat Regular'), local('Montserrat-Regular'), url('../fonts/Montserrat-Regular.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Montserrat Regular'),
+        local('Montserrat-Regular'),
+        url('../fonts/Montserrat-Regular.woff2') format('woff2'),
         url('../fonts/Montserrat-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -540,8 +720,11 @@
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat Thin Italic'), local('Montserrat-ThinItalic'), url('../fonts/Montserrat-ThinItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Montserrat Thin Italic'),
+        local('Montserrat-ThinItalic'),
+        url('../fonts/Montserrat-ThinItalic.woff2') format('woff2'),
         url('../fonts/Montserrat-ThinItalic.woff') format('woff');
     font-weight: 100;
     font-style: italic;
@@ -549,8 +732,11 @@
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat Bold'), local('Montserrat-Bold'), url('../fonts/Montserrat-Bold.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Montserrat Bold'),
+        local('Montserrat-Bold'),
+        url('../fonts/Montserrat-Bold.woff2') format('woff2'),
         url('../fonts/Montserrat-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
@@ -558,8 +744,11 @@
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat Light'), local('Montserrat-Light'), url('../fonts/Montserrat-Light.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Montserrat Light'),
+        local('Montserrat-Light'),
+        url('../fonts/Montserrat-Light.woff2') format('woff2'),
         url('../fonts/Montserrat-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
@@ -567,8 +756,11 @@
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat Black'), local('Montserrat-Black'), url('../fonts/Montserrat-Black.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Montserrat Black'),
+        local('Montserrat-Black'),
+        url('../fonts/Montserrat-Black.woff2') format('woff2'),
         url('../fonts/Montserrat-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
@@ -576,8 +768,11 @@
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat Medium'), local('Montserrat-Medium'), url('../fonts/Montserrat-Medium.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Montserrat Medium'),
+        local('Montserrat-Medium'),
+        url('../fonts/Montserrat-Medium.woff2') format('woff2'),
         url('../fonts/Montserrat-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
@@ -585,17 +780,23 @@
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat ExtraLight Italic'), local('Montserrat-ExtraLightItalic'),
-        url('../fonts/Montserrat-ExtraLightItalic.woff2') format('woff2'), url('../fonts/Montserrat-ExtraLightItalic.woff') format('woff');
+    font-display: swap;
+    src:
+        local('Montserrat ExtraLight Italic'),
+        local('Montserrat-ExtraLightItalic'),
+        url('../fonts/Montserrat-ExtraLightItalic.woff2') format('woff2'),
+        url('../fonts/Montserrat-ExtraLightItalic.woff') format('woff');
     font-weight: 200;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat Black Italic'), local('Montserrat-BlackItalic'), url('../fonts/Montserrat-BlackItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Montserrat Black Italic'),
+        local('Montserrat-BlackItalic'),
+        url('../fonts/Montserrat-BlackItalic.woff2') format('woff2'),
         url('../fonts/Montserrat-BlackItalic.woff') format('woff');
     font-weight: 900;
     font-style: italic;
@@ -603,26 +804,35 @@
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat ExtraBold Italic'), local('Montserrat-ExtraBoldItalic'),
-        url('../fonts/Montserrat-ExtraBoldItalic.woff2') format('woff2'), url('../fonts/Montserrat-ExtraBoldItalic.woff') format('woff');
+    font-display: swap;
+    src:
+        local('Montserrat ExtraBold Italic'),
+        local('Montserrat-ExtraBoldItalic'),
+        url('../fonts/Montserrat-ExtraBoldItalic.woff2') format('woff2'),
+        url('../fonts/Montserrat-ExtraBoldItalic.woff') format('woff');
     font-weight: 800;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat SemiBold Italic'), local('Montserrat-SemiBoldItalic'),
-        url('../fonts/Montserrat-SemiBoldItalic.woff2') format('woff2'), url('../fonts/Montserrat-SemiBoldItalic.woff') format('woff');
+    font-display: swap;
+    src:
+        local('Montserrat SemiBold Italic'),
+        local('Montserrat-SemiBoldItalic'),
+        url('../fonts/Montserrat-SemiBoldItalic.woff2') format('woff2'),
+        url('../fonts/Montserrat-SemiBoldItalic.woff') format('woff');
     font-weight: 600;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'), url('../fonts/Montserrat-ExtraBold.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Montserrat ExtraBold'),
+        local('Montserrat-ExtraBold'),
+        url('../fonts/Montserrat-ExtraBold.woff2') format('woff2'),
         url('../fonts/Montserrat-ExtraBold.woff') format('woff');
     font-weight: 800;
     font-style: normal;
@@ -630,8 +840,11 @@
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat Bold Italic'), local('Montserrat-BoldItalic'), url('../fonts/Montserrat-BoldItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Montserrat Bold Italic'),
+        local('Montserrat-BoldItalic'),
+        url('../fonts/Montserrat-BoldItalic.woff2') format('woff2'),
         url('../fonts/Montserrat-BoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
@@ -639,8 +852,11 @@
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat Light Italic'), local('Montserrat-LightItalic'), url('../fonts/Montserrat-LightItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Montserrat Light Italic'),
+        local('Montserrat-LightItalic'),
+        url('../fonts/Montserrat-LightItalic.woff2') format('woff2'),
         url('../fonts/Montserrat-LightItalic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
@@ -648,8 +864,11 @@
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'), url('../fonts/Montserrat-SemiBold.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Montserrat SemiBold'),
+        local('Montserrat-SemiBold'),
+        url('../fonts/Montserrat-SemiBold.woff2') format('woff2'),
         url('../fonts/Montserrat-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
@@ -657,8 +876,11 @@
 
 @font-face {
     font-family: 'Montserrat';
-
-    src: local('Montserrat Thin'), local('Montserrat-Thin'), url('../fonts/Montserrat-Thin.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Montserrat Thin'),
+        local('Montserrat-Thin'),
+        url('../fonts/Montserrat-Thin.woff2') format('woff2'),
         url('../fonts/Montserrat-Thin.woff') format('woff');
     font-weight: 100;
     font-style: normal;
@@ -666,8 +888,11 @@
 
 @font-face {
     font-family: 'Plus Jakarta Sans';
-
-    src: local('Plus Jakarta Sans Italic'), local('PlusJakartaSans-Italic'), url('../fonts/PlusJakartaSans-Italic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Plus Jakarta Sans Italic'),
+        local('PlusJakartaSans-Italic'),
+        url('../fonts/PlusJakartaSans-Italic.woff2') format('woff2'),
         url('../fonts/PlusJakartaSans-Italic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
@@ -676,8 +901,11 @@
 
 @font-face {
     font-family: 'Plus Jakarta Sans';
-
-    src: local('Plus Jakarta Sans Regular'), local('PlusJakartaSans-Regular'), url('../fonts/PlusJakartaSans-Regular.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Plus Jakarta Sans Regular'),
+        local('PlusJakartaSans-Regular'),
+        url('../fonts/PlusJakartaSans-Regular.woff2') format('woff2'),
         url('../fonts/PlusJakartaSans-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -686,8 +914,11 @@
 
 @font-face {
     font-family: 'Raleway';
-
-    src: local('Raleway SemiBold Italic'), local('Raleway-SemiBoldItalic'), url('../fonts/Raleway-SemiBoldItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Raleway SemiBold Italic'),
+        local('Raleway-SemiBoldItalic'),
+        url('../fonts/Raleway-SemiBoldItalic.woff2') format('woff2'),
         url('../fonts/Raleway-SemiBoldItalic.woff') format('woff');
     font-weight: 600;
     font-style: italic;
@@ -695,17 +926,23 @@
 
 @font-face {
     font-family: 'Raleway';
-
-    src: local('Raleway ExtraLight Italic'), local('Raleway-ExtraLightItalic'),
-        url('../fonts/Raleway-ExtraLightItalic.woff2') format('woff2'), url('../fonts/Raleway-ExtraLightItalic.woff') format('woff');
+    font-display: swap;
+    src:
+        local('Raleway ExtraLight Italic'),
+        local('Raleway-ExtraLightItalic'),
+        url('../fonts/Raleway-ExtraLightItalic.woff2') format('woff2'),
+        url('../fonts/Raleway-ExtraLightItalic.woff') format('woff');
     font-weight: 200;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Raleway';
-
-    src: local('Raleway Medium Italic'), local('Raleway-MediumItalic'), url('../fonts/Raleway-MediumItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Raleway Medium Italic'),
+        local('Raleway-MediumItalic'),
+        url('../fonts/Raleway-MediumItalic.woff2') format('woff2'),
         url('../fonts/Raleway-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
@@ -713,8 +950,11 @@
 
 @font-face {
     font-family: 'Raleway';
-
-    src: local('Raleway ExtraBold Italic'), local('Raleway-ExtraBoldItalic'), url('../fonts/Raleway-ExtraBoldItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Raleway ExtraBold Italic'),
+        local('Raleway-ExtraBoldItalic'),
+        url('../fonts/Raleway-ExtraBoldItalic.woff2') format('woff2'),
         url('../fonts/Raleway-ExtraBoldItalic.woff') format('woff');
     font-weight: 800;
     font-style: italic;
@@ -722,8 +962,11 @@
 
 @font-face {
     font-family: 'Raleway';
-
-    src: local('Raleway'), local('Raleway-Regular'), url('../fonts/Raleway-Regular.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Raleway Regular'),
+        local('Raleway-Regular'),
+        url('../fonts/Raleway-Regular.woff2') format('woff2'),
         url('../fonts/Raleway-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -731,8 +974,11 @@
 
 @font-face {
     font-family: 'Raleway';
-
-    src: local('Raleway ExtraBold'), local('Raleway-ExtraBold'), url('../fonts/Raleway-ExtraBold.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Raleway ExtraBold'),
+        local('Raleway-ExtraBold'),
+        url('../fonts/Raleway-ExtraBold.woff2') format('woff2'),
         url('../fonts/Raleway-ExtraBold.woff') format('woff');
     font-weight: 800;
     font-style: normal;
@@ -740,8 +986,11 @@
 
 @font-face {
     font-family: 'Raleway';
-
-    src: local('Raleway Black Italic'), local('Raleway-BlackItalic'), url('../fonts/Raleway-BlackItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Raleway Black Italic'),
+        local('Raleway-BlackItalic'),
+        url('../fonts/Raleway-BlackItalic.woff2') format('woff2'),
         url('../fonts/Raleway-BlackItalic.woff') format('woff');
     font-weight: 900;
     font-style: italic;
@@ -749,8 +998,11 @@
 
 @font-face {
     font-family: 'Raleway';
-
-    src: local('Raleway Light'), local('Raleway-Light'), url('../fonts/Raleway-Light.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Raleway Light'),
+        local('Raleway-Light'),
+        url('../fonts/Raleway-Light.woff2') format('woff2'),
         url('../fonts/Raleway-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
@@ -758,8 +1010,11 @@
 
 @font-face {
     font-family: 'Raleway';
-
-    src: local('Raleway Black'), local('Raleway-Black'), url('../fonts/Raleway-Black.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Raleway Black'),
+        local('Raleway-Black'),
+        url('../fonts/Raleway-Black.woff2') format('woff2'),
         url('../fonts/Raleway-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
@@ -767,8 +1022,11 @@
 
 @font-face {
     font-family: 'Raleway';
-
-    src: local('Raleway Medium'), local('Raleway-Medium'), url('../fonts/Raleway-Medium.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Raleway Medium'),
+        local('Raleway-Medium'),
+        url('../fonts/Raleway-Medium.woff2') format('woff2'),
         url('../fonts/Raleway-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
@@ -776,8 +1034,11 @@
 
 @font-face {
     font-family: 'Raleway';
-
-    src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url('../fonts/Raleway-ExtraLight.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Raleway ExtraLight'),
+        local('Raleway-ExtraLight'),
+        url('../fonts/Raleway-ExtraLight.woff2') format('woff2'),
         url('../fonts/Raleway-ExtraLight.woff') format('woff');
     font-weight: 200;
     font-style: normal;
@@ -785,8 +1046,11 @@
 
 @font-face {
     font-family: 'Raleway';
-
-    src: local('Raleway Italic'), local('Raleway-Italic'), url('../fonts/Raleway-Italic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Raleway Italic'),
+        local('Raleway-Italic'),
+        url('../fonts/Raleway-Italic.woff2') format('woff2'),
         url('../fonts/Raleway-Italic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
@@ -794,8 +1058,11 @@
 
 @font-face {
     font-family: 'Raleway';
-
-    src: local('Raleway Thin'), local('Raleway-Thin'), url('../fonts/Raleway-Thin.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Raleway Thin'),
+        local('Raleway-Thin'),
+        url('../fonts/Raleway-Thin.woff2') format('woff2'),
         url('../fonts/Raleway-Thin.woff') format('woff');
     font-weight: 100;
     font-style: normal;
@@ -803,8 +1070,11 @@
 
 @font-face {
     font-family: 'Raleway';
-
-    src: local('Raleway SemiBold'), local('Raleway-SemiBold'), url('../fonts/Raleway-SemiBold.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Raleway SemiBold'),
+        local('Raleway-SemiBold'),
+        url('../fonts/Raleway-SemiBold.woff2') format('woff2'),
         url('../fonts/Raleway-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
@@ -812,8 +1082,11 @@
 
 @font-face {
     font-family: 'Raleway';
-
-    src: local('Raleway Light Italic'), local('Raleway-LightItalic'), url('../fonts/Raleway-LightItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Raleway Light Italic'),
+        local('Raleway-LightItalic'),
+        url('../fonts/Raleway-LightItalic.woff2') format('woff2'),
         url('../fonts/Raleway-LightItalic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
@@ -821,8 +1094,11 @@
 
 @font-face {
     font-family: 'Raleway';
-
-    src: local('Raleway Bold'), local('Raleway-Bold'), url('../fonts/Raleway-Bold.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Raleway Bold'),
+        local('Raleway-Bold'),
+        url('../fonts/Raleway-Bold.woff2') format('woff2'),
         url('../fonts/Raleway-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
@@ -830,16 +1106,23 @@
 
 @font-face {
     font-family: 'Russia';
-
-    src: local('Russia Regular'), local('Russia'), url('../fonts/Russia.woff2') format('woff2'), url('../fonts/Russia.woff') format('woff');
+    font-display: swap;
+    src:
+        local('Russia Regular'),
+        local('Russia'),
+        url('../fonts/Russia.woff2') format('woff2'),
+        url('../fonts/Russia.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Russia';
-
-    src: local('Russia Italic'), local('Russia-Italic'), url('../fonts/Russia-Italic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Russia Italic'),
+        local('Russia-Italic'),
+        url('../fonts/Russia-Italic.woff2') format('woff2'),
         url('../fonts/Russia-Italic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
@@ -847,8 +1130,11 @@
 
 @font-face {
     font-family: 'Russia';
-
-    src: local('Russia Bold'), local('Russia-Bold'), url('../fonts/Russia-Bold.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Russia Bold'),
+        local('Russia-Bold'),
+        url('../fonts/Russia-Bold.woff2') format('woff2'),
         url('../fonts/Russia-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
@@ -856,8 +1142,11 @@
 
 @font-face {
     font-family: 'Russia';
-
-    src: local('Russia Light'), local('Russia-Light'), url('../fonts/Russia-Light.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Russia Light'),
+        local('Russia-Light'),
+        url('../fonts/Russia-Light.woff2') format('woff2'),
         url('../fonts/Russia-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
@@ -865,8 +1154,11 @@
 
 @font-face {
     font-family: 'Russia';
-
-    src: local('Russia Medium'), local('Russia-Medium'), url('../fonts/Russia-Medium.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Russia Medium'),
+        local('Russia-Medium'),
+        url('../fonts/Russia-Medium.woff2') format('woff2'),
         url('../fonts/Russia-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
@@ -874,8 +1166,11 @@
 
 @font-face {
     font-family: 'Russia';
-
-    src: local('Russia Light Italic'), local('Russia-LightItalic'), url('../fonts/Russia-LightItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Russia Light Italic'),
+        local('Russia-LightItalic'),
+        url('../fonts/Russia-LightItalic.woff2') format('woff2'),
         url('../fonts/Russia-LightItalic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
@@ -883,8 +1178,11 @@
 
 @font-face {
     font-family: 'Russia';
-
-    src: local('Russia Bold Italic'), local('Russia-BoldItalic'), url('../fonts/Russia-BoldItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Russia Bold Italic'),
+        local('Russia-BoldItalic'),
+        url('../fonts/Russia-BoldItalic.woff2') format('woff2'),
         url('../fonts/Russia-BoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
@@ -892,8 +1190,11 @@
 
 @font-face {
     font-family: 'Russia';
-
-    src: local('Russia Medium Italic'), local('Russia-MediumItalic'), url('../fonts/Russia-MediumItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Russia Medium Italic'),
+        local('Russia-MediumItalic'),
+        url('../fonts/Russia-MediumItalic.woff2') format('woff2'),
         url('../fonts/Russia-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
@@ -901,8 +1202,11 @@
 
 @font-face {
     font-family: 'Roboto';
-
-    src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url('../fonts/Roboto-BlackItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Roboto Black Italic'),
+        local('Roboto-BlackItalic'),
+        url('../fonts/Roboto-BlackItalic.woff2') format('woff2'),
         url('../fonts/Roboto-BlackItalic.woff') format('woff');
     font-weight: 900;
     font-style: italic;
@@ -910,8 +1214,11 @@
 
 @font-face {
     font-family: 'Roboto';
-
-    src: local('Roboto Bold'), local('Roboto-Bold'), url('../fonts/Roboto-Bold.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Roboto Bold'),
+        local('Roboto-Bold'),
+        url('../fonts/Roboto-Bold.woff2') format('woff2'),
         url('../fonts/Roboto-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
@@ -919,8 +1226,11 @@
 
 @font-face {
     font-family: 'Roboto';
-
-    src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url('../fonts/Roboto-BoldItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Roboto Bold Italic'),
+        local('Roboto-BoldItalic'),
+        url('../fonts/Roboto-BoldItalic.woff2') format('woff2'),
         url('../fonts/Roboto-BoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
@@ -928,8 +1238,11 @@
 
 @font-face {
     font-family: 'Roboto';
-
-    src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url('../fonts/Roboto-LightItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Roboto Light Italic'),
+        local('Roboto-LightItalic'),
+        url('../fonts/Roboto-LightItalic.woff2') format('woff2'),
         url('../fonts/Roboto-LightItalic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
@@ -937,8 +1250,11 @@
 
 @font-face {
     font-family: 'Roboto';
-
-    src: local('Roboto'), local('Roboto-Regular'), url('../fonts/Roboto-Regular.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Roboto'),
+        local('Roboto-Regular'),
+        url('../fonts/Roboto-Regular.woff2') format('woff2'),
         url('../fonts/Roboto-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -946,8 +1262,11 @@
 
 @font-face {
     font-family: 'Roboto';
-
-    src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'), url('../fonts/Roboto-ThinItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Roboto Thin Italic'),
+        local('Roboto-ThinItalic'),
+        url('../fonts/Roboto-ThinItalic.woff2') format('woff2'),
         url('../fonts/Roboto-ThinItalic.woff') format('woff');
     font-weight: 100;
     font-style: italic;
@@ -955,8 +1274,11 @@
 
 @font-face {
     font-family: 'Roboto';
-
-    src: local('Roboto Black'), local('Roboto-Black'), url('../fonts/Roboto-Black.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Roboto Black'),
+        local('Roboto-Black'),
+        url('../fonts/Roboto-Black.woff2') format('woff2'),
         url('../fonts/Roboto-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
@@ -964,8 +1286,11 @@
 
 @font-face {
     font-family: 'Roboto';
-
-    src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url('../fonts/Roboto-MediumItalic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Roboto Medium Italic'),
+        local('Roboto-MediumItalic'),
+        url('../fonts/Roboto-MediumItalic.woff2') format('woff2'),
         url('../fonts/Roboto-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
@@ -973,8 +1298,11 @@
 
 @font-face {
     font-family: 'Roboto';
-
-    src: local('Roboto Thin'), local('Roboto-Thin'), url('../fonts/Roboto-Thin.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Roboto Thin'),
+        local('Roboto-Thin'),
+        url('../fonts/Roboto-Thin.woff2') format('woff2'),
         url('../fonts/Roboto-Thin.woff') format('woff');
     font-weight: 100;
     font-style: normal;
@@ -982,8 +1310,11 @@
 
 @font-face {
     font-family: 'Roboto';
-
-    src: local('Roboto Light'), local('Roboto-Light'), url('../fonts/Roboto-Light.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Roboto Light'),
+        local('Roboto-Light'),
+        url('../fonts/Roboto-Light.woff2') format('woff2'),
         url('../fonts/Roboto-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
@@ -991,8 +1322,11 @@
 
 @font-face {
     font-family: 'Roboto';
-
-    src: local('Roboto Italic'), local('Roboto-Italic'), url('../fonts/Roboto-Italic.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Roboto Italic'),
+        local('Roboto-Italic'),
+        url('../fonts/Roboto-Italic.woff2') format('woff2'),
         url('../fonts/Roboto-Italic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
@@ -1000,8 +1334,11 @@
 
 @font-face {
     font-family: 'Roboto';
-
-    src: local('Roboto Medium'), local('Roboto-Medium'), url('../fonts/Roboto-Medium.woff2') format('woff2'),
+    font-display: swap;
+    src:
+        local('Roboto Medium'),
+        local('Roboto-Medium'),
+        url('../fonts/Roboto-Medium.woff2') format('woff2'),
         url('../fonts/Roboto-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;

@@ -1,5 +1,5 @@
 <template>
-  <div class="form-1" id="form-1">
+  <div class="form-1" id="form-1" v-if="props?.data.name == 'Form1Common' && props?.data.fields">
     <div class="form-1__container container">
       <div class="form-1__content">
         <div class="form-1__left">
@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
 import { object, string, boolean } from "yup";
-
+const props = defineProps<{ data: any }>();
 const rePhoneNumber = /^\+7\s?\(?\d{3}\)?\s?\d{3}\s[-\s]?\d{2}[-\s]?\d{2}$/;
 const schema = object({
   phone: string().matches(rePhoneNumber, "Номер телефона не валидный"),

@@ -1,8 +1,10 @@
 <template>
-    <div class="blog-content" :id="props.data.idBlock" v-if="props.data">
-        <div class="blog-content__container container">
-            <h2 class="blog-content__title">{{ props.data.title }}</h2>
-            <div class="blog-content__content" v-html="props.data.descr"></div>
+    <div class="blog-content" v-if="props?.data.name == 'BlogContentCustom' && props?.data.fields">
+        <div v-for="dataValue in props?.data.fields.list">
+            <div class="blog-content__container container">
+                <h2 class="blog-content__title">{{ dataValue.title }}</h2>
+                <div class="blog-content__content" v-html="dataValue.descr"></div>
+            </div>
         </div>
     </div>
 </template>

@@ -10,7 +10,7 @@ const route = useRoute();
 const storeCommon = useCommonStore();
 const slug = route.params.slug as string;
 
-const { data, status } = useAsyncData(`get-${slug}`, () => $api.getPage(slug), {
+const { data, status } =  useAsyncData(`get-${slug}`, () => $api.getPage(slug), {
     server: false,
     transform: (e) => {
         const transform = e.map((el: any) => {
