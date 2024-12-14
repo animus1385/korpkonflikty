@@ -15,7 +15,8 @@
             <swiper-slide class="clients__elem" v-for="(elem, index) in props?.data?.fields?.list"
                 :key="`clients-${index}`">
                 <div class="clients__img-block">
-                    <NuxtPicture class="clients__img" :src="elem.img.node.sourceUrl" :alt="`clients-${index}`">
+                    <NuxtPicture format="webp" preload class="clients__img" :src="elem.img.node.sourceUrl"
+                        :alt="`clients-${index}`">
                     </NuxtPicture>
                 </div>
             </swiper-slide>

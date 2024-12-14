@@ -5,8 +5,8 @@
             <ul class="blog-list__list">
                 <li class="blog-list__elem" v-for="elem in storeBlog.items">
                     <NuxtLink :to="elem.node.uri" class="blog-list__image-blog">
-                        <NuxtPicture class="blog-list__picture" :src="elem.node.featuredImage.node.sourceUrl"
-                            :alt="elem.node.title">
+                        <NuxtPicture format="webp" preload class="blog-list__picture"
+                            :src="elem.node.featuredImage.node.sourceUrl" :alt="elem.node.title">
                         </NuxtPicture>
                         <div class="blog-list__top">
                             <div class="blog-list__name-block">

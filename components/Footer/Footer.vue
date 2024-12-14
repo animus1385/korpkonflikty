@@ -1,9 +1,9 @@
 <template>
-    <footer class="footer" v-if="menuStore.footer.items">
+    <footer class="footer">
         <div class="footer__container container">
             <div class="footer__top">
                 <NuxtLink class="footer__logo" to="/" v-if="menuStore.footer.logo" aria-label="footer logo">
-                    <NuxtPicture :src="menuStore.footer.logo" alt="footer-logo"></NuxtPicture>
+                    <NuxtPicture format="webp" preload :src="menuStore.footer.logo" alt="footer-logo"></NuxtPicture>
                 </NuxtLink>
                 <ul class="footer__list" v-if="menuStore.footer.items">
                     <li class="footer__elem" v-for="elem in menuStore.footer.items" :key="elem.node.id">
@@ -11,7 +11,7 @@
                             elem.node.label }}</NuxtLink>
                     </li>
                 </ul>
-                <UButton class="footer__btn-call">Оставить заявку</UButton>
+                <NuxtLink class="footer__btn-call" to="#">Оставить заявку</NuxtLink>
                 <NuxtLink class="footer__address" :to="menuStore.footer.address.url"
                     :aria-label="menuStore.footer.address.title" v-if="menuStore.footer.address.url">
                     <Icon class="footer__icon" name="svg:ping" />
@@ -42,7 +42,8 @@
                     <li class="footer__social-elem" v-for="elem in menuStore.footer.social">
                         <NuxtLink class="footer__social-link" :to="elem.link.url" v-if="elem.link.url"
                             :aria-label="elem.link.title">
-                            <NuxtPicture :src="elem.img.node.sourceUrl" :alt="elem.link.title"></NuxtPicture>
+                            <NuxtPicture preload format="webp" :src="elem.img.node.sourceUrl" :alt="elem.link.title">
+                            </NuxtPicture>
                         </NuxtLink>
                     </li>
                 </ul>

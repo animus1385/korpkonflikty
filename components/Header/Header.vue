@@ -2,7 +2,7 @@
     <header class="header" v-if="menuStore.items">
         <div class="header__contaniner container">
             <NuxtLink class="header__logo" to="/" aria-label="header logo" v-if="menuStore.logo">
-                <NuxtPicture :src="menuStore.logo" alt="header-logo"></NuxtPicture>
+                <NuxtPicture format="webp" preload :src="menuStore.logo" alt="header-logo"></NuxtPicture>
             </NuxtLink>
             <nav class="header__nav">
                 <ul class="header__list" v-if="menuStore.items">
@@ -28,7 +28,8 @@
             <ul class="header__social" v-if="menuStore.social">
                 <li class="header__social-elem" v-for="elem in menuStore.social">
                     <NuxtLink :to="elem.link.url" :aria-label="elem.link.title">
-                        <NuxtPicture :src="elem.img.node.sourceUrl" :alt="elem.link.title"></NuxtPicture>
+                        <NuxtPicture format="webp" preload :src="elem.img.node.sourceUrl" :alt="elem.link.title">
+                        </NuxtPicture>
                     </NuxtLink>
                 </li>
             </ul>

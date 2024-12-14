@@ -9,8 +9,8 @@
                         props?.data?.fields?.btn.title
                     }}</NuxtLink>
             </div>
-            <NuxtPicture v-if="props?.data?.fields?.img" class="hero__img" :src="props?.data?.fields?.img.node.sourceUrl"
-                :alt="props?.data?.fields?.title" />
+            <NuxtPicture format="webp" preload v-if="props?.data?.fields?.img" class="hero__img"
+                :src="props?.data?.fields?.img.node.sourceUrl" :alt="props?.data?.fields?.title" />
         </div>
         <div class="hero__info">
             <span class="hero__info-text" v-if="props?.data?.fields?.message">{{ props?.data?.fields?.message }} </span>
