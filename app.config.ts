@@ -8,5 +8,9 @@ export default defineAppConfig({
                 color: 'korpConflikty',
             },
         },
+        notifications: {
+            position: 'top-0 bottom-[unset] items-end z-[999999] ',
+            container: 'w-[20%]',
+        }
     },
 });

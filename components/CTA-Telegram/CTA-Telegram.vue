@@ -1,5 +1,5 @@
 <template>
-    <div class="cta-telegram">
+    <div class="cta-telegram" id="cta-telegram">
         <div class="cta-telegram__container container">
             <div class="cta-telegram__left">
                 <h2 class="cta-telegram__title">Подпишитесь на наш Телеграм-канал,</h2>

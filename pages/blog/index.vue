@@ -1,6 +1,8 @@
 <template>
-    <BlogList></BlogList>
-    <Form1 class="blog-form"></Form1>
+
+    <BlogList />
+    <Form1 class="blog-form" />
+
 </template>
 
 <script setup lang="ts">

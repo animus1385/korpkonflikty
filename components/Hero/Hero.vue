@@ -1,5 +1,5 @@
 <template>
-    <div class="hero">
+    <div class="hero" id="hero">
         <div class="hero__container container">
             <div class="hero__left">
                 <h1 v-if="props?.data?.title" class="hero__title">{{ props?.data?.title }}</h1>

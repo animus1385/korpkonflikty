@@ -1,0 +1,39 @@
+.contacts {
+    @apply tablet:my-[80px] mobile:my-[40px];
+    &__title {
+        font-family: var(--second-family);
+        line-height: 117%;
+        @apply text-[$242527] tablet:text-[64px] font-extrabold mobile:text-[40px];
+    }
+    &__list {
+        @apply grid desktop:grid-cols-5 tablet:grid-cols-2 desktopWide:gap-[130px] mobile:gap-[30px] tablet:my-[100px] mobile:my-[50px];
+    }
+    &__social {
+        @apply grid grid-cols-[repeat(3,max-content)] items-center gap-[20px] h-full;
+    }
+
+    &__social-elem {
+        @apply flex items-center justify-center;
+    }
+    &__elem-social-block {
+        @apply grid gap-[39px] desktop:grid-cols-1 tablet:grid-cols-2 desktop:col-span-1 tablet:col-span-full  tablet:justify-center;
+    }
+    &__picture {
+        @apply w-full h-full;
+    }
+    &__elem {
+        @apply flex flex-col;
+    }
+    &__elem-top,
+    &__elem-bottom {
+        @apply flex flex-col;
+    }
+    &__label-elem {
+        @apply desktopWide:text-[18px] mobile:text-[14px] text-[#939393] font-normal mb-[17px];
+        font-family: var(--font3);
+    }
+    &__elem-text {
+        font-family: var(--second-family);
+        @apply desktopWide:text-[20px] mobile:text-[18px]  text-[#242527] font-semibold;
+    }
+}

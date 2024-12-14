@@ -1,5 +1,5 @@
 <template>
-  <div class="command">
+  <div class="command" id="command">
     <div class="command__container container">
       <div class="command__content">
         <div class="command__top">

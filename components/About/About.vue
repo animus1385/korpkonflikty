@@ -1,5 +1,5 @@
 <template>
-    <div class="about">
+    <div class="about" is="about">
         <div class="about__container container">
             <h2 class="about__title title-level-2">{{ props?.data?.title }}</h2>
             <ul class="about__list">

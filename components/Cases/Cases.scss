@@ -1,5 +1,5 @@
 .cases {
-    @apply pt-[115px] pb-[59px] overflow-hidden;
+    @apply desktop:pt-[115px] mobile:py-[70px]  desktop:pb-[59px]  overflow-hidden;
     &__btn-list {
         @apply flex flex-wrap justify-between desktop:mb-[85px] mobile:mb-[30px];
     }

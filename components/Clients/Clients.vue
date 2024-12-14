@@ -1,5 +1,5 @@
 <template>
-    <div class="clients">
+    <div class="clients" id="clients">
         <h2 class="clients__title title-level-2">{{ props?.data?.title }}</h2>
         <swiper-container
             class="clients__list"

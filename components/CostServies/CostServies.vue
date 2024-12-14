@@ -1,5 +1,5 @@
 <template>
-    <div class="cost-servies">
+    <div class="cost-servies" id="cost-servies">
         <div class="cost-servies__container container">
             <div class="cost-servies__img-block">
                 <NuxtPicture class="cost-servies__img-left" :src="props?.data?.img1.node.sourceUrl"></NuxtPicture>

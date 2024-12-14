@@ -2,41 +2,44 @@ export const useBlogStore = defineStore('blog-store', {
     state: () => ({
         loader: true,
         items: [],
-        postsPerPage: 6, 
-        page: 1, 
-        endCursor: null, 
-        hasNextPage: false, 
+        postsPerPage: 6,
+        page: 1,
+        endCursor: null,
+        hasNextPage: false,
         totalCount: 0,
     }),
 
     actions: {
         async getAll() {
             const { $api } = useNuxtApp();
+            const storeCommon = useCommonStore();
             this.loader = true;
 
             const data: any = await $api.post.getAll({
-                first: this.postsPerPage, 
-                after: this.endCursor, 
+                first: this.postsPerPage,
+                after: this.endCursor,
             });
 
             this.items = data.posts.edges;
-            this.endCursor = data.posts.pageInfo.endCursor; 
+            this.endCursor = data.posts.pageInfo.endCursor;
             this.hasNextPage = data.posts.pageInfo.hasNextPage;
 
             this.totalCount = data.posts.edges.length;
 
             this.loader = false;
+            storeCommon.statusLoading = '';
+
+            return data;
         },
 
         async handlePageChange(newPage: number) {
             this.page = newPage;
 
-          
             if (this.page === 1) {
-                this.endCursor = null; 
+                this.endCursor = null;
             }
 
-            this.getAll(); 
+            this.getAll();
         },
     },
 

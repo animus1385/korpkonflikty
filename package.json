@@ -11,12 +11,12 @@
     "start": "nuxt start"
   },
   "dependencies": {
-    "@nuxt/devtools": "^1.6.2",
-    "@nuxt/icon": "^1.9.0",
-    "@nuxt/ui": "^2.19.2",
+    "@nuxt/devtools": "^1.6.3",
+    "@nuxt/icon": "^1.10.0",
+    "@nuxt/ui": "^2.20.0",
     "@nuxtjs/tailwindcss": "^6.12.2",
     "@pinia/nuxt": "^0.9.0",
-    "axios": "^1.7.8",
+    "axios": "^1.7.9",
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.2",
     "graphql-tag": "^2.12.6",
@@ -24,6 +24,9 @@
     "nuxt": "^3.14.1592",
     "nuxt-swiper": "^2.0.0",
     "pinia": "^2.3.0",
+    "vue": "^3.5.13",
+    "vue-recaptcha-v3": "^2.0.1",
+    "yandex-maps": "^0.0.1",
     "yup": "^1.5.0"
   },
   "devDependencies": {
@@ -32,8 +35,8 @@
     "eslint": "^9.16.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "prettier": "^3.4.1",
-    "sass-embedded": "^1.81.1",
+    "prettier": "^3.4.2",
+    "sass-embedded": "^1.82.0",
     "typescript": "^5.7.2",
     "vue-eslint-parser": "^9.4.3",
     "vue-tsc": "^2.1.10"

@@ -1,5 +1,5 @@
 <template>
-    <div class="faq">
+    <div class="faq" id="faq">
         <div class="faq__container container">
             <div class="faq__left">
                 <h2 class="faq__title title-level-2">{{ props?.data?.title }}</h2>

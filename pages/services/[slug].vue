@@ -8,7 +8,7 @@ import type { IBlockFlexible } from '~/types/blockFlexible';
 const { $api } = useNuxtApp();
 const route = useRoute();
 const slug = route.params.slug as string;
-const { data, status } = useAsyncData('getService', async () => await $api.services.getService(slug), {
+const { data, status } = useAsyncData('getService', () =>  $api.services.getService(slug), {
     server: false,
     transform: (e) => {
         const transform = e.map((el: any) => {
@@ -23,5 +23,6 @@ const { data, status } = useAsyncData('getService', async () => await $api.servi
         return transform;
     },
 });
+
 </script>
 <style scoped></style>

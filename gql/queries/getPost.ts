@@ -7,10 +7,22 @@ export const GET_POST = gql`
             title
             uri
             postViews
+            date
             postId
             featuredImage {
                 node {
                     sourceUrl
+                }
+            }
+            contentPost {
+                contentPost {
+                    authorPost
+                    list {
+                        link {
+                            url
+                            title
+                        }
+                    }
                 }
             }
             pageBuilder {
@@ -277,6 +289,7 @@ export const GET_POST = gql`
                         fieldGroupName
                         blogContentCustom {
                             list {
+                                idBlock
                                 descr
                                 title
                             }
@@ -292,52 +305,63 @@ export const GET_POST = gql`
                         fieldGroupName
                     }
                     ... on PageBuilderFlexibleSuitableServicesCustomLayout {
-                      fieldGroupName
-                      suitableServicesCustom {
-                        suitableServicesList {
-                          edges {
-                            node {
-                              ... on PostService {
-                                id
-                                title
-                                uri
-                                pageBuilder {
-                                  flexible {
-                                    ... on PageBuilderFlexibleHeroCustomLayout {
-                                      fieldGroupName
-                                      heroCustom {
-                                        subtitle
-                                      }
+                        fieldGroupName
+                        suitableServicesCustom {
+                            suitableServicesList {
+                                edges {
+                                    node {
+                                        ... on PostService {
+                                            id
+                                            title
+                                            uri
+                                            pageBuilder {
+                                                flexible {
+                                                    ... on PageBuilderFlexibleHeroCustomLayout {
+                                                        fieldGroupName
+                                                        heroCustom {
+                                                            subtitle
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
                                     }
-                                  }
                                 }
-                              }
                             }
-                          }
                         }
-                      }
                     }
                     ... on PageBuilderFlexibleRelatedBlogCustomLayout {
-                      fieldGroupName
-                      relatedBlogCustom {
-                        relatedBlogList {
-                          edges {
-                            node {
-                              ... on Post {
-                                id
-                                title
-                                uri
-                                date
-                                author {
-                                  node {
-                                    name
-                                  }
+                        fieldGroupName
+                        relatedBlogCustom {
+                            relatedBlogList {
+                                edges {
+                                    node {
+                                        ... on Post {
+                                            id
+                                            title
+                                            uri
+                                            date
+                                            featuredImage {
+                                                node {
+                                                    sourceUrl
+                                                }
+                                            }
+                                            contentPost {
+                                                contentPost {
+                                                    authorPost
+                                                    list {
+                                                        link {
+                                                            url
+                                                            title
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
-                              }
                             }
-                          }
                         }
-                      }
                     }
                 }
             }

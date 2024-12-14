@@ -24,8 +24,9 @@
     &__img:deep() {
         @apply absolute inset-0 w-full z-[-1] rounded-[20px] overflow-hidden h-full;
         background: linear-gradient(333deg, #474747 0%, #222 53.8%);
+        
         img {
-            @apply w-full h-full;
+            @apply w-full h-full object-cover bg-center;
         }
     }
 }

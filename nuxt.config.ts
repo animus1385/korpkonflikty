@@ -16,6 +16,14 @@ export default defineNuxtConfig({
             charset: 'utf-8',
             meta: [],
             link: [],
+            script: [
+                {
+                    src: 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=3bfc6cb2-7479-477e-9638-a52995b5b67d',
+                    type: 'text/javascript',
+                    async: true,
+                    defer: true,
+                },
+            ],
         },
         baseURL: '/', // Базовый URL приложения
     },
@@ -33,6 +41,7 @@ export default defineNuxtConfig({
     runtimeConfig: {
         public: {
             API: process.env.PUBLIC_GRAPHQL_URL,
+            website: process.env.WEB_SITE,
         },
     },
     vite: {

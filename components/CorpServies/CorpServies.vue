@@ -1,5 +1,5 @@
 <template>
-    <div class="corp-servies">
+    <div class="corp-servies" id="corp-servies">
         <div class="corp-servies__container container">
             <h2 class="corp-servies__title title-level-2">Услуги по корпоративным спорам</h2>
             <swiper-container 

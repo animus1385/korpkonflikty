@@ -1,0 +1,43 @@
+.hero-blog {
+    @apply py-[60px];
+    &__container {
+        @apply grid grid-cols-[1fr_400px] grid-rows-[auto_535px] gap-[62px];
+    }
+    &__img-info {
+        @apply p-[60px_51px]  relative z-[2];
+    }
+    &__img:deep() {
+        @apply flex justify-center absolute inset-0;
+        img {
+            @apply w-full h-full object-cover;
+        }
+    }
+    &__img-block {
+        @apply bg-black  rounded-[20px] overflow-hidden relative;
+        &:before {
+            content: '';
+            @apply absolute inset-0  z-[2] bg-gradient-to-b to-[#0000008f] from-transparent;
+        }
+    }
+    &__img-info {
+        @apply flex flex-col relative h-full justify-end;
+    }
+    &__date {
+        font-family: var(--second-family);
+        @apply text-[20px] text-white font-semibold;
+    }
+    &__title {
+        font-family: var(--second-family);
+        font-weight: 800;
+        font-size: 64px;
+        line-height: 117%;
+        color: #242527;
+        @apply col-span-full;
+    }
+    &__content-title {
+    }
+    &__name {
+        font-family: var(--font-family);
+        @apply text-[24px] text-white font-semibold;
+    }
+}

@@ -1,5 +1,5 @@
 <template>
-    <div class="advantages">
+    <div class="advantages" id="advantages">
         <div class="advantages__container container">
             <h2 class="advantages__title title-level-2">{{ props?.data?.title }}</h2>
             <ul class="advantages__list">

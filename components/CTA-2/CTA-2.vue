@@ -1,5 +1,5 @@
 <template>
-    <div class="cta-2">
+    <div class="cta-2" id="cta-2">
         <div class="cta-2__container container">
             <div class="cta-2__left">
                 <h2 class="cta-2__title ">{{ props?.data?.title }}</h2>

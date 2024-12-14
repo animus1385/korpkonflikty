@@ -1,9 +1,14 @@
 <template>
     <div>
         <Header></Header>
-        <slot />
+        <div class="flex flex-col">
+            <slot />
+            <loader></loader>
+            <UNotifications />
+        </div>
+
         <Footer></Footer>
-        <!-- <loader></loader> -->
+
     </div>
 </template>
 

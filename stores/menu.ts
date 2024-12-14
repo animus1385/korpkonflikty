@@ -1,4 +1,4 @@
-export const useMenuStore = defineStore('blog-store', {
+export const useMenuStore = defineStore('menu-store', {
     state: () => ({
         items: [],
         tel: {},

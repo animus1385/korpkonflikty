@@ -1,58 +1,34 @@
 .form-1 {
-  &__content {
-    background: linear-gradient(224deg, #474747 0%, #222 41.8%);
-    border-radius: 40px;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 50% auto;
-    align-items: center;
-    justify-content: space-between;
-    padding: 36px 128px;
-    gap:80px
-  }
-  &__title {
-    font-family: var(--second-family);
-    font-weight: 700;
-    font-size: 40px;
-    color: #fff;
-    margin-bottom: 49px;
-  }
-  &__descr {
-    font-family: var(--second-family);
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 170%;
-    color: #fff;
-  }
-  &__fileds-block {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  &__field-label:deep() {
-    grid-column: 1 / -1;
-    label {
-      font-family: var(--font-family);
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 162%;
-      color: #fff;
+    &__content {
+        background: linear-gradient(224deg, #474747 0%, #222 41.8%);
+        @apply desktop:p-[36px_128px] mobile:p-[45px_24px]  desktop:gap-[80px] mobile:gap-[19px] grid overflow-hidden rounded-[40px] desktop:grid-cols-2 items-center;
     }
-  }
-  &__check {
-    grid-column: 1 / 2;
-  }
-  &__btn {
-    align-self: flex-start;
-    margin-left: auto;
-    grid-column: 2/-1;
-    border-radius: 71px;
-    padding: 20px 40px;
-    font-family: var(--font-family);
-    font-weight: 600;
-    font-size: 18px;
-    text-align: center;
-    color: #fff;
-  }
+    &__title {
+        font-family: var(--second-family);
+        @apply desktop:mb-[49px] mobile:mb-[19px] text-white desktop:text-[40px] font-bold mobile:text-[32px];
+    }
+    &__descr {
+        font-family: var(--second-family);
+        line-height: 170%;
+        @apply text-white desktop:text-[18px] font-normal mobile:text-[14px];
+    }
+    &__fileds-block {
+        @apply grid desktop:grid-cols-2 gap-[20px];
+    }
+
+    &__field-label:deep() {
+        @apply col-span-full;
+        label {
+            font-family: var(--font-family);
+            line-height: 162%;
+            @apply desktop:text-[16px] text-white font-normal mobile:text-[14px];
+        }
+    }
+    &__check {
+        @apply desktop:col-start-1 desktop:col-end-2;
+    }
+    &__btn {
+        font-family: var(--font-family);
+        @apply flex desktop:col-start-2 w-full justify-center desktop:text-[18px] mobile:text-[14px] text-white font-semibold desktop:p-[20px_40px] mobile:p-[13px] rounded-[71px];
+    }
 }

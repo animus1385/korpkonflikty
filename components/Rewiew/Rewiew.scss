@@ -1,16 +1,15 @@
 .rewiew {
     @apply desktop:pt-[101px]  desktop:pb-[91px] mobile:py-[30px] overflow-hidden;
     &__btn-list {
-        @apply flex desktop:gap-[32px] mobile:flex-col tablet:flex-row   mobile:w-full tablet:w-max mobile:gap-[11px] desktop:mb-[84px] mobile:mb-[30px];
+        @apply flex desktop:gap-[32px] tablet:flex-row   mobile:w-full tablet:w-max mobile:gap-[11px] desktop:mb-[84px] mobile:mb-[30px];
     }
     &__btn {
         font-family: var(--font-family);
         font-weight: 600;
         font-size: 14px;
         text-align: center;
-        color: #fff;
         border-radius: 59px;
-        @apply desktop:p-[20px_40px] mobile:w-full tablet:w-max flex justify-center;
+        @apply desktop:p-[20px_40px]  tablet:w-max flex justify-center text-white text-center;
     }
     swiper-container {
         &::part(container) {

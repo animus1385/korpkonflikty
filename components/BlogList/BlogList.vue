@@ -1,11 +1,12 @@
 <template>
-    <div class="blog-list">
+    <div class="blog-list" id="blog-list">
         <div class="blog-list__container container">
             <h1 class="blog-list__title">Блог</h1>
             <ul class="blog-list__list">
                 <li class="blog-list__elem" v-for="elem in storeBlog.items">
                     <NuxtLink :to="elem.node.uri" class="blog-list__image-blog">
-                        <NuxtPicture class="blog-list__picture" :src="elem.node.featuredImage.node.sourceUrl"></NuxtPicture>
+                        <NuxtPicture class="blog-list__picture" :src="elem.node.featuredImage.node.sourceUrl">
+                        </NuxtPicture>
                         <div class="blog-list__top">
                             <div class="blog-list__name-block">
                                 <span class="blog-list__date">{{ elem.node.date }}</span>
@@ -23,13 +24,8 @@
             </ul>
             <loader v-if="storeBlog.loader"></loader>
         </div>
-        <UPagination
-            class="blog-list__pagination"
-            v-model="storeBlog.page"
-            :page-count="storeBlog.totalPages"
-            :total="storeBlog.items.length"
-            @click="storeBlog.handlePageChange(storeBlog.page)"
-        />
+        <UPagination class="blog-list__pagination" v-model="storeBlog.page" :page-count="storeBlog.totalPages"
+            :total="storeBlog.items.length" @click="storeBlog.handlePageChange(storeBlog.page)" />
     </div>
 </template>
 
@@ -37,9 +33,10 @@
 const storeBlog = useBlogStore();
 const storeCommon = useCommonStore();
 
-onMounted(() => {
-    storeBlog.getAll();
-});
+const { status } = useAsyncData('getListBlog', () => storeBlog.getAll(), { server: false })
+watchEffect(() => {
+    storeCommon.statusLoading = status.value;
+})
 </script>
 
 <style scoped lang="scss">

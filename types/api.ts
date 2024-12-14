@@ -1,6 +1,6 @@
 export interface Api {
     getSettingsAll: () => Promise<any[]>;
-    getPage: (id: string) => Promise<any[]>;
+    getPage: (name: string) => Promise<any[]>;
     getMenu: (slug: string) => Promise<any[]>;
     post: {
         getAll: (variables: { first: number; after: string | null }) => Promise<any[]>;
@@ -10,5 +10,4 @@ export interface Api {
     services: {
         getService: (slug: string) => Promise<any[]>;
     };
-  
 }

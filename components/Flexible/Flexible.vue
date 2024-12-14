@@ -1,32 +1,29 @@
 <template>
-    <div v-if="status == 'success' && data">
+    <div v-if="status == 'success' && data" class="flexible">
         <section v-for="section in data" class="section">
-            <Hero v-if="section.name == 'HeroCustom'" :data="section.fields"></Hero>
-            <Advantages v-if="section.name == 'AdvantagesCommon'" :data="section.fields"></Advantages>
-            <CorpServies v-if="section.name == 'CorpServiesCommon'" :data="section.fields"></CorpServies>
-            <CostServies v-if="section.name == 'CostServiesCommon'" :data="section.fields"></CostServies>
-            <IncludedServies v-if="section.name == 'IncludedServiesCommon'" :data="section.fields"></IncludedServies>
-            <CTA v-if="section.name == 'CtaCommon'" :data="section.fields"></CTA>
-            <About v-if="section.name == 'AboutCommon'" :data="section.fields"></About>
-            <Command v-if="section.name == 'CommandCommon'" :data="section.fields"></Command>
-            <Clients v-if="section.name == 'ClientsCommon'" :data="section.fields"></Clients>
-            <Cases v-if="section.name == 'CasesCommon'" :data="section.fields"></Cases>
-            <FAQ v-if="section.name == 'FaqCommon'" :data="section.fields"></FAQ>
-            <CTA2 v-if="section.name == 'Cta2Common'" :data="section.fields"></CTA2>
-            <Rewiew v-if="section.name == 'RewiewCommon'" :data="section.fields"></Rewiew>
-            <!-- <PopularBlog v-if="section.name == 'PopularBlogCommon'" :data="section.fields"></PopularBlog> -->
-
-            <CTATelegram v-if="section.name == 'CtaTelegramCommon'" :data="section.fields"></CTATelegram>
-            <BlogContent
-                v-if="section.name == 'BlogContentCustom'"
-                v-for="dataValue in section.fields.list"
-                :data="dataValue"
-            ></BlogContent>
-            <Form1 v-if="section.name == 'Form1Common'"></Form1>
-            <Form2 v-if="section.name == 'Form2Common'"></Form2>
-            <FormCommnent v-if="section.name == 'FormCommentCommon'" :data="section.fields" :pageId="section.pageId"></FormCommnent>
-            <SuitableServices v-if="section.name == 'SuitableServicesCustom'" :data="section.fields"></SuitableServices>
-            <RelatedBlog v-if="section.name == 'RelatedBlogCustom'" :data="section.fields"></RelatedBlog>
+            <Hero v-if="section.name == 'HeroCustom'" :data="section.fields" />
+            <Advantages v-if="section.name == 'AdvantagesCommon'" :data="section.fields" />
+            <CorpServies v-if="section.name == 'CorpServiesCommon'" :data="section.fields" />
+            <CostServies v-if="section.name == 'CostServiesCommon'" :data="section.fields" />
+            <IncludedServies v-if="section.name == 'IncludedServiesCommon'" :data="section.fields" />
+            <CTA v-if="section.name == 'CtaCommon'" :data="section.fields" />
+            <About v-if="section.name == 'AboutCommon'" :data="section.fields" />
+            <Command v-if="section.name == 'CommandCommon'" :data="section.fields" />
+            <Clients v-if="section.name == 'ClientsCommon'" :data="section.fields" />
+            <Cases v-if="section.name == 'CasesCommon'" :data="section.fields" />
+            <FAQ v-if="section.name == 'FaqCommon'" :data="section.fields" />
+            <CTA2 v-if="section.name == 'Cta2Common'" :data="section.fields" />
+            <Rewiew v-if="section.name == 'RewiewCommon'" :data="section.fields" />
+            <CTATelegram v-if="section.name == 'CtaTelegramCommon'" :data="section.fields" />
+            <BlogContent v-if="section.name == 'BlogContentCustom'" v-for="dataValue in section.fields.list"
+                :data="dataValue" />
+            <Form1 v-if="section.name == 'Form1Common'" />
+            <Form2 v-if="section.name == 'Form2Common'" />
+            <FormCommnent v-if="section.name == 'FormCommentCommon'" :data="section.fields" :pageId="section?.pageId" />
+            <SuitableServices v-if="section.name == 'SuitableServicesCustom'" :data="section.fields" />
+            <RelatedBlog v-if="section.name == 'RelatedBlogCustom'" :data="section.fields" />
+            <Map v-if="section.name == 'MapCommon'" :data="section.fields" />
+            <Contacts v-if="section.name == 'ContactsCustom'" :data="section.fields" />
         </section>
     </div>
 </template>
@@ -37,7 +34,7 @@ const props = defineProps<{ data: IBlockFlexible[] | null }>();
 const { $api } = useNuxtApp();
 const storeCommon = useCommonStore();
 
-const { data, status, error } = useAsyncData('getSettingsAll', async () => await $api.getSettingsAll(), {
+const { data, status } = useAsyncData('getSettingsAll', () => $api.getSettingsAll(), {
     transform: (e: any) => {
         let difference = props?.data?.map((x: any) => {
             const current = Object.entries(e).find((el) => x.name.toLowerCase().includes(el[0].toLowerCase()));
@@ -52,12 +49,9 @@ const { data, status, error } = useAsyncData('getSettingsAll', async () => await
     },
     server: false,
 });
-watch(
-    () => status.value == 'success' && data,
-    () => {
-        storeCommon.loader = false;
-    }
-);
+watchEffect(() => {
+    storeCommon.statusLoading = status.value;
+})
 </script>
 
 <style scoped></style>

@@ -12,7 +12,6 @@ export default {
     theme: {
         container: {
             center: true,
-            padding: '24px',
         },
         screens: screens,
         extend: {

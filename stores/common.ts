@@ -2,6 +2,7 @@ export const useCommonStore = defineStore('common-store', {
     state: () => {
         return {
             loader: true,
+            statusLoading: '',
         };
     },
 });

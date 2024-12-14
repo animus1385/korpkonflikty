@@ -1,5 +1,5 @@
 <template>
-    <div class="blog-content">
+    <div class="blog-content" :id="props.data.idBlock">
         <div class="blog-content__container container">
             <h2 class="blog-content__title">{{ props.data.title }}</h2>
             <div class="blog-content__content" v-html="props.data.descr"></div>

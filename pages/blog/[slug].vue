@@ -1,5 +1,6 @@
 <template>
-    <Flexible v-if="status == 'success' && data" :data="data" />
+    <HeroBlog :data="data?.postInfo" />
+    <Flexible v-if="status == 'success' && data" :data="data.transform" />
 </template>
 
 <script setup lang="ts">
@@ -8,6 +9,7 @@ import type { IBlockFlexible } from '~/types/blockFlexible';
 const { $api } = useNuxtApp();
 const route = useRoute();
 const slug = route.params.slug as string;
+const storeCommon = useCommonStore();
 
 const { data, status } = useAsyncData('getPost', async () => await $api.post.getPost(slug), {
     transform: (e: any) => {
@@ -25,7 +27,10 @@ const { data, status } = useAsyncData('getPost', async () => await $api.post.get
                 fields: fields,
             } as IBlockFlexible;
         });
-        return transform;
+        return {
+            postInfo: e.postInfo,
+            transform: transform
+        } as { postInfo: any, transform: IBlockFlexible[] }
     },
 });
 </script>

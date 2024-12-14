@@ -5,31 +5,27 @@
         font-family: var(--second-family);
         line-height: 119%;
         letter-spacing: -0.04em;
-        @apply tablet:text-[52px] font-bold mb-[22px] text-center text-[#090914] mobile:text-[35px];
+        @apply mb-[22px] text-center text-[#090914];
     }
     &__date {
         font-family: var(--second-family);
-        font-weight: 700;
-        font-size: 20px;
         line-height: 130%;
-        color: #939393;
+        @apply text-[#939393] text-[20px] font-bold;
     }
     &__name {
         font-family: var(--font-family);
-        font-weight: 600;
-        font-size: 21px;
-        color: #242527;
+        @apply text-[#242527] text-[21px] font-semibold;
     }
     swiper-container {
         &::part(container) {
-            @apply mobile:overflow-visible desktop:overflow-hidden;
+            @apply mobile:overflow-visible desktop:overflow-hidden tablet:h-[380px] mobile:h-[400px];
         }
         &::part(wrapper) {
             @apply items-center;
         }
     }
     &__swiper {
-        margin-bottom: 68px;
+        @apply mb-[68px];
     }
     &__title-elem {
         font-family: var(--font-family);
@@ -37,40 +33,22 @@
         letter-spacing: -0.01em;
         @apply desktop:text-[21px] font-semibold mb-[26px] text-black mobile:text-[18px];
     }
-    &__img {
-        display: flex;
-        height: 192px;
-        background-color: #52525b;
-        border-radius: 16px;
-        margin-bottom: 26px;
-    }
-    &__elem {
-        background: #dbeafe;
-        border-radius: 16px;
-        padding: 24px;
+    &__img:deep() {
+        @apply flex tablet:min-h-[192px] mobile:min-h-[200px] bg-[#52525b] rounded-[16px] mb-[26px] w-full;
+        img {
+            @apply w-full h-full object-cover ;
+        }
     }
     &__subtitle {
-        display: flex;
-        justify-content: center;
+        @apply flex justify-center font-normal desktop:text-[18px] mobile:text-[14px] text-center text-[#52525b] desktop:mb-[68px] mb-[43px];
         font-family: var(--font-family);
-        font-weight: 400;
-        font-size: 18px;
         line-height: 167%;
-        text-align: center;
-        color: #52525b;
-        margin-bottom: 68px;
     }
     &__btn {
+        @apply flex mx-auto justify-center font-semibold desktop:text-[18px] mobile:text-[14px] text-center text-white desktop:p-[20px_40px] rounded-[71px] w-max;
         font-family: var(--font-family);
-        font-weight: 600;
-        font-size: 18px;
-        text-align: center;
-        color: #fff;
-        border-radius: 71px;
-        padding: 20px 40px;
-        margin: 0 auto;
-        display: flex;
-        width: max-content;
-        justify-content: center;
+    }
+    &__elem-link {
+        @apply h-full p-[24px] rounded-[16px] bg-[#dbeafe] flex flex-col;
     }
 }

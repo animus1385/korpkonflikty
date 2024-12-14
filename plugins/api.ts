@@ -29,18 +29,29 @@ export default defineNuxtPlugin(() => {
             }
             return result;
         },
-        getPage: async (id: string) => {
+        getPage: async (name: string) => {
             let result = [];
 
             try {
                 const res = await axios.post(BASE_API, {
                     query: pageQuery,
-                    variables: { ID: id },
+                    variables: { name: name },
                     headers: {
                         'Content-Type': 'application/json',
                     },
                 });
-                result = res?.data.data.page.pageBuilder.flexible;
+
+                if (res?.data.data.pages.edges.length == 0) {
+                    showError({
+                        statusCode: 404,
+                        statusMessage: 'Страница не найдена',
+                    });
+                    throw createError({
+                        statusCode: 404,
+                        statusMessage: 'Страница не найдена',
+                    });
+                }
+                result = res?.data.data.pages.edges[0].node.pageBuilder.flexible;
             } catch (e) {
                 console.error(`текст ошибки ${e}`);
             }
@@ -92,7 +103,25 @@ export default defineNuxtPlugin(() => {
                             'Content-Type': 'application/json',
                         },
                     });
+                    if (res?.data.data.post == null) {
+                        showError({
+                            statusCode: 404,
+                            statusMessage: 'Страница не найдена',
+                        });
+                        throw createError({
+                            statusCode: 404,
+                            statusMessage: 'Страница не найдена',
+                        });
+                    }
                     result = {
+                        postInfo: {
+                            uri: res.data.data.post.uri,
+                            title: res.data.data.post.title,
+                            date: res.data.data.post.date,
+                            img: res.data.data.post.featuredImage.node.sourceUrl,
+                            postViews: res.data.data.post.postViews,
+                            contentPost: res.data.data.post.contentPost.contentPost,
+                        },
                         pageId: res.data.data.post.postId,
                         flexible: res?.data.data.post.pageBuilder.flexible,
                         comments: res?.data.data.post.comments.edges,
@@ -132,6 +161,17 @@ export default defineNuxtPlugin(() => {
                             'Content-Type': 'application/json',
                         },
                     });
+                    if (res?.data.data.postService == null) {
+                        showError({
+                            statusCode: 404,
+                            statusMessage: 'Страница не найдена',
+                        });
+                        throw createError({
+                            statusCode: 404,
+                            statusMessage: 'Страница не найдена',
+                        });
+                    }
+
                     result = res?.data.data.postService.pageBuilder.flexible;
                 } catch (e) {
                     console.error(`текст ошибки ${e}`);

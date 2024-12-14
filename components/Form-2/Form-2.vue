@@ -1,5 +1,5 @@
 <template>
-    <div class="form-2">
+    <div class="form-2" id="form-2">
         <div class="form-2__container container">
             <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
                 <div class="form-2__content">

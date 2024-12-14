@@ -1,0 +1,18 @@
+.map {
+    @apply h-[420px] desktop:my-[150px] tablet:my-[70px] mobile:my-[50px];
+    &__container {
+        box-shadow: 0 -4px 97px 0 rgba(36, 37, 39, 0.05);
+        @apply w-full h-full rounded-[30px] p-[0] overflow-hidden bg-[#828282];
+    }
+    &__content:deep() {
+        @apply w-full h-full;
+        .ymaps-2-1-79-copyright,
+        .ymaps-2-1-79-map-copyrights-promo {
+            display: none !important;
+        }
+    }
+}
+
+#map {
+    @apply w-full h-full;
+}
