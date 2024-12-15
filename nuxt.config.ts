@@ -69,7 +69,7 @@ export default defineNuxtConfig({
             cleanPrefetches: true,
             inlineStyles: true,
         },
-        targetFormats: ['webp', 'avif', 'jpg|jpeg|png|gif'],
+        targetFormats: ['webp', 'avif', 'jpg|jpeg|png|gif', 'svg'],
         performanceMetrics: {
             device: {
                 hardwareConcurrency: { min: 2, max: 48 },
