@@ -4,7 +4,7 @@
             <h1 class="hero-blog__title "> {{ props.data?.title }}</h1>
             <div class="hero-blog__img-block">
 
-                <NuxtPicture format="webp" preload class="hero-blog__img" :src="props.data?.img"
+                <NuxtPicture loading="lazy" format="webp" preload class="hero-blog__img" :src="props.data?.img"
                     :alt="props.data?.title">
                 </NuxtPicture>
                 <div class="hero-blog__img-info">

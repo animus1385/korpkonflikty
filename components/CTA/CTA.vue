@@ -2,8 +2,8 @@
     <section class="cta" id="cta" v-if="props?.data.name == 'CtaCommon' && props?.data.fields">
         <div class="cta__container container">
             <div class="cta__content">
-                <NuxtPicture format="webp" preload class="cta__img" :src="props?.data?.fields.bg.node.sourceUrl"
-                    :alt="props?.data?.fields?.title"></NuxtPicture>
+                <NuxtPicture loading="lazy" format="webp" preload class="cta__img"
+                    :src="props?.data?.fields.bg.node.sourceUrl" :alt="props?.data?.fields?.title"></NuxtPicture>
                 <div class="cta__left">
                     <h2 class="cta__title">{{ props?.data?.fields?.title }}</h2>
                     <p class="cta__descr">

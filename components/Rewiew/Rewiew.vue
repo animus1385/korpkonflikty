@@ -25,7 +25,7 @@
             }">
                 <swiper-slide v-for="elem in props.data.fields.listImg" :key="elem.img.node.id">
                     <div class="rewiew__elem">
-                        <NuxtPicture preload :src="elem.img.node.sourceUrl" @click="setDataPopup({
+                        <NuxtPicture loading="lazy" preload :src="elem.img.node.sourceUrl" @click="setDataPopup({
                             type: activeBtn,
                             value: elem.img.node.sourceUrl
                         })"></NuxtPicture>
@@ -48,7 +48,7 @@
             }">
                 <swiper-slide v-for="(elem, index) in props.data.fields.listVideo" :key="`video-review-${index}`">
                     <div class="rewiew__elem">
-                        <NuxtPicture preload :src="elem.cover.node.sourceUrl" @click="setDataPopup({
+                        <NuxtPicture loading="lazy" preload :src="elem.cover.node.sourceUrl" @click="setDataPopup({
                             type: activeBtn,
                             value: elem.videoElem
                         })"></NuxtPicture>
@@ -74,12 +74,12 @@
                 }">
                     <template #header>
                         <div class="flex items-center justify-between">
-                            <UButton color="gray" variant="ghost" icon="i-heroicons-x-mark-20-solid" class="ml-auto my-1"
-                                @click="activePopup = false" />
+                            <UButton color="gray" variant="ghost" icon="i-heroicons-x-mark-20-solid"
+                                class="ml-auto my-1" @click="activePopup = false" />
                         </div>
                     </template>
                     <div class="rewiew__elem-modal" v-if="dataPopup.type == 'img'">
-                        <NuxtPicture preload :src="dataPopup.value"></NuxtPicture>
+                        <NuxtPicture loading="lazy" preload :src="dataPopup.value"></NuxtPicture>
                     </div>
                     <div class="rewiew__elem-modal" v-if="dataPopup.type == 'video'">
                         <div v-html="dataPopup.value"> </div>

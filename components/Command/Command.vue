@@ -12,7 +12,8 @@
           <ul class="command__list" v-if="isDesktop">
             <li class="command__elem" v-for="(elem, index) in props?.data?.fields?.list.slice(0, 2)"
               :key="`${elem.title}-${index}`">
-              <NuxtPicture format="webp" preload class="command__img" :src="elem.img.node.sourceUrl" :alt="elem.title">
+              <NuxtPicture loading="lazy" format="webp" preload class="command__img" :src="elem.img.node.sourceUrl"
+                :alt="elem.title">
               </NuxtPicture>
               <h3 class="command__title-elem">{{ elem.title }}</h3>
               <p class="command__descr-elem">{{ elem.position }}</p>
@@ -32,7 +33,8 @@
         }" v-if="isDesktop">
           <swiper-slide v-for="(elem, index) in props?.data?.fields?.list.slice(2)" :key="`${elem.title}-${index}`">
             <div class="command__elem">
-              <NuxtPicture format="webp" preload class="command__img" :src="elem.img.node.sourceUrl" :alt="elem.title">
+              <NuxtPicture loading="lazy" format="webp" preload class="command__img" :src="elem.img.node.sourceUrl"
+                :alt="elem.title">
               </NuxtPicture>
               <h3 class="command__title-elem">{{ elem.title }}</h3>
               <p class="command__descr-elem">{{ elem.position }}</p>
@@ -41,7 +43,8 @@
         </swiper-container>
         <ul v-else class="command__list">
           <li class="command__elem" v-for="(elem, index) in props?.data?.fields?.list" :key="`${elem.title}-${index}`">
-            <NuxtPicture format="webp" preload class="command__img" :src="elem.img.node.sourceUrl" :alt="elem.title">
+            <NuxtPicture loading="lazy" format="webp" preload class="command__img" :src="elem.img.node.sourceUrl"
+              :alt="elem.title">
             </NuxtPicture>
             <h3 class="command__title-elem">{{ elem.title }}</h3>
             <p class="command__descr-elem">{{ elem.position }}</p>

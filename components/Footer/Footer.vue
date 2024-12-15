@@ -3,7 +3,8 @@
         <div class="footer__container container">
             <div class="footer__top">
                 <NuxtLink class="footer__logo" to="/" v-if="menuStore.footer.logo" aria-label="footer logo">
-                    <NuxtPicture format="webp" preload :src="menuStore.footer.logo" alt="footer-logo"></NuxtPicture>
+                    <NuxtPicture loading="lazy" format="webp" preload :src="menuStore.footer.logo" alt="footer-logo">
+                    </NuxtPicture>
                 </NuxtLink>
                 <ul class="footer__list" v-if="menuStore.footer.items">
                     <li class="footer__elem" v-for="elem in menuStore.footer.items" :key="elem.node.id">
@@ -35,14 +36,15 @@
                 <NuxtLink class="footer__policy" :to="menuStore.footer.policy.url" v-if="menuStore.footer.policy.title"
                     :aria-label="menuStore.footer.policy.title">
                     {{
-                        menuStore.footer.policy.title }}
+                    menuStore.footer.policy.title }}
                 </NuxtLink>
 
                 <ul class="footer__social" v-if="menuStore.footer.social">
                     <li class="footer__social-elem" v-for="elem in menuStore.footer.social">
                         <NuxtLink class="footer__social-link" :to="elem.link.url" v-if="elem.link.url"
                             :aria-label="elem.link.title">
-                            <NuxtPicture preload format="webp" :src="elem.img.node.sourceUrl" :alt="elem.link.title">
+                            <NuxtPicture loading="lazy" preload format="webp" :src="elem.img.node.sourceUrl"
+                                :alt="elem.link.title">
                             </NuxtPicture>
                         </NuxtLink>
                     </li>

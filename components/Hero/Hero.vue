@@ -6,10 +6,10 @@
                 <p v-if="props?.data?.fields?.subtitle" class="hero__descr">{{ props?.data?.fields?.subtitle }}</p>
                 <NuxtLink v-if="props?.data?.fields?.btn.title && props?.data?.fields?.btn.url" class="hero__btn btn"
                     :href="props?.data?.fields?.btn.url">{{
-                        props?.data?.fields?.btn.title
+                    props?.data?.fields?.btn.title
                     }}</NuxtLink>
             </div>
-            <NuxtPicture format="webp" preload v-if="props?.data?.fields?.img" class="hero__img"
+            <NuxtPicture loading="lazy" format="webp" preload v-if="props?.data?.fields?.img" class="hero__img"
                 :src="props?.data?.fields?.img.node.sourceUrl" :alt="props?.data?.fields?.title" />
         </div>
         <div class="hero__info">

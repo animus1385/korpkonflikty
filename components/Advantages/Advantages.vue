@@ -4,7 +4,7 @@
             <h2 class="advantages__title title-level-2">{{ props?.data?.fields?.title }}</h2>
             <ul class="advantages__list">
                 <li class="advantages__elem" v-for="elem in props?.data?.fields?.advantagesList">
-                    <NuxtPicture format="webp" class="advantages__img" :src="elem.icon.node.sourceUrl"
+                    <NuxtPicture loading="lazy" format="webp" class="advantages__img" :src="elem.icon.node.sourceUrl"
                         :alt="props?.data?.fields?.title">
                     </NuxtPicture>
                     <div class="advantages__info-elem">

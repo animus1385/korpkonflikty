@@ -37,7 +37,7 @@ export default defineNuxtConfig({
         '@pinia/nuxt',
         'vue-yandex-maps/nuxt',
         'dayjs-nuxt',
-        'nuxt-beastcss',
+        'nuxt-booster',
     ],
     tailwindcss: {
         viewer: false,
@@ -45,10 +45,40 @@ export default defineNuxtConfig({
     yandexMaps: {
         apikey: '3bfc6cb2-7479-477e-9638-a52995b5b67d',
     },
-    beastcss: {
-        config: {
-            // Default: false
-            fontFace: true,
+    booster: {
+        image: {
+            screens: {
+                default: 320,
+                xxs: 480,
+                xs: 576,
+                sm: 768,
+                md: 996,
+                lg: 1200,
+                xl: 1367,
+                xxl: 1600,
+                '4k': 1921,
+            },
+        },
+        detection: {
+            performance: true,
+            browserSupport: true,
+            battery: true,
+        },
+        optimizeSSR: {
+            cleanPreloads: true,
+            cleanPrefetches: true,
+            inlineStyles: true,
+        },
+        targetFormats: ['webp', 'avif', 'jpg|jpeg|png|gif'],
+        performanceMetrics: {
+            device: {
+                hardwareConcurrency: { min: 2, max: 48 },
+                deviceMemory: { min: 2 },
+            },
+            timing: {
+                fcp: 800,
+                dcl: 1200,
+            },
         },
     },
     runtimeConfig: {

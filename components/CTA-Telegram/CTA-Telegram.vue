@@ -10,7 +10,8 @@
                 <NuxtLink class="cta-telegram__btn btn" :to="props.data.fields.btn.url">{{ props.data.fields.btn.title
                     }}</NuxtLink>
             </div>
-            <NuxtPicture class="cta-telegram__img" preload :src="props.data.fields.img.node.sourceUrl" alt="telegram">
+            <NuxtPicture loading="lazy" class="cta-telegram__img" preload :src="props.data.fields.img.node.sourceUrl"
+                alt="telegram">
             </NuxtPicture>
         </div>
     </section>
