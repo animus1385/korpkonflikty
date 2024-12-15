@@ -1,4 +1,4 @@
-import { screensNuxtImage } from "./config/screens";
+import { screensNuxtImage } from './config/screens';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -28,12 +28,28 @@ export default defineNuxtConfig({
         strict: true,
         typeCheck: false,
     },
-    modules: ['@nuxt/devtools', '@nuxt/image', '@nuxt/ui', 'nuxt-swiper', '@nuxt/icon', '@pinia/nuxt', 'vue-yandex-maps/nuxt', 'dayjs-nuxt'],
+    modules: [
+        '@nuxt/devtools',
+        '@nuxt/image',
+        '@nuxt/ui',
+        'nuxt-swiper',
+        '@nuxt/icon',
+        '@pinia/nuxt',
+        'vue-yandex-maps/nuxt',
+        'dayjs-nuxt',
+        'nuxt-beastcss',
+    ],
     tailwindcss: {
         viewer: false,
     },
     yandexMaps: {
         apikey: '3bfc6cb2-7479-477e-9638-a52995b5b67d',
+    },
+    beastcss: {
+        config: {
+            // Default: false
+            fontFace: true,
+        },
     },
     runtimeConfig: {
         public: {
