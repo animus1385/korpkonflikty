@@ -28,7 +28,7 @@ export default defineNuxtConfig({
         strict: true,
         typeCheck: false,
     },
-    modules: ['@nuxt/devtools', '@nuxt/image', '@nuxt/ui', 'nuxt-swiper', '@nuxt/icon', '@pinia/nuxt', 'vue-yandex-maps/nuxt'],
+    modules: ['@nuxt/devtools', '@nuxt/image', '@nuxt/ui', 'nuxt-swiper', '@nuxt/icon', '@pinia/nuxt', 'vue-yandex-maps/nuxt', 'dayjs-nuxt'],
     tailwindcss: {
         viewer: false,
     },

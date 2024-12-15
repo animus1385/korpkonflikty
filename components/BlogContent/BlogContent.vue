@@ -1,12 +1,12 @@
 <template>
-    <div class="blog-content" v-if="props?.data.name == 'BlogContentCustom' && props?.data.fields">
+    <section class="blog-content" v-if="props?.data.name == 'BlogContentCustom' && props?.data.fields">
         <div v-for="dataValue in props?.data.fields.list">
             <div class="blog-content__container container">
-                <h2 class="blog-content__title">{{ dataValue.title }}</h2>
+                <h2 class="blog-content__title title-level-2">{{ dataValue.title }}</h2>
                 <div class="blog-content__content" v-html="dataValue.descr"></div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">

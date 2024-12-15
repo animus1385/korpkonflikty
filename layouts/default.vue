@@ -10,11 +10,13 @@
         </div>
 
         <Footer></Footer>
-
+        <loader v-if="storeCommon.loader"></loader>
     </div>
-    <loader></loader>
+
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const storeCommon = useCommonStore();
+</script>
 
 <style scoped></style>

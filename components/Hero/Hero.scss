@@ -2,10 +2,10 @@
     background: linear-gradient(224deg, #474747 0%, #222 41.8%);
     @apply relative;
     &__container {
-        @apply overflow-hidden h-full desktop:h-[902px] grid items-center relative z-[1]  desktop:grid-cols-2 desktop:grid-rows-1 mobile:grid-rows-[max-content_1fr];
+        @apply overflow-hidden h-full desktop:h-[902px]  grid items-center relative z-[1]  desktop:grid-cols-2 desktop:grid-rows-1 mobile:grid-rows-[max-content_1fr];
     }
     &__left {
-        @apply desktop:max-w-[753px] h-full flex  flex-col mobile:justify-start mobile:self-start mt-[141px] tablet:mt-[40px] mobile:mt-[20px];
+        @apply  h-full flex  flex-col mobile:justify-start mobile:self-start mt-[141px] tablet:mt-[40px] mobile:mt-[20px];
     }
     &__btn {
         @apply tabletMedium:max-w-max mobile:p-[10px];

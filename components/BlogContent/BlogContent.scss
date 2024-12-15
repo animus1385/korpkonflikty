@@ -1,66 +1,44 @@
 .blog-content {
-    margin-bottom: 60px;
+    @apply desktop:mb-[60px] ;
     &__container {
-        @apply grid gap-[60px];
+        @apply grid desktop:gap-[60px] mobile:gap-[20px];
     }
     &__title {
         font-family: var(--second-family);
-        font-weight: 700;
-        font-size: 46px;
-        color: #242527;
+        @apply text-[#242527]  font-sans;
     }
     &__content:deep() {
         font-family: var(--second-family);
-        font-weight: 500;
-        font-size: 20px;
         line-height: 160%;
         letter-spacing: -0.02em;
-        color: #0f172a;
+        @apply text-[#0f172a] desktop:text-[20px] mobile:text-[14px] font-medium;
         p {
-            margin-bottom: 30px;
+            @apply mb-[30px];
         }
         ul,
         ol {
             list-style: revert;
-            padding-left: 20px;
-            display: grid;
-            gap: 20px;
             font-family: var(--font-family);
-            font-weight: 600;
-            font-size: 18px;
             line-height: 170%;
-            color: #939393;
+            @apply text-[#939393] desktop:text-[18px] mobile:text-[14px] font-semibold desktop:gap-[20px] mobile:gap-[10px] grid pl-[20px];
         }
         ul {
             li::marker {
-                color: #2387c0;
+                @apply text-[#2387c0];
             }
         }
 
         blockquote {
-            box-shadow: 3px 6px 15px 0 rgba(36, 37, 39, 0.05);
-            background: #edf5ff;
             font-family: var(--second-family);
-            font-weight: 600;
-            font-size: 30px;
             line-height: 140%;
-            color: #0f172a;
-            border-radius: 20px;
-            padding: 60px;
-            display: grid;
-            grid-template-columns: 8px 1fr;
-            justify-content: center;
-            gap: 60px;
-            margin-bottom: 60px;
+            @apply desktop:mb-[60px] mobile:mb-[30px] desktop:gap-[60px] mobile:gap-[20px] bg-[#edf5ff] shadow-[3px_6px_15px_0_#2425270d] justify-center grid-cols-[8px_1fr] grid desktop:p-[60px] mobile:p-[20px] font-semibold rounded-[20px] text-[#0f172a] desktop:text-[30px] mobile:text-[14px];
             &::before {
                 content: '';
                 background: linear-gradient(127deg, #60bbee 0%, #0a72ad 100%);
-                width: 8px;
-                border-radius: 30px;
-                height: 100%;
+                @apply w-[8px] rounded-[30px] h-full;
             }
             p {
-                margin: 0;
+                @apply mb-0;
             }
         }
     }

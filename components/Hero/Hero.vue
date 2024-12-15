@@ -1,5 +1,5 @@
 <template>
-    <div class="hero" id="hero" v-if="props.data.name == 'HeroCustom' && props.data.fields">
+    <section class="hero" id="hero" v-if="props.data.name == 'HeroCustom' && props.data.fields">
         <div class="hero__container container">
             <div class="hero__left">
                 <h1 v-if="props?.data?.fields?.title" class="hero__title">{{ props?.data?.fields?.title }}</h1>
@@ -15,7 +15,7 @@
         <div class="hero__info">
             <span class="hero__info-text" v-if="props?.data?.fields?.message">{{ props?.data?.fields?.message }} </span>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">

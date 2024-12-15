@@ -1,8 +1,9 @@
 <template>
-    <div class="form-commnent" id="form-commnent" v-if="props?.data?.name == 'FormCommentCommon' && props?.data?.fields">
+    <section class="form-commnent" id="form-commnent"
+        v-if="props?.data?.name == 'FormCommentCommon' && props?.data?.fields">
         <div class="form-commnent__container container">
             <div class="form-commnent__block-enter">
-                <h2 class="form-commnent__title">Оставьте комментарий</h2>
+                <h2 class="form-commnent__title title-level-2">Оставьте комментарий</h2>
                 <UForm class="form-commnent__form" :schema="schema" :state="state" @submit="onSubmit">
                     <div class="form-commnent__content">
                         <UFormGroup class="form-commnent form-commnent__comment" label="Ваш комментарий" name="comment">
@@ -45,7 +46,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">

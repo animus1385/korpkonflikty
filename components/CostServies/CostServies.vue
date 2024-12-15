@@ -1,5 +1,6 @@
 <template>
-    <div class="cost-servies" id="cost-servies" v-if="props?.data.name == 'CostServiesCommon' && props?.data.fields">
+    <section class="cost-servies" id="cost-servies"
+        v-if="props?.data.name == 'CostServiesCommon' && props?.data.fields">
         <div class="cost-servies__container container">
             <div class="cost-servies__img-block">
                 <NuxtPicture format="webp" preload class="cost-servies__img-left"
@@ -15,7 +16,7 @@
                 <UButton class="cost-servies__btn btn"> {{ props?.data?.fields?.btn.title }}</UButton>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">

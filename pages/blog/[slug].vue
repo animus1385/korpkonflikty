@@ -25,13 +25,29 @@ const { data, status } = useAsyncData('getPost', async () => await $api.post.get
                 pageId: e.pageId,
                 name: name,
                 fields: fields,
+
             } as IBlockFlexible;
         });
         return {
             postInfo: e.postInfo,
-            transform: transform
-        } as { postInfo: any, transform: IBlockFlexible[] }
+            transform: transform,
+            seo: e.seo
+        }
     },
 });
+watch(() => data.value, () => {
+    useHead({
+        title: data?.value?.seo?.title,
+        meta: [
+            { name: 'description', content: data?.value?.seo?.metaDesc },
+            { name: 'robots', content: `${data?.value?.seo?.metaRobotsNofollow} ${data?.value?.seo?.metaRobotsNoindex}` },
+            { name: 'keywords', content: data?.value?.seo?.metaKeywords }
+        ],
+        link: [{
+            rel: 'canonical',
+            href: data?.value?.seo?.canonical
+        }]
+    })
+})
 </script>
 <style scoped></style>

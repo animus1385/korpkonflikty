@@ -23,6 +23,8 @@
             <RelatedBlog :data="section" />
             <Map :data="section" />
             <Contacts :data="section" />
+            <BlogList :data="section" />
+            <TextOpen :data="section" />
         </div>
     </div>
 </template>

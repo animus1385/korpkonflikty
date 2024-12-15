@@ -5,6 +5,18 @@ export const pageQuery = gql`
         pages(where: { status: PUBLISH, name: $name }) {
             edges {
                 node {
+                    seo {
+                        title
+                        metaDesc
+                        canonical
+                        breadcrumbs {
+                            url
+                            text
+                        }
+                        metaRobotsNoindex
+                        metaRobotsNofollow
+                        metaKeywords
+                    }
                     pageBuilder {
                         fieldGroupName
                         flexible {
@@ -265,11 +277,27 @@ export const pageQuery = gql`
                                     title
                                 }
                             }
-                            ... on PageBuilderFlexibleForm1CommonLayout {
+                            ... on PageBuilderFlexibleForm1CustomLayout {
                                 fieldGroupName
+                                form1Custom {
+                                    id
+                                    title
+                                    descr
+                                }
                             }
-                            ... on PageBuilderFlexibleForm2CommonLayout {
+                            ... on PageBuilderFlexibleForm2CustomLayout {
                                 fieldGroupName
+                                form2Custom {
+                                    id
+                                }
+                            }
+                            ... on PageBuilderFlexibleFormModalCustomLayout {
+                                fieldGroupName
+                                formModalCustom {
+                                    id
+                                    title
+                                    descr
+                                }
                             }
                             ... on PageBuilderFlexibleFormCommentCommonLayout {
                                 fieldGroupName
@@ -286,6 +314,8 @@ export const pageQuery = gql`
                             ... on PageBuilderFlexibleSuitableServicesCustomLayout {
                                 fieldGroupName
                                 suitableServicesCustom {
+                                    title
+                                    descr
                                     suitableServicesList {
                                         nodes {
                                             ... on PostService {
@@ -345,6 +375,8 @@ export const pageQuery = gql`
                             ... on PageBuilderFlexibleRelatedBlogCustomLayout {
                                 fieldGroupName
                                 relatedBlogCustom {
+                                    title
+                                    descr
                                     relatedBlogList {
                                         edges {
                                             node {
@@ -359,7 +391,7 @@ export const pageQuery = gql`
                                                     }
                                                     contentPost {
                                                         contentPost {
-                                                            authorPost                                              
+                                                            authorPost
                                                         }
                                                     }
                                                 }
@@ -368,6 +400,15 @@ export const pageQuery = gql`
                                         }
                                     }
                                 }
+                            }
+                            ... on PageBuilderFlexibleBlogListCommonLayout {
+                                fieldGroupName
+                            }
+                            ... on PageBuilderFlexibleTextOpenCommonLayout {
+                                fieldGroupName
+                            }
+                            ... on PageBuilderFlexibleTextOpenCustomLayout {
+                                fieldGroupName
                             }
                         }
                     }

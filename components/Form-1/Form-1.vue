@@ -1,13 +1,11 @@
 <template>
-  <div class="form-1" id="form-1" v-if="props?.data.name == 'Form1Common' && props?.data.fields">
+  <section class="form-1" id="form-1" v-if="props?.data.name == 'Form1Custom' && props?.data.fields">
+
     <div class="form-1__container container">
       <div class="form-1__content">
         <div class="form-1__left">
-          <h2 class="form-1__title">Узнайте стоимость и получите консультацию юриста</h2>
-          <p class="form-1__descr">
-            Оставьте заявку, чтобы получить бесплатную консультацию юриста по корпоративному праву в сфере
-            урегулирования конфликтов и понять примерную стоимость и сроки реализации проекта!
-          </p>
+          <h2 class="form-1__title">{{ props?.data.fields.title }}</h2>
+          <p class="form-1__descr">{{ props?.data.fields.descr }}</p>
         </div>
         <UForm ref="form" :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
           <div class="form-1__fileds-block">
@@ -29,7 +27,7 @@
         </UForm>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -52,20 +50,20 @@ const state = reactive({
 
 async function onSubmit(e: any) {
   const formData = new FormData();
-  formData.append("_wpcf7_unit_tag", "250");
+  formData.append("_wpcf7_unit_tag", props.data.fields?.id);
   formData.append('phone', state.phone)
   formData.append('emails', state.email)
   loadingSend.value = true;
 
   await fetch(
-    "https://admin.korpkonflikty.ru/wp-json/contact-form-7/v1/contact-forms/250/feedback",
+    `https://admin.korpkonflikty.ru/wp-json/contact-form-7/v1/contact-forms/${props.data.fields?.id}/feedback`,
     {
       method: "POST",
       body: formData,
     },
   ).then(e => e.json()).then((data) => {
     toast.add({
-      icon: "i-heroicons-check-circle", timeout: 50000, title: 'Успешно', description: data.message, 'closeButton': {
+      icon: "i-heroicons-check-circle", timeout: 3000, title: 'Успешно', description: data.message, 'closeButton': {
         color: 'white'
       },
       ui: {

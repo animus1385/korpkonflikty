@@ -1,5 +1,5 @@
 <template>
-    <div class="form-2" id="form-2" v-if="props?.data.name == 'Form2Common' && props?.data.fields">
+    <section class="form-2" id="form-2" v-if="props?.data.name == 'Form2Custom' && props?.data.fields">
         <div class="form-2__container container">
             <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
                 <div class="form-2__content">
@@ -28,15 +28,15 @@
                 </div>
             </UForm>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">
-import { object, string, type InferType, boolean } from 'yup';
-import type { FormSubmitEvent } from '#ui/types';
+import { object, string, boolean } from 'yup';
 const props = defineProps<{ data: any }>();
 const rePhoneNumber = /^\+7\s?\(?\d{3}\)?\s?\d{3}\s[-\s]?\d{2}[-\s]?\d{2}$/;
-
+const toast = useToast()
+const loadingSend = ref(false);
 const schema = object({
     name: string().min(2, 'Имя должно состоять как минимум из 2 символов').required('Обязательное поле'),
     phone: string().matches(rePhoneNumber, 'Номер телефона не валидный'),
@@ -44,7 +44,7 @@ const schema = object({
     check: boolean().oneOf([true], 'Вы должны согласиться с Политикой обработки данных').required('Обязательное поле'),
 });
 
-type Schema = InferType<typeof schema>;
+
 
 const state = reactive({
     name: '',
@@ -53,9 +53,59 @@ const state = reactive({
     check: false,
 });
 
-async function onSubmit(event: FormSubmitEvent<Schema>) {
-    // Действия при отправке формы
-    console.log(event.data);
+async function onSubmit(e: any) {
+    const formData = new FormData();
+    formData.append("_wpcf7_unit_tag", props.data.fields?.id);
+    formData.append('name', state.name);
+    formData.append('phone', state.phone)
+    formData.append('emails', state.email)
+    loadingSend.value = true;
+
+    await fetch(
+        `https://admin.korpkonflikty.ru/wp-json/contact-form-7/v1/contact-forms/${props.data.fields?.id}/feedback`,
+        {
+            method: "POST",
+            body: formData,
+        },
+    ).then(e => e.json()).then((data) => {
+        toast.add({
+            icon: "i-heroicons-check-circle", timeout: 3000, title: 'Успешно', description: data.message, 'closeButton': {
+                color: 'white'
+            },
+            ui: {
+                title: 'text-white',
+                description: 'text-white',
+                background: 'bg-green-500',
+                progress: {
+                    background: 'bg-white'
+                },
+                icon: {
+                    color: 'text-white'
+                }
+            }
+
+        })
+        loadingSend.value = false;
+    }).catch(e => {
+        toast.add({
+            title: `Ошибка  ${e.statusCode}`, description: e.message,
+            icon: "carbon:close-filled",
+            ui: {
+                title: 'text-white',
+                description: 'text-white',
+                background: 'bg-red-500',
+                progress: {
+                    background: 'bg-white'
+                },
+                icon: {
+                    color: 'text-white'
+                }
+            }
+        })
+        loadingSend.value = false;
+    });
+
+
 }
 </script>
 

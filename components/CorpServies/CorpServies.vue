@@ -1,5 +1,5 @@
 <template>
-    <div class="corp-servies" id="corp-servies" v-if="props.data.name == 'CorpServiesCommon' && props.data.fields">
+    <section class="corp-servies" id="corp-servies" v-if="props.data.name == 'CorpServiesCommon' && props.data.fields">
         <div class="corp-servies__container container">
             <h2 class="corp-servies__title title-level-2">Услуги по корпоративным спорам</h2>
             <swiper-container :space-between="50" :breakpoints="{
@@ -26,7 +26,7 @@
 
             </swiper-container>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">

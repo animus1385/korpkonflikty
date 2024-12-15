@@ -1,5 +1,5 @@
 <template>
-    <div class="included-servies" id="included-servies"
+    <section class="included-servies" id="included-servies"
         v-if="props?.data.name == 'IncludedServiesCommon' && props?.data.fields">
         <div class="included-servies__container container">
             <h2 class="included-servies__title title-level-2">{{ props?.data?.fields?.title }}</h2>
@@ -16,7 +16,7 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">

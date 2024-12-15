@@ -1,22 +1,24 @@
 .header {
-    @apply sticky top-0 z-[9999] left-0 right-0;
+    @apply sticky top-0 z-[999] left-0 right-0;
     background: linear-gradient(333deg, #474747 0%, #222 53.8%);
 
     &__contaniner {
         @apply grid desktopWide:grid-cols-[max-content_1fr_repeat(3,max-content)] laptopMedium:grid-cols-[max-content_1fr_repeat(2,max-content)] mobile:grid-cols-[repeat(2,max-content)] justify-between  desktopMedium:gap-[40px] py-[32px] items-center laptopMedium:gap-[20px];
-
     }
     &__list {
         @apply grid grid-cols-6 gap-[20px];
     }
-    &__logo {
+    &__logo:deep() {
         @apply desktopMedium:w-[183px] desktopMedium:h-[87px] mobile:w-[150px] mobile:h-[60px];
+        img {
+            @apply w-full h-full;
+        }
     }
     &__icon {
         @apply w-full h-full;
     }
     &__nav {
-        @apply laptopMedium:flex mobile:hidden ;
+        @apply laptopMedium:flex mobile:hidden;
     }
     &__connect {
         @apply laptopMedium:grid desktopMedium:grid-cols-2 desktopMedium:gap-[30px] mobile:grid-cols-1 mobile:hidden mobile:gap-[10px];
@@ -26,12 +28,15 @@
         @apply grid desktopWide:grid-cols-[20px_1fr] gap-[10px]  desktopMedium:text-[18px] text-center font-semibold text-white desktopWide:text-[16px];
         font-family: var(--second-family);
     }
-    &__social {
+    &__social:deep() {
         @apply grid grid-cols-[repeat(5,20px)] gap-[10px] mobile:hidden desktopWide:grid;
-      
+           img {
+            @apply w-full h-full;
+        }
     }
     &__elem {
         @apply flex justify-center;
+     
     }
     &__link {
         @apply desktopMedium:text-[18px] font-bold text-center text-[#c4c4c4] laptopMedium:text-[16px];
@@ -42,6 +47,6 @@
         font-family: var(--font-family);
     }
     &__burger {
-        @apply text-white w-full h-full  laptopMedium:hidden mobile:flex ;
+        @apply text-white w-full h-full  laptopMedium:hidden mobile:flex;
     }
 }

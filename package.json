@@ -17,6 +17,7 @@
     "@nuxtjs/tailwindcss": "^6.12.2",
     "@pinia/nuxt": "^0.9.0",
     "axios": "^1.7.9",
+    "dayjs-nuxt": "^2.1.11",
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.2",
     "graphql-tag": "^2.12.6",
@@ -26,6 +27,7 @@
     "pinia": "^2.3.0",
     "vue": "^3.5.13",
     "vue-yandex-maps": "^2.1.4",
+    "vue3-perfect-scrollbar": "^2.0.0",
     "yandex-maps": "^0.0.1",
     "yup": "^1.5.0"
   },

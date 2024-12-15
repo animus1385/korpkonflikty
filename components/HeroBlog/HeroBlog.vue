@@ -1,5 +1,5 @@
 <template>
-    <div class="hero-blog" id="hero-blog" v-if="props.data">
+    <section class="hero-blog" id="hero-blog" v-if="props.data">
         <div class="hero-blog__container container">
             <h1 class="hero-blog__title "> {{ props.data?.title }}</h1>
             <div class="hero-blog__img-block">
@@ -8,20 +8,24 @@
                     :alt="props.data?.title">
                 </NuxtPicture>
                 <div class="hero-blog__img-info">
-                    <span class="hero-blog__date">{{ props.data?.date }}</span>
+                    <time class="hero-blog__date" :datetime="$dayjs(props.data?.date).utc().toString()"> {{
+                        $dayjs(props.data?.date).format('DD.MM.YYYY') }} </time>
                     <span class="hero-blog__name"> {{ props.data?.contentPost?.authorPost }}</span>
                 </div>
             </div>
             <div class="hero-blog__content">
-                <h2 class="hero-blog__content-title">Содержание</h2>
-                <ul class="hero-blog__list">
-                    <li class="hero-blog__elem" v-for="elem in props.data?.contentPost.list">
-                        <NuxtLink :to="elem.link.url"> {{ elem.link?.title }}</NuxtLink>
-                    </li>
-                </ul>
+                <h2 class="hero-blog__content-title title-level-2">Содержание</h2>
+                <PerfectScrollbar class="hero-blog__scrollbar">
+                    <ul class="hero-blog__list">
+                        <li class="hero-blog__elem" v-for="elem in props.data?.contentPost.list">
+                            <NuxtLink class="hero-blog__elem-link" :to="elem.link.url"> {{ elem.link?.title }}
+                            </NuxtLink>
+                        </li>
+                    </ul>
+                </PerfectScrollbar>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">

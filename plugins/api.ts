@@ -30,7 +30,7 @@ export default defineNuxtPlugin(() => {
             return result;
         },
         getPage: async (name: string) => {
-            let result = [];
+            let result: any = {};
 
             try {
                 const res = await axios.post(BASE_API, {
@@ -51,7 +51,10 @@ export default defineNuxtPlugin(() => {
                         statusMessage: 'Страница не найдена',
                     });
                 }
-                result = res?.data.data.pages.edges[0].node.pageBuilder.flexible;
+                result = {
+                    flexible: res?.data.data.pages.edges[0].node.pageBuilder.flexible,
+                    seo: res?.data.data.pages.edges[0].node.seo,
+                };
             } catch (e) {
                 console.error(`текст ошибки ${e}`);
             }
@@ -75,7 +78,7 @@ export default defineNuxtPlugin(() => {
             return result;
         },
         post: {
-            getAll: async (variables: { first: number; after: string | null }) => {
+            getAll: async (variables: { offset: number; size: number }) => {
                 let result: any = {};
 
                 try {
@@ -125,6 +128,7 @@ export default defineNuxtPlugin(() => {
                         pageId: res.data.data.post.postId,
                         flexible: res?.data.data.post.pageBuilder.flexible,
                         comments: res?.data.data.post.comments.edges,
+                        seo: res.data.data.post.seo,
                     };
                 } catch (e) {
                     console.error(`текст ошибки ${e}`);
@@ -151,7 +155,7 @@ export default defineNuxtPlugin(() => {
         },
         services: {
             getService: async (slug: string) => {
-                let result = [];
+                let result: any = {};
 
                 try {
                     const res = await axios.post(BASE_API, {
@@ -171,8 +175,10 @@ export default defineNuxtPlugin(() => {
                             statusMessage: 'Страница не найдена',
                         });
                     }
-
-                    result = res?.data.data.postService.pageBuilder.flexible;
+                    result = {
+                        flexible: res?.data.data.postService.pageBuilder.flexible,
+                        seo: res?.data.data.postService.seo,
+                    };
                 } catch (e) {
                     console.error(`текст ошибки ${e}`);
                 }

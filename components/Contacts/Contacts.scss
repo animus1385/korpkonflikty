@@ -9,17 +9,23 @@
         @apply grid desktop:grid-cols-5 tablet:grid-cols-2 desktopWide:gap-[130px] mobile:gap-[30px] tablet:my-[100px] mobile:my-[50px];
     }
     &__social {
-        @apply grid grid-cols-[repeat(3,max-content)] items-center gap-[20px] h-full;
+        @apply grid grid-cols-[repeat(3,60px)] grid-rows-[45px] items-center gap-[20px] h-full;
     }
 
     &__social-elem {
-        @apply flex items-center justify-center;
+        @apply flex items-center justify-center h-full w-full;
     }
     &__elem-social-block {
         @apply grid gap-[39px] desktop:grid-cols-1 tablet:grid-cols-2 desktop:col-span-1 tablet:col-span-full  tablet:justify-center;
     }
-    &__picture {
-        @apply w-full h-full;
+    &__picture:deep() {
+        @apply w-full h-full flex;
+        img {
+            @apply w-full h-full;
+        }
+    }
+    &__social-link {
+        @apply flex w-full h-full;
     }
     &__elem {
         @apply flex flex-col;

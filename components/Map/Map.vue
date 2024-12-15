@@ -1,5 +1,5 @@
 <template>
-    <div class="map" v-if="props?.data.name == 'MapCommon' && props?.data.fields">
+    <section class="map" v-if="props?.data.name == 'MapCommon' && props?.data.fields">
         <div class="map__container container">
             <div class="map__content">
 
@@ -16,7 +16,7 @@
                 </yandex-map>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">

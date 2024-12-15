@@ -152,14 +152,25 @@ export const allQuery = gql`
                     listImg {
                         img {
                             node {
+                                id
                                 sourceUrl
                             }
                         }
                     }
                     listVideo {
                         videoElem
+                        cover {
+                            node {
+                                sourceUrl
+                            }
+                        }
                     }
                     type
+                    fieldGroupName
+                }
+                textOpenCommon {
+                    title
+                    descr
                 }
             }
         }

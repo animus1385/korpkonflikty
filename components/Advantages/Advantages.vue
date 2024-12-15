@@ -1,5 +1,5 @@
 <template>
-    <div class="advantages" id="advantages" v-if="props.data.name == 'AdvantagesCommon' && props.data.fields">
+    <section class="advantages" id="advantages" v-if="props.data.name == 'AdvantagesCommon' && props.data.fields">
         <div class="advantages__container container">
             <h2 class="advantages__title title-level-2">{{ props?.data?.fields?.title }}</h2>
             <ul class="advantages__list">
@@ -14,7 +14,7 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">

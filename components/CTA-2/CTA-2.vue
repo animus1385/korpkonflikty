@@ -1,5 +1,5 @@
 <template>
-    <div class="cta-2" id="cta-2" v-if="props?.data.name == 'Cta2Common' && props?.data.fields">
+    <section class="cta-2" id="cta-2" v-if="props?.data.name == 'Cta2Common' && props?.data.fields">
         <div class="cta-2__container container">
             <div class="cta-2__left">
                 <h2 class="cta-2__title ">{{ props?.data?.fields?.title }}</h2>
@@ -11,7 +11,7 @@
                     props?.data?.fields?.btn.title }}</NuxtLink>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">

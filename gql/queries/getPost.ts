@@ -295,11 +295,27 @@ export const GET_POST = gql`
                             }
                         }
                     }
-                    ... on PageBuilderFlexibleForm1CommonLayout {
+                    ... on PageBuilderFlexibleForm1CustomLayout {
                         fieldGroupName
+                        form1Custom {
+                            id
+                            title
+                            descr
+                        }
                     }
-                    ... on PageBuilderFlexibleForm2CommonLayout {
+                    ... on PageBuilderFlexibleForm2CustomLayout {
                         fieldGroupName
+                        form2Custom {
+                            id
+                        }
+                    }
+                    ... on PageBuilderFlexibleFormModalCustomLayout {
+                        fieldGroupName
+                        formModalCustom {
+                            id
+                            title
+                            descr
+                        }
                     }
                     ... on PageBuilderFlexibleFormCommentCommonLayout {
                         fieldGroupName
@@ -307,6 +323,8 @@ export const GET_POST = gql`
                     ... on PageBuilderFlexibleSuitableServicesCustomLayout {
                         fieldGroupName
                         suitableServicesCustom {
+                            title
+                            descr
                             suitableServicesList {
                                 edges {
                                     node {
@@ -333,6 +351,8 @@ export const GET_POST = gql`
                     ... on PageBuilderFlexibleRelatedBlogCustomLayout {
                         fieldGroupName
                         relatedBlogCustom {
+                            title
+                            descr
                             relatedBlogList {
                                 edges {
                                     node {
@@ -363,6 +383,15 @@ export const GET_POST = gql`
                             }
                         }
                     }
+                    ... on PageBuilderFlexibleBlogListCommonLayout {
+                        fieldGroupName
+                    }
+                    ... on PageBuilderFlexibleTextOpenCommonLayout {
+                        fieldGroupName
+                    }
+                    ... on PageBuilderFlexibleTextOpenCustomLayout {
+                        fieldGroupName
+                    }
                 }
             }
             comments {
@@ -376,6 +405,18 @@ export const GET_POST = gql`
                         }
                     }
                 }
+            }
+            seo {
+                title
+                metaDesc
+                canonical
+                breadcrumbs {
+                    url
+                    text
+                }
+                metaRobotsNoindex
+                metaRobotsNofollow
+                metaKeywords
             }
         }
     }

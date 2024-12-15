@@ -1,0 +1,43 @@
+.text-open {
+    @apply py-[30px];
+    &__content {
+        @apply relative;
+    }
+    &__title {
+        font-family: var(--second-family);
+        @apply text-[#242527] font-bold desktop:mb-[74px] mobile:mb-[30px];
+    }
+    &__descr-block {
+        @apply grid grid-cols-[8px_1fr] desktop:gap-[24px] mobile:gap-[10px] overflow-hidden desktop:h-[600px] tablet:h-[400px] mobile:h-[300px] text-[#0f172a] desktop:text-[25px] mobile:text-[16px] font-medium desktop:pl-[32px]   relative transition-all mb-[20px];
+        font-family: var(--second-family);
+        line-height: 128%;
+        letter-spacing: -0.01em;
+        &::before {
+            content: '';
+            @apply flex h-[100%]   rounded-[30px] desktop:w-[8px] mobile:w-[3px] z-[3];
+            background: linear-gradient(127deg, #60bbee 0%, #0a72ad 100%);
+        }
+        &:after {
+            content: '';
+            @apply absolute inset-0  z-[2] bg-gradient-to-b to-[#fff] from-60% to-95% from-transparent;
+        }
+        &.active {
+            @apply h-full;
+            &::after {
+                @apply hidden;
+            }
+            &::before {
+                @apply h-full;
+            }
+        }
+    }
+    &__btn {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 18px;
+        text-align: center;
+        color: #fff;
+        margin: 0 auto;
+        display: flex;
+    }
+}

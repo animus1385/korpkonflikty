@@ -1,16 +1,19 @@
 <template>
-    <div class="cta-telegram" id="cta-telegram" v-if="props?.data.name == 'CtaTelegramCommon' && props?.data.fields">
+    <section class="cta-telegram" id="cta-telegram"
+        v-if="props?.data.name == 'CtaTelegramCommon' && props?.data.fields">
         <div class="cta-telegram__container container">
             <div class="cta-telegram__left">
-                <h2 class="cta-telegram__title">Подпишитесь на наш Телеграм-канал,</h2>
+                <h2 class="cta-telegram__title title-level-2"> {{ props.data.fields.title }}</h2>
                 <p class="cta-telegram__descr">
-                    чтобы быть в курсе всех новостей из мира корпоративного права, защиты бизнеса и собственников!
+                    {{ props.data.fields.descr }}
                 </p>
-                <UButton class="cta-telegram__btn btn">Подписаться</UButton>
+                <NuxtLink class="cta-telegram__btn btn" :to="props.data.fields.btn.url">{{ props.data.fields.btn.title
+                    }}</NuxtLink>
             </div>
-            <img class="cta-telegram__img" src="/img/telegram.png" alt="telegram"></img>
+            <NuxtPicture class="cta-telegram__img" preload :src="props.data.fields.img.node.sourceUrl" alt="telegram">
+            </NuxtPicture>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">

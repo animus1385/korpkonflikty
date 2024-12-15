@@ -1,5 +1,5 @@
 <template>
-    <div class="loader" v-if="storeCommon.loader">
+    <div class="loader" >
 
         <svg class="loader__svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-const storeCommon = useCommonStore();
+
 </script>
 
 <style scoped lang="scss">

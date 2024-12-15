@@ -11,7 +11,7 @@ body {
     @apply w-full h-full;
 }
 body {
-    @apply bg-[#f6f5f9]  font-['Poppins'_sans-serif] h-full;
+    @apply bg-[#ffffff]  font-['Poppins'_sans-serif] h-full;
 }
 .wrapper {
     display: flex;
@@ -19,7 +19,7 @@ body {
     min-height: 100%;
 }
 .content {
-    flex: 1 0 auto;
+    @apply flex-[1_0_auto] mb-[100px];
 }
 .btn {
     box-shadow: 0 13px 20px 0 rgba(1, 115, 153, 0.2);

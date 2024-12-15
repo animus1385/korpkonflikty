@@ -1,79 +1,56 @@
 .form-commnent {
     &__title {
         font-family: var(--second-family);
-        font-weight: 700;
-        font-size: 52px;
-        color: #090914;
+        @apply font-bold text-[#090914];
     }
     &__container {
-        display: grid;
-        gap: 38px;
+        @apply grid gap-[38px];
     }
     &__block-enter {
-        display: grid;
-        gap: 40px;
-        background: #dbeafe;
-        border-radius: 40px;
-        padding: 60px 133px;
+        @apply grid desktop:gap-[40px] mobile:gap-[20px] bg-[#dbeafe] rounded-[40px] desktop:p-[60px_133px] p-[40px_20px];
     }
     &__content {
-        display: grid;
-        grid-template-columns: 1fr minmax(auto, 490px);
-        gap: 40px;
+        @apply grid desktop:grid-cols-[1fr_minmax(auto,490px)] desktop:gap-[40px] mobile:gap-[20px];
     }
     &__fileds-block {
-        display: grid;
-        gap: 20px;
+        @apply grid gap-[20px];
     }
     &__bottom {
-        display: flex;
-        gap: 20px;
+        @apply flex gap-[20px] desktop:flex-row mobile:flex-col;
     }
     &__field-textarea {
-        height: 100%;
+        @apply h-full;
     }
     &__comment:deep() {
-        height: 100%;
+        @apply h-full;
         div:nth-child(2) {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            padding-bottom: 20px;
+            @apply h-full flex flex-col pb-[20px];
         }
         textarea {
-            height: 100%;
-            background: #fff;
-            border-radius: 10px;
+            @apply h-full bg-white rounded-[10px];
         }
     }
     &__list {
-        display: grid;
-        gap: 20px;
+        @apply grid gap-[20px];
     }
     &__elem {
-        display: grid;
-        grid-template-columns: 40px 1fr;
-        gap: 4px;
+        @apply grid grid-cols-[40px_1fr] gap-[4px];
     }
     &__elem-info {
-        display: flex;
-        flex-direction: column;
-        background: #e6e6e6;
-        border-radius: 20px;
-        padding: 8px;
+        @apply flex flex-col bg-[#e6e6e6] rounded-[20px] p-[8px];
     }
     &__elem-name {
         font-family: var(--font8);
-        font-weight: 400;
-        font-size: 14px;
         line-height: 129%;
-        color: #64748b;
+        @apply font-normal text-[14px] text-[#64748b];
     }
     &__all-comments {
-        margin-bottom: 100px;
+        @apply mb-[100px];
     }
     &__span {
-        display: flex;
-        margin-bottom: 10px;
+        @apply mb-[10px] flex;
+    }
+    &__btn {
+        @apply tablet:max-w-max text-center justify-center;
     }
 }

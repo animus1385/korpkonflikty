@@ -11,7 +11,7 @@
     &__logo:deep() {
         @apply desktop:w-[183px] h-[87px] desktop:mb-[19px] mobile:mx-auto mobile:w-full order-1;
         img {
-            @apply mx-auto;
+            @apply mx-auto w-full h-full;
         }
     }
     &__icon {

@@ -1,5 +1,5 @@
 <template>
-    <div class="cta" id="cta" v-if="props?.data.name == 'CtaCommon' && props?.data.fields">
+    <section class="cta" id="cta" v-if="props?.data.name == 'CtaCommon' && props?.data.fields">
         <div class="cta__container container">
             <div class="cta__content">
                 <NuxtPicture format="webp" preload class="cta__img" :src="props?.data?.fields.bg.node.sourceUrl"
@@ -14,7 +14,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">

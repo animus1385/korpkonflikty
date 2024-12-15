@@ -1,5 +1,5 @@
 .cta-telegram {
-    @apply overflow-hidden desktop:pt-[95px] desktop:pb-[159px] mobile:pt-[30px] desktop:bg-transparent desktop:to-inherit mobile:bg-gradient-to-r mobile:to-[#474747] mobile:from-[#222];
+    @apply overflow-hidden desktop:py-[95px]  mobile:pt-[30px] desktop:bg-transparent desktop:to-inherit mobile:bg-gradient-to-r mobile:to-[#474747] mobile:from-[#222];
     &__container {
         @apply desktop:p-[72px_134px] mobile:p-[60px_0px_0px] desktop:min-h-[469px] mobile:max-h-[766px] grid desktop:grid-cols-[588px_1fr] relative gap-[60px]  desktop:bg-gradient-to-r desktop:to-[#474747]  desktop:from-[#222];
         border-radius: 30px;
@@ -8,7 +8,7 @@
         }
     }
     &__title {
-        @apply mb-[20px] desktop:text-[52px] font-bold text-white mobile:text-[40px];
+        @apply mb-[20px]  font-bold text-white ;
         font-family: var(--second-family);
         line-height: 119%;
         letter-spacing: -0.04em;

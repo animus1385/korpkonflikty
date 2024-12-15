@@ -1,5 +1,5 @@
 <template>
-    <div class="clients" id="clients" v-if="props?.data.name == 'ClientsCommon' && props?.data.fields">
+    <section class="clients" id="clients" v-if="props?.data.name == 'ClientsCommon' && props?.data.fields">
         <h2 class="clients__title title-level-2">{{ props?.data?.fields?.title }}</h2>
         <swiper-container class="clients__list" :slides-per-view="5" :loop="true" :breakpoints="{
             320: {
@@ -21,7 +21,7 @@
                 </div>
             </swiper-slide>
         </swiper-container>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">
