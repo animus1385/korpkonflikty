@@ -80,6 +80,7 @@ export default defineNuxtConfig({
                 dcl: 1200,
             },
         },
+        domains: ['admin.korpkonflikty.ru'],
     },
     runtimeConfig: {
         public: {
