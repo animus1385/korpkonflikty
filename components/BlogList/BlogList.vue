@@ -5,15 +5,14 @@
             <ul class="blog-list__list">
                 <li class="blog-list__elem" v-for="elem in storeBlog.items">
                     <NuxtLink :to="elem.node.uri" NuxtPicture class="blog-list__image-blog">
-                        <NuxtPicture sizes="100vw tablet:50vw mobile:400px" fit="fill" loading="lazy" format="webp" preload
-                            class="blog-list__picture" :src="elem.node.featuredImage.node.sourceUrl"
-                            :alt="elem.node.title">
-                        </NuxtPicture>
+                        <NuxtImg fit="fill" loading="lazy" format="webp"  class="blog-list__picture"
+                            :src="elem.node.featuredImage.node.sourceUrl" :alt="elem.node.title" />
                         <div class="blog-list__top">
                             <div class="blog-list__name-block">
                                 <time :datetime="$dayjs(elem.node.date).utc().toString()"> {{
                                     $dayjs(elem.node.date).format('DD.MM.YYYY') }} </time>
-                                <span class="blog-list__name">{{ elem.node.contentPost.contentPost.authorPost }}</span>
+                                <span class="blog-list__name">{{ elem.node.contentPost.contentPost.authorPost
+                                    }}</span>
                             </div>
                             <div class="blog-list__all-metric">
                                 <div class="blog-list__views blog-list__metric">
@@ -22,7 +21,8 @@
                                 </div>
                                 <div class="blog-list__comments blog-list__metric">
                                     <Icon class="blog-list__icon" name="majesticons:comment-text" />
-                                    <span class="blog-list__metric-text"> {{ elem.node.comments.edges.length }}</span>
+                                    <span class="blog-list__metric-text"> {{ elem.node.comments.edges.length
+                                        }}</span>
                                 </div>
 
                             </div>

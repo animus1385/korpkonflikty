@@ -38,6 +38,7 @@ export default defineNuxtConfig({
         'vue-yandex-maps/nuxt',
         'dayjs-nuxt',
         'nuxt-booster',
+        '@nuxtjs/fontaine',
     ],
     tailwindcss: {
         viewer: false,
@@ -98,9 +99,13 @@ export default defineNuxtConfig({
         },
     },
     image: {
-        inject: true,
-        dir: 'assets/img',
-        screens: screensNuxtImage,
+        provider: 'ipx',
+        domains: ['admin.korpkonflikty.ru'],
+        ipx: {
+            modifiers: {
+                format: 'webp',
+            },
+        },
     },
     icon: {
         customCollections: [
