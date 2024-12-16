@@ -1,29 +1,23 @@
 import axios from 'axios';
-import { allQuery } from '../gql/queries/getSettingsAll';
-import { pageQuery } from '../gql/queries/getIndexPage';
+import allQuery from '../gql/queries/getSettingsAll.gql';
+import pageQuery from '../gql/queries/getIndexPage.gql';
 import type { Api } from '../types/api';
-import { GET_POST } from '../gql/queries/getPost';
+import GET_POST from '../gql/queries/getPost.gql';
 import { CREATE_COMMENT } from '~/gql/mutations/createComment';
-import { GET_POSTS } from '~/gql/queries/getPosts';
-import { GET_POST_SERVICE } from '~/gql/queries/getService';
-import { GET_MENU } from '~/gql/queries/getMenu';
+import GET_POSTS from '~/gql/queries/getPosts.gql';
+import GET_POST_SERVICE from '~/gql/queries/getService.gql';
+import GET_MENU from '~/gql/queries/getMenu.gql';
 
 export default defineNuxtPlugin(() => {
     const config = useRuntimeConfig();
     const BASE_API: string = config.public.API;
-
+    const { $graphql } = useNuxtApp();
     const api: Api = {
         getSettingsAll: async () => {
             let result = [];
-
             try {
-                const res = await axios.post(BASE_API, {
-                    query: allQuery,
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-                result = res?.data.data.settingsAll.gQLSettings;
+                const res = await $graphql?.default?.request(allQuery);
+                result = res.settingsAll.gQLSettings;
             } catch (e) {
                 console.error(`текст ошибки ${e}`);
             }
@@ -33,15 +27,9 @@ export default defineNuxtPlugin(() => {
             let result: any = {};
 
             try {
-                const res = await axios.post(BASE_API, {
-                    query: pageQuery,
-                    variables: { name: name },
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
+                const res = await $graphql?.default?.request(pageQuery, { name: name });
 
-                if (res?.data.data.pages.edges.length == 0) {
+                if (res.pages.edges.length == 0) {
                     showError({
                         statusCode: 404,
                         statusMessage: 'Страница не найдена',
@@ -52,8 +40,8 @@ export default defineNuxtPlugin(() => {
                     });
                 }
                 result = {
-                    flexible: res?.data.data.pages.edges[0].node.pageBuilder.flexible,
-                    seo: res?.data.data.pages.edges[0].node.seo,
+                    flexible: res.pages.edges[0].node.pageBuilder.flexible,
+                    seo: res.pages.edges[0].node.seo,
                 };
             } catch (e) {
                 console.error(`текст ошибки ${e}`);
@@ -64,14 +52,9 @@ export default defineNuxtPlugin(() => {
             let result = [];
 
             try {
-                const res = await axios.post(BASE_API, {
-                    query: GET_MENU,
-                    variables: { ID: slug },
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-                result = res?.data.data;
+                const res = await $graphql?.default?.request(GET_MENU, { ID: slug });
+
+                result = res;
             } catch (e) {
                 console.error(`текст ошибки ${e}`);
             }
@@ -82,14 +65,8 @@ export default defineNuxtPlugin(() => {
                 let result: any = {};
 
                 try {
-                    const res = await axios.post(BASE_API, {
-                        query: GET_POSTS,
-                        variables: variables,
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                    });
-                    result = res.data.data;
+                    const res = await $graphql?.default?.request(GET_POSTS, variables);
+                    result = res;
                 } catch (e) {
                     console.error(`Error fetching posts: ${e}`);
                 }
@@ -99,14 +76,10 @@ export default defineNuxtPlugin(() => {
                 let result: any = {};
 
                 try {
-                    const res = await axios.post(BASE_API, {
-                        query: GET_POST,
-                        variables: { ID: slug },
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                    });
-                    if (res?.data.data.post == null) {
+                    const res = await $graphql?.default?.request(GET_POST, { ID: slug });
+                    result = res;
+
+                    if (res?.post == null) {
                         showError({
                             statusCode: 404,
                             statusMessage: 'Страница не найдена',
@@ -118,17 +91,17 @@ export default defineNuxtPlugin(() => {
                     }
                     result = {
                         postInfo: {
-                            uri: res.data.data.post.uri,
-                            title: res.data.data.post.title,
-                            date: res.data.data.post.date,
-                            img: res.data.data.post.featuredImage.node.sourceUrl,
-                            postViews: res.data.data.post.postViews,
-                            contentPost: res.data.data.post.contentPost.contentPost,
+                            uri: res.post.uri,
+                            title: res.post.title,
+                            date: res.post.date,
+                            img: res.post.featuredImage.node.sourceUrl,
+                            postViews: res.post.postViews,
+                            contentPost: res.post.contentPost.contentPost,
                         },
-                        pageId: res.data.data.post.postId,
-                        flexible: res?.data.data.post.pageBuilder.flexible,
-                        comments: res?.data.data.post.comments.edges,
-                        seo: res.data.data.post.seo,
+                        pageId: res.post.postId,
+                        flexible: res.post.pageBuilder.flexible,
+                        comments: res.post.comments.edges,
+                        seo: res.post.seo,
                     };
                 } catch (e) {
                     console.error(`текст ошибки ${e}`);
@@ -158,14 +131,9 @@ export default defineNuxtPlugin(() => {
                 let result: any = {};
 
                 try {
-                    const res = await axios.post(BASE_API, {
-                        query: GET_POST_SERVICE,
-                        variables: { ID: slug },
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                    });
-                    if (res?.data.data.postService == null) {
+                    const res = await $graphql?.default?.request(GET_POST_SERVICE, { ID: slug });
+
+                    if (res?.postService == null) {
                         showError({
                             statusCode: 404,
                             statusMessage: 'Страница не найдена',
@@ -176,8 +144,8 @@ export default defineNuxtPlugin(() => {
                         });
                     }
                     result = {
-                        flexible: res?.data.data.postService.pageBuilder.flexible,
-                        seo: res?.data.data.postService.seo,
+                        flexible: res.postService.pageBuilder.flexible,
+                        seo: res.postService.seo,
                     };
                 } catch (e) {
                     console.error(`текст ошибки ${e}`);

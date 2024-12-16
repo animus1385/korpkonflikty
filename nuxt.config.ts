@@ -39,6 +39,7 @@ export default defineNuxtConfig({
         'dayjs-nuxt',
         'nuxt-booster',
         '@nuxtjs/fontaine',
+        'nuxt-graphql-request',
     ],
     tailwindcss: {
         viewer: false,
@@ -87,6 +88,16 @@ export default defineNuxtConfig({
         public: {
             API: process.env.PUBLIC_GRAPHQL_URL,
             website: process.env.WEB_SITE,
+        },
+    },
+    build: {
+        transpile: ['nuxt-graphql-request'],
+    },
+    graphql: {
+        clients: {
+            default: {
+                endpoint: process.env.PUBLIC_GRAPHQL_URL as string,
+            },
         },
     },
     vite: {

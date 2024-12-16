@@ -10,7 +10,7 @@
                     slidesPerView: 2,
                 }
             }" class="corp-servies__swiper">
-                <swiper-slide class="corp-servies__elem" v-for="elem in props?.data?.fields?.corpServiesList.nodes">
+                <swiper-slide class="corp-servies__elem" v-for="elem in props?.data?.fields?.corpServiesList?.nodes">
                     <div class="corp-servies__elem">
                         <img class="corp-servies__img" src="#" alt="#"></img>
                         <div class="corp-servies__elem-info">
