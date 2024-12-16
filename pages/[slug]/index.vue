@@ -19,8 +19,8 @@ const storeCommon = useCommonStore();
 const slug = route.params.slug as string;
 const breadcrumbs = ref<any>(null)
 
-const { data, status } = useAsyncData(`get-${slug}`, async () => await $api.getPage(slug), {
-    server: false,
+const { data, status } = useAsyncData(`get-${slug}`, () => $api.getPage(slug), {
+    server: true,
     transform: (e: any) => {
         const transform = e.flexible.map((el: any) => {
             const name = el.fieldGroupName.replace(/(PageBuilderFlexible)(.*)(Layout)/g, '$2');

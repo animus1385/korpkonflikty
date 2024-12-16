@@ -3,7 +3,7 @@
 
     <div class="form-1__container container">
       <div class="form-1__content">
-        <div class="form-1__left">
+        <div class="form-1__left" v-if="props?.data.fields.title">
           <h2 class="form-1__title">{{ props?.data.fields.title }}</h2>
           <p class="form-1__descr">{{ props?.data.fields.descr }}</p>
         </div>

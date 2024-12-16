@@ -76,7 +76,7 @@ body {
     }
 }
 .breadcrumbs-block {
-    @apply py-[20px];
+    @apply py-[20px] ;
     &.HeroCustom {
         background: linear-gradient(244deg, #474747 1%, #222 59.8%);
         .breadcrumbs {
@@ -87,6 +87,6 @@ body {
         }
     }
     .breadcrumbs {
-        @apply p-[12px_20px] bg-[#EDF5FF] max-w-max  rounded-[32px];
+        @apply p-[12px_20px] bg-[#EDF5FF] max-w-max  rounded-[32px] min-h-[48px];
     }
 }

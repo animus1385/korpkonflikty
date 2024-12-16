@@ -1,5 +1,5 @@
 .header {
-    @apply sticky top-0 z-[999] left-0 right-0;
+    @apply sticky top-0 z-[999] left-0 right-0 min-h-[150px];
     background: linear-gradient(333deg, #474747 0%, #222 53.8%);
 
     &__contaniner {

@@ -1,15 +1,15 @@
 .form-1 {
+  
     &__content {
         background: linear-gradient(224deg, #474747 0%, #222 41.8%);
         @apply desktop:p-[36px_128px] mobile:p-[45px_24px]  desktop:gap-[80px] mobile:gap-[19px] grid overflow-hidden rounded-[40px] desktop:grid-cols-2 items-center;
     }
     &__title {
         font-family: var(--second-family);
-        @apply desktop:mb-[0px] mobile:mb-[19px] text-white desktop:text-[40px] font-bold mobile:text-[32px];
+        @apply  mb-[19px] text-white desktop:text-[40px] font-bold mobile:text-[32px];
     }
     &__descr {
         font-family: var(--second-family);
-        line-height: 170%;
         @apply text-white desktop:text-[18px] font-normal mobile:text-[14px];
     }
     &__fileds-block {
