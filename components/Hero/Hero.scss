@@ -17,13 +17,10 @@
     }
     &__descr {
         font-family: var(--second-family);
-        @apply font-semibold desktop:text-[30px] text-[#c4c4c4] desktop:mb-[61px] mobile:mb-[30px] laptop:text-[27px] tablet:text-[25px] mobile:text-[14px];
+        @apply font-semibold desktop:text-[25px] text-[#c4c4c4] desktop:mb-[61px] mobile:mb-[30px] laptop:text-[22px] tablet:text-[20px] mobile:text-[14px];
     }
     &__img:deep() {
-        @apply translate-y-[35px]  h-full w-full  flex desktop:items-stretch desktop:justify-end    z-[0] mobile:items-end  mobile:justify-center;
-        img {
-            @apply w-full h-full object-contain;
-        }
+        @apply translate-y-[35px]  h-full w-full  flex desktop:items-stretch desktop:justify-end    z-[0] mobile:items-end  mobile:justify-center object-contain;
     }
     &__info {
         @apply absolute bottom-[-5%] right-[5%] z-[2] laptop:left-auto mobile:left-[5%] rounded-[35px] tablet:p-[23px_46px] max-w-[869px] flex justify-center mobile:p-[20px];

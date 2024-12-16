@@ -27,12 +27,12 @@
                     spaceBetween: 50,
                 },
             }">
-                <swiper-slide v-for="elem in props.data.fields.listImg" :key="elem.img.node.id">
+                <swiper-slide v-for="(elem,index) in props.data.fields.listImg" :key="elem.img.node.id">
                     <div class="rewiew__elem">
                         <NuxtImg loading="lazy" :src="elem.img.node.sourceUrl" @click="setDataPopup({
                             type: activeBtn,
                             value: elem.img.node.sourceUrl
-                        })"></NuxtImg>
+                        })" :alt="`cover-img-${index}`"></NuxtImg>
                     </div>
                 </swiper-slide>
             </swiper-container>
@@ -55,7 +55,7 @@
                         <NuxtImg loading="lazy" :src="elem.cover.node.sourceUrl" @click="setDataPopup({
                             type: activeBtn,
                             value: elem.videoElem
-                        })"></NuxtImg>
+                        })" :alt="`cover-video-${index}`"></NuxtImg>
                     </div>
                 </swiper-slide>
             </swiper-container>
@@ -83,7 +83,7 @@
                         </div>
                     </template>
                     <div class="rewiew__elem-modal" v-if="dataPopup.type == 'img'">
-                        <NuxtImg loading="lazy" :src="dataPopup.value"></NuxtImg>
+                        <NuxtImg loading="lazy" :src="dataPopup.value" alt="cover-modal"></NuxtImg>
                     </div>
                     <div class="rewiew__elem-modal" v-if="dataPopup.type == 'video'">
                         <div v-html="dataPopup.value"> </div>

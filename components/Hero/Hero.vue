@@ -9,7 +9,7 @@
                         props?.data?.fields?.btn.title
                     }}</NuxtLink>
             </div>
-            <NuxtImg loading="lazy" format="webp" v-if="props?.data?.fields?.img" class="hero__img"
+            <NuxtImg preload format="webp" class="hero__img"
                 :src="props?.data?.fields?.img.node.sourceUrl" :alt="props?.data?.fields?.title" />
         </div>
         <div class="hero__info">

@@ -25,6 +25,7 @@
             <Contacts :data="section" />
             <BlogList :data="section" />
             <TextOpen :data="section" />
+            <ModalForm :data="section" />
         </div>
     </div>
     <div class="container" v-else-if="status == 'idle' || status == 'pending'">

@@ -1,5 +1,5 @@
 .contacts {
-    @apply my-[40px];
+    @apply desktop:my-[40px] mobile:my-[20px];
     &__title {
         font-family: var(--second-family);
         line-height: 117%;

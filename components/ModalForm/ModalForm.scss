@@ -1,0 +1,17 @@
+.modal-form {
+    &__content {
+        @apply grid gap-[20px] mobileWide:p-[20px];
+    }
+    &__title {
+        @apply text-center font-bold mobileWide:text-[20px] mobile:text-[16px];
+    }
+    &__descr {
+        @apply text-center mobileWide:text-[16px] mobile:text-[14px];
+    }
+    &__field-label {
+        @apply mb-[20px];
+    }
+    &__btn {
+        @apply w-full justify-center mobileWide:p-[15px];
+    }
+}

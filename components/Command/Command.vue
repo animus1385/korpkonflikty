@@ -21,14 +21,23 @@
           </ul>
         </div>
         <swiper-container class="command__swiper" :breakpoints="{
+          1024: {
+            slidesPerView: 2,
+          },
           1280: {
             slidesPerView: 3.5,
           },
           1440: {
-            slidesPerView: 5,
+            slidesPerView: 4,
+          },
+          1500: {
+            slidesPerView: 4,
           },
           1600: {
-            slidesPerView: 5,
+            slidesPerView: 4.5,
+          },
+          1920: {
+            slidesPerView: 5.6,
           },
         }" v-if="isDesktop">
           <swiper-slide v-for="(elem, index) in props?.data?.fields?.list.slice(2)" :key="`${elem.title}-${index}`">

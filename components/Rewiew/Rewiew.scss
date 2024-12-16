@@ -39,11 +39,8 @@
         div {
             @apply w-full h-full flex justify-center items-center;
         }
-        picture {
-            @apply w-full h-full flex justify-center;
-            img {
-                @apply  object-contain
-            }
+        img {
+            @apply w-full h-full flex justify-center  object-contain;
         }
         iframe,p {
             @apply  w-full h-full max-w-[1000px] max-h-[700px] ;

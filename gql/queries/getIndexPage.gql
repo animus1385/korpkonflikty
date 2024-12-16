@@ -292,8 +292,11 @@ query getPage($name: String!) {
                             fieldGroupName
                             formModalCustom {
                                 id
+                                hash
                                 title
                                 descr
+                                nameBtn
+                                successMessage
                             }
                         }
                         ... on PageBuilderFlexibleFormCommentCommonLayout {

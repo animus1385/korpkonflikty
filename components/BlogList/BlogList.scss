@@ -1,5 +1,5 @@
 .blog-list {
-    @apply  p-[40px_0] desktop:mb-[100px];
+    @apply  desktop:py-[40px] mobile:py-[20px] desktop:mb-[100px];
     &__container {
         @apply relative;
     }
@@ -35,11 +35,8 @@
         }
     }
     &__picture:deep() {
-        @apply rounded-[16px] tablet:h-[200px] mobile:h-[132px] laptop:w-[70%] flex tabletMedium:mb-[20px] laptop:order-1 mobile:order-2;
+        @apply rounded-[16px] w-full h-full tablet:h-[200px] mobile:h-[132px] laptop:w-[70%] flex tabletMedium:mb-[20px] laptop:order-1 mobile:order-2 object-cover;
 
-        img {
-            @apply w-full h-full object-cover;
-        }
     }
     &__all-metric {
         @apply grid grid-cols-[repeat(2,max-content)] justify-end gap-[15px];

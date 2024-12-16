@@ -1,5 +1,5 @@
 .header {
-    @apply sticky top-0 z-[999] left-0 right-0 min-h-[150px];
+    @apply sticky top-0 z-[999] left-0 right-0 desktop:min-h-[150px];
     background: linear-gradient(333deg, #474747 0%, #222 53.8%);
 
     &__contaniner {
@@ -9,10 +9,8 @@
         @apply grid grid-cols-6 gap-[20px];
     }
     &__logo:deep() {
-        @apply desktopMedium:w-[183px] desktopMedium:h-[87px] mobile:w-[150px] mobile:h-[60px];
-        img {
-            @apply w-full h-full;
-        }
+        @apply desktopMedium:w-[183px] desktopMedium:h-[87px] mobile:w-[150px] mobile:h-[60px] object-contain;
+
     }
     &__icon {
         @apply w-full h-full;

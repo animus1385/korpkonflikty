@@ -18,7 +18,7 @@
         @apply desktopMedium:p-[57px_138px] laptopMedium:p-[57px_50px] mobile:pb-[20px]  w-full;
     }
     &__swiper {
-        @apply w-full h-full col-span-full grid desktop:grid-rows-[350px];
+        @apply w-full h-full col-span-full grid desktop:grid-rows-[334.29px];
     }
     &__list {
         @apply grid desktop:grid-cols-2 desktop:grid-rows-1  tablet:grid-cols-3 tablet:auto-cols-[300px] laptop:auto-rows-[300px] tabletMedium:auto-rows-[240px]  mobile:grid-cols-2 mobile:auto-rows-[163px]  mobile:auto-cols-auto mobileWide:auto-rows-[180px] mobileMedium:auto-rows-[163px] overflow-hidden desktop:rounded-none mobile:rounded-[20px];

@@ -2,8 +2,8 @@
     @apply m-0 p-0;
     box-sizing: border-box;
 }
-html{
-     scroll-padding-top: 100px;
+html {
+    scroll-padding-top: 100px;
 }
 html,
 body {
@@ -21,31 +21,24 @@ body {
     min-height: 100%;
 }
 .content {
-    @apply flex-[1_0_auto] mb-[100px];
+    @apply flex-[1_0_auto] desktop:mb-[100px];
 }
 .btn {
     box-shadow: 0 13px 20px 0 rgba(1, 115, 153, 0.2);
-    border-radius: 65px;
-    text-align: center;
     font-family: var(--font-family);
-    font-weight: 600;
-    border-image: linear-gradient(127deg, #60bbee 0%, #0a72ad 100%);
-    border: 3px solid transparent;
-    border-image-slice: 1;
-    @apply tabletMedium:text-[21px] tabletMedium:p-[26px_52px] mobile:p-[15px_30px] mobile:text-[18px];
-
+    outline: 3px solid transparent;
+    @apply overflow-hidden rounded-[65px] font-semibold text-center  tabletMedium:text-[21px] tabletMedium:p-[26px_52px] mobile:p-[15px_30px] mobile:text-[18px];
+    &:hover {
+        background: linear-gradient(267deg, #60bbee 0%, #0a72ad 100%);
+        @apply text-white;
+    }
     &--bg {
         background: linear-gradient(127deg, #60bbee 0%, #0a72ad 100%);
-        border: none;
-        color: #fff;
+        @apply text-white;
     }
     &--dont-active {
         @apply text-[#2387C0] bg-transparent;
-        border: 3px solid #2387c0;
-    }
-
-    &:hover {
-        @apply text-[#2387C0];
+        outline: 3px solid #2387c0;
     }
 }
 
@@ -76,7 +69,7 @@ body {
     }
 }
 .breadcrumbs-block {
-    @apply py-[20px] ;
+    @apply py-[20px];
     &.HeroCustom {
         background: linear-gradient(244deg, #474747 1%, #222 59.8%);
         .breadcrumbs {
@@ -87,6 +80,6 @@ body {
         }
     }
     .breadcrumbs {
-        @apply p-[12px_20px] bg-[#EDF5FF] max-w-max  rounded-[32px] min-h-[48px];
+        @apply desktop:p-[12px_20px] mobile:p-[10px_10px] bg-[#EDF5FF] max-w-max  rounded-[32px] desktop:min-h-[48px];
     }
 }

@@ -10,7 +10,7 @@
         </div>
 
         <Footer></Footer>
-        <!-- <loader v-if="storeCommon.loader"></loader> -->
+        <loader v-if="storeCommon.loader"></loader>
         <UModals />
     </div>
 
