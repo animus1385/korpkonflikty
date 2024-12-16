@@ -18,11 +18,24 @@ export default defineNuxtConfig({
             charset: 'utf-8',
             meta: [],
             link: [],
+            script: [
+                {
+                    innerHTML: `
+          window.addEventListener('load', function() {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = '/_nuxt/assets/styles/styles.scss';
+            document.head.appendChild(link);
+          });
+        `,
+                    type: 'text/javascript',
+                },
+            ],
         },
-        baseURL: '/', // Базовый URL приложения
+        baseURL: '/',
     },
 
-    css: ['@/assets/styles/styles.scss'],
+    // css: ['@/assets/styles/styles.scss'],
 
     typescript: {
         strict: true,
