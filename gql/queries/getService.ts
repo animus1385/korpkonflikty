@@ -385,6 +385,52 @@ export const GET_POST_SERVICE = gql`
                             }
                         }
                     }
+                    ... on PageBuilderFlexibleMapCommonLayout {
+                        fieldGroupName
+                    }
+                    ... on PageBuilderFlexibleContactsCustomLayout {
+                        fieldGroupName
+                        contactsCustom {
+                            list {
+                                address {
+                                    url
+                                    title
+                                }
+                                email {
+                                    url
+                                    title
+                                }
+                                tel {
+                                    url
+                                    title
+                                }
+                                social {
+                                    link {
+                                        url
+                                        target
+                                    }
+                                    icon {
+                                        node {
+                                            sourceUrl
+                                        }
+                                    }
+                                }
+                                socialCall {
+                                    link {
+                                        url
+                                        title
+                                    }
+                                    icon {
+                                        node {
+                                            sourceUrl
+                                        }
+                                    }
+                                }
+                                rekvizit
+                            }
+                            fieldGroupName
+                        }
+                    }
                     ... on PageBuilderFlexibleBlogListCommonLayout {
                         fieldGroupName
                     }
@@ -393,6 +439,10 @@ export const GET_POST_SERVICE = gql`
                     }
                     ... on PageBuilderFlexibleTextOpenCustomLayout {
                         fieldGroupName
+                        textOpenCustom {
+                            title
+                            descr
+                        }
                     }
                 }
             }

@@ -30,13 +30,21 @@
     }
     &__social:deep() {
         @apply grid grid-cols-[repeat(5,20px)] gap-[10px] mobile:hidden desktopWide:grid;
-           img {
-            @apply w-full h-full;
+        img {
+            @apply w-full h-full object-contain;
+        }
+    }
+    &__social-mobile {
+        @apply grid grid-cols-5 grid-rows-[30px];
+    }
+    &__social-elem-mobile:deep() {
+        @apply w-full h-full;
+        img {
+            @apply w-full h-full object-contain invert;
         }
     }
     &__elem {
         @apply flex justify-center;
-     
     }
     &__link {
         @apply desktopMedium:text-[18px] font-bold text-center text-[#c4c4c4] laptopMedium:text-[16px];
@@ -48,5 +56,39 @@
     }
     &__burger {
         @apply text-white w-full h-full  laptopMedium:hidden mobile:flex;
+    }
+    &__nav-mobile {
+        @apply mb-[50px];
+    }
+    &__link-mobile {
+        @apply text-[18px] text-center font-bold;
+    }
+    &__list-mobile {
+        @apply grid gap-[45px] items-center justify-center;
+    }
+    &__elem-mobile {
+        @apply flex justify-center;
+    }
+    &__top-mobile {
+        @apply mb-[20px];
+    }
+    &__connect-mobile {
+        @apply flex justify-between;
+    }
+    &__email-mobile,
+    &__tel-mobile {
+        @apply text-[14px] font-semibold flex;
+    }
+    &__tel-mobile {
+        @apply flex flex-col items-end;
+    }
+    &__tel-block-mobile {
+        @apply flex items-center gap-[10px];
+    }
+    &__email-block-mobile {
+        @apply flex items-center mb-auto gap-[10px];
+    }
+    &__icon-mobile:deep() {
+        @apply w-[16px] h-[16px] invert;
     }
 }

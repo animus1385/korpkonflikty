@@ -1,15 +1,21 @@
 <template>
+    <div class="breadcrumbs-block" v-if="breadcrumbs">
+        <div class="container">
+            <UBreadcrumb class="breadcrumbs" :links="breadcrumbs" />
+        </div>
+    </div>
     <HeroBlog :data="data?.postInfo" />
     <Flexible v-if="status == 'success' && data" :data="data.transform" />
 </template>
 
 <script setup lang="ts">
+import { useBreadcrumbs } from '~/composables/useBreadcrumbs';
 import type { IBlockFlexible } from '~/types/blockFlexible';
 
 const { $api } = useNuxtApp();
 const route = useRoute();
 const slug = route.params.slug as string;
-const storeCommon = useCommonStore();
+const breadcrumbs = ref<any>(null)
 
 const { data, status } = useAsyncData('getPost', async () => await $api.post.getPost(slug), {
     transform: (e: any) => {
@@ -35,6 +41,9 @@ const { data, status } = useAsyncData('getPost', async () => await $api.post.get
         }
     },
 });
+watchEffect(() => {
+    breadcrumbs.value = useBreadcrumbs(data.value?.seo?.breadcrumbs);
+})
 watch(() => data.value, () => {
     useHead({
         title: data?.value?.seo?.title,

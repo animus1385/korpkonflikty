@@ -1,17 +1,25 @@
 <template>
-
+    <div class="breadcrumbs-block" v-if="breadcrumbs" :class="{
+        'HeroCustom': data?.flexible[0].name == 'HeroCustom'
+    }">
+        <div class="container">
+            <UBreadcrumb class="breadcrumbs" :links="breadcrumbs" />
+        </div>
+    </div>
     <Flexible v-if="status == 'success' && data" :data="data.flexible" />
 </template>
 
 <script setup lang="ts">
+// import { useBreadcrumbs } from '~/composables/useBreadcrumbs';
 import type { IBlockFlexible } from '~/types/blockFlexible';
 
 const { $api } = useNuxtApp();
 const route = useRoute();
 const storeCommon = useCommonStore();
 const slug = route.params.slug as string;
+const breadcrumbs = ref<any>(null)
 
-const { data, status } = useAsyncData(`get-${slug}`, () => $api.getPage(slug), {
+const { data, status } = useAsyncData(`get-${slug}`, async () => await $api.getPage(slug), {
     server: false,
     transform: (e: any) => {
         const transform = e.flexible.map((el: any) => {
@@ -29,7 +37,10 @@ const { data, status } = useAsyncData(`get-${slug}`, () => $api.getPage(slug), {
         };
     },
 });
+
+
 watchEffect(() => {
+    breadcrumbs.value = useBreadcrumbs(data.value?.seo?.breadcrumbs);
     storeCommon.statusLoading = status.value;
 })
 watch(() => data.value, () => {

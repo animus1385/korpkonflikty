@@ -14,13 +14,13 @@
         @apply flex flex-col h-full; 
     }
     &__img:deep() {
-        @apply mx-auto;
+        @apply mx-auto flex items-start w-full h-full;
         img {
-            @apply w-full h-full;
+            @apply w-full h-full object-contain;
         }
     }
     &__elem {
-        @apply grid desktop:grid-cols-1 mobile:grid-cols-[78px_1fr]  desktop:grid-rows-[100px_1fr]  gap-[20px]   desktop:max-w-[15%] tablet:max-w-[45%] mobile:max-w-full;
+        @apply grid desktop:grid-cols-1 mobile:grid-cols-[78px_1fr]  desktop:grid-rows-[100px_1fr]  gap-[20px] items-start   desktop:max-w-[15%] tablet:max-w-[45%] mobile:max-w-full;
     }
     &__elem-text {
         @apply font-bold text-[20px] text-[#675656] desktop:text-center  mobile:text-[14px];

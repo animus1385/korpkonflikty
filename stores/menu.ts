@@ -1,11 +1,13 @@
 export const useMenuStore = defineStore('menu-store', {
     state: () => ({
         items: [],
+        burger: false,
         tel: {},
         mail: {},
         logo: '',
         social: [],
         link: {},
+        logoMobile: '',
         footer: {
             items: [],
             tel: {},
@@ -29,6 +31,7 @@ export const useMenuStore = defineStore('menu-store', {
             this.social = data.settingsAll.gQLSettings.headerRemove.social;
             this.logo = data.settingsAll.gQLSettings.headerRemove.logoBtn.logo.node.sourceUrl;
             this.link = data.settingsAll.gQLSettings.headerRemove.link;
+            this.logoMobile = data.settingsAll.gQLSettings.headerRemove.logoMobile.node.sourceUrl;
         },
         async getFooter() {
             const { $api } = useNuxtApp();

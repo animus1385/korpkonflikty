@@ -51,8 +51,8 @@ const state = reactive({
 async function onSubmit(e: any) {
   const formData = new FormData();
   formData.append("_wpcf7_unit_tag", props.data.fields?.id);
-  formData.append('phone', state.phone)
-  formData.append('emails', state.email)
+  formData.append('current-phone', state.phone)
+  formData.append('current-email', state.email)
   loadingSend.value = true;
 
   await fetch(

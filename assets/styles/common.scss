@@ -57,3 +57,18 @@ body {
         color: black;
     }
 }
+.breadcrumbs-block {
+    @apply py-[20px];
+    &.HeroCustom {
+        background: linear-gradient(244deg, #474747 1%, #222 59.8%);
+        .breadcrumbs {
+            @apply bg-transparent;
+            span {
+                @apply text-white;
+            }
+        }
+    }
+    .breadcrumbs {
+        @apply p-[12px_20px] bg-[#EDF5FF] max-w-max  rounded-[32px];
+    }
+}

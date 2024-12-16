@@ -25,6 +25,11 @@ export const GET_MENU = gql`
                         title
                         url
                     }
+                    logoMobile {
+                        node {
+                            sourceUrl
+                        }
+                    }
                     logoBtn {
                         url
                         logo {

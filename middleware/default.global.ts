@@ -1,8 +1,9 @@
 export default defineNuxtRouteMiddleware((to, from) => {
-    const storeCommon = useCommonStore();
-
+    const storeCommon: any = useCommonStore();
+    const storeMenu = useMenuStore();
     const anchorTo = to.hash;
-
+    storeMenu.burger = false;
+    
     watchEffect(() => {
         if (storeCommon.statusLoading == 'success') {
             storeCommon.loader = false;

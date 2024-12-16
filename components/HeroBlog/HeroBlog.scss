@@ -1,5 +1,6 @@
 .hero-blog {
-    @apply py-[60px];
+    @apply py-[20px];
+    
     &__container {
         @apply grid desktop:grid-cols-[1fr_400px]  mobile:grid-cols-1 desktop:grid-rows-[auto_535px]  desktop:gap-[62px] mobile:gap-[20px];
     }

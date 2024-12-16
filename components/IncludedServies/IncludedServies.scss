@@ -7,7 +7,7 @@
         @apply flex flex-wrap desktop:gap-[50px] justify-center mobile:gap-[20px];
     }
     &__elem {
-        @apply desktop:min-h-[242px] desktop:max-w-[526px] rounded-[30px] bg-[#2387c0] shadow-[6px_2px_20px_0_#2425270d] p-[42px] grid desktop:grid-cols-1 desktop:items-center justify-center mobile:p-[20px]  mobile:grid-cols-[62px_1fr] auto-rows-max gap-[0_15px];
+        @apply  desktop:max-w-[526px] rounded-[30px] bg-[#2387c0] shadow-[6px_2px_20px_0_#2425270d] p-[42px] grid desktop:grid-cols-1 desktop:items-center justify-center mobile:p-[20px]  mobile:grid-cols-[62px_1fr] auto-rows-max gap-[0_15px];
     }
     &__info-elem {
         @apply flex flex-col;

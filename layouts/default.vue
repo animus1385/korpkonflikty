@@ -11,6 +11,7 @@
 
         <Footer></Footer>
         <loader v-if="storeCommon.loader"></loader>
+        <UModals />
     </div>
 
 </template>

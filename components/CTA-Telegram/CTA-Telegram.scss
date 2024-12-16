@@ -8,7 +8,7 @@
         }
     }
     &__title {
-        @apply mb-[20px]  font-bold text-white ;
+        @apply mb-[20px]  font-bold text-white;
         font-family: var(--second-family);
         line-height: 119%;
         letter-spacing: -0.04em;
@@ -21,7 +21,11 @@
     &__btn {
         @apply p-[20px_40px] rounded-[71px] mobile:w-full desktop:w-auto flex justify-center;
     }
-    &__img {
-        @apply desktop:absolute mobile:mx-auto bottom-0 right-[10%] z-[1];
+    &__img:deep() {
+        @apply desktop:absolute mobile:mx-auto bottom-0 right-[10%]  z-[1] desktop:w-auto mobile:w-full  h-full flex;
+
+        img {
+            @apply w-full h-full;
+        }
     }
 }

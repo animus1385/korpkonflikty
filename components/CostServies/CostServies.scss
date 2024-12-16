@@ -24,13 +24,13 @@
     &__img-left:deep() {
         @apply flex desktop:w-[120%] desktop:h-[120%] mobile:w-full mobile:h-full;
         img {
-            @apply w-full h-full;
+            @apply w-full h-full object-contain;
         }
     }
     &__img-right:deep() {
         @apply desktop:w-[80%] desktop:h-[80%] translate-x-[-80px] desktop:translate-y-[50px] mobile:w-[60%] mobile:h-[60%];
         img {
-            @apply w-full h-full;
+            @apply w-full h-full object-contain;
         }
     }
 }

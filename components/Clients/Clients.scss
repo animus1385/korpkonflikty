@@ -24,7 +24,10 @@
             @apply h-full flex;
         }
     }
-    &__img {
-        @apply w-full  h-full flex items-center justify-center;
+    &__img:deep() {
+        @apply w-full  h-full flex items-center justify-center max-w-[120px];
+        img {
+            @apply w-full h-full object-contain;
+        }
     }
 }
