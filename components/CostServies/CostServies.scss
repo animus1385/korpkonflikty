@@ -1,5 +1,5 @@
 .cost-servies {
-    @apply desktop:pt-[63px] mobile:py-[30px] desktop:pb-[90px];
+    @apply desktop:pt-[63px] mobile:py-[30px] desktop:pb-[90px] overflow-hidden;
     &__container {
         @apply grid desktop:grid-cols-2 desktop:gap-[185px]  mobile:gap-[30px];
     }
@@ -22,15 +22,11 @@
     }
 
     &__img-left:deep() {
-        @apply flex desktop:w-[120%] desktop:h-[120%] mobile:w-full mobile:h-full;
-        img {
-            @apply w-full h-full object-contain;
-        }
+        @apply flex  laptop:w-[80%] mobile:w-[80%] mobile:h-full object-contain;
+   
     }
     &__img-right:deep() {
-        @apply desktop:w-[80%] desktop:h-[80%] translate-x-[-80px] desktop:translate-y-[50px] mobile:w-[60%] mobile:h-[60%];
-        img {
-            @apply w-full h-full object-contain;
-        }
+        @apply  laptop:translate-x-[-150px] mobile:translate-x-[-80px] translate-y-[20px] laptop:w-[40%] mobile:w-[60%] mobile:h-[60%] object-contain;
+  
     }
 }

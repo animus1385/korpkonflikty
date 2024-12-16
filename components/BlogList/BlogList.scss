@@ -1,5 +1,5 @@
 .blog-list {
-    @apply desktop:p-[80px_0] mobile:p-[40px_0] desktop:mb-[100px];
+    @apply  p-[40px_0] desktop:mb-[100px];
     &__container {
         @apply relative;
     }

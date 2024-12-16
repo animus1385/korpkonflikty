@@ -4,8 +4,8 @@
             <h1 class="blog-list__title title-level-2">Блог</h1>
             <ul class="blog-list__list">
                 <li class="blog-list__elem" v-for="elem in storeBlog.items">
-                    <NuxtLink :to="elem.node.uri" NuxtPicture class="blog-list__image-blog">
-                        <NuxtImg fit="fill" loading="lazy" format="webp"  class="blog-list__picture"
+                    <NuxtLink :to="elem.node.uri" NuxtImg class="blog-list__image-blog">
+                        <NuxtImg fit="fill" loading="lazy" format="webp" class="blog-list__picture"
                             :src="elem.node.featuredImage.node.sourceUrl" :alt="elem.node.title" />
                         <div class="blog-list__top">
                             <div class="blog-list__name-block">

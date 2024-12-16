@@ -8,7 +8,7 @@
         @apply  h-full flex  flex-col mobile:justify-start mobile:self-start mt-[141px] tablet:mt-[40px] mobile:mt-[20px];
     }
     &__btn {
-        @apply tabletMedium:max-w-max mobile:p-[10px];
+        @apply tabletMedium:max-w-max mobile:p-[10px] text-white desktop:p-[20px_40px];
     }
     &__title {
         font-family: var(--second-family);

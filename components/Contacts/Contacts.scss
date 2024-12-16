@@ -1,5 +1,5 @@
 .contacts {
-    @apply tablet:my-[80px] mobile:my-[40px];
+    @apply my-[40px];
     &__title {
         font-family: var(--second-family);
         line-height: 117%;
@@ -19,10 +19,7 @@
         @apply grid gap-[39px] desktop:grid-cols-1 tablet:grid-cols-2 desktop:col-span-1 tablet:col-span-full  tablet:justify-center;
     }
     &__picture:deep() {
-        @apply w-full h-full flex;
-        img {
-            @apply w-full h-full;
-        }
+        @apply w-full h-full flex object-contain;
     }
     &__social-link {
         @apply flex w-full h-full;

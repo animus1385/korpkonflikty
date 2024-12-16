@@ -1,9 +1,9 @@
 export default defineNuxtRouteMiddleware((to, from) => {
     const storeCommon: any = useCommonStore();
     const storeMenu = useMenuStore();
-    const anchorTo = to.hash;
+    let anchorTo = to.hash;
     storeMenu.burger = false;
-    
+
     watchEffect(() => {
         if (storeCommon.statusLoading == 'success') {
             storeCommon.loader = false;
@@ -11,10 +11,13 @@ export default defineNuxtRouteMiddleware((to, from) => {
             storeCommon.loader = true;
         }
         if (storeCommon.statusLoading == 'success' && anchorTo) {
-            const element = document.querySelector(anchorTo);
-            if (element) {
-                element.scrollIntoView();
-            }
+            setTimeout(() => {
+                const element = document.querySelector(anchorTo);
+                if (element) {
+                    element.scrollIntoView();
+                    anchorTo = '';
+                }
+            }, 500);
         }
     });
 });

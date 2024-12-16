@@ -7,12 +7,13 @@
                 <p class="cta-telegram__descr">
                     {{ props.data.fields.descr }}
                 </p>
-                <NuxtLink class="cta-telegram__btn btn" :to="props.data.fields.btn.url">{{ props.data.fields.btn.title
+                <NuxtLink class="cta-telegram__btn btn btn--bg" :to="props.data.fields.btn.url">{{
+                    props.data.fields.btn.title
                     }}</NuxtLink>
             </div>
-            <NuxtPicture loading="lazy" class="cta-telegram__img" preload :src="props.data.fields.img.node.sourceUrl"
+            <NuxtImg loading="lazy" class="cta-telegram__img" :src="props.data.fields.img.node.sourceUrl"
                 alt="telegram">
-            </NuxtPicture>
+            </NuxtImg>
         </div>
     </section>
 </template>

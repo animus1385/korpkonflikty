@@ -2,7 +2,9 @@
     @apply m-0 p-0;
     box-sizing: border-box;
 }
-
+html{
+     scroll-padding-top: 100px;
+}
 html,
 body {
     @apply h-full scroll-smooth;
@@ -27,8 +29,24 @@ body {
     text-align: center;
     font-family: var(--font-family);
     font-weight: 600;
-    background: linear-gradient(127deg, #60bbee 0%, #0a72ad 100%);
+    border-image: linear-gradient(127deg, #60bbee 0%, #0a72ad 100%);
+    border: 3px solid transparent;
+    border-image-slice: 1;
     @apply tabletMedium:text-[21px] tabletMedium:p-[26px_52px] mobile:p-[15px_30px] mobile:text-[18px];
+
+    &--bg {
+        background: linear-gradient(127deg, #60bbee 0%, #0a72ad 100%);
+        border: none;
+        color: #fff;
+    }
+    &--dont-active {
+        @apply text-[#2387C0] bg-transparent;
+        border: 3px solid #2387c0;
+    }
+
+    &:hover {
+        @apply text-[#2387C0];
+    }
 }
 
 .title-level-2 {

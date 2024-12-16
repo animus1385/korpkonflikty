@@ -4,9 +4,9 @@
             <h1 class="hero-blog__title "> {{ props.data?.title }}</h1>
             <div class="hero-blog__img-block">
 
-                <NuxtPicture loading="lazy" format="webp" preload class="hero-blog__img" :src="props.data?.img"
+                <NuxtImg loading="lazy" format="webp" class="hero-blog__img" :src="props.data?.img"
                     :alt="props.data?.title">
-                </NuxtPicture>
+                </NuxtImg>
                 <div class="hero-blog__img-info">
                     <time class="hero-blog__date" :datetime="$dayjs(props.data?.date).utc().toString()"> {{
                         $dayjs(props.data?.date).format('DD.MM.YYYY') }} </time>

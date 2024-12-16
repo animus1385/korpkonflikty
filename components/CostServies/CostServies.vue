@@ -3,10 +3,10 @@
         v-if="props?.data.name == 'CostServiesCommon' && props?.data.fields">
         <div class="cost-servies__container container">
             <div class="cost-servies__img-block">
-                <NuxtPicture loading="lazy" format="webp" preload class="cost-servies__img-left"
-                    :src="props?.data?.fields?.img1.node.sourceUrl" alt="cost-servies-1"></NuxtPicture>
-                <NuxtPicture loading="lazy" format="webp" preload class="cost-servies__img-right"
-                    :src="props?.data?.fields?.img2.node.sourceUrl" alt="cost-servies-2"></NuxtPicture>
+                <NuxtImg loading="lazy" format="webp" class="cost-servies__img-left"
+                    :src="props?.data?.fields?.img1.node.sourceUrl" alt="cost-servies-1"></NuxtImg>
+                <NuxtImg loading="lazy" format="webp" class="cost-servies__img-right"
+                    :src="props?.data?.fields?.img2.node.sourceUrl" alt="cost-servies-2"></NuxtImg>
             </div>
             <div class="cost-servies__info">
                 <h2 class="cost-servies__title title-level-2">{{ props?.data?.fields?.title }}</h2>

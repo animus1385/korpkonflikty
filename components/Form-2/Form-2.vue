@@ -24,7 +24,8 @@
                                 label="Отправляя данные, вы соглашаетесь с Политикой обработки данных " />
                         </UFormGroup>
                     </div>
-                    <UButton class="form-2__btn btn" type="submit"> Получить консультацию </UButton>
+                    <UButton :loading="loadingSend" class="form-2__btn btn" type="submit"> Получить консультацию
+                    </UButton>
                 </div>
             </UForm>
         </div>

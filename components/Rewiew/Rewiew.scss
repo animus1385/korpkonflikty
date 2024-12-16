@@ -9,7 +9,7 @@
         font-size: 14px;
         text-align: center;
         border-radius: 59px;
-        @apply desktop:p-[20px_40px]  tablet:w-max flex justify-center text-white text-center;
+        @apply desktop:p-[20px_40px]  tablet:w-max flex justify-center  text-center;
     }
     swiper-container {
         &::part(container) {

@@ -4,9 +4,9 @@
             <h2 class="advantages__title title-level-2">{{ props?.data?.fields?.title }}</h2>
             <ul class="advantages__list">
                 <li class="advantages__elem" v-for="elem in props?.data?.fields?.advantagesList">
-                    <NuxtPicture loading="lazy" format="webp" class="advantages__img" :src="elem.icon.node.sourceUrl"
+                    <NuxtImg loading="lazy" format="webp" class="advantages__img" :src="elem.icon.node.sourceUrl"
                         :alt="props?.data?.fields?.title">
-                    </NuxtPicture>
+                    </NuxtImg>
                     <div class="advantages__info-elem">
                         <h3 class="advantages__elem-title">{{ elem.title }}</h3>
                         <p class="advantages__elem-text">{{ elem.subtitle }}</p>

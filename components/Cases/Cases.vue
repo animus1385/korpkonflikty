@@ -21,7 +21,9 @@
             }">
                 <swiper-slide class="cases__btn-elem" v-for="(elem, index) in props?.data?.fields?.casesCommonList"
                     :key="`cases-btn-${index + 1}`" @click="active = index">
-                    <UButton class="btn">Кейс {{ index + 1 }}</UButton>
+                    <UButton class="btn" :class="{
+                        'btn--dont-active': active !== index
+                    }">Кейс {{ index + 1 }}</UButton>
                 </swiper-slide>
             </swiper-container>
             <div class="info-case">

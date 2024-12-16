@@ -2,7 +2,7 @@
     <header class="header" v-if="menuStore.items">
         <div class="header__contaniner container">
             <NuxtLink class="header__logo" to="/" aria-label="header logo" v-if="menuStore.logo">
-                <NuxtPicture loading="lazy" format="webp" preload :src="menuStore.logo" alt="header-logo"></NuxtPicture>
+                <NuxtImg loading="lazy" format="webp" :src="menuStore.logo" alt="header-logo"></NuxtImg>
             </NuxtLink>
             <nav class="header__nav">
                 <ul class="header__list" v-if="menuStore.items">
@@ -29,13 +29,12 @@
             <ul class="header__social" v-if="menuStore.social">
                 <li class="header__social-elem" v-for="elem in menuStore.social">
                     <NuxtLink :to="elem.link.url" :aria-label="elem.link.title">
-                        <NuxtPicture loading="lazy" format="webp" preload :src="elem.img.node.sourceUrl"
-                            :alt="elem.link.title">
-                        </NuxtPicture>
+                        <NuxtImg loading="lazy" format="webp" :src="elem.img.node.sourceUrl" :alt="elem.link.title">
+                        </NuxtImg>
                     </NuxtLink>
                 </li>
             </ul>
-            <NuxtLink class="header__btn-call btn" v-if="menuStore.link.url" :to="menuStore.link.url"
+            <NuxtLink class="header__btn-call btn btn--bg" v-if="menuStore.link.url" :to="menuStore.link.url"
                 :aria-label="menuStore.link.title">{{ menuStore.link.title }}</NuxtLink>
             <UButton class="header__burger" variant="ghost" size="xl" icon="iconamoon:menu-burger-horizontal-bold"
                 @click="menuStore.burger = true" />
@@ -46,12 +45,12 @@
                     <div class="header__top-mobile">
                         <NuxtLink class="header__logo-mobile" to="/" aria-label="header logo"
                             v-if="menuStore.logoMobile">
-                            <NuxtPicture loading="lazy" format="webp" preload :src="menuStore.logoMobile"
-                                alt="header-logo-mobile">
-                            </NuxtPicture>
+                            <NuxtImg loading="lazy" format="webp" :src="menuStore.logoMobile" alt="header-logo-mobile">
+                            </NuxtImg>
                         </NuxtLink>
                         <UButton color="gray" variant="ghost" size="sm" icon="i-heroicons-x-mark-20-solid"
-                            class="flex sm:hidden absolute end-5 top-5 z-10" square padded @click="menuStore.burger = false" />
+                            class="flex sm:hidden absolute end-5 top-5 z-10" square padded
+                            @click="menuStore.burger = false" />
                     </div>
 
                     <div class="header__connect-mobile">
@@ -85,9 +84,8 @@
                 <ul class="header__social-mobile" v-if="menuStore.social">
                     <li class="header__social-elem-mobile" v-for="elem in menuStore.social">
                         <NuxtLink :to="elem.link.url" :aria-label="elem.link.title">
-                            <NuxtPicture loading="lazy" format="webp" preload :src="elem.img.node.sourceUrl"
-                                :alt="elem.link.title">
-                            </NuxtPicture>
+                            <NuxtImg loading="lazy" format="webp" :src="elem.img.node.sourceUrl" :alt="elem.link.title">
+                            </NuxtImg>
                         </NuxtLink>
                     </li>
                 </ul>

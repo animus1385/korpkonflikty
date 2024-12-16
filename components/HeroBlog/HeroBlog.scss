@@ -8,10 +8,8 @@
         @apply desktop:p-[60px_51px] mobile:p-[20px_0px]  relative z-[2];
     }
     &__img:deep() {
-        @apply flex justify-center desktop:absolute inset-0;
-        img {
-            @apply w-full h-full object-cover;
-        }
+        @apply flex justify-center desktop:absolute inset-0 object-cover w-full h-full;
+
     }
     &__img-block {
         @apply desktop:bg-black  rounded-[20px] overflow-hidden relative flex flex-col-reverse;
