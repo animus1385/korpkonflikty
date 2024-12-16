@@ -27,6 +27,9 @@
             <TextOpen :data="section" />
         </div>
     </div>
+    <div v-else-if="status == 'idle' || status == 'pending'">
+        <USkeleton class=" h-[400px] w-full" v-for="index in 5" :key="`skeleton-${index}`" />
+    </div>
 </template>
 <script setup lang="ts">
 import type { IBlockFlexible } from '~/types/blockFlexible';
