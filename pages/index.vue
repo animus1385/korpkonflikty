@@ -8,7 +8,7 @@ import type { IBlockFlexible } from '~/types/blockFlexible';
 const { $api } = useNuxtApp();
 const storeCommon = useCommonStore();
 
-const { data, status } = useAsyncData('getPage', () => $api.getPage(`141-2`), {
+const { data, status } = useAsyncData('getPage', async () => await $api.getPage(`141-2`), {
     server: false,
     transform: (e: any) => {
         const transform = e.flexible.map((el: any) => {
