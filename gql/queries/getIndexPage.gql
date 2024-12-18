@@ -279,7 +279,6 @@ query getPage($name: String!) {
                                 id
                                 title
                                 descr
-                                cf7FormDynamicFields
                             }
                         }
                         ... on PageBuilderFlexibleForm2CustomLayout {
