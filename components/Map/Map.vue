@@ -2,7 +2,13 @@
     <section class="map" v-if="props?.data.name == 'MapCommon' && props?.data.fields">
         <div class="map__container container">
             <div class="map__content">
-                <div id="map"></div>
+                <yandex-map v-model="map" :settings="{
+                    location: {
+                        center: [37.617644, 55.755819],
+                        zoom: 9,
+                    },
+                }" width="100%" height="500px">
+                </yandex-map>
             </div>
         </div>
     </section>
@@ -10,25 +16,11 @@
 
 <script setup lang="ts">
 const props = defineProps<{ data: any }>();
-import { onMounted } from 'vue';
+import type { YMap } from '@yandex/ymaps3-types';
+import { YandexMap, YandexMapDefaultSchemeLayer } from 'vue-yandex-maps';
 
-onMounted(() => {
-    // Инициализация карты при монтировании компонента
-    if (typeof ymaps !== 'undefined') {
-        ymaps.ready(() => {
-            const map = new ymaps.Map('map', {
-                center: [55.76, 37.64], // Москва
-                zoom: 10, // Уровень приближения
-                controls: [], // Убираем все элементы управления
-            });
-            // Добавление метки на карту
-            const placemark = new ymaps.Placemark([55.76, 37.64], {
-                balloonContent: 'Москва, Россия',
-            });
-            map.geoObjects.add(placemark);
-        });
-    }
-});
+//Можно использовать для различных преобразований
+const map = shallowRef<null | YMap>(null);
 </script>
 
 <style scoped lang="scss">
