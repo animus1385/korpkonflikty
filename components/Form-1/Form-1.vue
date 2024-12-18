@@ -34,34 +34,11 @@
 import { object, string, boolean } from "yup";
 const props = defineProps<{ data: any }>();
 const rePhoneNumber = /^\+7\s?\(?\d{3}\)?\s?\d{3}\s[-\s]?\d{2}[-\s]?\d{2}$/;
-const fieldsSchema = computed<any>(() => {
-  const arr = JSON.parse(props.data.cf7FormDynamicFields);
-  const schemaArr: any = {};
-  arr.forEach((el: any) => {
-    if (el.type == 'text' && !(el.property.includes('phone') || el.property.includes('tel'))) {
-      schemaArr[el.property] = string();
-    } else if (el.type == 'email') {
-
-      schemaArr[el.property] = string().email("Не валидный Email");
-    } else if (el.type == 'text' && (el.property.includes('phone') || el.property.includes('tel'))) {
-
-      schemaArr[el.property] = string().matches(rePhoneNumber, "Номер телефона не валидный");
-    } else if (el.type == "acceptance") {
-      schemaArr[el.property] = boolean();
-    }
-
-    if (el.is_required && el.type !== "acceptance") {
-
-      schemaArr[el.property] = schemaArr[el.property].required("Обязательное поле")
-    }
-    if (el.type == "acceptance" && el.is_required) {
-      schemaArr[el.property] = schemaArr[el.property].oneOf([true], "Вы должны согласиться с Политикой обработки данных")
-    }
-  });
-
-  return schemaArr
-
-})
+const schema = object({
+  phone: string().matches(rePhoneNumber, "Номер телефона не валидный"),
+  email: string().email("Не валидный Email").required("Обязательное поле"),
+  check: boolean().oneOf([true], "Вы должны согласиться с Политикой обработки данных").required("Обязательное поле"),
+});
 const toast = useToast()
 const loadingSend = ref(false);
 const state = reactive({
