@@ -35,7 +35,7 @@
         @apply m-auto ;
     }
     &__elem-modal:deep() {
-        @apply   h-full  w-full  flex ;
+        @apply   h-full  w-full  flex  m-auto max-w-max;
         div {
             @apply w-full h-full flex justify-center items-center;
         }

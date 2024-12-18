@@ -20,7 +20,6 @@ const props = defineProps<{ data: any }>();
 import type { YMap } from '@yandex/ymaps3-types';
 import { YandexMap, YandexMapDefaultSchemeLayer } from 'vue-yandex-maps';
 
-//Можно использовать для различных преобразований
 const map = shallowRef<null | YMap>(null);
 </script>
 
