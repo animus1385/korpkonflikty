@@ -8,6 +8,7 @@
                         zoom: 9,
                     },
                 }" width="100%" height="500px">
+                    <yandex-map-default-scheme-layer />
                 </yandex-map>
             </div>
         </div>
