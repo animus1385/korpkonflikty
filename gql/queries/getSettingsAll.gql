@@ -169,6 +169,15 @@ query NewQuery {
                 title
                 descr
             }
+            formModalCommon {
+                id
+                hash
+                title
+                descr
+                nameBtn
+                successMessage
+                cf7FormDynamicFields
+            }
         }
     }
 }

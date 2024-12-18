@@ -303,14 +303,6 @@ query getPostServices($ID: ID!) {
                         id
                     }
                 }
-                ... on PageBuilderFlexibleFormModalCustomLayout {
-                    fieldGroupName
-                    formModalCustom {
-                        id
-                        title
-                        descr
-                    }
-                }
                 ... on PageBuilderFlexibleFormCommentCommonLayout {
                     fieldGroupName
                 }

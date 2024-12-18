@@ -96,9 +96,7 @@
 
 <script setup lang="ts">
 const menuStore = useMenuStore();
-onMounted(() => {
-    menuStore.getHeader();
-});
+
 </script>
 
 <style scoped lang="scss">

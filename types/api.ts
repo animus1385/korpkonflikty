@@ -1,7 +1,7 @@
 export interface Api {
     getSettingsAll: () => Promise<any[]>;
     getPage: (name: string) => Promise<any[]>;
-    getMenu: (slug: string) => Promise<any[]>;
+    getLayout: () => Promise<any[]>;
     post: {
         getAll: (variables: { offset: number; size: number }) => Promise<any[]>;
         getPost: (slug: string) => Promise<any[]>;

@@ -1,12 +1,12 @@
 import axios from 'axios';
 import allQuery from '../gql/queries/getSettingsAll.gql';
-import pageQuery from '../gql/queries/getIndexPage.gql';
+import GET_PAGE from '../gql/queries/getIndexPage.gql';
 import type { Api } from '../types/api';
 import GET_POST from '../gql/queries/getPost.gql';
 import { CREATE_COMMENT } from '~/gql/mutations/createComment';
 import GET_POSTS from '~/gql/queries/getPosts.gql';
 import GET_POST_SERVICE from '~/gql/queries/getService.gql';
-import GET_MENU from '~/gql/queries/getMenu.gql';
+import GET_LAYOUT from '~/gql/queries/getLayout.gql';
 
 export default defineNuxtPlugin(() => {
     const config = useRuntimeConfig();
@@ -14,7 +14,7 @@ export default defineNuxtPlugin(() => {
     const { $graphql } = useNuxtApp();
     const api: Api = {
         getSettingsAll: async () => {
-            let result = [];
+            let result: any = {};
             try {
                 const res = await $graphql?.default?.request(allQuery);
                 result = res.settingsAll.gQLSettings;
@@ -27,8 +27,7 @@ export default defineNuxtPlugin(() => {
             let result: any = {};
 
             try {
-                const res = await $graphql?.default?.request(pageQuery, { name: name });
-
+                const res = await $graphql?.default?.request(GET_PAGE, { name: name });
                 if (res.pages.edges.length == 0) {
                     showError({
                         statusCode: 404,
@@ -39,6 +38,7 @@ export default defineNuxtPlugin(() => {
                         statusMessage: 'Страница не найдена',
                     });
                 }
+
                 result = {
                     flexible: res.pages.edges[0].node.pageBuilder.flexible,
                     seo: res.pages.edges[0].node.seo,
@@ -48,12 +48,11 @@ export default defineNuxtPlugin(() => {
             }
             return result;
         },
-        async getMenu(slug: string) {
-            let result = [];
+        async getLayout() {
+            let result: any = {};
 
             try {
-                const res = await $graphql?.default?.request(GET_MENU, { ID: slug });
-
+                const res = await $graphql?.default?.request(GET_LAYOUT);
                 result = res;
             } catch (e) {
                 console.error(`текст ошибки ${e}`);

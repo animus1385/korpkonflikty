@@ -15,7 +15,6 @@ query getPage($name: String!) {
                     metaKeywords
                 }
                 pageBuilder {
-                    fieldGroupName
                     flexible {
                         fieldGroupName
                         ... on PageBuilderFlexibleHeroCustomLayout {
@@ -286,17 +285,6 @@ query getPage($name: String!) {
                             fieldGroupName
                             form2Custom {
                                 id
-                            }
-                        }
-                        ... on PageBuilderFlexibleFormModalCustomLayout {
-                            fieldGroupName
-                            formModalCustom {
-                                id
-                                hash
-                                title
-                                descr
-                                nameBtn
-                                successMessage
                             }
                         }
                         ... on PageBuilderFlexibleFormCommentCommonLayout {

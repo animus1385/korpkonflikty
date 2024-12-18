@@ -55,9 +55,7 @@
 
 <script setup lang="ts">
 const menuStore = useMenuStore();
-onMounted(() => {
-    menuStore.getFooter();
-});
+
 </script>
 
 <style scoped lang="scss">

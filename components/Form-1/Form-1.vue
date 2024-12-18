@@ -47,7 +47,6 @@ const state = reactive({
   check: false,
 });
 
-
 async function onSubmit(e: any) {
   const formData = new FormData();
   formData.append("_wpcf7_unit_tag", props.data.fields?.id);

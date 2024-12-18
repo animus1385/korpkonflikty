@@ -1,12 +1,15 @@
-query getMenu($ID: ID!) {
-    menu(idType: SLUG, id: $ID) {
-        id
-        menuItems {
-            edges {
-                node {
-                    id
-                    uri
-                    label
+query getLayout {
+    menus {
+        nodes {
+            id
+            slug
+            menuItems {
+                edges {
+                    node {
+                        id
+                        uri
+                        label
+                    }
                 }
             }
         }
@@ -91,6 +94,15 @@ query getMenu($ID: ID!) {
                     url
                     title
                 }
+            }
+            formModalCommon {
+                id
+                hash
+                title
+                descr
+                nameBtn
+                successMessage
+                cf7FormDynamicFields
             }
         }
     }
