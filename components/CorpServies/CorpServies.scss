@@ -1,25 +1,46 @@
 .corp-servies {
-    @apply desktop:pt-[88px] desktop:pb-[63px] mobile:py-[30px];
+    @apply desktop:pt-[88px] desktop:pb-[63px] mobile:py-[30px] ;
     &__swiper {
         @apply w-full h-full;
     }
-    &__title{
+    &__container {
+        @apply overflow-hidden;
+    }
+    swiper-container {
+        &::part(container) {
+            @apply mobile:overflow-visible;
+        }
+        &::part(wrapper) {
+            @apply items-center;
+        }
+    }
+    &__title {
         @apply mb-[40px];
     }
     &__elem {
         background: #fff;
         border-radius: 30px;
         @apply flex desktop:flex-row mobile:flex-col  w-full overflow-hidden desktop:min-h-[374px];
+        box-shadow: 3px 6px 15px 0 rgba(36, 37, 39, 0.05);
+    }
+    &__elem-swiper {
+        @apply py-[10px];
     }
     &__elem-info {
         @apply p-[22px] flex flex-col w-full;
     }
     &__btn {
-        @apply mt-auto desktop:ml-auto;
+        @apply mt-auto desktop:ml-auto text-[#0a71ad];
     }
     &__img {
         @apply desktop:w-[254px] desktop:h-auto mobile:h-[170px];
         background: #dbeafe;
+    }
+    &__top {
+        @apply flex justify-between items-center;
+    }
+    &__nav-btns {
+        @apply grid grid-cols-2;
     }
     &__elem-title {
         font-family: var(--third-family);

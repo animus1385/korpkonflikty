@@ -6,7 +6,7 @@
             <ul class="contacts__list">
                 <li class="contacts__elem" v-if="props?.data?.fields.list[0].tel.url">
                     <span class="contacts__label-elem">Телефон</span>
-                    <NuxtLink class="contacts__elem-text" :to="props?.data?.fields.list[0].tel.url"
+                    <NuxtLink class="contacts__elem-text tel" :to="props?.data?.fields.list[0].tel.url"
                         :aria-label="props?.data?.fields.list[0].tel.title">{{
                             props?.data?.fields.list[0].tel.title }}</NuxtLink>
                     <span>с 8.00 до 17.00 по МСК</span>

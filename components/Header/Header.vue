@@ -1,14 +1,35 @@
 <template>
     <header class="header" v-if="menuStore.items">
+
         <div class="header__contaniner container">
-            <NuxtLink class="header__logo" to="/" aria-label="header logo" v-if="menuStore.logo">
-                <NuxtImg loading="lazy" format="webp" :src="menuStore.logo" alt="header-logo"></NuxtImg>
-            </NuxtLink>
+            <UButton class="header__logo" @click="navigateTo('/')" variant="ghost" aria-label="header logo"
+                v-if="menuStore.logo">
+                <NuxtImg class="header__logo-img" loading="lazy" format="webp" :src="menuStore.logo" alt="header-logo">
+                </NuxtImg>
+            </UButton>
             <nav class="header__nav">
                 <ul class="header__list" v-if="menuStore.items">
-                    <li class="header__elem" v-for="elem in menuStore.items" :key="elem.node.id">
-                        <NuxtLink class="header__link" :to="elem.node.uri" :aria-label="elem.node.label">{{
-                            elem.node.label }}</NuxtLink>
+                    <li class="header__elem " v-for="elem in menuStore.level1Items" :key="elem.node.id">
+                        <NuxtLink v-if="!menuStore.level2Items.find((e: any) => elem?.node?.id == e.node.parentId)"
+                            class="header__link" :class="{ active: route.path == elem.node.uri }" :to="elem.node.uri"
+                            :aria-label="elem.node.label">{{
+                            elem.node.label }} </NuxtLink>
+
+                        <UPopover mode="hover" v-else>
+                            <UButton class="header__link" :class="{ active: route.path.includes('services') }"
+                                variant="ghost" :label="elem.node.label"
+                                trailing-icon="i-heroicons-chevron-down-20-solid" />
+                            <template #panel>
+                                <div class="header__level-2">
+                                    <NuxtLink class="header__level-2-link"
+                                        :class="{ active: route.path == level2Elem.node.uri }"
+                                        v-for="level2Elem in menuStore.level2Items" :key="level2Elem.id"
+                                        :to="level2Elem.node.uri" :aria-label="level2Elem.node.label">
+                                        {{ level2Elem.node.label }}
+                                    </NuxtLink>
+                                </div>
+                            </template>
+                        </UPopover>
                     </li>
                 </ul>
             </nav>
@@ -16,21 +37,26 @@
             <div class="header__connect">
                 <NuxtLink class="header__email" v-if="menuStore.mail.url" :to="menuStore.mail.url"
                     :aria-label="menuStore.mail.title">
-                    <Icon class="header__icon" name="svg:mail" />
-                    <span> {{ menuStore.mail.title }}</span>
+                    <div class="header__email-info">
+                        <CorpIcon class="header__icon" name="custom-icons:mail" />
+                        <span> {{ menuStore.mail.title }}</span>
+                    </div>
                 </NuxtLink>
                 <NuxtLink class="header__tel" v-if="menuStore.tel.url" :to="menuStore.tel.url"
                     :aria-label="menuStore.tel.title">
-                    <Icon class="header__icon" name="svg:tel" />
-                    <span>{{ menuStore.tel.title }}</span>
+                    <div class="header__tel-info">
+                        <CorpIcon class="header__icon" name="custom-icons:tel" />
+                        <span>{{ menuStore.tel.title }}</span>
+                    </div>
+
+                    <span class="header__tel-text">с 8.00 до 17.00 по МСК</span>
 
                 </NuxtLink>
             </div>
             <ul class="header__social" v-if="menuStore.social">
                 <li class="header__social-elem" v-for="elem in menuStore.social">
                     <NuxtLink :to="elem.link.url" :aria-label="elem.link.title">
-                        <NuxtImg loading="lazy" format="webp" :src="elem.img.node.sourceUrl" :alt="elem.link.title">
-                        </NuxtImg>
+                        <CorpIcon class="header__icon" :name="setIcon(elem.icon[0])" />
                     </NuxtLink>
                 </li>
             </ul>
@@ -84,8 +110,7 @@
                 <ul class="header__social-mobile" v-if="menuStore.social">
                     <li class="header__social-elem-mobile" v-for="elem in menuStore.social">
                         <NuxtLink :to="elem.link.url" :aria-label="elem.link.title">
-                            <NuxtImg loading="lazy" format="webp" :src="elem.img.node.sourceUrl" :alt="elem.link.title">
-                            </NuxtImg>
+                            <Icon class="header__icon-mobile" :name="setIcon(elem.icon[0])" />
                         </NuxtLink>
                     </li>
                 </ul>
@@ -96,7 +121,29 @@
 
 <script setup lang="ts">
 const menuStore = useMenuStore();
+const route = useRoute()
 
+const setIcon = (param: string) => {
+    let result = '';
+    switch (param) {
+        case 'Вконтакте':
+            result = 'custom-icons:vk';
+            break;
+        case 'Дзен':
+            result = 'custom-icons:dzen';
+            break;
+        case 'YouTube':
+            result = 'custom-icons:youtube';
+            break;
+        case 'Telegram':
+            result = 'custom-icons:telegram';
+            break;
+        case 'WhatsApp':
+            result = 'custom-icons:whats-app';
+            break;
+    }
+    return result;
+}
 </script>
 
 <style scoped lang="scss">

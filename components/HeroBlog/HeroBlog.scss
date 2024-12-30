@@ -32,10 +32,13 @@
         @apply col-span-full desktop:text-[64px] mobile:text-[30px] font-extrabold;
     }
     &__list {
-        @apply grid gap-[20px];
+        @apply grid ;
     }
     &__elem {
-        @apply flex;
+        @apply flex mb-[20px];
+    }
+    &__content {
+        @apply overflow-hidden flex flex-col;
     }
     &__content-title {
         @apply desktop:mb-[60px] mobile:mb-[20px];
@@ -51,7 +54,7 @@
         }
     }
     &__scrollbar {
-        @apply desktop:h-auto mobile:h-[250px];
+        @apply  desktop:h-full mobile:h-[250px];
     }
     &__name {
         font-family: var(--font-family);

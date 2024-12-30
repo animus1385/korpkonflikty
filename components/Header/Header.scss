@@ -8,23 +8,36 @@
     &__list {
         @apply grid grid-cols-6 gap-[20px];
     }
+    &__logo-img {
+        @apply h-full w-full;
+    }
     &__logo:deep() {
         @apply desktopMedium:w-[183px] desktopMedium:h-[87px] mobile:w-[150px] mobile:h-[60px] object-contain;
+    }
 
-    }
-    &__icon {
-        @apply w-full h-full;
-    }
     &__nav {
         @apply laptopMedium:flex mobile:hidden;
     }
     &__connect {
-        @apply laptopMedium:grid desktopMedium:grid-cols-2 desktopMedium:gap-[30px] mobile:grid-cols-1 mobile:hidden mobile:gap-[10px];
+        @apply laptopMedium:flex desktopMedium:flex-row desktopMedium:gap-[30px] mobile:flex-col mobile:hidden mobile:gap-[10px];
     }
     &__email,
     &__tel {
-        @apply grid desktopWide:grid-cols-[20px_1fr] gap-[10px]  desktopMedium:text-[18px] text-center font-semibold text-white desktopWide:text-[16px];
+        @apply flex flex-col  gap-[0px_10px]  justify-start   desktopMedium:text-[18px] text-end font-semibold text-white desktopWide:text-[16px];
+    }
+    &__email {
         font-family: var(--second-family);
+    }
+    &__tel {
+        font-family: var(--font3);
+    }
+    &__tel-info,
+    &__email-info {
+        @apply flex justify-end gap-[10px] items-center;
+    }
+  
+    &__tel-text {
+        @apply col-start-2 text-[12px] w-full;
     }
     &__social:deep() {
         @apply grid grid-cols-[repeat(5,20px)] gap-[10px] mobile:hidden desktopWide:grid;
@@ -32,21 +45,28 @@
             @apply w-full h-full object-contain;
         }
     }
+    &__level-2 {
+        @apply grid gap-[10px] p-[10px_15px] items-start;
+    }
+    &__level-2-link {
+        @apply desktopMedium:text-[18px] font-bold text-left  laptopMedium:text-[16px];
+        font-family: var(--second-family);
+        &.active {
+            @apply text-blue-300;
+        }
+    }
     &__social-mobile {
         @apply grid grid-cols-5 grid-rows-[30px];
     }
-    &__social-elem-mobile:deep() {
-        @apply w-full h-full;
-        img {
-            @apply w-full h-full object-contain invert;
-        }
-    }
     &__elem {
-        @apply flex justify-center;
+        @apply flex justify-center items-center;
     }
     &__link {
-        @apply desktopMedium:text-[18px] font-bold text-center text-[#c4c4c4] laptopMedium:text-[16px];
+        @apply desktopMedium:text-[18px] font-bold text-center text-[#c4c4c4] laptopMedium:text-[16px] p-0 h-full;
         font-family: var(--second-family);
+        &.active {
+            @apply text-blue-300;
+        }
     }
     &__btn-call {
         @apply font-semibold text-[16px] p-[15px_30px] text-center text-white justify-self-end justify-center laptopMedium:flex mobile:hidden;
@@ -87,6 +107,19 @@
         @apply flex items-center mb-auto gap-[10px];
     }
     &__icon-mobile:deep() {
-        @apply w-[16px] h-[16px] invert;
+        @apply w-full h-full;
+        path {
+            fill: #2387c0;
+        }
+    }
+    &__social-elem-mobile {
+        a:where([aria-label='whatsApp']) {
+            .header__icon-mobile:deep() {
+                rect {
+                    fill: transparent;
+                    stroke: #2387c0;
+                }
+            }
+        }
     }
 }

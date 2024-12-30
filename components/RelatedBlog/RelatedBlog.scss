@@ -5,7 +5,7 @@
         font-family: var(--second-family);
         line-height: 119%;
         letter-spacing: -0.04em;
-        @apply mb-[22px] text-center text-[#090914];
+        @apply mb-[22px] text-center text-[#090914] max-w-[660px] justify-center flex m-auto;
     }
     &__date {
         font-family: var(--second-family);
@@ -45,7 +45,7 @@
         line-height: 167%;
     }
     &__btn {
-        @apply flex mx-auto justify-center font-semibold desktop:text-[18px] mobile:text-[14px] text-center text-white desktop:p-[20px_40px] rounded-[71px] w-max;
+        @apply flex gap-[10px] items-center mx-auto justify-center font-semibold desktop:text-[18px] mobile:text-[14px] text-center text-white desktop:p-[20px_40px] rounded-[71px] w-max;
         font-family: var(--font-family);
     }
     &__elem-link {

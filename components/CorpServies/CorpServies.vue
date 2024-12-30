@@ -1,7 +1,18 @@
 <template>
     <section class="corp-servies" id="corp-servies" v-if="props.data.name == 'CorpServiesCommon' && props.data.fields">
         <div class="corp-servies__container container">
-            <h2 class="corp-servies__title title-level-2">Услуги по корпоративным спорам</h2>
+            <div class="corp-servies__top">
+                <h2 class="corp-servies__title title-level-2">Услуги по корпоративным спорам</h2>
+                <div class="corp-servies__nav-btns">
+                    <UButton variant="ghost">
+                        <CorpIcon name="custom-icons:arrow-slide-prev"></CorpIcon>
+                    </UButton>
+                    <UButton variant="ghost">
+                        <CorpIcon name="custom-icons:arrow-slide-next"></CorpIcon>
+                    </UButton>
+                </div>
+            </div>
+
             <swiper-container :space-between="50" :breakpoints="{
                 320: {
                     slidesPerView: 1,
@@ -10,8 +21,9 @@
                     slidesPerView: 2,
                 }
             }" class="corp-servies__swiper">
-                <swiper-slide class="corp-servies__elem" v-for="elem in props?.data?.fields?.corpServiesList?.nodes">
-                    <div class="corp-servies__elem">
+                <swiper-slide class="corp-servies__elem-swiper"
+                    v-for="elem in props?.data?.fields?.corpServiesList?.nodes">
+                    <NuxtLink class="corp-servies__elem" :to="elem.uri">
                         <img class="corp-servies__img" src="#" alt="#"></img>
                         <div class="corp-servies__elem-info">
                             <h3 class="corp-servies__elem-title">{{ elem.title }}</h3>
@@ -21,7 +33,7 @@
                             <NuxtLink class="corp-servies__btn" :to="elem.uri">Подробнее</NuxtLink>
                         </div>
 
-                    </div>
+                    </NuxtLink>
                 </swiper-slide>
 
             </swiper-container>

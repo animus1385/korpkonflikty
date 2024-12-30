@@ -9,6 +9,7 @@ query getLayout {
                         id
                         uri
                         label
+                        parentId
                     }
                 }
             }
@@ -43,11 +44,7 @@ query getLayout {
                         url
                         title
                     }
-                    img {
-                        node {
-                            sourceUrl
-                        }
-                    }
+                    icon
                 }
                 tel {
                     url

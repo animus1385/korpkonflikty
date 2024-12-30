@@ -5,9 +5,9 @@
             <ul class="blog-list__list">
                 <li class="blog-list__elem" v-for="elem in storeBlog.items">
                     <NuxtLink :to="elem.node.uri" NuxtImg class="blog-list__image-blog">
-                        <NuxtImg fit="fill" loading="lazy" format="webp" class="blog-list__picture"
-                            :src="elem.node.featuredImage.node.sourceUrl" :alt="elem.node.title" />
                         <div class="blog-list__top">
+                            <NuxtImg fit="fill" loading="lazy" format="webp" class="blog-list__picture"
+                                :src="elem.node.featuredImage.node.sourceUrl" :alt="elem.node.title" />
                             <div class="blog-list__name-block">
                                 <time :datetime="$dayjs(elem.node.date).utc().toString()"> {{
                                     $dayjs(elem.node.date).format('DD.MM.YYYY') }} </time>

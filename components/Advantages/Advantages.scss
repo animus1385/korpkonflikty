@@ -1,7 +1,11 @@
 .advantages {
     @apply desktop:pt-[122px] mobile:pt-[70px] desktop:pb-[84px] mobile:pb-[30px];
     &__title {
-        @apply desktop:mb-[95px] mobile:mb-[40px];
+        @apply desktop:mb-[95px] mobile:mb-[40px] desktop:max-w-[358px];
+    }
+    &__arrow {
+        @apply w-[93px] h-[9px] mb-[39px];
+        background: linear-gradient(267deg, #0a72ad 0%, #60bbee 100%);
     }
     &__list {
         @apply flex flex-wrap gap-[20px]   justify-between;
@@ -11,7 +15,7 @@
         @apply mb-[8px] text-[#242527] desktop:text-[24px] font-semibold desktop:text-center mobile:text-[20px];
     }
     &__info-elem {
-        @apply flex flex-col h-full; 
+        @apply flex flex-col h-full;
     }
     &__img:deep() {
         @apply mx-auto flex items-start w-full h-full object-contain;

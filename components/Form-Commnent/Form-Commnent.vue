@@ -32,7 +32,7 @@
                     </div>
                 </UForm>
             </div>
-            <div class="form-commnent__all-comments">
+            <div class="form-commnent__all-comments" v-if="props?.data?.fields.length !== 0">
                 <span class="form-commnent__span">Комментарии</span>
                 <ul class="form-commnent__list">
                     <li class="form-commnent__elem" v-for="comment in props?.data?.fields" :key="comment.node.id">

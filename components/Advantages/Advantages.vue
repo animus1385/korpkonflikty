@@ -1,6 +1,7 @@
 <template>
     <section class="advantages" id="advantages" v-if="props.data.name == 'AdvantagesCommon' && props.data.fields">
         <div class="advantages__container container">
+            <div class="advantages__arrow"></div>
             <h2 class="advantages__title title-level-2">{{ props?.data?.fields?.title }}</h2>
             <ul class="advantages__list">
                 <li class="advantages__elem" v-for="elem in props?.data?.fields?.advantagesList">

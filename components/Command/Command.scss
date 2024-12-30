@@ -9,6 +9,11 @@
     &__top {
         @apply grid desktop:grid-cols-[1fr_700px] desktop:grid-rows-[320px];
     }
+    swiper-container {
+        &::part(wrapper) {
+            @apply justify-end;
+        }
+    }
     &__descr {
         font-family: var(--second-family);
         line-height: 167%;

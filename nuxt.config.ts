@@ -47,42 +47,15 @@ export default defineNuxtConfig({
     yandexMaps: {
         apikey: '3bfc6cb2-7479-477e-9638-a52995b5b67d',
     },
-    booster: {
-        image: {
-            screens: {
-                default: 320,
-                xxs: 480,
-                xs: 576,
-                sm: 768,
-                md: 996,
-                lg: 1200,
-                xl: 1367,
-                xxl: 1600,
-                '4k': 1921,
+    icon: {
+        mode: 'svg',
+        componentName: 'CorpIcon',
+        customCollections: [
+            {
+                prefix: 'custom-icons',
+                dir: './assets/custom-icons',
             },
-        },
-        detection: {
-            performance: true,
-            browserSupport: true,
-            battery: true,
-        },
-        optimizeSSR: {
-            cleanPreloads: true,
-            cleanPrefetches: true,
-            inlineStyles: true,
-        },
-        targetFormats: ['webp', 'avif', 'jpg|jpeg|png|gif', 'svg'],
-        performanceMetrics: {
-            device: {
-                hardwareConcurrency: { min: 2, max: 48 },
-                deviceMemory: { min: 2 },
-            },
-            timing: {
-                fcp: 800,
-                dcl: 1200,
-            },
-        },
-        domains: ['admin.korpkonflikty.ru'],
+        ],
     },
     runtimeConfig: {
         public: {
@@ -108,22 +81,5 @@ export default defineNuxtConfig({
                 },
             },
         },
-    },
-    image: {
-        provider: 'ipx',
-        domains: ['admin.korpkonflikty.ru'],
-        ipx: {
-            modifiers: {
-                format: 'webp',
-            },
-        },
-    },
-    icon: {
-        customCollections: [
-            {
-                prefix: 'svg',
-                dir: './assets/svg',
-            },
-        ],
     },
 });

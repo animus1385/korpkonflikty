@@ -2,13 +2,16 @@
     <footer class="footer">
         <div class="footer__container container">
             <div class="footer__top">
-                <NuxtLink class="footer__logo" to="/" v-if="menuStore.footer.logo" aria-label="footer logo">
-                    <NuxtImg loading="lazy" format="webp" :src="menuStore.footer.logo" alt="footer-logo">
+                <UButton class="footer__logo" variant="ghost" @click="navigateTo('/')" v-if="menuStore.footer.logo"
+                    aria-label="footer logo">
+                    <NuxtImg class="footer__logo-icon" loading="lazy" format="webp" :src="menuStore.footer.logo"
+                        alt="footer-logo">
                     </NuxtImg>
-                </NuxtLink>
-                <ul class="footer__list" v-if="menuStore.footer.items">
-                    <li class="footer__elem" v-for="elem in menuStore.footer.items" :key="elem.node.id">
-                        <NuxtLink class="footer__link" :to="elem.node.uri" :aria-label="elem.node.label"> {{
+                </UButton>
+                <ul class="footer__list" v-if="menuStore.level1Items">
+                    <li class="footer__elem" v-for="elem in menuStore.level1Items.filter(e => e.node.uri)"
+                        :key="elem.node.id">
+                        <NuxtLink vv class="footer__link" :to="elem.node.uri" :aria-label="elem.node.label"> {{
                             elem.node.label }}</NuxtLink>
                     </li>
                 </ul>
@@ -36,7 +39,7 @@
                 <NuxtLink class="footer__policy" :to="menuStore.footer.policy.url" v-if="menuStore.footer.policy.title"
                     :aria-label="menuStore.footer.policy.title">
                     {{
-                        menuStore.footer.policy.title }}
+                    menuStore.footer.policy.title }}
                 </NuxtLink>
 
                 <ul class="footer__social" v-if="menuStore.footer.social">

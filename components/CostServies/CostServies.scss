@@ -12,7 +12,7 @@
         line-height: 170%;
     }
     &__btn {
-        @apply w-full bg-[#0a72ad] justify-center;
+        @apply w-full bg-[#0a72ad] justify-center desktop:max-w-max;
     }
     &__info {
         @apply desktop:order-2;

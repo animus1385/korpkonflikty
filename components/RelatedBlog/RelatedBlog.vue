@@ -35,12 +35,15 @@
                             :src="elem.node.featuredImage.node.sourceUrl" :alt="elem.node.title">
                         </NuxtImg>
                         <div class="related-blog__date"> <time :datetime="$dayjs(elem.node.date).utc().toString()"> {{
-                            $dayjs(elem.node.date).format('DD.MM.YYYY') }} </time></div>
+                                $dayjs(elem.node.date).format('DD.MM.YYYY') }} </time></div>
                         <div class="related-blog__name">{{ elem.node.contentPost.contentPost.authorPost }}</div>
                     </NuxtLink>
                 </swiper-slide>
             </swiper-container>
-            <NuxtLink to="/blog/" class="related-blog__btn btn btn--bg">Все статьи</NuxtLink>
+            <NuxtLink to="/blog/" class="related-blog__btn btn btn--bg">
+                <span>Все статьи</span>
+                <Icon name="custom-icons:arrow" />
+            </NuxtLink>
         </div>
     </section>
 </template>

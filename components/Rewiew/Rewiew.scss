@@ -20,7 +20,7 @@
         }
     }
     &__elem:deep() {
-        @apply w-full h-full bg-[#eaeaea] rounded-[16px] desktop:h-[243px] mobile:h-[131px] flex justify-center items-center;
+        @apply desktop:w-full  bg-[#eaeaea] rounded-[16px] desktop:h-[384px] mobile:h-[131px] flex justify-center items-center;
         picture {
             @apply w-full h-full;
         }

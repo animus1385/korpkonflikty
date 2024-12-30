@@ -44,4 +44,18 @@ export const useMenuStore = defineStore('menu-store', {
             this.footer.address = data.settingsAll.gQLSettings.footer.address;
         },
     },
+    getters: {
+        level1Items(context) {
+            return context.items.filter((obj: any) => {
+                const matchingObject = context.items.find((item: any) => obj.node.parentId === null);
+                return !!matchingObject;
+            });
+        },
+        level2Items(context) {
+            return context.items.filter((obj: any) => {
+                const matchingObject = context.items.find((item: any) => item.node.id === obj.node.parentId);
+                return !!matchingObject;
+            });
+        },
+    },
 });

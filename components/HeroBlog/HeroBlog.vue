@@ -16,12 +16,10 @@
             <div class="hero-blog__content">
                 <h2 class="hero-blog__content-title title-level-2">Содержание</h2>
                 <PerfectScrollbar class="hero-blog__scrollbar">
-                    <ul class="hero-blog__list">
-                        <li class="hero-blog__elem" v-for="elem in props.data?.contentPost.list">
-                            <NuxtLink class="hero-blog__elem-link" :to="elem.link.url"> {{ elem.link?.title }}
-                            </NuxtLink>
-                        </li>
-                    </ul>
+                    <div class="hero-blog__elem" v-for="elem in props.data?.contentPost.list">
+                        <NuxtLink class="hero-blog__elem-link" :to="elem.link.url"> {{ elem.link?.title }}
+                        </NuxtLink>
+                    </div>
                 </PerfectScrollbar>
             </div>
         </div>

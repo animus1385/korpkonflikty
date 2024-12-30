@@ -3,12 +3,16 @@
     &__content {
         @apply relative;
     }
+    &__arrow {
+        @apply w-[93px] h-[9px] mb-[39px];
+        background: linear-gradient(267deg, #0a72ad 0%, #60bbee 100%);
+    }
     &__title {
         font-family: var(--second-family);
-        @apply text-[#242527] font-bold desktop:mb-[74px] mobile:mb-[30px];
+        @apply text-[#242527] font-bold desktop:mb-[74px] mobile:mb-[30px] desktop:max-w-[121px];
     }
     &__descr-block {
-        @apply grid grid-cols-[8px_1fr] desktop:gap-[24px] mobile:gap-[10px] overflow-hidden desktop:h-[600px] tablet:h-[400px] mobile:h-[300px] text-[#0f172a] desktop:text-[25px] mobile:text-[16px] font-medium desktop:pl-[32px]   relative transition-all mb-[20px];
+        @apply grid grid-cols-[8px_1fr] desktop:gap-[24px]  mobile:gap-[10px] overflow-hidden desktop:h-[600px] tablet:h-[400px] mobile:h-[300px] text-[#0f172a] desktop:text-[25px] mobile:text-[16px] font-medium desktop:pl-[32px]   relative transition-all mb-[20px];
         font-family: var(--second-family);
         line-height: 128%;
         letter-spacing: -0.01em;
