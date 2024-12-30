@@ -49,7 +49,6 @@ export default defineNuxtConfig({
     },
     icon: {
         mode: 'svg',
-        componentName: 'CorpIcon',
         customCollections: [
             {
                 prefix: 'custom-icons',

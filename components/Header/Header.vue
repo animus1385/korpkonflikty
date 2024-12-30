@@ -13,7 +13,7 @@
                         <NuxtLink v-if="!menuStore.level2Items.find((e: any) => elem?.node?.id == e.node.parentId)"
                             class="header__link" :class="{ active: route.path == elem.node.uri }" :to="elem.node.uri"
                             :aria-label="elem.node.label">{{
-                            elem.node.label }} </NuxtLink>
+                                elem.node.label }} </NuxtLink>
 
                         <UPopover mode="hover" v-else>
                             <UButton class="header__link" :class="{ active: route.path.includes('services') }"
@@ -38,14 +38,14 @@
                 <NuxtLink class="header__email" v-if="menuStore.mail.url" :to="menuStore.mail.url"
                     :aria-label="menuStore.mail.title">
                     <div class="header__email-info">
-                        <CorpIcon class="header__icon" name="custom-icons:mail" />
+                        <Icon class="header__icon" name="custom-icons:mail" />
                         <span> {{ menuStore.mail.title }}</span>
                     </div>
                 </NuxtLink>
                 <NuxtLink class="header__tel" v-if="menuStore.tel.url" :to="menuStore.tel.url"
                     :aria-label="menuStore.tel.title">
                     <div class="header__tel-info">
-                        <CorpIcon class="header__icon" name="custom-icons:tel" />
+                        <Icon class="header__icon" name="custom-icons:tel" />
                         <span>{{ menuStore.tel.title }}</span>
                     </div>
 
@@ -56,7 +56,7 @@
             <ul class="header__social" v-if="menuStore.social">
                 <li class="header__social-elem" v-for="elem in menuStore.social">
                     <NuxtLink :to="elem.link.url" :aria-label="elem.link.title">
-                        <CorpIcon class="header__icon" :name="setIcon(elem.icon[0])" />
+                        <Icon class="header__icon" :name="setIcon(elem.icon[0])" />
                     </NuxtLink>
                 </li>
             </ul>

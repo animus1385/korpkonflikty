@@ -5,10 +5,10 @@
                 <h2 class="corp-servies__title title-level-2">Услуги по корпоративным спорам</h2>
                 <div class="corp-servies__nav-btns">
                     <UButton variant="ghost">
-                        <CorpIcon name="custom-icons:arrow-slide-prev"></CorpIcon>
+                        <Icon name="custom-icons:arrow-slide-prev"></Icon>
                     </UButton>
                     <UButton variant="ghost">
-                        <CorpIcon name="custom-icons:arrow-slide-next"></CorpIcon>
+                        <Icon name="custom-icons:arrow-slide-next"></Icon>
                     </UButton>
                 </div>
             </div>
