@@ -1,13 +1,17 @@
 <template>
-    <section class="map" v-if="props?.data.name == 'MapCommon' || props?.data.name == 'MapCustom' && props?.data.fields">
+    <section class="map"
+        v-if="props?.data.name == 'MapCommon' || props?.data.name == 'MapCustom' && props?.data.fields">
         <div class="map__container container">
             <div class="map__content">
                 <yandex-map v-model="map" :settings="{
                     location: {
-                        center: [37.617644, 55.755819],
-                        zoom: 9,
+                        center: [props?.data.fields.centerX, props?.data.fields.centerY],
+                        zoom: props?.data.fields.zoom,
                     },
                 }" width="100%" height="500px">
+                    <yandex-map-marker position="top-center left-center"
+                        :settings="{ coordinates: [props?.data.fields.metka.centerX, props?.data.fields.metka.centerY] }">
+                    </yandex-map-marker>
                     <yandex-map-default-scheme-layer />
                 </yandex-map>
             </div>
@@ -18,7 +22,7 @@
 <script setup lang="ts">
 const props = defineProps<{ data: any }>();
 import type { YMap } from '@yandex/ymaps3-types';
-import { YandexMap, YandexMapDefaultSchemeLayer } from 'vue-yandex-maps';
+import { YandexMap, YandexMapDefaultSchemeLayer, YandexMapMarker } from 'vue-yandex-maps';
 
 const map = shallowRef<null | YMap>(null);
 </script>
