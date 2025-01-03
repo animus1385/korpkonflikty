@@ -16,3 +16,10 @@
 #map {
     @apply w-full h-full;
 }
+.pin {
+    cursor: pointer;
+    max-width: unset;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}

@@ -1,6 +1,5 @@
 <template>
-    <section class="map"
-        v-if="props?.data.name == 'MapCommon' && props?.data.fields">
+    <section class="map" v-if="props?.data.name == 'MapCommon' && props?.data.fields">
         <div class="map__container container">
             <div class="map__content">
                 <yandex-map v-model="map" :settings="{
@@ -12,6 +11,8 @@
                     <yandex-map-marker position="top-center left-center"
                         :settings="{ coordinates: [props?.data.fields.metka.centerX, props?.data.fields.metka.centerY] }">
                     </yandex-map-marker>
+                    <yandex-map-default-scheme-layer />
+                    <yandex-map-default-features-layer />
                 </yandex-map>
             </div>
         </div>
@@ -21,7 +22,7 @@
 <script setup lang="ts">
 const props = defineProps<{ data: any }>();
 import type { YMap } from '@yandex/ymaps3-types';
-import { YandexMap, YandexMapMarker } from 'vue-yandex-maps';
+import { YandexMap, YandexMapDefaultFeaturesLayer, YandexMapDefaultSchemeLayer, YandexMapMarker } from 'vue-yandex-maps';
 
 const map = shallowRef<null | YMap>(null);
 </script>
