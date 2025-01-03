@@ -184,6 +184,14 @@ query NewQuery {
                 successMessage
                 cf7FormDynamicFields
             }
+            mapCommon {
+                centerX
+                centerY
+                metka {
+                    centerX
+                    centerY
+                }
+            }
         }
     }
 }
