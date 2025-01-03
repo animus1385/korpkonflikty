@@ -12,7 +12,6 @@
                     <yandex-map-marker position="top-center left-center"
                         :settings="{ coordinates: [props?.data.fields.metka.centerX, props?.data.fields.metka.centerY] }">
                     </yandex-map-marker>
-                    <yandex-map-default-scheme-layer />
                 </yandex-map>
             </div>
         </div>
@@ -22,7 +21,7 @@
 <script setup lang="ts">
 const props = defineProps<{ data: any }>();
 import type { YMap } from '@yandex/ymaps3-types';
-import { YandexMap, YandexMapDefaultSchemeLayer, YandexMapMarker } from 'vue-yandex-maps';
+import { YandexMap, YandexMapMarker } from 'vue-yandex-maps';
 
 const map = shallowRef<null | YMap>(null);
 </script>
