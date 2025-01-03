@@ -104,10 +104,10 @@
                                 class="ml-auto my-1" @click="activePopup = false" />
                         </div>
                     </template>
-                    <div class="rewiew__elem-modal" v-if="dataPopup.type == 'img'">
+                    <div class="rewiew__elem-modal img" v-if="dataPopup.type == 'img'">
                         <NuxtImg loading="lazy" :src="dataPopup.value" alt="cover-modal"></NuxtImg>
                     </div>
-                    <div class="rewiew__elem-modal" v-if="dataPopup.type == 'video'">
+                    <div class="rewiew__elem-modal video" v-if="dataPopup.type == 'video'">
                         <div v-html="dataPopup.value"> </div>
                     </div>
                 </UCard>

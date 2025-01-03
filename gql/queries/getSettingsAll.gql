@@ -171,6 +171,17 @@ query NewQuery {
                 type
                 fieldGroupName
             }
+            sertificateCommon {
+                listImg {
+                    img {
+                        node {
+                            id
+                            sourceUrl
+                        }
+                    }
+                }
+                fieldGroupName
+            }
             textOpenCommon {
                 title
                 descr

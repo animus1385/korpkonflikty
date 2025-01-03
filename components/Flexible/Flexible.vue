@@ -14,6 +14,7 @@
             <FAQ :data="section" />
             <CTA2 :data="section" />
             <Rewiew :data="section" />
+            <Certificate :data="section" />
             <CTATelegram :data="section" />
             <BlogContent :data="section" />
             <Form1 :data="section" />
