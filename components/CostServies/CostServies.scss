@@ -1,32 +1,52 @@
 .cost-servies {
     @apply desktop:pt-[63px] mobile:py-[30px] desktop:pb-[90px] overflow-hidden;
     &__container {
-        @apply grid desktop:grid-cols-2 desktop:gap-[185px]  mobile:gap-[30px];
+        @apply grid desktop:grid-cols-2 desktop:gap-[40px]  mobile:gap-[30px];
+        &.reverse {
+            .cost-servies__img-block {
+                @apply order-2;
+            }
+            .cost-servies__info {
+                @apply order-1;
+            }
+            .cost-servies__img-left:deep() {
+                @apply order-2 w-[100%];
+            }
+            .cost-servies__img-right:deep() {
+                @apply order-1 laptop:translate-x-[100px] mobile:translate-x-[80px] w-[60%] h-[70%];
+            }
+        }
     }
     &__title {
         @apply mb-[29px];
     }
-    &__descr {
+    &__descr:deep() {
         @apply desktop:text-[18px] mobile:text-[14px] font-semibold text-[#575555] mb-[33px];
         font-family: var(--font-family);
         line-height: 170%;
+        ul,
+        ol {
+            list-style: revert;
+            @apply pl-[20px];
+            li::marker {
+                @apply text-[#2387c0];
+            }
+        }
     }
     &__btn {
-        @apply w-full bg-[#0a72ad] justify-center desktop:max-w-max;
+        @apply w-full bg-[#0a72ad] justify-center desktop:max-w-max text-white desktop:p-[22px_45px] mobile:text-[14px] desktop:text-[18px];
     }
     &__info {
-        @apply desktop:order-2;
+        @apply desktop:order-2 flex flex-col;
     }
     &__img-block {
         @apply relative desktop:order-1 mobile:order-1   h-full   mx-auto flex items-center w-full;
     }
 
     &__img-left:deep() {
-        @apply flex  laptop:w-[80%] mobile:w-[80%] mobile:h-full object-contain;
-   
+        @apply flex  laptop:w-[80%] mobile:w-[80%] mobile:h-full object-contain rounded-[30px] overflow-hidden;
     }
     &__img-right:deep() {
-        @apply  laptop:translate-x-[-150px] mobile:translate-x-[-80px] translate-y-[20px] laptop:w-[40%] mobile:w-[60%] mobile:h-[60%] object-contain;
-  
+        @apply laptop:translate-x-[-150px] mobile:translate-x-[-80px] translate-y-[20px] rounded-[30px] overflow-hidden laptop:w-[40%] mobile:w-[60%] mobile:h-[60%] object-contain;
     }
 }

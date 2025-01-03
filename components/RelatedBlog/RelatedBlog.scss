@@ -25,7 +25,10 @@
         }
     }
     &__swiper {
-        @apply mb-[68px];
+        @apply mb-[30px];
+    }
+    &__nav-btns {
+        @apply grid tablet:grid-cols-2 mb-[30px] mobile:grid-cols-[repeat(2,max-content)] tablet:justify-normal mobile:justify-between;
     }
     &__title-elem {
         font-family: var(--font-family);
@@ -36,7 +39,7 @@
     &__img:deep() {
         @apply flex tablet:min-h-[192px] mobile:min-h-[200px] bg-[#52525b] rounded-[16px] mb-[26px] w-full;
         img {
-            @apply w-full h-full object-cover ;
+            @apply w-full h-full object-cover;
         }
     }
     &__subtitle {

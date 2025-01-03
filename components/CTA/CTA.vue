@@ -1,5 +1,5 @@
 <template>
-    <section class="cta" id="cta" v-if="props?.data.name == 'CtaCommon' && props?.data.fields">
+    <section class="cta" id="cta" v-if="props?.data.name == 'CtaCommon' || props?.data.name == 'CtaCustom' && props?.data.fields">
         <div class="cta__container container">
             <div class="cta__content">
                 <NuxtImg loading="lazy" format="webp" class="cta__img" :src="props?.data?.fields.bg.node.sourceUrl"

@@ -1,24 +1,39 @@
 .suitable-services {
     @apply overflow-hidden py-[60px] bg-[#EDF5FF];
-    &__elem-link {
-        @apply grid gap-[23px];
-    }
+
     &__title {
         font-family: var(--font-family);
-        @apply mb-[46px] text-[#242527] font-semibold;
+        @apply  text-[#242527] font-semibold;
     }
     swiper-container {
         &::part(container) {
             @apply overflow-visible;
         }
         &::part(wrapper) {
-            @apply items-center;
+            @apply items-center laptop:min-h-[450px] mobile:min-h-[280px];
         }
     }
-
+    swiper-slide {
+        @apply h-full;
+    }
+    &__top {
+        @apply flex justify-between items-center mb-[30px];
+    }
+    &__list {
+        @apply h-full   mb-[30px];
+    }
+    &__nav-btn:deep() {
+        @apply w-[60px] h-[44px] p-[11px_17px];
+        svg {
+            @apply w-full h-full;
+        }
+    }
+    &__nav-btns {
+        @apply grid tablet:grid-cols-2 mobile:grid-cols-[repeat(2,max-content)] tablet:justify-normal mobile:justify-between;
+    }
     &__elem-link {
         background: linear-gradient(224deg, #474747 0%, #222 41.8%);
-        @apply rounded-[30px] overflow-hidden p-[40px] shadow-[3px_6px_15px_0_#2425270d];
+        @apply rounded-[30px] overflow-hidden p-[40px] shadow-[3px_6px_15px_0_#2425270d] h-full flex flex-col justify-between gap-[23px];
     }
     &__title-elem {
         font-family: var(--second-family);

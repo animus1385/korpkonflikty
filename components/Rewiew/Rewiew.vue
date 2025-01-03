@@ -1,5 +1,6 @@
 <template>
-    <section class="rewiew" id="rewiew" v-if="props?.data.name == 'RewiewCommon' && props?.data.fields">
+    <section class="rewiew" id="rewiew"
+        v-if="props?.data.name == 'RewiewCommon' || props?.data.name == 'RewiewCustom' && props?.data.fields">
         <div class="rewiew__container container">
             <div class="rewiew__top">
                 <ul class="rewiew__btn-list">
@@ -14,9 +15,17 @@
                         }" @click="activeBtn = 'video'"> Видео отзывы</UButton>
                     </li>
                 </ul>
-             
+                <div class="rewiew__nav-btns" v-if="$viewport.isGreaterOrEquals('tablet')">
+                    <UButton class="rewiew__nav-btn" @click="swiper.prev()" variant="ghost"
+                        icon="custom-icons:arrow-slide-prev">
+                    </UButton>
+                    <UButton class="rewiew__nav-btn" @click="swiper.next()" variant="ghost"
+                        icon="custom-icons:arrow-slide-next">
+                    </UButton>
+                </div>
             </div>
-            <swiper-container ref="swiperReview" v-if="activeBtn == 'img'" :slides-per-view="4" :breakpoints="{
+            <swiper-container class="rewiew__swiper" ref="swiperReviewRef" v-if="activeBtn == 'img'"
+                :slides-per-view="4" :breakpoints="{
                 320: {
                     slidesPerView: 1.5,
                     spaceBetween: 10,
@@ -39,7 +48,8 @@
                     </div>
                 </swiper-slide>
             </swiper-container>
-            <swiper-container v-if="activeBtn == 'video'" :slides-per-view="4" :breakpoints="{
+            <swiper-container class="rewiew__swiper" ref="swiperVideoRef" v-if="activeBtn == 'video'"
+                :slides-per-view="4" :breakpoints="{
                 320: {
                     slidesPerView: 1.5,
                     spaceBetween: 10,
@@ -63,6 +73,14 @@
                 </swiper-slide>
 
             </swiper-container>
+            <div class="rewiew__nav-btns" v-if="$viewport.isLessThan('tablet')">
+                <UButton class="rewiew__nav-btn" @click="swiper.prev()" variant="ghost"
+                    icon="custom-icons:arrow-slide-prev">
+                </UButton>
+                <UButton class="rewiew__nav-btn" @click="swiper.next()" variant="ghost"
+                    icon="custom-icons:arrow-slide-next">
+                </UButton>
+            </div>
             <UModal v-model="activePopup" class=" rewiew__modal" fullscreen :ui="{
                 base: 'h-full flex flex-col',
                 rounded: '',
@@ -101,7 +119,12 @@
 
 <script setup lang="ts">
 const props = defineProps<{ data: any }>();
+const swiperReviewRef = ref(null);
+const swiperVideoRef = ref(null);
 const activeBtn = ref('img');
+const { $viewport } = useNuxtApp()
+const swiper = computed(() => activeBtn.value == 'img' ? useSwiper(swiperReviewRef) : useSwiper(swiperVideoRef))
+
 const activePopup = ref(false);
 const dataPopup = ref({
     type: '',

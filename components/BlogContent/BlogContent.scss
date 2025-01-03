@@ -22,7 +22,7 @@
             line-height: 170%;
             @apply text-[#939393] desktop:text-[18px] mobile:text-[14px] font-semibold desktop:gap-[20px] mobile:gap-[10px] grid pl-[20px];
         }
-        ul {
+        ul,ol {
             li::marker {
                 @apply text-[#2387c0];
             }

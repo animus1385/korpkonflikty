@@ -1,7 +1,10 @@
 .rewiew {
     @apply desktop:pt-[101px]  desktop:pb-[91px] mobile:py-[30px] overflow-hidden;
     &__btn-list {
-        @apply flex desktop:gap-[32px] tablet:flex-row   mobile:w-full tablet:w-max mobile:gap-[11px] desktop:mb-[84px] mobile:mb-[30px];
+        @apply flex desktop:gap-[32px] tablet:flex-row   mobile:w-full tablet:w-max mobile:gap-[11px] ;
+    }
+    &__top {
+        @apply flex justify-between items-center desktop:mb-[84px] mobile:mb-[30px];
     }
     &__btn {
         font-family: var(--font-family);
@@ -9,7 +12,19 @@
         font-size: 14px;
         text-align: center;
         border-radius: 59px;
-        @apply desktop:p-[20px_40px]  tablet:w-max flex justify-center  text-center;
+        @apply desktop:p-[20px_40px] mobile:p-[10px_20px]   tablet:w-max flex justify-center  text-center;
+    }
+    &__nav-btn:deep() {
+        @apply w-[60px] h-[44px] p-[11px_17px];
+        svg {
+            @apply w-full h-full;
+        }
+    }
+    &__swiper {
+        @apply mb-[30px];
+    }
+    &__nav-btns {
+        @apply grid tablet:grid-cols-2 mobile:grid-cols-[repeat(2,max-content)] tablet:justify-normal mobile:justify-between;
     }
     swiper-container {
         &::part(container) {
@@ -32,18 +47,19 @@
         @apply desktop:w-[100px] mobile:w-[30px] desktop:h-[100px] mobile:h-[30px];
     }
     &__modal {
-        @apply m-auto ;
+        @apply m-auto;
     }
     &__elem-modal:deep() {
-        @apply   h-full  w-full  flex  m-auto max-w-max;
+        @apply h-full  w-full  flex  m-auto max-w-max;
         div {
             @apply w-full h-full flex justify-center items-center;
         }
         img {
             @apply w-full h-full flex justify-center  object-contain;
         }
-        iframe,p {
-            @apply  w-full h-full max-w-[1000px] max-h-[700px] ;
+        iframe,
+        p {
+            @apply w-full h-full max-w-[1000px] max-h-[700px];
         }
     }
 }

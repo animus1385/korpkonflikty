@@ -13,7 +13,7 @@
                         <NuxtLink v-if="!menuStore.level2Items.find((e: any) => elem?.node?.id == e.node.parentId)"
                             class="header__link" :class="{ active: route.path == elem.node.uri }" :to="elem.node.uri"
                             :aria-label="elem.node.label">{{
-                                elem.node.label }} </NuxtLink>
+                            elem.node.label }} </NuxtLink>
 
                         <UPopover mode="hover" v-else>
                             <UButton class="header__link" :class="{ active: route.path.includes('services') }"
@@ -29,6 +29,7 @@
                                     </NuxtLink>
                                 </div>
                             </template>
+
                         </UPopover>
                     </li>
                 </ul>
@@ -66,7 +67,7 @@
                 @click="menuStore.burger = true" />
         </div>
         <USlideover v-model="menuStore.burger" side="left" :ui="{ wrapper: 'z-[1000]' }">
-            <UCard>
+            <UCard class="h-full">
                 <template #header>
                     <div class="header__top-mobile">
                         <NuxtLink class="header__logo-mobile" to="/" aria-label="header logo"
@@ -74,37 +75,65 @@
                             <NuxtImg loading="lazy" format="webp" :src="menuStore.logoMobile" alt="header-logo-mobile">
                             </NuxtImg>
                         </NuxtLink>
-                        <UButton color="gray" variant="ghost" size="sm" icon="i-heroicons-x-mark-20-solid"
-                            class="flex sm:hidden absolute end-5 top-5 z-10" square padded
-                            @click="menuStore.burger = false" />
+                        <UButton variant="ghost" size="sm" icon="i-heroicons-x-mark-20-solid" class="header__close"
+                            square padded @click="menuStore.burger = false" />
                     </div>
 
                     <div class="header__connect-mobile">
                         <NuxtLink class="header__email-mobile" v-if="menuStore.mail.url" :to="menuStore.mail.url"
                             :aria-label="menuStore.mail.title">
                             <div class="header__email-block-mobile">
-                                <Icon class="header__icon-mobile" name="svg:mail" />
+                                <Icon class="header__icon-mobile" name="custom-icons:mail" />
                                 <span> {{ menuStore.mail.title }}</span>
                             </div>
                         </NuxtLink>
                         <NuxtLink class="header__tel-mobile" v-if="menuStore.tel.url" :to="menuStore.tel.url"
                             :aria-label="menuStore.tel.title">
                             <div class="header__tel-block-mobile">
-                                <Icon class="header__icon-mobile" name="svg:tel" />
+                                <Icon class="header__icon-mobile" name="custom-icons:tel" />
                                 <span>{{ menuStore.tel.title }}</span>
                             </div>
                             <span class="footer__tel-text">с 8.00 до 17.00 по МСК</span>
                         </NuxtLink>
                     </div>
                 </template>
+
                 <nav class="header__nav-mobile">
                     <ul class="header__list-mobile" v-if="menuStore.items">
-                        <li class="header__elem-mobile" v-for="elem in menuStore.items" :key="elem.node.id">
-                            <NuxtLink class="header__link-mobile" :to="elem.node.uri" :aria-label="elem.node.label">{{
+                        <li class="header__elem-mobile" v-for="elem in menuStore.level1Items" :key="elem.node.id">
+                            <NuxtLink v-if="!menuStore.level2Items.find((e: any) => elem?.node?.id == e.node.parentId)"
+                                class="header__link-mobile" :to="elem.node.uri" :aria-label="elem.node.label">
+                                {{
                                 elem.node.label }}</NuxtLink>
+                            <UAccordion v-else class="header__accordion" variant="ghost" size="xl" color="black" :items="[{
+                                    label: 'Услуги',
+                                }]">
+                                <template #default="{ open }">
+                                    <UButton color="gray" variant="ghost" class="header__accordion-btn-mobile">
+                                        <span class="header__accordion-btn-text ">Услуги</span>
+                                        <template #trailing>
+                                            <UIcon :name="!open ? 'i-heroicons-plus' : 'i-heroicons-minus'" />
+                                        </template>
+
+                                    </UButton>
+                                </template>
+                                <template #item="{ item }">
+                                    <ul class="header__accordion-mobile-list">
+                                        <li class="header__accordion-mobile-elem"
+                                            v-for="level2Elem in menuStore.level2Items" :key="level2Elem.id">
+                                            <NuxtLink class="header__accordion-link-mobile" :to="level2Elem.node.uri"
+                                                :aria-label="level2Elem.node.label">
+                                                {{ level2Elem.node.label }}
+                                            </NuxtLink>
+                                        </li>
+                                    </ul>
+                                </template>
+                            </UAccordion>
                         </li>
                     </ul>
                 </nav>
+
+
                 <NuxtLink class="header__btn-call btn" v-if="menuStore.link.url" :to="menuStore.link.url"
                     :aria-label="menuStore.link.title">{{ menuStore.link.title }}</NuxtLink>
                 <ul class="header__social-mobile" v-if="menuStore.social">

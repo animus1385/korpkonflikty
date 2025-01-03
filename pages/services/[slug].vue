@@ -28,7 +28,7 @@ const { data, status } = useAsyncData('getService', async () => await $api.servi
                 name: name,
                 fields: el[key] ? el[key] : {},
             } as IBlockFlexible;
-        });
+        })
         return {
             flexible: transform,
             seo: e.seo

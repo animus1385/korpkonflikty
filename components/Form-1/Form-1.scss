@@ -6,7 +6,7 @@
     }
     &__title {
         font-family: var(--second-family);
-        @apply  mb-[19px] text-white desktop:text-[40px] font-bold mobile:text-[32px];
+        @apply  mb-[19px] text-white desktop:text-[40px] font-bold mobile:text-[25px];
     }
     &__descr {
         font-family: var(--second-family);

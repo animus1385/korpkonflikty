@@ -71,15 +71,19 @@ body {
 .breadcrumbs-block {
     @apply py-[20px];
     &.HeroCustom {
-        background: linear-gradient(244deg, #474747 1%, #222 59.8%);
+        @apply bg-gradient-to-l from-[#474747] to-[#222];
         .breadcrumbs {
             @apply bg-transparent;
             span {
-                @apply text-white;
+                @apply text-white ;
             }
         }
     }
     .breadcrumbs {
         @apply desktop:p-[12px_20px] mobile:p-[10px_10px] bg-[#EDF5FF] max-w-max  rounded-[32px] desktop:min-h-[48px];
+
+        span {
+            @apply font-light;
+        }
     }
 }

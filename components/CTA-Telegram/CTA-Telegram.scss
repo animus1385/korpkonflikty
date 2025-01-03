@@ -19,7 +19,7 @@
         line-height: 120%;
     }
     &__btn {
-        @apply p-[20px_40px] rounded-[71px] mobile:w-full desktop:w-max text-[18px]  flex justify-center;
+        @apply desktop:p-[20px_40px] mobile:p-[10px_30px] desktop:text-[18px] rounded-[71px] mobile:w-full desktop:w-max mobile:text-[14px]  flex justify-center;
     }
     &__img:deep() {
         @apply desktop:absolute mobile:mx-auto bottom-0 right-[10%]  z-[1] desktop:w-auto mobile:w-full  h-full flex;

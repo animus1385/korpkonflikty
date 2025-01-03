@@ -32,15 +32,21 @@
     &__btn {
         @apply mt-auto desktop:ml-auto text-[#0a71ad];
     }
+    &__nav-btn:deep() {
+        @apply w-[60px] h-[44px] p-[11px_17px];
+        svg {
+            @apply w-full h-full;
+        }
+    }
     &__img {
-        @apply desktop:w-[254px] desktop:h-auto mobile:h-[170px];
+        @apply desktop:w-[254px] desktop:h-auto mobile:h-[170px] object-cover ;
         background: #dbeafe;
     }
     &__top {
         @apply flex justify-between items-center;
     }
     &__nav-btns {
-        @apply grid grid-cols-2;
+        @apply grid tablet:grid-cols-2 mobile:grid-cols-[repeat(2,max-content)] tablet:justify-normal mobile:justify-between;
     }
     &__elem-title {
         font-family: var(--third-family);

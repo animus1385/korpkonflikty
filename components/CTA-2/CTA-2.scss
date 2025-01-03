@@ -35,7 +35,7 @@
         @apply flex justify-end items-end;
     }
     &__btn {
-        @apply text-center desktop:min-w-[398px]  transition-colors  desktop:w-auto mobile:w-full justify-center  flex rounded-full desktop:p-[20px] text-[#242527] desktop:text-[18px] mobile:text-[14px] font-semibold;
+        @apply text-center desktop:min-w-[398px]  transition-colors  desktop:w-auto mobile:w-full justify-center  flex rounded-full desktop:p-[20px] text-[#242527] desktop:text-[18px] mobile:p-[10px] mobile:text-[14px] font-semibold;
         font-family: var(--font-family);
         background: #fff;
         border: 3px solid white;

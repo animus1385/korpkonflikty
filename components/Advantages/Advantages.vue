@@ -1,5 +1,5 @@
 <template>
-    <section class="advantages" id="advantages" v-if="props.data.name == 'AdvantagesCommon' && props.data.fields">
+    <section class="advantages" id="advantages" v-if="props.data.name == 'AdvantagesCommon' || props?.data.name == 'AdvantagesCustom' && props.data.fields">
         <div class="advantages__container container">
             <div class="advantages__arrow"></div>
             <h2 class="advantages__title title-level-2">{{ props?.data?.fields?.title }}</h2>

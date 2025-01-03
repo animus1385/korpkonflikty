@@ -1,5 +1,5 @@
 <template>
-    <section class="contacts" v-if="props?.data.name == 'ContactsCustom' && props?.data.fields">
+    <section class="contacts" v-if="props?.data.name == 'ContactsCustom' || props?.data.name == 'ContactsCustom' && props?.data.fields">
         <div class="contacts__container container">
 
             <h1 class="contacts__title">Контакты</h1>

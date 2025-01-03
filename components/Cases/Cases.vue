@@ -1,5 +1,5 @@
 <template>
-    <section class="cases" id="cases" v-if="props?.data.name == 'CasesCommon' && props?.data.fields">
+    <section class="cases" id="cases" v-if="props?.data.name == 'CasesCommon' || props?.data.name == 'CasesCustom' && props?.data.fields">
         <div class="cases__container container">
             <h2 class="cases__title title-level-2">{{ props?.data?.fields?.title }}</h2>
             <swiper-container class="cases__btn-list" :breakpoints="{
@@ -21,7 +21,7 @@
             }">
                 <swiper-slide class="cases__btn-elem" v-for="(elem, index) in props?.data?.fields?.casesCommonList"
                     :key="`cases-btn-${index + 1}`" @click="active = index">
-                    <UButton class="btn" :class="{
+                    <UButton class="btn cases__btn" :class="{
                         'btn--dont-active': active !== index
                     }">Кейс {{ index + 1 }}</UButton>
                 </swiper-slide>

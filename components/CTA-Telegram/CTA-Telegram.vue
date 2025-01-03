@@ -1,6 +1,6 @@
 <template>
     <section class="cta-telegram" id="cta-telegram"
-        v-if="props?.data.name == 'CtaTelegramCommon' && props?.data.fields">
+        v-if="props?.data.name == 'CtaTelegramCommon' || props?.data.name == 'CtaTelegramCustom' && props?.data.fields">
         <div class="cta-telegram__container container">
             <div class="cta-telegram__left">
                 <h2 class="cta-telegram__title title-level-2"> {{ props.data.fields.title }}</h2>

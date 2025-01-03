@@ -40,6 +40,11 @@ query getPostServices($ID: ID!) {
                                 sourceUrl
                             }
                         }
+                        bg {
+                            node {
+                                sourceUrl
+                            }
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleAdvantagesCommonLayout {
@@ -86,6 +91,7 @@ query getPostServices($ID: ID!) {
                             title
                             url
                         }
+                        reverse
                         descr
                         img1 {
                             node {

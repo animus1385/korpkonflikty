@@ -33,6 +33,11 @@ query getPage($name: String!) {
                                         sourceUrl
                                     }
                                 }
+                                bg {
+                                    node {
+                                        sourceUrl
+                                    }
+                                }
                             }
                         }
                         ... on PageBuilderFlexibleAdvantagesCommonLayout {
@@ -79,6 +84,7 @@ query getPage($name: String!) {
                                     title
                                     url
                                 }
+                                reverse
                                 descr
                                 img1 {
                                     node {

@@ -9,7 +9,7 @@
     }
 
     &__logo {
-        @apply h-[87px]  p-0   desktop:mb-[19px] mobile:mx-auto mobile:w-full order-1;
+        @apply h-[87px]  p-0  flex mobile:justify-center desktop:justify-start  desktop:mb-[19px]  mobile:w-full order-1;
     }
     &__logo-icon {
         @apply w-auto h-full object-cover object-left;
@@ -57,7 +57,7 @@
     &__btn-call {
         box-shadow: 0 10px 15px 0 rgba(1, 115, 153, 0.2);
         font-family: var(--font-family);
-        @apply p-[20px_40px] bg-[#fff] text-[#242527] justify-center rounded-[59px] text-[16px] font-semibold  text-center mobile:w-full flex  desktop:order-[3] mobile:order-5  justify-self-end desktop:max-w-max;
+        @apply desktop:p-[20px_40px] mobile:p-[10px] bg-[#fff] text-[#242527] justify-center rounded-[59px] text-[16px] font-semibold  text-center mobile:w-full flex  desktop:order-[3] mobile:order-5  justify-self-end desktop:max-w-max;
     }
     &__address {
         @apply grid grid-cols-[20px_1fr] items-center gap-[10px] w-full desktop:order-4 mobile:order-3;
@@ -84,7 +84,7 @@
         @apply desktop:text-left;
     }
     &__social {
-        @apply grid gap-[9px] grid-cols-5 desktop:max-w-max desktop:justify-self-end desktop:order-8 mobile:order-4 w-full mobile:justify-center justify-items-center desktop:mb-0 mobile:mb-[30px];
+        @apply grid gap-[9px] grid-cols-5 desktop:max-w-max desktop:justify-self-end desktop:order-8 mobile:order-4 w-full mobile:justify-center justify-items-center desktop:mb-0 mobile:mb-[10px];
     }
     &__social-elem {
         @apply h-[20px] w-[20px];

@@ -1,5 +1,5 @@
 export const useCommonStore = defineStore('common-store', {
-    state: () => {
+    state: (): any => {
         return {
             loader: true,
             statusLoading: '',

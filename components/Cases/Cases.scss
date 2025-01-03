@@ -9,6 +9,9 @@
     &__title {
         @apply desktop:text-center desktop:mb-[50px] mobile:mb-[20px];
     }
+    &__btn {
+        @apply desktop:p-[20px_40px] mobile:p-[15px_30px] desktop:text-[16px] mobile:text-[14px];
+    }
 }
 .info-case {
     @apply grid desktop:grid-cols-2 desktop:gap-[210px] mobile:gap-[30px];

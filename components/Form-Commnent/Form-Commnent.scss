@@ -1,4 +1,5 @@
 .form-commnent {
+    @apply laptop:mb-[100px] mobile:mb-[30px];
     &__title {
         font-family: var(--second-family);
         @apply font-bold text-[#090914];

@@ -51,7 +51,7 @@
 
 <script setup lang="ts">
 import { object, string, boolean } from 'yup';
-const props = defineProps<{ data: any; pageId: number | undefined }>();
+const props = defineProps<{ data: any; pageId: any }>();
 const { $api } = useNuxtApp();
 const toast = useToast()
 const loadingSend = ref(false);

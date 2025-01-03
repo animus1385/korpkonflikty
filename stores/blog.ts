@@ -1,5 +1,5 @@
 export const useBlogStore = defineStore('blog-store', {
-    state: () => ({
+    state: (): any => ({
         loader: true,
         items: [],
         postsPerPage: 6,
@@ -27,9 +27,9 @@ export const useBlogStore = defineStore('blog-store', {
         },
 
         async handlePageChange(newPage: number) {
-            this.page = newPage; 
-            this.offset = (newPage - 1) * this.postsPerPage; 
-            await this.getAll(); 
+            this.page = newPage;
+            this.offset = (newPage - 1) * this.postsPerPage;
+            await this.getAll();
         },
     },
 });

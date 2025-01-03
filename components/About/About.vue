@@ -1,5 +1,5 @@
 <template>
-    <section class="about" is="about" v-if="props?.data.name == 'AboutCommon' && props?.data.fields">
+    <section class="about" is="about" v-if="props?.data.name == 'AboutCommon' || props?.data.name == 'AboutCustom' && props?.data.fields">
         <div class="about__container container">
             <h2 class="about__title title-level-2">{{ props?.data?.fields?.title }}</h2>
             <ul class="about__list">

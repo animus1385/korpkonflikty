@@ -1,5 +1,5 @@
 export const useMenuStore = defineStore('menu-store', {
-    state: () => ({
+    state: () :any => ({
         items: [],
         burger: false,
         tel: {},

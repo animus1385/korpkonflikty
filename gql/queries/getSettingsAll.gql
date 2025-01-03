@@ -63,6 +63,11 @@ query NewQuery {
                             id
                             uri
                             title
+                            featuredImage {
+                                node {
+                                    sourceUrl
+                                }
+                            }
                             pageBuilder {
                                 flexible {
                                     ... on PageBuilderFlexibleHeroCustomLayout {
@@ -81,6 +86,7 @@ query NewQuery {
                     title
                     url
                 }
+                reverse
                 descr
                 img1 {
                     node {

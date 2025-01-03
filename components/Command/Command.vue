@@ -1,5 +1,5 @@
 <template>
-  <section class="command" id="command" v-if="props?.data.name == 'CommandCommon' && props?.data.fields">
+  <section class="command" id="command" v-if="props?.data.name == 'CommandCommon' || props?.data.name == 'CommandCustom' && props?.data.fields">
     <div class="command__container container">
       <div class="command__content">
         <div class="command__top">

@@ -37,15 +37,17 @@ export default defineNuxtConfig({
         '@pinia/nuxt',
         'vue-yandex-maps/nuxt',
         'dayjs-nuxt',
-        'nuxt-booster',
-        '@nuxtjs/fontaine',
         'nuxt-graphql-request',
+        'nuxt-viewport',
     ],
     tailwindcss: {
         viewer: false,
     },
     yandexMaps: {
         apikey: '3bfc6cb2-7479-477e-9638-a52995b5b67d',
+    },
+    viewport: {
+        breakpoints: screensNuxtImage,
     },
     icon: {
         mode: 'svg',

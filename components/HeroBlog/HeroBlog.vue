@@ -8,8 +8,8 @@
                     :alt="props.data?.title">
                 </NuxtImg>
                 <div class="hero-blog__img-info">
-                    <time class="hero-blog__date" :datetime="$dayjs(props.data?.date).utc().toString()"> {{
-                        $dayjs(props.data?.date).format('DD.MM.YYYY') }} </time>
+                    <time class="hero-blog__date" :datetime="dayjs(props.data?.date).utc().toString()"> {{
+                        dayjs(props.data?.date).format('DD.MM.YYYY') }} </time>
                     <span class="hero-blog__name"> {{ props.data?.contentPost?.authorPost }}</span>
                 </div>
             </div>
@@ -28,6 +28,7 @@
 
 <script setup lang="ts">
 const props = defineProps<{ data: any }>();
+const dayjs = useDayjs()
 </script>
 
 <style scoped lang="scss">

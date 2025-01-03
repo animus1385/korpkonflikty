@@ -5,9 +5,10 @@
         @apply text-center mb-[27px] text-white;
     }
     &__list {
-        @apply h-full;
+        @apply h-full ;
     }
     swiper-container {
+        @apply mobile:max-w-[50%] desktop:max-w-full mobile:mx-auto desktop:mx-0;
         &::part(container) {
             @apply overflow-visible;
         }
@@ -15,6 +16,7 @@
             @apply items-center;
         }
     }
+  
     &__elem {
         @apply h-full;
     }

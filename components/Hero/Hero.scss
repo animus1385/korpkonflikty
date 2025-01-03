@@ -1,14 +1,17 @@
 .hero {
-    background: linear-gradient(224deg, #474747 0%, #222 41.8%);
+    @apply bg-gradient-to-l from-[#474747] to-[#222];
     @apply relative;
     &__container {
         @apply overflow-hidden h-full desktop:h-[902px]  grid items-center relative z-[1]  desktop:grid-cols-2 desktop:grid-rows-1 mobile:grid-rows-[max-content_1fr];
     }
+    &__bg {
+        @apply absolute inset-0 object-cover w-full h-full;
+    }
     &__left {
-        @apply  h-full flex  flex-col mobile:justify-start mobile:self-start mt-[141px] tablet:mt-[40px] mobile:mt-[20px];
+        @apply h-full flex  flex-col mobile:justify-start mobile:self-start mt-[141px] tablet:mt-[40px] mobile:mt-[20px];
     }
     &__btn {
-        @apply tabletMedium:max-w-max mobile:p-[10px] text-white desktop:p-[20px_40px];
+        @apply tabletMedium:max-w-max mobile:p-[10px_30px] text-white desktop:p-[20px_40px] desktop:text-[16px];
     }
     &__title {
         font-family: var(--second-family);
@@ -29,6 +32,6 @@
     }
     &__info-text {
         font-family: var(--font-family);
-        @apply font-semibold desktop:text-[46px] text-[40px] text-center text-white tablet:text-[40px] mobile:text-[20px];
+        @apply font-semibold desktop:text-[46px] laptop:text-[30px]  text-center text-white tablet:text-[20px] mobile:text-[16px];
     }
 }
