@@ -28,7 +28,7 @@ export default defineNuxtPlugin(() => {
             let result: any = {};
 
             try {
-                const res = await $graphql?.default?.request(GET_PAGE, { name: name });
+                const res = await $graphql?.default?.request(GET_PAGE, { ID: name });
                 if (!res) {
                     showError({
                         statusCode: 404,
