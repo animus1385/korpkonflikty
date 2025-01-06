@@ -2,11 +2,11 @@
     @apply py-[30px];
     &__content {
         background: linear-gradient(224deg, #474747 0%, #222 41.8%);
-        @apply desktop:p-[36px_128px] mobile:p-[20px] grid justify-center rounded-[40px] gap-[20px] items-center desktop:grid-cols-2  overflow-hidden;
+        @apply desktop:p-[36px_128px] mobile:p-[20px] grid desktop:justify-center rounded-[40px] gap-[20px] items-center desktop:grid-cols-[1fr_max-content]  overflow-hidden;
     }
 
     &__fileds-block {
-        @apply grid desktop:grid-cols-3 gap-[6px_20px];
+        @apply grid desktop:grid-cols-3 gap-[15px_20px];
     }
     &__check {
         @apply col-span-full;
@@ -18,7 +18,9 @@
             @apply text-[16px] text-white font-normal;
         }
     }
-
+    &__acceptance {
+        @apply col-span-full;
+    }
     &__btn {
         @apply desktop:max-w-max desktop:justify-self-end mobile:justify-self-auto mobile:justify-center;
     }

@@ -1,6 +1,5 @@
 <template>
-    <section class="included-servies" id="included-servies"
-        v-if="props?.data.name == 'IncludedServiesCommon' || props?.data.name == 'IncludedServiesCustom' && props?.data.fields">
+    <section class="included-servies" id="included-servies" v-if="props?.data.fields">
         <div class="included-servies__container container">
             <h2 class="included-servies__title title-level-2">{{ props?.data?.fields?.title }}</h2>
             <ul class="included-servies__list">

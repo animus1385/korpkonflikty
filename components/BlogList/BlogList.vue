@@ -1,5 +1,5 @@
 <template>
-    <section class="blog-list" id="blog-list" v-if="props?.data.name == 'BlogListCommon' && props?.data.fields">
+    <section class="blog-list" id="blog-list" v-if="props?.data.fields">
         <div class="blog-list__container container">
             <h1 class="blog-list__title title-level-2">Блог</h1>
             <ul class="blog-list__list">

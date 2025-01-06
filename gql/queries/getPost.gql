@@ -86,6 +86,12 @@ query getPost($ID: ID!) {
                 ... on PageBuilderFlexibleCostServiesCommonLayout {
                     fieldGroupName
                 }
+                ... on PageBuilderFlexibleContentCustomLayout {
+                    fieldGroupName
+                    contentCustom {
+                        content
+                    }
+                }
                 ... on PageBuilderFlexibleCostServiesCustomLayout {
                     fieldGroupName
                     costServiesCustom {
@@ -295,6 +301,7 @@ query getPost($ID: ID!) {
                             idBlock
                             descr
                             title
+                            activeMetric
                         }
                     }
                 }
@@ -304,12 +311,18 @@ query getPost($ID: ID!) {
                         id
                         title
                         descr
+                        successMessage
+                        nameBtn
+                        cf7FormDynamicFields
                     }
                 }
                 ... on PageBuilderFlexibleForm2CustomLayout {
                     fieldGroupName
                     form2Custom {
                         id
+                        successMessage
+                        nameBtn
+                        cf7FormDynamicFields
                     }
                 }
                 ... on PageBuilderFlexibleFormCommentCommonLayout {

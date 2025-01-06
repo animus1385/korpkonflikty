@@ -1,6 +1,5 @@
 <template>
-    <section class="cost-servies" id="cost-servies"
-        v-if="props?.data.name == 'CostServiesCommon' || props?.data.name == 'CostServiesCustom' && props?.data.fields">
+    <section class="cost-servies" id="cost-servies" v-if="props?.data.fields">
         <div class="cost-servies__container container" :class="{ reverse: props?.data?.fields.reverse }">
             <div class="cost-servies__img-block">
                 <NuxtImg loading="lazy" format="webp" class="cost-servies__img-left"

@@ -1,6 +1,5 @@
 <template>
-    <section class="form-commnent" id="form-commnent"
-        v-if="props?.data?.name == 'FormCommentCommon' && props?.data?.fields">
+    <section class="form-commnent" id="form-commnent" v-if="props?.data?.fields">
         <div class="form-commnent__container container">
             <div class="form-commnent__block-enter">
                 <h2 class="form-commnent__title title-level-2">Оставьте комментарий</h2>
@@ -34,16 +33,15 @@
             </div>
             <div class="form-commnent__all-comments" v-if="props?.data?.fields.length !== 0">
                 <span class="form-commnent__span">Комментарии</span>
-                <ul class="form-commnent__list">
-                    <li class="form-commnent__elem" v-for="comment in props?.data?.fields" :key="comment.node.id">
-                        <UAvatar class="form-commnent__elem-avatar"
-                            src="https://avatars.githubusercontent.com/u/739984?v=4" alt="Avatar" />
+                <PerfectScrollbar class="form-commnent__list">
+                    <div class="form-commnent__elem" v-for="comment in props?.data?.fields" :key="comment.node.id">
+                        <UIcon class="form-commnent__elem-avatar" name="fa-solid:user-tie"></UIcon>
                         <div class="form-commnent__elem-info">
                             <span class="form-commnent__elem-name">{{ comment.node.author.name }}</span>
                             <div class="form-commnent__elem-comment" v-html="comment.node.content"></div>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+                </PerfectScrollbar>
             </div>
         </div>
     </section>
@@ -80,7 +78,7 @@ const { status, error } = useAsyncData(
 );
 
 watch(status, (e) => {
-    if (e == 'success') {
+    if (e == 'success' && loadingSend.value) {
         toast.add({
             icon: "i-heroicons-check-circle", timeout: 50000, title: 'Успешно', description: 'Коментарий отправлен! на модерацию!', 'closeButton': {
                 color: 'white'
@@ -99,7 +97,7 @@ watch(status, (e) => {
 
         })
         loadingSend.value = false;
-    } else if (e == 'error') {
+    } else if (e == 'error' && !loadingSend.value) {
         toast.add({
             title: `Ошибка  ${error?.value?.statusCode}`, description: error?.value?.message,
             icon: "carbon:close-filled",

@@ -14,6 +14,9 @@ import type { IBlockFlexible } from '~/types/blockFlexible';
 
 const { $api } = useNuxtApp();
 const route = useRoute();
+const store = {
+    blog: useBlogStore()
+}
 const slug = route.params.slug as string;
 const breadcrumbs = ref<any>(null)
 
@@ -41,9 +44,15 @@ const { data, status } = useAsyncData('getPost', async () => await $api.post.get
         }
     },
 });
-watchEffect(() => {
-    breadcrumbs.value = useBreadcrumbs(data.value?.seo?.breadcrumbs);
+
+onMounted(async () => {
+    await store.blog.viewPost(slug)
 })
+watchEffect(async () => {
+    breadcrumbs.value = useBreadcrumbs(data.value?.seo?.breadcrumbs);
+
+})
+
 watch(() => data.value, () => {
     useHead({
         title: data?.value?.seo?.title,
@@ -57,6 +66,8 @@ watch(() => data.value, () => {
             href: data?.value?.seo?.canonical
         }]
     })
+
+
 })
 </script>
 <style scoped></style>

@@ -25,7 +25,10 @@ export const useBlogStore = defineStore('blog-store', {
 
             return data;
         },
-
+        async viewPost(slug: string) {
+            const { $api } = useNuxtApp();
+            return await $api.post.viewPost(slug);
+        },
         async handlePageChange(newPage: number) {
             this.page = newPage;
             this.offset = (newPage - 1) * this.postsPerPage;

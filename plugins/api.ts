@@ -3,6 +3,7 @@ import allQuery from '../gql/queries/getSettingsAll.gql';
 import GET_PAGE from '../gql/queries/getIndexPage.gql';
 import type { Api } from '../types/api';
 import GET_POST from '../gql/queries/getPost.gql';
+import VIEW_POST from '../gql/mutations/setPostViews.gql';
 import { CREATE_COMMENT } from '~/gql/mutations/createComment';
 import GET_POSTS from '~/gql/queries/getPosts.gql';
 import GET_POST_SERVICE from '~/gql/queries/getService.gql';
@@ -118,6 +119,17 @@ export default defineNuxtPlugin(() => {
                             'Content-Type': 'application/json',
                         },
                     });
+                    result = res;
+                } catch (e) {
+                    console.error(`текст ошибки ${e}`);
+                }
+                return result;
+            },
+            viewPost: async (slug: string) => {
+                let result: any = {};
+
+                try {
+                    const res = await $graphql?.default?.request(VIEW_POST, { slug });
                     result = res;
                 } catch (e) {
                     console.error(`текст ошибки ${e}`);

@@ -1,6 +1,5 @@
 <template>
-  <section class="suitable-services" id="suitable-services"
-    v-if="props?.data.name == 'SuitableServicesCustom' && props?.data.fields">
+  <section class="suitable-services" id="suitable-services" v-if="props?.data.fields">
     <div class="suitable-services__container container">
       <div class="suitable-services__top">
         <h2 class="suitable-services__title title-level-2">{{ props?.data.fields.title }}</h2>

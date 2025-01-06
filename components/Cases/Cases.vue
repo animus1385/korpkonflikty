@@ -1,5 +1,5 @@
 <template>
-    <section class="cases" id="cases" v-if="props?.data.name == 'CasesCommon' || props?.data.name == 'CasesCustom' && props?.data.fields">
+    <section class="cases" id="cases" v-if="props?.data.fields">
         <div class="cases__container container">
             <h2 class="cases__title title-level-2">{{ props?.data?.fields?.title }}</h2>
             <swiper-container class="cases__btn-list" :breakpoints="{

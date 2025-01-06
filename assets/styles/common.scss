@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 html {
-    scroll-padding-top: 150px;
+    @apply scroll-pt-[150px] pr-0 !important;
 }
 html,
 body {
@@ -75,7 +75,7 @@ body {
         .breadcrumbs {
             @apply bg-transparent;
             span {
-                @apply text-white ;
+                @apply text-white;
             }
         }
     }

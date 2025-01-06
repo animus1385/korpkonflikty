@@ -1,6 +1,5 @@
 <template>
-    <section class="related-blog" id="related-blog"
-        v-if="props?.data.name == 'RelatedBlogCustom' && props?.data.fields">
+    <section class="related-blog" id="related-blog" v-if="props?.data.fields">
         <div class="related-blog__container container">
             <h2 class="related-blog__title title-level-2"> {{ props?.data.fields.title }}</h2>
             <span class="related-blog__subtitle">{{ props?.data.fields.descr }}</span>

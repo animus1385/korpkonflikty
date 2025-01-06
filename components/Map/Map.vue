@@ -1,5 +1,5 @@
 <template>
-    <section class="map" v-if="props?.data.name == 'MapCommon' && props?.data.fields">
+    <section class="map" v-if="props?.data.fields">
         <div class="map__container container">
             <div class="map__content">
                 <yandex-map v-model="map" :settings="{

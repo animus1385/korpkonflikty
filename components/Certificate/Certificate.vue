@@ -1,5 +1,5 @@
 <template>
-    <section class="certificate" v-if="props?.data.name == 'SertificateCommon' && props?.data.fields">
+    <section class="certificate" v-if="props?.data.fields">
         <div class="certificate__container container">
             <div class="certificate__top">
                 <h2 class="certificate__title title-level-2">Наши сертификаты</h2>

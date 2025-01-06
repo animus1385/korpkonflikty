@@ -1,7 +1,7 @@
 .cta {
     @apply desktop:pt-[48px]  desktop:pb-[40px] mobile:py-[30px];
     &__content {
-        @apply relative min-h-[600px] h-full grid desktop:grid-cols-[705px_1fr]  items-center w-full   desktop:p-[95px_128px] mobile:p-[45px_24px];
+        @apply relative min-h-[600px] h-full grid desktop:grid-cols-[705px_1fr] rounded-[20px]  overflow-hidden  bg-gradient-to-l from-[#474747] to-[#222] items-center w-full   desktop:p-[95px_128px] mobile:p-[45px_24px];
     }
     &__title {
         font-family: var(--font-family);
@@ -19,11 +19,9 @@
         @apply desktop:text-[18px] max-w-max mobile:text-[14px];
     }
     &__left {
-        @apply w-full flex flex-col desktop:justify-center h-full;
+        @apply w-full flex flex-col desktop:justify-center h-full relative z-[1];
     }
     &__img:deep() {
-        @apply absolute inset-0 w-full z-[-1] rounded-[20px] overflow-hidden h-full bg-center object-cover;
-        background: linear-gradient(333deg, #474747 0%, #222 53.8%);
-        
+        @apply desktop:absolute mobile:relative  h-full z-[0] desktop:w-auto desktop:max-h-full mobile:max-h-[600px] mobile:w-full  mobile:mx-auto  mobile:max-w-max  object-contain right-0 desktopBig:scale-[2] desktop:scale-[1.4] mobile:scale-[1.8] desktop:translate-y-10 mobile:translate-x-[80px]  mobile:translate-y-[50px];
     }
 }

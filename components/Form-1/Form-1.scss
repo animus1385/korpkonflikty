@@ -31,4 +31,7 @@
         font-family: var(--font-family);
         @apply flex desktop:col-start-2 w-full justify-center desktop:text-[18px] mobile:text-[14px] text-white font-semibold desktop:p-[20px_40px] mobile:p-[13px] rounded-[71px];
     }
+    &__acceptance {
+        @apply desktop:col-start-1  desktop:col-end-2;
+    }
 }

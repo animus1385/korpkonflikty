@@ -32,7 +32,7 @@
         }
     }
     &__list {
-        @apply grid gap-[20px];
+        @apply grid gap-[20px] desktop:max-h-[500px] mobile:max-h-[250px];
     }
     &__elem {
         @apply grid grid-cols-[40px_1fr] gap-[4px];
@@ -45,8 +45,8 @@
         line-height: 129%;
         @apply font-normal text-[14px] text-[#64748b];
     }
-    &__all-comments {
-        @apply mb-[100px];
+    &__elem-avatar {
+        @apply flex justify-center items-center w-auto h-auto p-[10px] bg-gray-200 rounded-[20px] overflow-hidden;
     }
     &__span {
         @apply mb-[10px] flex;

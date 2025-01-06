@@ -1,7 +1,7 @@
 <template>
 
     <div class="modal-form">
-        <UModal class="modal-form__modal" v-model="isOpen" :transition="false" :ui="{
+        <UModal class="modal-form__modal" v-model="isOpen" :transition="false" @close="closeModal" :ui="{
             base: 'h-full flex flex-col max-w-max rounded-[20px] overflow-hidden',
             container: 'items-center',
             rounded: '',
@@ -19,7 +19,7 @@
                 <template #header>
                     <div class="flex items-center justify-between">
                         <UButton color="gray" variant="ghost" icon="i-heroicons-x-mark-20-solid" class="ml-auto "
-                            @click="isOpen = false" />
+                            @click="closeModal" />
                     </div>
                     <div class="modal-form__content" v-if="!successActive">
                         <h3 class="modal-form__title" v-if="props.data.title">
@@ -31,14 +31,15 @@
                         <UForm ref="form" :schema="schema" :state="filedState" class="modal-form__form"
                             @submit="onSubmit">
                             <div class="modal-form__fileds-block">
-                                <UFormGroup v-for="field in JSON.parse(props.data.cf7FormDynamicFields)"
-                                    :key="field.property" class="modal-form__field-label modal-form__phone"
-                                    :label="field.placeholder" :name="field.property">
+                                <UFormGroup v-for="field in fields" :key="field.property"
+                                    class="modal-form__field-label modal-form__phone"
+                                    :label="field.type !== 'hidden' ? field.placeholder : null" :name="field.property">
                                     <UInput v-if="field.type !== 'acceptance'" :type="field.type"
                                         class="modal-form__field-input input-field"
                                         v-maska="(field.type == 'text' && (field.property.includes('phone') || field.property.includes('tel'))) ? '+7 (###) ### ##-##' : false"
                                         v-model="filedState[field.property]" :placeholder="field.placeholder" />
                                     <UCheckbox v-else v-model="filedState[field.property]" :label="field.label" />
+
                                 </UFormGroup>
 
                                 <UButton :loading="loadingSend" class="modal-form__btn btn" type="submit"> {{
@@ -48,7 +49,6 @@
                     </div>
                     <div v-else class="modal-form__success" v-html="props.data.successMessage"></div>
                 </template>
-                <!--  -->
             </UCard>
         </UModal>
     </div>
@@ -61,11 +61,10 @@ const rePhoneNumber = /^\+7\s?\(?\d{3}\)?\s?\d{3}\s[-\s]?\d{2}[-\s]?\d{2}$/;
 
 const route = useRoute()
 const toast = useToast()
-
+const fields = ref(JSON.parse(props.data.cf7FormDynamicFields));
 const fieldsSchema = computed<any>(() => {
-    const arr = JSON.parse(props.data.cf7FormDynamicFields);
     const schemaArr: any = {};
-    arr.forEach((el: any) => {
+    fields.value.forEach((el: any) => {
         if (el.type == 'text' && !(el.property.includes('phone') || el.property.includes('tel'))) {
             schemaArr[el.property] = string();
         } else if (el.type == 'email') {
@@ -92,9 +91,11 @@ const fieldsSchema = computed<any>(() => {
 })
 
 const filedState = reactive(
-    JSON.parse(props.data.cf7FormDynamicFields).reduce((accumulator: any, current: any) => {
+    fields.value.reduce((accumulator: any, current: any) => {
         if (current.type === 'acceptance') {
             accumulator[current.property] = false;
+        } else if (current.type === 'hidden') {
+            accumulator[current.property] = current.placeholder;
         } else {
             accumulator[current.property] = '';
         }
@@ -122,10 +123,10 @@ watch(
     },
     { immediate: true }
 )
-onMounted(() => {
-    const btn = document.querySelector(`[href="/${route.hash}"]`);
+watchEffect(() => {
+    const btn = document.querySelector(`[href="${route.hash}"]`);
     btn?.addEventListener('click', function () {
-        isOpen.value = true
+        isOpen.value = true;
     })
 })
 async function onSubmit(e: any) {
@@ -143,46 +144,20 @@ async function onSubmit(e: any) {
             body: formData,
         },
     ).then(e => e.json()).then((data) => {
-        toast.add({
-            icon: "i-heroicons-check-circle", timeout: 3000, title: 'Успешно', description: data.message, 'closeButton': {
-                color: 'white'
-            },
-            ui: {
-                title: 'text-white',
-                description: 'text-white',
-                background: 'bg-green-500',
-                progress: {
-                    background: 'bg-white'
-                },
-                icon: {
-                    color: 'text-white'
-                }
-            }
-
-        })
         loadingSend.value = false;
         successActive.value = true;
     }).catch(e => {
-        toast.add({
-            title: `Ошибка  ${e.statusCode}`, description: e.message,
-            icon: "carbon:close-filled",
-            ui: {
-                title: 'text-white',
-                description: 'text-white',
-                background: 'bg-red-500',
-                progress: {
-                    background: 'bg-white'
-                },
-                icon: {
-                    color: 'text-white'
-                }
-            }
-        })
         loadingSend.value = false;
 
     });
 
 
+}
+
+function closeModal() {
+    isOpen.value = false;
+    location.hash = '';
+    window.scrollTo(0, window.scrollY);
 }
 </script>
 

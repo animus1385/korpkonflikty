@@ -1,6 +1,6 @@
 <template>
     <section class="text-open"
-        v-if="(props?.data.name == 'TextOpenCommon' || props?.data.name == 'TextOpenCustom') && props?.data.fields">
+        v-if="props?.data.fields">
         <div class="text-open__container container">
             <div class="text-open__arrow"></div>
             <h2 class="text-open__title title-level-2">{{ props.data.fields.title }}</h2>

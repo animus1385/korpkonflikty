@@ -292,6 +292,7 @@ query getPostServices($ID: ID!) {
                         list {
                             descr
                             title
+                            activeMetric
                         }
                     }
                 }
@@ -301,12 +302,18 @@ query getPostServices($ID: ID!) {
                         id
                         title
                         descr
+                        successMessage
+                        nameBtn
+                        cf7FormDynamicFields
                     }
                 }
                 ... on PageBuilderFlexibleForm2CustomLayout {
                     fieldGroupName
                     form2Custom {
                         id
+                        successMessage
+                        nameBtn
+                        cf7FormDynamicFields
                     }
                 }
                 ... on PageBuilderFlexibleFormCommentCommonLayout {
@@ -382,6 +389,12 @@ query getPostServices($ID: ID!) {
                 }
                 ... on PageBuilderFlexibleMapCommonLayout {
                     fieldGroupName
+                }
+                ... on PageBuilderFlexibleContentCustomLayout {
+                    fieldGroupName
+                    contentCustom {
+                        content
+                    }
                 }
                 ... on PageBuilderFlexibleContactsCustomLayout {
                     fieldGroupName

@@ -281,16 +281,23 @@ query getPage($name: String!) {
                         }
                         ... on PageBuilderFlexibleForm1CustomLayout {
                             fieldGroupName
+
                             form1Custom {
                                 id
                                 title
                                 descr
+                                successMessage
+                                nameBtn
+                                cf7FormDynamicFields
                             }
                         }
                         ... on PageBuilderFlexibleForm2CustomLayout {
                             fieldGroupName
                             form2Custom {
                                 id
+                                successMessage
+                                nameBtn
+                                cf7FormDynamicFields
                             }
                         }
                         ... on PageBuilderFlexibleFormCommentCommonLayout {
@@ -302,6 +309,7 @@ query getPage($name: String!) {
                                 list {
                                     title
                                     descr
+                                    activeMetric
                                 }
                             }
                         }
@@ -403,6 +411,12 @@ query getPage($name: String!) {
                         }
                         ... on PageBuilderFlexibleTextOpenCustomLayout {
                             fieldGroupName
+                        }
+                        ... on PageBuilderFlexibleContentCustomLayout {
+                            fieldGroupName
+                            contentCustom {
+                                content
+                            }
                         }
                     }
                 }

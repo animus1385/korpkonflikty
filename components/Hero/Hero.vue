@@ -1,5 +1,5 @@
 <template>
-    <section class="hero" id="hero" v-if="props.data.name == 'HeroCustom'  && props.data.fields">
+    <section class="hero" id="hero" v-if="props.data.fields">
         <NuxtImg v-if="props?.data?.fields?.bg"  preload format="webp" class="hero__bg" :src="props?.data?.fields?.bg.node.sourceUrl"
             :alt="props?.data?.fields?.title" />
         <div class="hero__container container">

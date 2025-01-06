@@ -1,0 +1,7 @@
+
+mutation setPostViews($slug: String!) {
+    increasePostViews(input: { postSlug: $slug }) {
+        clientMutationId
+    }
+}
+

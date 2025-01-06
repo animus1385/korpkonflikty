@@ -9,7 +9,7 @@ export const screens: IScreens = {
     laptop: '992px',
     laptopMedium: '1024px',
     desktop: '1280px',
-    desktopMedium: '1440px',
+    desktopMedium: '1430px',
     desktopWide: '1600px',
     desktopBig: '1920px',
 };
