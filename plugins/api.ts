@@ -29,7 +29,7 @@ export default defineNuxtPlugin(() => {
 
             try {
                 const res = await $graphql?.default?.request(GET_PAGE, { name: name });
-                if (res.pages.edges.length == 0) {
+                if (!res) {
                     showError({
                         statusCode: 404,
                         statusMessage: 'Страница не найдена',
@@ -41,8 +41,8 @@ export default defineNuxtPlugin(() => {
                 }
 
                 result = {
-                    flexible: res.pages.edges[0].node.pageBuilder.flexible,
-                    seo: res.pages.edges[0].node.seo,
+                    flexible: res.page.pageBuilder.flexible,
+                    seo: res.page.seo,
                 };
             } catch (e) {
                 console.error(`текст ошибки ${e}`);
