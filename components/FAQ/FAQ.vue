@@ -1,5 +1,6 @@
 <template>
-    <section class="faq" id="faq" v-if="props?.data.name == 'FaqCommon' || props?.data.name == 'FaqCustom' && props?.data.fields">
+    <section class="faq" id="faq"
+        v-if="props?.data.name == 'FaqCommon' || props?.data.name == 'FaqCustom' && props?.data.fields">
         <div class="faq__container container">
             <div class="faq__left">
                 <h2 class="faq__title title-level-2">{{ props?.data?.fields?.title }}</h2>
@@ -16,7 +17,7 @@
 
                             <template #trailing>
                                 <UIcon :name="!open ? 'i-heroicons-plus' : 'i-heroicons-minus'"
-                                    class="w-5 h-5 ms-auto transform transition-transform duration-200" />
+                                    class="accordion__btn-icon w-5 h-5 ms-auto transform transition-transform duration-200" />
                             </template>
                         </UButton>
                     </template>

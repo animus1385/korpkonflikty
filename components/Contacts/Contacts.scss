@@ -36,11 +36,11 @@
         font-family: var(--font3);
     }
     &__elem-text {
-        font-family: var(--second-family);
-        @apply desktopWide:text-[20px] mobile:text-[18px]  text-[#242527] font-semibold;
+        font-family: var(--font3);
+        @apply desktopWide:text-[20px] mobile:text-[18px]  text-[#242527] font-light;
 
         &.tel {
-           font-family: var(--font3);
+           @apply font-semibold;
         }
     }
 }

@@ -14,10 +14,16 @@ query getPosts($offset: Int!, $size: Int!) {
                 contentPost {
                     contentPost {
                         authorPost
-                        list {
+                        listLevel1 {
                             link {
                                 url
                                 title
+                            }
+                            listLevel2 {
+                                link {
+                                    url
+                                    title
+                                }
                             }
                         }
                     }

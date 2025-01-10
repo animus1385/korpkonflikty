@@ -21,8 +21,12 @@
                     slidesPerView: 3,
                     spaceBetween: 20,
                 },
-                1280: {
+                1440: {
                     slidesPerView: 4,
+                    spaceBetween: 50,
+                },
+                1920: {
+                    slidesPerView: 5,
                     spaceBetween: 50,
                 },
             }">

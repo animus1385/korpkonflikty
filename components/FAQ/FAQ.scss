@@ -35,7 +35,7 @@
         }
     }
     & > * {
-        @apply border-b border-black;
+        @apply border-b border-[#2387c0];
     }
     &__btn-text {
         @apply text-start;
@@ -45,5 +45,10 @@
         line-height: 133%;
         color: #18181b;
         @apply desktop:text-[18px] mobile:text-[16px];
+    }
+    &__btn-icon:deep() {
+        path {
+            stroke: #2387c0;
+        }
     }
 }

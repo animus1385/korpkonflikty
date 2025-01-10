@@ -1,6 +1,6 @@
 .hero-blog {
     @apply py-[20px];
-    
+
     &__container {
         @apply grid desktop:grid-cols-[1fr_400px]  mobile:grid-cols-1 desktop:grid-rows-[auto_535px]  desktop:gap-[62px] mobile:gap-[20px];
     }
@@ -9,7 +9,6 @@
     }
     &__img:deep() {
         @apply flex justify-center desktop:absolute inset-0 object-cover w-full h-full;
-
     }
     &__img-block {
         @apply desktop:bg-black  rounded-[20px] overflow-hidden relative flex flex-col-reverse;
@@ -23,7 +22,7 @@
     }
     &__date {
         font-family: var(--second-family);
-        @apply text-[20px] desktop:text-white font-semibold ;
+        @apply text-[20px] desktop:text-white font-semibold;
     }
     &__title {
         font-family: var(--second-family);
@@ -32,11 +31,14 @@
         @apply col-span-full desktop:text-[64px] mobile:text-[30px] font-extrabold;
     }
     &__list {
-        @apply grid ;
+        @apply grid;
     }
-    &__elem {
-        @apply flex mb-[20px];
+    &__elem-level-1 {
+        @apply grid gap-[10px] mb-[20px];
     }
+     &__elem-level-2 {
+        @apply pl-[20px]
+     }
     &__content {
         @apply overflow-hidden flex flex-col;
     }
@@ -53,8 +55,11 @@
             background: linear-gradient(127deg, #60bbee 0%, #0a72ad 100%);
         }
     }
-    &__scrollbar {
-        @apply  desktop:h-full mobile:h-[250px];
+    &__scrollbar:deep() {
+        @apply desktop:h-full mobile:h-[250px];
+        .ps__thumb-y {
+            background: linear-gradient(127deg, #60bbee 0%, #0a72ad 100%);
+        }
     }
     &__name {
         font-family: var(--font-family);

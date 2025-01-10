@@ -5,6 +5,7 @@
         </div>
     </div>
     <HeroBlog :data="data?.postInfo" />
+    <ScharedSocial :data="data?.postInfo.contentPost" />
     <Flexible v-if="status == 'success' && data" :data="data.transform" />
 </template>
 

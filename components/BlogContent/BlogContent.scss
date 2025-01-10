@@ -13,12 +13,13 @@
         letter-spacing: -0.02em;
         @apply text-[#0f172a] desktop:text-[20px] mobile:text-[14px] font-medium;
         p {
-            @apply mb-[30px];
+            @apply mb-[30px] font-light;
+            font-family: var(--font3);
         }
         ul,
         ol {
             list-style: revert;
-            font-family: var(--font-family);
+            font-family: var(--font3);
             line-height: 170%;
             @apply text-[#939393] desktop:text-[18px] mobile:text-[14px] font-semibold desktop:gap-[20px] mobile:gap-[10px] grid pl-[20px];
         }
@@ -30,7 +31,7 @@
         }
 
         blockquote {
-            font-family: var(--second-family);
+           font-family: var(--font3) ;
             line-height: 140%;
             @apply desktop:mb-[60px] mobile:mb-[30px] desktop:gap-[60px] mobile:gap-[20px] bg-[#edf5ff] shadow-[3px_6px_15px_0_#2425270d] justify-center grid-cols-[8px_1fr] grid desktop:p-[60px] mobile:p-[20px] font-semibold rounded-[20px] text-[#0f172a] desktop:text-[30px] mobile:text-[14px];
             &::before {

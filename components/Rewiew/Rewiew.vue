@@ -37,6 +37,10 @@
                         slidesPerView: 4,
                         spaceBetween: 50,
                     },
+                    1440: {
+                        slidesPerView: 5,
+                        spaceBetween: 50,
+                    },
                 }">
                 <swiper-slide v-for="(elem, index) in props.data.fields.listImg" :key="elem.img.node.id">
                     <div class="rewiew__elem">
@@ -57,8 +61,12 @@
                         slidesPerView: 3,
                         spaceBetween: 20,
                     },
-                    1280: {
+                    1440: {
                         slidesPerView: 4,
+                        spaceBetween: 50,
+                    },
+                    1920: {
+                        slidesPerView: 5,
                         spaceBetween: 50,
                     },
                 }">

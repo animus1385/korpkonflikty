@@ -13,9 +13,14 @@
     &__logo:deep() {
         @apply desktopMedium:w-[183px] desktopMedium:h-[87px] mobile:w-[150px] mobile:h-[60px] object-contain;
     }
-
+    &__nav-popup{
+        @apply absolute left-0;
+    }
     &__nav {
         @apply laptopMedium:flex mobile:hidden;
+    }
+    &:deep(.header__nav-popup) {
+        @apply absolute translate-x-0 w-max translate-y-8 !important;
     }
     &__connect {
         @apply laptopMedium:flex desktopMedium:flex-row desktopMedium:gap-[30px] mobile:flex-col mobile:hidden mobile:gap-[10px];
@@ -58,7 +63,7 @@
         @apply grid grid-cols-5 grid-rows-[30px];
     }
     &__elem {
-        @apply flex justify-center items-center;
+        @apply flex justify-center items-center relative;
     }
     &__link {
         @apply desktopMedium:text-[18px] font-bold text-center text-[#c4c4c4] laptopMedium:text-[16px] p-0 h-full;

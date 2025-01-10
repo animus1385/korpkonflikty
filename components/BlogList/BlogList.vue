@@ -34,9 +34,9 @@
             </ul>
             <loader v-if="storeBlog.loader"></loader>
         </div>
-
-        <UPagination class="blog-list__pagination" v-model="storeBlog.page" :page-count="storeBlog.postsPerPage"
-            :total="storeBlog.totalCount" @click="storeBlog.handlePageChange(storeBlog.page)" />
+        <UPagination v-if="storeBlog.items.length > storeBlog.postsPerPage" class="blog-list__pagination"
+            v-model="storeBlog.page" :page-count="storeBlog.postsPerPage" :total="storeBlog.totalCount"
+            @click="storeBlog.handlePageChange(storeBlog.page)" />
     </section>
 </template>
 

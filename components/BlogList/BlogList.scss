@@ -13,28 +13,28 @@
     }
     &__title-elem {
         font-family: var(--font-family);
-        @apply font-semibold tablet:text-[30px] mobile:text-[16px] text-[#000] laptop:order-3 mobile:order-1 laptop:p-[0_45px];
+        @apply font-semibold tablet:text-[30px] mobile:text-[16px] text-[#000] laptop:order-3 mobile:order-1 desktop:p-[15px_45px_20px] laptop:p-[20px_45px]  mobile:p-[0_0_20px];
         line-height: 120%;
         letter-spacing: -0.01em;
     }
     &__top {
-        @apply grid grid-cols-2 items-center laptop:order-2 mobile:order-3 relative laptop:p-[20px_45px] laptop:gap-[0] mobile:gap-[20px];
+        @apply grid grid-cols-2 items-center laptop:order-2 mobile:order-3 relative laptop:p-[20px_45px]  mobile:gap-[20px];
         &::before {
             content: '';
-            @apply absolute inset-0 h-[60%] m-auto mb-[0px] desktop:shadow-[6px_2px_20px_0_#2425270d] desktop:bg-[#dbeafe] mobile:bg-none  mobile:shadow-none z-[-1] rounded-[16px] laptop:flex mobile:hidden;
+            @apply absolute inset-0 h-[60%] m-auto mb-[0px] laptop:shadow-[6px_2px_20px_0_#2425270d] laptop:bg-[#dbeafe] mobile:bg-none  mobile:shadow-none z-[-1] rounded-[16px] laptop:flex mobile:hidden;
         }
     }
     &__name-block {
         @apply flex flex-col order-2;
     }
     &__elem {
-        @apply laptop:rounded-[16px] mobile:rounded-[20px] desktop:shadow-none desktop:bg-transparent mobile:shadow-[6px_2px_20px_0_#2425270d] mobile:bg-[#dbeafe];
+        @apply laptop:rounded-[16px] mobile:rounded-[20px] laptop:shadow-none laptop:bg-transparent mobile:shadow-[6px_2px_20px_0_#2425270d] mobile:bg-[#dbeafe];
     }
     &__image-blog {
-        @apply laptop:p-[0] mobile:p-[20px_30px] relative grid gap-[20px];
+        @apply laptop:p-[0] mobile:p-[20px_30px] relative grid desktopMedium:gap-[20px] mobile:gap-[0];
     }
     &__picture:deep() {
-        @apply rounded-[16px] w-full h-full tablet:h-[200px] mobile:h-[132px] laptop:w-[90%] flex tabletMedium:mb-[20px] laptop:order-1 mobile:order-2 object-cover col-span-full;
+        @apply rounded-[16px] w-full h-full tablet:h-[200px] mobile:h-[132px] laptop:w-[90%] desktop:h-[376px] flex tabletMedium:mb-[20px] laptop:order-1 mobile:order-2 object-cover col-span-full;
     }
     &__all-metric {
         @apply grid grid-cols-[repeat(2,max-content)] justify-end gap-[15px] order-3;

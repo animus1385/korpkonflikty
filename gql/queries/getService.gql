@@ -373,10 +373,16 @@ query getPostServices($ID: ID!) {
                                         contentPost {
                                             contentPost {
                                                 authorPost
-                                                list {
+                                                listLevel1 {
                                                     link {
                                                         url
                                                         title
+                                                    }
+                                                    listLevel2 {
+                                                        link {
+                                                            url
+                                                            title
+                                                        }
                                                     }
                                                 }
                                             }

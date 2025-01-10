@@ -1,11 +1,11 @@
 .cta-telegram {
     @apply overflow-hidden desktop:py-[95px]  mobile:pt-[30px] desktop:bg-transparent desktop:to-inherit mobile:bg-gradient-to-r mobile:to-[#474747] mobile:from-[#222];
     &__container {
-        @apply desktop:p-[72px_134px] mobile:p-[60px_0px_0px] desktop:min-h-[469px] mobile:max-h-[766px] grid desktop:grid-cols-[588px_1fr] relative gap-[60px]  desktop:bg-gradient-to-r desktop:to-[#474747]  desktop:from-[#222];
+        @apply desktop:pt-[95px] relative;
+    }
+    &__info {
+        @apply desktop:p-[72px_134px] mobile:p-[60px_0px_0px] desktop:min-h-[469px] mobile:max-h-[766px] grid desktop:grid-cols-[588px_1fr]  gap-[60px]  desktop:bg-gradient-to-r desktop:to-[#474747]  desktop:from-[#222];
         border-radius: 30px;
-
-        @media (max-width: de) {
-        }
     }
     &__title {
         @apply mb-[20px]  font-bold text-white;
@@ -22,7 +22,7 @@
         @apply desktop:p-[20px_40px] mobile:p-[10px_30px] desktop:text-[18px] rounded-[71px] mobile:w-full desktop:w-max mobile:text-[14px]  flex justify-center;
     }
     &__img:deep() {
-        @apply desktop:absolute mobile:mx-auto bottom-0 right-[10%]  z-[1] desktop:w-auto mobile:w-full  h-full flex max-w-[400px];
+        @apply desktop:absolute mobile:mx-auto bottom-0 right-[10%]  z-[1] desktop:w-auto mobile:w-full  h-full flex desktop:max-w-[450px] mobile:max-w-[400px];
 
         img {
             @apply w-full h-full;

@@ -29,6 +29,10 @@
                     slidesPerView: 4,
                     spaceBetween: 50,
                 },
+                1920: {
+                    slidesPerView: 5,
+                    spaceBetween: 50,
+                },
             }" class="related-blog__swiper">
                 <swiper-slide class="related-blog__elem" ref="swiperRef"
                     v-for="elem in props?.data?.fields.relatedBlogList.edges" :key="elem.node.id">

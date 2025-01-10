@@ -3,18 +3,18 @@
 
     &__title {
         font-family: var(--font-family);
-        @apply  text-[#242527] font-semibold;
+        @apply text-[#242527] font-semibold;
     }
     swiper-container {
         &::part(container) {
             @apply overflow-visible;
         }
         &::part(wrapper) {
-            @apply items-center laptop:min-h-[450px] mobile:min-h-[280px];
+            @apply  desktopMedium:min-h-[410px] mobile:min-h-[280px];
         }
     }
     swiper-slide {
-        @apply h-full;
+        @apply h-auto;
     }
     &__top {
         @apply flex justify-between items-center mb-[30px];
@@ -24,6 +24,7 @@
     }
     &__nav-btn:deep() {
         @apply w-[60px] h-[44px] p-[11px_17px];
+        box-shadow: 1px 4px 12px -1px rgba(36, 37, 39, 0.05);
         svg {
             @apply w-full h-full;
         }
@@ -32,8 +33,8 @@
         @apply grid tablet:grid-cols-2 mobile:grid-cols-[repeat(2,max-content)] tablet:justify-normal mobile:justify-between;
     }
     &__elem-link {
-        background: linear-gradient(224deg, #474747 0%, #222 41.8%);
-        @apply rounded-[30px] overflow-hidden p-[40px] shadow-[3px_6px_15px_0_#2425270d] h-full flex flex-col justify-between gap-[23px];
+        box-shadow: 3px 6px 15px 0 rgba(36, 37, 39, 0.05);
+        @apply rounded-[30px] overflow-hidden p-[40px] shadow-[3px_6px_15px_0_#2425270d] h-full flex flex-col  gap-[23px] bg-gradient-to-l from-[#474747] to-[#222];
     }
     &__title-elem {
         font-family: var(--second-family);
@@ -48,6 +49,6 @@
     }
     &__btn-elem {
         font-family: var(--font-family);
-        @apply desktop:text-[18px] mobile:text-[14px] font-semibold text-center text-white max-w-max p-[10px_40px] rounded-[71px];
+        @apply desktop:text-[18px] mt-auto mobile:text-[14px] font-semibold text-center text-white max-w-max p-[10px_40px] rounded-[71px];
     }
 }

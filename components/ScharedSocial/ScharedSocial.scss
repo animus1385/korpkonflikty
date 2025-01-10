@@ -1,0 +1,15 @@
+.schared-social {
+    @apply fixed right-0 z-[3] top-[300px] left-0 w-full desktop:flex mobile:hidden;
+    &__list {
+        @apply translate-x-[100px] grid grid-rows-[repeat(2,42px)] justify-self-end grid-cols-[42px] gap-[18px] bg-[#DBEAFE] max-w-max rounded-[16px] p-[20px];
+    }
+    &__item {
+        @apply w-full h-full flex;
+        a:deep() {
+            @apply flex  h-full w-full;
+            svg {
+                @apply w-full h-full;
+            }
+        }
+    }
+}

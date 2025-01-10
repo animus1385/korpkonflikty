@@ -4,10 +4,10 @@
         @apply desktop:text-center desktop:mb-[49px] mobile:mb-[40px];
     }
     &__list {
-        @apply flex flex-wrap desktop:gap-[50px] justify-center mobile:gap-[20px];
+        @apply flex flex-wrap desktopMedium:gap-[50px] justify-center mobile:gap-[20px];
     }
     &__elem {
-        @apply  desktop:max-w-[526px] rounded-[30px] bg-[#2387c0] shadow-[6px_2px_20px_0_#2425270d] p-[42px] grid desktop:grid-cols-1 desktop:items-center justify-center mobile:p-[20px]  mobile:grid-cols-[62px_1fr] auto-rows-max gap-[0_15px];
+        @apply desktopBig:max-w-[526px] desktopWide:max-w-[426px] rounded-[30px] bg-[#2387c0] shadow-[6px_2px_20px_0_#2425270d] desktopMedium:p-[42px] desktopMedium:max-w-[350px] laptopMedium:max-w-[300px]  grid laptopMedium:grid-cols-1 desktop:items-center justify-center mobile:p-[20px]  mobile:grid-cols-[62px_1fr] auto-rows-max gap-[0_15px] mobile:w-full;
     }
     &__info-elem {
         @apply flex flex-col;
@@ -18,11 +18,11 @@
         font-family: var(--font-family);
     }
     &__elem-title {
-        @apply mb-[4px] font-semibold text-[16px] desktop:text-center mobile:text-left text-white;
+        @apply mb-[4px] font-semibold text-[16px] laptopMedium:text-center mobile:text-left text-white;
         font-family: var(--font-family);
     }
     &__elem-text {
-        @apply font-semibold text-[14px] desktop:text-center mobile:text-left text-white col-start-2;
+        @apply font-semibold text-[14px] laptopMedium:text-center mobile:text-left text-white col-start-2;
         font-family: var(--second-family);
         line-height: 130%;
     }

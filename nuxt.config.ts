@@ -44,7 +44,7 @@ export default defineNuxtConfig({
         viewer: false,
     },
     yandexMaps: {
-        apikey: '3bfc6cb2-7479-477e-9638-a52995b5b67d',
+        apikey: '985b6d39-07bb-4745-87b0-a0fec1b0c094',
     },
     viewport: {
         breakpoints: screensNuxtImage,

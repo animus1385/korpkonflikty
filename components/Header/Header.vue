@@ -15,7 +15,9 @@
                             :aria-label="elem.node.label">{{
                             elem.node.label }} </NuxtLink>
 
-                        <UPopover mode="hover" v-else>
+                        <UPopover v-else mode="hover" :ui="{
+                            container: 'header__nav-popup',
+                        }">
                             <UButton class="header__link" :class="{ active: route.path.includes('services') }"
                                 variant="ghost" :label="elem.node.label"
                                 trailing-icon="i-heroicons-chevron-down-20-solid" />
@@ -106,13 +108,13 @@
                                 {{
                                 elem.node.label }}</NuxtLink>
                             <UAccordion v-else class="header__accordion" variant="ghost" size="xl" color="black" :items="[{
-                                    label: 'Услуги',
-                                }]">
+                                label: 'Услуги',
+                            }]">
                                 <template #default="{ open }">
                                     <UButton color="gray" variant="ghost" class="header__accordion-btn-mobile">
                                         <span class="header__accordion-btn-text ">Услуги</span>
                                         <template #trailing>
-                                            <UIcon :name="!open ? 'i-heroicons-plus' : 'i-heroicons-minus'" />
+                                            <UIcon :name="!open ? 'i-heroicons-chevron-down-20-solid' : 'i-heroicons-chevron-up-20-solid'" />
                                         </template>
 
                                     </UButton>
