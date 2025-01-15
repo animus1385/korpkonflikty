@@ -36,7 +36,7 @@
         }
     }
     &__elem:deep() {
-        @apply desktop:w-full overflow-hidden  bg-[#eaeaea] rounded-[16px] desktop:min-h-[384px] mobile:h-[131px] flex justify-center items-center;
+        @apply desktop:w-full overflow-hidden  bg-[#eaeaea] rounded-[16px] desktop:min-h-[384px] mobile:h-[131px] flex justify-center items-center max-h-[90vh];
         picture {
             @apply w-full h-full;
         }

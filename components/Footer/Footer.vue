@@ -15,7 +15,7 @@
                             elem.node.label }}</NuxtLink>
                     </li>
                 </ul>
-                <NuxtLink class="footer__btn-call" to="#">Оставить заявку</NuxtLink>
+                <NuxtLink class="footer__btn-call" :to="menuStore.footer.link.url">{{ menuStore.footer.link.label }}</NuxtLink>
                 <NuxtLink class="footer__address" :to="menuStore.footer.address.url"
                     :aria-label="menuStore.footer.address.title" v-if="menuStore.footer.address.url">
                     <Icon class="footer__icon" name="custom-icons:ping" />

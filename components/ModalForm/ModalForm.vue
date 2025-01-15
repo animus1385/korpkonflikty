@@ -2,7 +2,7 @@
 
     <div class="modal-form">
         <UModal class="modal-form__modal" v-model="isOpen" :transition="false" @close="closeModal" :ui="{
-            base: 'h-full flex flex-col max-w-max rounded-[20px] overflow-hidden',
+            base: 'h-full flex flex-col max-w-max rounded-[20px] overflow-hidden max-w-[600px]',
             container: 'items-center',
             rounded: '',
             wrapper: 'z-[10000]',
