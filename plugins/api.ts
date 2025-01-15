@@ -8,6 +8,7 @@ import { CREATE_COMMENT } from '~/gql/mutations/createComment';
 import GET_POSTS from '~/gql/queries/getPosts.gql';
 import GET_POST_SERVICE from '~/gql/queries/getService.gql';
 import GET_LAYOUT from '~/gql/queries/getLayout.gql';
+import GET_SITEMAP from '~/gql/queries/getSitemap.gql';
 
 export default defineNuxtPlugin(() => {
     const config = useRuntimeConfig();
@@ -49,12 +50,23 @@ export default defineNuxtPlugin(() => {
             }
             return result;
         },
-        async getLayout() {
+        getLayout: async () => {
             let result: any = {};
 
             try {
                 const res = await $graphql?.default?.request(GET_LAYOUT);
                 result = res;
+            } catch (e) {
+                console.error(`текст ошибки ${e}`);
+            }
+            return result;
+        },
+        getSiteMap: async () => {
+            let result: any = {};
+
+            try {
+                const res = await $graphql?.default?.request(GET_SITEMAP);
+                result = res.allUrls;
             } catch (e) {
                 console.error(`текст ошибки ${e}`);
             }

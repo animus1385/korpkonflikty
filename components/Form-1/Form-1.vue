@@ -51,9 +51,12 @@
 import { string, boolean, object } from "yup";
 const props = defineProps<{ data: any }>();
 const rePhoneNumber = /^\+7\s?\(?\d{3}\)?\s?\d{3}\s[-\s]?\d{2}[-\s]?\d{2}$/;
-const toast = useToast()
+
 const loadingSend = ref(false);
 const successActive = ref(false);
+const runtimeConfig = useRuntimeConfig()
+
+
 const fields = ref(JSON.parse(props.data.fields.cf7FormDynamicFields));
 const fieldsSchema = computed<any>(() => {
   const schemaArr: any = {};
@@ -105,7 +108,7 @@ async function onSubmit(e: any) {
   loadingSend.value = true;
 
   await fetch(
-    `https://admin.korpkonflikty.ru/wp-json/contact-form-7/v1/contact-forms/${props.data.fields?.id}/feedback`,
+    `${runtimeConfig.public.websiteAdmin}/wp-json/contact-form-7/v1/contact-forms/${props.data.fields?.id}/feedback`,
     {
       method: "POST",
       body: formData,

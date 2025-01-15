@@ -9,12 +9,16 @@ export default defineNuxtConfig({
         preference: 'light',
     },
     ssr: true,
+    site: {
+        url: process.env.WEB_SITE,
+        name: 'Корпоратиные конфликты',
+    },
     app: {
         head: {
             htmlAttrs: {
                 lang: 'ru',
             },
-            title: 'Template',
+            title: 'Корпоратиные конфликты',
             charset: 'utf-8',
             meta: [],
             link: [],
@@ -39,6 +43,8 @@ export default defineNuxtConfig({
         'dayjs-nuxt',
         'nuxt-graphql-request',
         'nuxt-viewport',
+        '@nuxtjs/robots',
+        '@nuxtjs/sitemap',
     ],
     tailwindcss: {
         viewer: false,
@@ -62,6 +68,7 @@ export default defineNuxtConfig({
         public: {
             API: process.env.PUBLIC_GRAPHQL_URL,
             website: process.env.WEB_SITE,
+            websiteAdmin: process.env.WEB_ADMIN_SITE,
         },
     },
     build: {
