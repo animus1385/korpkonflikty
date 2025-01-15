@@ -9,6 +9,9 @@ export default defineNuxtConfig({
         preference: 'light',
     },
     ssr: true,
+    sitemap: {
+        sources: ['/api/__sitemap__/urls'],
+    },
     site: {
         url: process.env.WEB_SITE,
         name: 'Корпоратиные конфликты',
