@@ -60,7 +60,7 @@ const { data, status } = useAsyncData('getSettingsAll', () => $api.getSettingsAl
         });
         return difference;
     },
-    server: false,
+    server: true,
 });
 watchEffect(() => {
     storeCommon.statusLoading = status.value;
