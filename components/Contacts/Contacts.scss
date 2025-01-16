@@ -16,7 +16,7 @@
         @apply flex items-center justify-center h-full w-full;
     }
     &__elem-social-block {
-        @apply grid gap-[39px] desktop:grid-cols-1 tablet:grid-cols-2 desktop:col-span-1 tablet:col-span-full  tablet:justify-center;
+        @apply grid gap-[39px] desktop:grid-cols-1 tablet:grid-cols-2 desktop:col-span-1 tablet:col-span-full  tablet:justify-center justify-self-end;
     }
     &__picture:deep() {
         @apply w-full h-full flex object-contain;

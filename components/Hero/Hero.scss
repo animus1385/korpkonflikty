@@ -2,7 +2,7 @@
     @apply bg-gradient-to-l from-[#474747] to-[#222];
     @apply relative;
     &__container {
-        @apply overflow-hidden h-full desktop:min-h-[902px]  grid items-center relative z-[1]  desktop:grid-cols-2 desktop:grid-rows-1 mobile:grid-rows-[max-content_1fr];
+        @apply overflow-hidden  desktop:max-h-[902px] h-fit  grid items-center relative z-[1]  desktop:grid-cols-2 grid-rows-1 mobile:grid-rows-[max-content_1fr];
     }
     &__bg {
         @apply absolute inset-0 object-cover w-full h-full;
@@ -16,7 +16,7 @@
     &__title {
         font-family: var(--second-family);
         line-height: 117%;
-        @apply font-extrabold desktop:text-[64px] text-white desktop:mb-[28px] mobile:mb-[20px] laptopMedium:text-[52px] tablet:text-[45px] mobile:text-[30px];
+        @apply font-extrabold desktop:text-[64px] desktopWide:text-[50px] text-white desktop:mb-[28px] mobile:mb-[20px] laptopMedium:text-[45px] tablet:text-[40px] mobile:text-[30px];
     }
     &__descr {
         font-family: var(--second-family);
