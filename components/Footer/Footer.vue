@@ -3,7 +3,7 @@
         <div class="footer__container container">
             <div class="footer__top">
                 <UButton class="footer__logo" variant="ghost" @click="navigateTo('/')" v-if="menuStore.footer.logo"
-                    aria-label="footer logo">
+                    aria-label="Футтер логотип">
                     <NuxtImg class="footer__logo-icon" loading="lazy" format="webp" :src="menuStore.footer.logo"
                         alt="footer-logo">
                     </NuxtImg>
@@ -15,7 +15,7 @@
                             elem.node.label }}</NuxtLink>
                     </li>
                 </ul>
-                <NuxtLink class="footer__btn-call" :to="menuStore.footer.link.url">{{ menuStore.footer.link.label }}</NuxtLink>
+                <NuxtLink class="footer__btn-call" :to="menuStore.footer.link.url">{{ menuStore.footer.link.title }}</NuxtLink>
                 <NuxtLink class="footer__address" :to="menuStore.footer.address.url"
                     :aria-label="menuStore.footer.address.title" v-if="menuStore.footer.address.url">
                     <Icon class="footer__icon" name="custom-icons:ping" />

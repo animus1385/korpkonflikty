@@ -7,12 +7,17 @@
                     <p class="cta__descr">
                         {{ props?.data?.fields?.descr }}
                     </p>
-                    <NuxtLink :to="props?.data?.fields?.btn.url" class="cta__btn btn btn--bg">{{
+                    <NuxtLink :to="props?.data?.fields?.btn.url" :aria-label="props?.data?.fields?.title" class="cta__btn btn btn--bg">{{
                         props?.data?.fields?.btn.title
-                        }}</NuxtLink>
+                    }}</NuxtLink>
                 </div>
-                <NuxtImg loading="lazy" format="webp" class="cta__img" :src="props?.data?.fields.bg.node.sourceUrl"
-                    :alt="props?.data?.fields?.title"></NuxtImg>
+                <NuxtImg
+                    loading="lazy"
+                    format="webp"
+                    class="cta__img"
+                    :src="props?.data?.fields.bg.node.sourceUrl"
+                    :alt="props?.data?.fields?.title"
+                ></NuxtImg>
             </div>
         </div>
     </section>

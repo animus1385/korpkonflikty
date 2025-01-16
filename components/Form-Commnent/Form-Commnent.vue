@@ -24,7 +24,7 @@
                                     <UCheckbox v-model="state.check"
                                         label="Отправляя данные, вы соглашаетесь с Политикой обработки данных " />
                                 </UFormGroup>
-                                <UButton :loading="loadingSend" class="form-commnent__btn btn" type="submit"> Отправить
+                                <UButton :loading="loadingSend" class="form-commnent__btn btn" type="submit" aria-label="Кнопка отправить комментарий"> Отправить
                                 </UButton>
                             </div>
                         </div>

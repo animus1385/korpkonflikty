@@ -25,7 +25,7 @@
                         <UCheckbox v-else v-model="filedState[field.property]" :label="field.label" />
                     </UFormGroup>
                 </div>
-                <UButton :loading="loadingSend" class="form-2__btn btn" type="submit"> {{ props.data.fields.nameBtn }} </UButton>
+                <UButton :loading="loadingSend" class="form-2__btn btn" type="submit" :aria-label="`Кнопка ${props.data.fields.nameBtn}`"> {{ props.data.fields.nameBtn }} </UButton>
             </UForm>
         </div>
         <Teleport to="body">

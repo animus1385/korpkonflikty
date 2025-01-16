@@ -7,7 +7,7 @@
                     <p class="cta-telegram__descr">
                         {{ props.data.fields.descr }}
                     </p>
-                    <NuxtLink class="cta-telegram__btn btn btn--bg" :to="props.data.fields.btn.url">{{
+                    <NuxtLink class="cta-telegram__btn btn btn--bg" :aria-label="props?.data?.fields?.btn.title"  :to="props.data.fields.btn.url">{{
                         props.data.fields.btn.title
                         }}</NuxtLink>
                 </div>

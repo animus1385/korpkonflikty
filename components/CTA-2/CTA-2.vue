@@ -7,7 +7,7 @@
                 <div class="cta-2__descr-block" v-html="props?.data?.fields?.descr"></div>
             </div>
             <div class="cta-2__right">
-                <NuxtLink class="cta-2__btn btn" color="white" :to="props?.data?.fields?.btn.url">{{
+                <NuxtLink class="cta-2__btn btn" color="white" :aria-label="props?.data?.fields?.btn.title"  :to="props?.data?.fields?.btn.url">{{
                     props?.data?.fields?.btn.title }}</NuxtLink>
             </div>
         </div>
