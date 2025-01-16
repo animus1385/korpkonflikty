@@ -1,5 +1,5 @@
 <template>
-    <Flexible v-if="status == 'success' && data" :data="data.flexible" />
+    <Flexible v-if="status == 'success' && data" :data="data.flexible" :status="status" />
 </template>
 
 <script setup lang="ts">
@@ -8,24 +8,43 @@ import type { IBlockFlexible } from '~/types/blockFlexible';
 const { $api } = useNuxtApp();
 const storeCommon = useCommonStore();
 
-const { data, status } = await useLazyAsyncData('getPage', async () => await $api.getPage(`/`), {
-    server: false,
-    transform: (e: any) => {
-        const transform = e.flexible.map((el: any) => {
-            const name = el.fieldGroupName.replace(/(PageBuilderFlexible)(.*)(Layout)/g, '$2');
-            const key = name[0].toLowerCase() + name.slice(1);
-
-            return {
-                name: name,
-                fields: el[key] ? el[key] : {},
-            } as IBlockFlexible;
-        });
+const { data, status } = useLazyAsyncData(
+    'getPage',
+    async () => {
+        const flexible = await $api.getSettingsAll();
+        const page = await $api.getPage(`/`);
         return {
-            flexible: transform,
-            seo: e.seo,
+            flexible,
+            page,
         };
     },
-});
+    {
+        transform: (e: any) => {
+            const transform = e.page.flexible.map((el: any) => {
+                const name = el.fieldGroupName.replace(/(PageBuilderFlexible)(.*)(Layout)/g, '$2');
+                const key = name[0].toLowerCase() + name.slice(1);
+
+                return {
+                    name: name,
+                    fields: el[key] ? el[key] : {},
+                } as IBlockFlexible;
+            });
+            let difference = transform.map((x: any) => {
+                const current = Object.entries(e?.flexible).find((el) => x.name.toLowerCase().includes(el[0].toLowerCase()));
+
+                return {
+                    pageId: x.pageId,
+                    name: x.name,
+                    fields: current ? current[1] : x.fields,
+                } as IBlockFlexible;
+            });
+            return {
+                flexible: difference,
+                seo: e.page.seo,
+            };
+        },
+    }
+);
 watchEffect(() => {
     storeCommon.statusLoading = status.value;
 });
