@@ -1,5 +1,7 @@
 <template>
     <section class="form-1" v-if="props.data.fields.cf7FormDynamicFields">
+
+    {{ console.log(props.data.fields.cf7FormDynamicFields) }}
         <div class="form-1__container container">
             <div class="form-1__content">
                 <div class="form-1__left" v-if="props?.data.fields.title">

@@ -29,11 +29,6 @@
             <Content v-if="section.name == 'ContentCustom'" :data="section" />
         </div>
     </div>
-    <div class="container" v-else-if="status == 'idle' || status == 'pending'">
-        <div class="grid gap-[30px]">
-            <USkeleton class="h-[400px] w-full" v-for="index in 3" :key="`skeleton-${index}`" />
-        </div>
-    </div>
 </template>
 <script setup lang="ts">
 import type { IBlockFlexible } from '~/types/blockFlexible';

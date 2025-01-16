@@ -62,7 +62,7 @@
                                     :loading="loadingSend"
                                     class="modal-form__btn btn"
                                     type="submit"
-                                    :aria-label="`Кнопка ${props.data.fields.nameBtn}`"
+                                    :aria-label="`Кнопка ${props.data.nameBtn}`"
                                 >
                                     {{ props.data.nameBtn }}
                                 </UButton>
