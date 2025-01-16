@@ -18,7 +18,6 @@
 
                         <UPopover
                             v-else
-                            mode="hover"
                             :ui="{
                                 container: 'header__nav-popup',
                             }"
