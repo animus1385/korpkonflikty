@@ -16,7 +16,7 @@
     &__title {
         font-family: var(--second-family);
         line-height: 117%;
-        @apply font-extrabold desktop:text-[64px] desktopWide:text-[50px] text-white desktop:mb-[28px] mobile:mb-[20px] laptopMedium:text-[45px] tablet:text-[40px] mobile:text-[30px];
+        @apply font-extrabold desktop:text-[50px] desktopWide:text-[64px] text-white desktop:mb-[28px] mobile:mb-[20px] laptopMedium:text-[45px] tablet:text-[40px] mobile:text-[30px];
     }
     &__descr {
         font-family: var(--second-family);

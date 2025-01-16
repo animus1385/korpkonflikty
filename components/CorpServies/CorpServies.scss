@@ -8,16 +8,16 @@
     }
     swiper-container {
         &::part(container) {
-            @apply mobile:overflow-visible ;
+            @apply mobile:overflow-visible flex h-auto ;
         }
         &::part(wrapper) {
-            @apply items-center py-[10px];
+            @apply  py-[10px] h-auto;
         }
     }
     swiper-slide {
         @apply cursor-pointer transition-transform;
         &:hover {
-            @apply scale-105;
+            @apply scale-[1.03];
         }
     }
     &__title {
