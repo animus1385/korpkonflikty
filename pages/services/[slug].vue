@@ -67,13 +67,12 @@ watchEffect(() => {
 watch(
     () => data.value,
     () => {
-        useHead({
+        useSeoMeta({
             title: data?.value?.seo?.title,
-            meta: [
-                { name: 'description', content: data?.value?.seo?.metaDesc },
-                { name: 'robots', content: `${data?.value?.seo?.metaRobotsNofollow} ${data?.value?.seo?.metaRobotsNoindex}` },
-                { name: 'keywords', content: data?.value?.seo?.metaKeywords },
-            ],
+            description: data?.value?.seo?.metaDesc,
+            robots: `${data?.value?.seo?.metaRobotsNofollow} ${data?.value?.seo?.metaRobotsNoindex}`,
+        });
+        useHead({
             link: [
                 {
                     rel: 'canonical',
