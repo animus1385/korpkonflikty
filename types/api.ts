@@ -12,4 +12,9 @@ export interface Api {
     services: {
         getService: (slug: string) => Promise<any[]>;
     };
+    seo: {
+        getSeoPage: (slug: string) => Promise<any[]>;
+        getSeoPost: (slug: string) => Promise<any[]>;
+        getSeoService: (slug: string) => Promise<any[]>;
+    };
 }

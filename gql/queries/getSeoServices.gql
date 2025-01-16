@@ -1,0 +1,16 @@
+query getSeoService($ID: ID!) {
+    postService(idType: SLUG, id: $ID) {
+        seo {
+            title
+            metaDesc
+            canonical
+            breadcrumbs {
+                url
+                text
+            }
+            metaRobotsNoindex
+            metaRobotsNofollow
+            metaKeywords
+        }
+    }
+}

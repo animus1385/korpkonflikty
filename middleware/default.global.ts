@@ -20,4 +20,5 @@ export default defineNuxtRouteMiddleware((to, from) => {
             }, 500);
         }
     });
+    
 });

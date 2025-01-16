@@ -9,6 +9,9 @@ import GET_POSTS from '~/gql/queries/getPosts.gql';
 import GET_POST_SERVICE from '~/gql/queries/getService.gql';
 import GET_LAYOUT from '~/gql/queries/getLayout.gql';
 import GET_SITEMAP from '~/gql/queries/getSitemap.gql';
+import GET_SEO_PAGE from '~/gql/queries/getSeoPage.gql';
+import GET_SEO_POST from '~/gql/queries/getSeoPost.gql';
+import GET_SEO_SERVICE from '~/gql/queries/getSeoServices.gql';
 
 export default defineNuxtPlugin(() => {
     const config = useRuntimeConfig();
@@ -170,6 +173,41 @@ export default defineNuxtPlugin(() => {
                         flexible: res.postService.pageBuilder.flexible,
                         seo: res.postService.seo,
                     };
+                } catch (e) {
+                    console.error(`текст ошибки ${e}`);
+                }
+                return result;
+            },
+        },
+        seo: {
+            getSeoPage: async (slug: string) => {
+                let result: any = {};
+
+                try {
+                    const res = await $graphql?.default?.request(GET_SEO_PAGE, { ID: slug });
+                    result = res.page;
+                } catch (e) {
+                    console.error(`текст ошибки ${e}`);
+                }
+                return result;
+            },
+            getSeoPost: async (slug: string) => {
+                let result: any = {};
+
+                try {
+                    const res = await $graphql?.default?.request(GET_SEO_POST, { ID: slug });
+                    result = res.post;
+                } catch (e) {
+                    console.error(`текст ошибки ${e}`);
+                }
+                return result;
+            },
+            getSeoService: async (slug: string) => {
+                let result: any = {};
+
+                try {
+                    const res = await $graphql?.default?.request(GET_SEO_SERVICE, { ID: slug });
+                    result = res.postService;
                 } catch (e) {
                     console.error(`текст ошибки ${e}`);
                 }

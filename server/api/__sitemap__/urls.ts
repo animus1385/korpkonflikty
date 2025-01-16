@@ -7,18 +7,7 @@ export default defineSitemapEventHandler(async () => {
             query: 'query getPage {\n  allUrls\n}',
         },
     });
-    const departmentUrl = [];
     const result = await req.then((e: any) => e.data.allUrls);
-    if (result) {
-        result
-            .filter((e: any) => e.includes('/blog'))
-            .every((e: string) => {
-                departmentUrl.push({
-                    loc: e,
-                    _sitemap: 'blog',
-                });
-            });
-    }
 
     return result satisfies SitemapUrlInput[];
 });

@@ -1,0 +1,16 @@
+query getSeoPage($ID: ID!) {
+    page(id: $ID, idType: URI) {
+        seo {
+            title
+            metaDesc
+            canonical
+            breadcrumbs {
+                url
+                text
+            }
+            metaRobotsNoindex
+            metaRobotsNofollow
+            metaKeywords
+        }
+    }
+}
