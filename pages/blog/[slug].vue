@@ -75,22 +75,18 @@ watchEffect(async () => {
     breadcrumbs.value = useBreadcrumbs(data.value?.seo?.breadcrumbs);
     storeCommon.statusLoading = status.value;
 });
-watch(
-    () => data.value,
-    () => {
-        useSeoMeta({
-            title: data?.value?.seo?.title,
-            description: data?.value?.seo?.metaDesc,
-            robots: `${data?.value?.seo?.metaRobotsNofollow} ${data?.value?.seo?.metaRobotsNoindex}`,
-        });
-        useHead({
-            link: [
-                {
-                    rel: 'canonical',
-                    href: data?.value?.seo?.canonical,
-                },
-            ],
-        });
-    }
-);
+useHead({
+    title: data?.value?.seo?.title,
+    meta: [
+        { name: 'description', content: data?.value?.seo?.metaDesc },
+        { name: 'robots', content: `${data?.value?.seo?.metaRobotsNofollow} ${data?.value?.seo?.metaRobotsNoindex}` },
+        { name: 'keywords', content: data?.value?.seo?.metaKeywords },
+    ],
+    link: [
+        {
+            rel: 'canonical',
+            href: data?.value?.seo?.canonical,
+        },
+    ],
+});
 </script>
