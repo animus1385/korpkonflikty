@@ -114,6 +114,11 @@ query NewQuery {
                 }
             }
             cta2Common {
+                img {
+                    node {
+                        sourceUrl
+                    }
+                }
                 title
                 subtitle
                 descr

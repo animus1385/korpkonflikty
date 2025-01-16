@@ -377,11 +377,13 @@ query getPostServices($ID: ID!) {
                                                     link {
                                                         url
                                                         title
+                                                        target
                                                     }
                                                     listLevel2 {
                                                         link {
                                                             url
                                                             title
+                                                            target
                                                         }
                                                     }
                                                 }
@@ -422,6 +424,7 @@ query getPostServices($ID: ID!) {
                                 link {
                                     url
                                     target
+                                    target
                                 }
                                 icon {
                                     node {
@@ -433,6 +436,7 @@ query getPostServices($ID: ID!) {
                                 link {
                                     url
                                     title
+                                    target
                                 }
                                 icon {
                                     node {

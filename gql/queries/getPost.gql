@@ -22,11 +22,13 @@ query getPost($ID: ID!) {
                     link {
                         url
                         title
+                        target
                     }
                     listLevel2 {
                         link {
                             url
                             title
+                            target
                         }
                     }
                 }
@@ -391,11 +393,13 @@ query getPost($ID: ID!) {
                                                     link {
                                                         url
                                                         title
+                                                        target
                                                     }
                                                     listLevel2 {
                                                         link {
                                                             url
                                                             title
+                                                            target
                                                         }
                                                     }
                                                 }

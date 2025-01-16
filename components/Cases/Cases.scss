@@ -14,7 +14,7 @@
     }
 }
 .info-case {
-    @apply grid desktop:grid-cols-2 desktop:gap-[210px] mobile:gap-[30px];
+    @apply grid desktop:grid-cols-2 desktop:gap-[56px] mobile:gap-[30px];
     &__title {
         font-family: var(--second-family);
         line-height: 110%;

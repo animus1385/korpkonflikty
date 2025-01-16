@@ -1,5 +1,5 @@
 .corp-servies {
-    @apply desktop:pt-[88px] desktop:pb-[63px] mobile:py-[30px] ;
+    @apply desktop:pt-[88px] desktop:pb-[63px] mobile:py-[30px];
     &__swiper {
         @apply w-full h-full;
     }
@@ -8,10 +8,16 @@
     }
     swiper-container {
         &::part(container) {
-            @apply mobile:overflow-visible;
+            @apply mobile:overflow-visible ;
         }
         &::part(wrapper) {
-            @apply items-center;
+            @apply items-center py-[10px];
+        }
+    }
+    swiper-slide {
+        @apply cursor-pointer transition-transform;
+        &:hover {
+            @apply scale-105;
         }
     }
     &__title {
@@ -20,14 +26,14 @@
     &__elem {
         background: #fff;
         border-radius: 30px;
-        @apply flex desktop:flex-row mobile:flex-col  w-full overflow-hidden desktop:min-h-[374px];
+        @apply flex desktop:flex-row mobile:flex-col  w-full overflow-hidden desktop:min-h-[374px] h-full;
         box-shadow: 3px 6px 15px 0 rgba(36, 37, 39, 0.05);
     }
     &__elem-swiper {
-        @apply py-[10px];
+        @apply py-[10px] h-full;
     }
     &__elem-info {
-        @apply p-[22px] flex flex-col w-full;
+        @apply p-[22px] flex flex-col w-full h-full;
     }
     &__btn {
         @apply mt-auto desktop:ml-auto text-[#0a71ad];
@@ -40,7 +46,7 @@
         }
     }
     &__img {
-        @apply desktop:w-[254px] desktop:h-auto mobile:h-[170px] object-cover ;
+        @apply desktop:w-[254px] desktop:h-auto mobile:h-[170px] object-cover;
         background: #dbeafe;
     }
     &__top {
@@ -58,6 +64,6 @@
     &__elem-descr {
         font-family: var(--third-family);
         line-height: 173%;
-        @apply text-[#606571] text-[15px] font-normal mb-[10px];
+        @apply text-[#606571] text-[15px] font-normal mb-[10px]  line-clamp-4;
     }
 }

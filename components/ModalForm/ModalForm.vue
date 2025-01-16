@@ -169,8 +169,7 @@ async function onSubmit(e: any) {
 
 function closeModal() {
     isOpen.value = false;
-    location.hash = '';
-    window.scrollTo(0, window.scrollY);
+    location.hash = '#_';
 }
 </script>
 

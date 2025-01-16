@@ -1,8 +1,8 @@
 .header {
-    @apply sticky top-0 z-[999] left-0 right-0 desktop:min-h-[150px] bg-gradient-to-l from-[#474747] to-[#222];
+    @apply sticky top-0 z-[999] left-0 right-0  bg-gradient-to-l from-[#474747] to-[#222];
 
     &__contaniner {
-        @apply grid desktopWide:grid-cols-[max-content_1fr_repeat(3,max-content)] laptopMedium:grid-cols-[max-content_1fr_repeat(2,max-content)] mobile:grid-cols-[repeat(2,max-content)] justify-between  desktopMedium:gap-[40px] py-[32px] items-center laptopMedium:gap-[20px];
+        @apply grid desktopWide:grid-cols-[max-content_1fr_repeat(3,max-content)] laptopMedium:grid-cols-[max-content_1fr_repeat(2,max-content)] mobile:grid-cols-[repeat(2,max-content)] justify-between  desktopMedium:gap-[40px] desktop:py-[32px] mobile:py-[15px] items-center laptopMedium:gap-[20px];
     }
     &__list {
         @apply grid grid-cols-6 gap-[20px];
@@ -129,7 +129,7 @@
         }
     }
     &__accordion-link-mobile {
-        @apply text-[18px] text-center font-bold;
+        @apply text-[18px] text-center font-bold flex justify-center;
     }
     &__accordion-btn-mobile {
         @apply flex justify-center text-[18px] text-center font-bold;
@@ -142,6 +142,9 @@
         path {
             fill: #2387c0;
         }
+    }
+    &__logo-mobile {
+        @apply max-w-[130px];
     }
     &__social-elem-mobile {
         a:where([aria-label='whatsApp']) {

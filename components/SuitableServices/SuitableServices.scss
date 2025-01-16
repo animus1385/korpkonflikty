@@ -13,8 +13,12 @@
             @apply desktopMedium:min-h-max mobile:min-h-[280px];
         }
     }
-    swiper-slide {
-        @apply h-auto;
+  
+     swiper-slide {
+        @apply cursor-pointer transition-transform h-auto;
+        &:hover {
+            @apply scale-105;
+        }
     }
     &__top {
         @apply flex justify-between items-center mb-[30px];

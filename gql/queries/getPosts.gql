@@ -18,11 +18,13 @@ query getPosts($offset: Int!, $size: Int!) {
                             link {
                                 url
                                 title
+                                target
                             }
                             listLevel2 {
                                 link {
                                     url
                                     title
+                                    target
                                 }
                             }
                         }

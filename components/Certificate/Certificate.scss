@@ -35,14 +35,21 @@
     }
     swiper-container {
         &::part(container) {
-            @apply mobile:overflow-visible tablet:overflow-hidden;
+            @apply mobile:overflow-visible tablet:overflow-hidden px-[10px];
         }
         &::part(wrapper) {
-            @apply items-center;
+            @apply items-center  py-[30px];
+        }
+    }
+    swiper-slide {
+        @apply cursor-pointer transition-transform;
+        &:hover {
+            @apply scale-105;
         }
     }
     &__elem:deep() {
         @apply desktop:w-full  bg-[#eaeaea]  overflow-hidden rounded-[16px] desktop:h-[384px] mobile:h-[131px] flex justify-center items-center;
+        box-shadow: 1px 4px 12px -1px rgba(36, 37, 39, 0.5);
         picture {
             @apply w-full h-full;
         }

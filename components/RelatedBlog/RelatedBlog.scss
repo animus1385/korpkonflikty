@@ -18,10 +18,16 @@
     }
     swiper-container {
         &::part(container) {
-            @apply mobile:overflow-visible desktop:overflow-hidden tablet:h-auto mobile:h-[400px];
+            @apply mobile:overflow-visible desktop:overflow-hidden tablet:h-auto mobile:h-[400px]   px-[10px];
         }
         &::part(wrapper) {
-            @apply items-center;
+            @apply items-center py-[15px];
+        }
+    }
+    swiper-slide {
+        @apply cursor-pointer transition-transform;
+        &:hover {
+            @apply scale-105;
         }
     }
     &__swiper {
@@ -38,7 +44,6 @@
     }
     &__img:deep() {
         @apply flex tablet:min-h-[192px] mobile:min-h-[200px] bg-[#52525b] rounded-[16px] mb-[26px] w-full h-full object-cover;
-
     }
     &__subtitle {
         @apply flex justify-center font-normal desktop:text-[18px] mobile:text-[14px] text-center text-[#52525b] desktop:mb-[68px] mb-[43px];

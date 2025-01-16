@@ -1,5 +1,5 @@
 export const useMenuStore = defineStore('menu-store', {
-    state: () :any => ({
+    state: (): any => ({
         items: [],
         burger: false,
         tel: {},
@@ -48,6 +48,12 @@ export const useMenuStore = defineStore('menu-store', {
         level1Items(context) {
             return context.items.filter((obj: any) => {
                 const matchingObject = context.items.find((item: any) => obj.node.parentId === null);
+                return !!matchingObject;
+            });
+        },
+        level1ItemsFooter(context) {
+            return context.footer.items.filter((obj: any) => {
+                const matchingObject = context.footer.items.find((item: any) => obj.node.parentId === null);
                 return !!matchingObject;
             });
         },

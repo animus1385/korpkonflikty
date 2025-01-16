@@ -1,13 +1,14 @@
 <template>
     <header class="header" v-if="menuStore.items">
         <div class="header__contaniner container">
-            <UButton class="header__logo" @click="navigateTo('/')" variant="ghost" aria-label="логотип" v-if="menuStore.logo">
+            <NuxtLink class="header__logo" to="/" variant="ghost" aria-label="логотип" v-if="menuStore.logo">
                 <NuxtImg class="header__logo-img" loading="lazy" format="webp" :src="menuStore.logo" alt="header-logo"> </NuxtImg>
-            </UButton>
+            </NuxtLink>
             <nav class="header__nav">
                 <ul class="header__list" v-if="menuStore.items">
                     <li class="header__elem" v-for="elem in menuStore.level1Items" :key="elem.node.id">
                         <NuxtLink
+                            :target="elem.node.target"
                             v-if="!menuStore.level2Items.find((e: any) => elem?.node?.id == e.node.parentId)"
                             class="header__link"
                             :class="{ active: route.path == elem.node.uri }"
@@ -17,6 +18,7 @@
                         </NuxtLink>
 
                         <UPopover
+                            v-model="openPopover"
                             v-else
                             :ui="{
                                 container: 'header__nav-popup',
@@ -29,6 +31,7 @@
                                 variant="ghost"
                                 :label="elem.node.label"
                                 trailing-icon="i-heroicons-chevron-down-20-solid"
+                                @click="openPopover = !openPopover"
                             />
                             <template #panel>
                                 <div class="header__level-2">
@@ -38,6 +41,7 @@
                                         v-for="level2Elem in menuStore.level2Items"
                                         :key="level2Elem.id"
                                         :to="level2Elem.node.uri"
+                                        :target="level2Elem.node.target"
                                         :aria-label="level2Elem.node.label"
                                     >
                                         {{ level2Elem.node.label }}
@@ -50,13 +54,25 @@
             </nav>
 
             <div class="header__connect">
-                <NuxtLink class="header__email" v-if="menuStore.mail.url" :to="menuStore.mail.url" :aria-label="menuStore.mail.title">
+                <NuxtLink
+                    class="header__email"
+                    v-if="menuStore.mail.url"
+                    :target="menuStore.mail.target"
+                    :to="menuStore.mail.url"
+                    :aria-label="menuStore.mail.title"
+                >
                     <div class="header__email-info">
                         <Icon class="header__icon" name="custom-icons:mail" />
                         <span> {{ menuStore.mail.title }}</span>
                     </div>
                 </NuxtLink>
-                <NuxtLink class="header__tel" v-if="menuStore.tel.url" :to="menuStore.tel.url" :aria-label="menuStore.tel.title">
+                <NuxtLink
+                    class="header__tel"
+                    v-if="menuStore.tel.url"
+                    :target="menuStore.tel.target"
+                    :to="menuStore.tel.url"
+                    :aria-label="menuStore.tel.title"
+                >
                     <div class="header__tel-info">
                         <Icon class="header__icon" name="custom-icons:tel" />
                         <span>{{ menuStore.tel.title }}</span>
@@ -67,7 +83,7 @@
             </div>
             <ul class="header__social" v-if="menuStore.social">
                 <li class="header__social-elem" v-for="elem in menuStore.social">
-                    <NuxtLink :to="elem.link.url" :aria-label="elem.link.title">
+                    <NuxtLink :to="elem.link.url" :target="elem.link.target" :aria-label="elem.link.title">
                         <Icon class="header__icon" :name="setIcon(elem.icon[0])" />
                     </NuxtLink>
                 </li>
@@ -76,6 +92,7 @@
                 class="header__btn-call btn btn--bg"
                 v-if="menuStore.link.url"
                 :to="menuStore.link.url"
+                :target="menuStore.link.target"
                 :aria-label="menuStore.link.title"
                 >{{ menuStore.link.title }}</NuxtLink
             >
@@ -92,7 +109,7 @@
             <UCard class="h-full">
                 <template #header>
                     <div class="header__top-mobile">
-                        <NuxtLink class="header__logo-mobile" to="/" aria-label="Логотип мобильный" v-if="menuStore.logoMobile" >
+                        <NuxtLink class="header__logo-mobile" to="/" aria-label="Логотип мобильный" v-if="menuStore.logoMobile">
                             <NuxtImg loading="lazy" format="webp" :src="menuStore.logoMobile" alt="header-logo-mobile"> </NuxtImg>
                         </NuxtLink>
                         <UButton
@@ -112,6 +129,7 @@
                             class="header__email-mobile"
                             v-if="menuStore.mail.url"
                             :to="menuStore.mail.url"
+                            :target="menuStore.mail.target"
                             :aria-label="menuStore.mail.title"
                         >
                             <div class="header__email-block-mobile">
@@ -123,6 +141,7 @@
                             class="header__tel-mobile"
                             v-if="menuStore.tel.url"
                             :to="menuStore.tel.url"
+                            :target="menuStore.tel.target"
                             :aria-label="menuStore.tel.title"
                         >
                             <div class="header__tel-block-mobile">
@@ -141,6 +160,7 @@
                                 v-if="!menuStore.level2Items.find((e: any) => elem?.node?.id == e.node.parentId)"
                                 class="header__link-mobile"
                                 :to="elem.node.uri"
+                                :target="elem.node.target"
                                 :aria-label="elem.node.label"
                             >
                                 {{ elem.node.label }}</NuxtLink
@@ -158,7 +178,12 @@
                                 ]"
                             >
                                 <template #default="{ open }">
-                                    <UButton color="gray" variant="ghost" class="header__accordion-btn-mobile" aria-label="`Кнопка аккордеона">
+                                    <UButton
+                                        color="gray"
+                                        variant="ghost"
+                                        class="header__accordion-btn-mobile"
+                                        aria-label="`Кнопка аккордеона"
+                                    >
                                         <span class="header__accordion-btn-text">Услуги</span>
                                         <template #trailing>
                                             <UIcon
@@ -177,6 +202,7 @@
                                             <NuxtLink
                                                 class="header__accordion-link-mobile"
                                                 :to="level2Elem.node.uri"
+                                                :target="level2Elem.node.target"
                                                 :aria-label="level2Elem.node.label"
                                             >
                                                 {{ level2Elem.node.label }}
@@ -193,12 +219,13 @@
                     class="header__btn-call btn mobile btn--bg"
                     v-if="menuStore.link.url"
                     :to="menuStore.link.url"
+                    :target="menuStore.link.target"
                     :aria-label="menuStore.link.title"
                     >{{ menuStore.link.title }}</NuxtLink
                 >
                 <ul class="header__social-mobile" v-if="menuStore.social">
                     <li class="header__social-elem-mobile" v-for="elem in menuStore.social">
-                        <NuxtLink :to="elem.link.url" :aria-label="elem.link.title">
+                        <NuxtLink :to="elem.link.url" :target="elem.link.target" :aria-label="elem.link.title">
                             <Icon class="header__icon-mobile" :name="setIcon(elem.icon[0])" />
                         </NuxtLink>
                     </li>
@@ -211,7 +238,7 @@
 <script setup lang="ts">
 const menuStore = useMenuStore();
 const route = useRoute();
-
+const openPopover = ref(false);
 const setIcon = (param: string) => {
     let result = '';
     switch (param) {

@@ -3,13 +3,13 @@
         @apply desktop:py-[131px] mobile:py-[30px] mobile:bg-[#dbeafe] desktop:bg-white mb-[40px] rounded-[16px] overflow-hidden;
     }
     &__content {
-        @apply flex flex-col auto-cols-max  desktop:bg-[#dbeafe] rounded-[16px]  p-0;
+        @apply flex flex-wrap   h-full desktop:bg-[#dbeafe] rounded-[16px] overflow-hidden  p-0;
     }
     &__title {
         @apply mb-[12px];
     }
     &__top {
-        @apply grid desktop:grid-cols-[1fr_700px] desktop:grid-rows-[320px];
+        @apply desktopMedium:flex desktop:flex-wrap mobile:grid grid-rows-1 tabletMedium:grid-cols-3 mobile:grid-cols-2  w-full justify-end desktop:auto-rows-[376px] laptopMedium:auto-rows-[310px] laptop:auto-rows-[280px] tabletMedium:auto-rows-[220px] tablet:auto-rows-[280px] mobileWide:auto-rows-[180px] mobile:auto-rows-[150px]   h-full;
     }
     swiper-container {
         &::part(wrapper) {
@@ -19,19 +19,23 @@
     &__descr {
         font-family: var(--second-family);
         line-height: 167%;
-        @apply desktop:max-w-[496px] desktop:text-[18px] mobile:text-[14px] font-medium text-[#52525b];
+        @apply desktop:text-[18px] mobile:text-[14px] font-medium text-[#52525b];
     }
     &__info {
-        @apply desktopMedium:p-[57px_138px] laptopMedium:p-[57px_50px] mobile:pb-[20px]  w-full;
+        @apply flex  desktopWide:flex-[1_1_50%] desktopMedium:flex-[1_1_40%] mobile:flex-[1_1_100%] col-span-full desktopMedium:mb-0 mobile:mb-[20px]   desktopWide:p-[30px_120px] desktop:p-[30px_50px]  mobile:p-[0px]  flex-col justify-center  w-auto;
     }
     &__swiper {
         @apply w-full h-full col-span-full grid desktop:grid-rows-[334.29px];
     }
+    &__list-top {
+        @apply flex  w-full h-full;
+    }
     &__list {
-        @apply grid desktop:grid-cols-2 desktop:grid-rows-1  tablet:grid-cols-3 tablet:auto-cols-[300px] laptop:auto-rows-[300px] tabletMedium:auto-rows-[240px]  mobile:grid-cols-2 mobile:auto-rows-[163px]  mobile:auto-cols-auto mobileWide:auto-rows-[180px] mobileMedium:auto-rows-[163px] overflow-hidden desktop:rounded-none mobile:rounded-[20px];
+        @apply flex flex-wrap  justify-end w-full;
     }
     &__elem {
-        @apply h-full w-full relative flex flex-col justify-end desktop:p-[33px_40px] mobile:p-[15px_10px];
+        @apply relative flex flex-col justify-end desktop:p-[33px_40px] mobile:p-[15px_10px] desktopWide:w-[349px] desktopMedium:w-[336px] mobile:w-full desktopMedium:h-[336px] mobile:h-full;
+
         &:before {
             content: '';
             @apply absolute inset-0  z-[2] bg-gradient-to-b to-[#0000008f] from-transparent;

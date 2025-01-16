@@ -337,11 +337,13 @@ query getPage($ID: ID!) {
                             address {
                                 url
                                 title
+                                target
                             }
                             social {
                                 link {
                                     url
                                     title
+                                    target
                                 }
                                 icon {
                                     node {
@@ -353,15 +355,18 @@ query getPage($ID: ID!) {
                             email {
                                 title
                                 url
+                                target
                             }
                             tel {
                                 title
                                 url
+                                target
                             }
                             socialCall {
                                 link {
                                     url
                                     title
+                                    target
                                 }
                                 icon {
                                     node {

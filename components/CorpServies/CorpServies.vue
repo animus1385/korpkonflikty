@@ -25,6 +25,7 @@
             <swiper-container
                 ref="swiperRef"
                 :space-between="50"
+                :auto-height="true"
                 :breakpoints="{
                     320: {
                         slidesPerView: 1,
