@@ -18,7 +18,7 @@
                         </NuxtLink>
 
                         <UPopover
-                            v-model="openPopover"
+                            v-model:open="commonStore.popoverHeader"
                             v-else
                             :ui="{
                                 container: 'header__nav-popup',
@@ -31,7 +31,6 @@
                                 variant="ghost"
                                 :label="elem.node.label"
                                 trailing-icon="i-heroicons-chevron-down-20-solid"
-                                @click="openPopover = !openPopover"
                             />
                             <template #panel>
                                 <div class="header__level-2">
@@ -237,8 +236,9 @@
 
 <script setup lang="ts">
 const menuStore = useMenuStore();
+const commonStore = useCommonStore();
 const route = useRoute();
-const openPopover = ref(false);
+
 const setIcon = (param: string) => {
     let result = '';
     switch (param) {

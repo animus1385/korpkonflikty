@@ -3,7 +3,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
     const storeMenu = useMenuStore();
     let anchorTo = to.hash;
     storeMenu.burger = false;
-
+    storeCommon.popoverHeader = false;
     watchEffect(() => {
         if (storeCommon.statusLoading == 'success') {
             storeCommon.loader = false;
@@ -20,5 +20,4 @@ export default defineNuxtRouteMiddleware((to, from) => {
             }, 500);
         }
     });
-    
 });

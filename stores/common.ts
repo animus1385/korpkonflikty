@@ -3,6 +3,7 @@ export const useCommonStore = defineStore('common-store', {
         return {
             loader: true,
             statusLoading: '',
+            popoverHeader: false,
         };
     },
 });
