@@ -13,7 +13,7 @@
     &__logo:deep() {
         @apply desktopMedium:w-[183px] desktopMedium:h-[87px] mobile:w-[150px] mobile:h-[60px] object-contain;
     }
-    &__nav-popup{
+    &__nav-popup {
         @apply absolute left-0;
     }
     &__nav {
@@ -75,6 +75,9 @@
     &__btn-call {
         @apply font-semibold text-[16px] p-[15px_30px] text-center text-white justify-self-end justify-center laptopMedium:flex mobile:hidden;
         font-family: var(--font-family);
+        &.mobile {
+            @apply mb-[40px] mobile:flex w-full;
+        }
     }
     &__burger {
         @apply text-white w-full h-full  laptopMedium:hidden mobile:flex;

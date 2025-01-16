@@ -1,5 +1,5 @@
 .text-open {
-    @apply py-[30px];
+    @apply desktop:py-[30px] mobile:py-[50px];
     &__content {
         @apply relative;
     }

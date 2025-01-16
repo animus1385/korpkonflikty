@@ -18,7 +18,7 @@
     }
     swiper-container {
         &::part(container) {
-            @apply mobile:overflow-visible desktop:overflow-hidden tablet:h-[380px] mobile:h-[400px];
+            @apply mobile:overflow-visible desktop:overflow-hidden tablet:h-auto mobile:h-[400px];
         }
         &::part(wrapper) {
             @apply items-center;
@@ -34,13 +34,11 @@
         font-family: var(--font-family);
         line-height: 152%;
         letter-spacing: -0.01em;
-        @apply desktop:text-[21px] font-semibold mb-[26px] text-black mobile:text-[18px];
+        @apply desktop:text-[20px] font-semibold mb-[20px] text-black mobile:text-[18px] line-clamp-3;
     }
     &__img:deep() {
-        @apply flex tablet:min-h-[192px] mobile:min-h-[200px] bg-[#52525b] rounded-[16px] mb-[26px] w-full;
-        img {
-            @apply w-full h-full object-cover;
-        }
+        @apply flex tablet:min-h-[192px] mobile:min-h-[200px] bg-[#52525b] rounded-[16px] mb-[26px] w-full h-full object-cover;
+
     }
     &__subtitle {
         @apply flex justify-center font-normal desktop:text-[18px] mobile:text-[14px] text-center text-[#52525b] desktop:mb-[68px] mb-[43px];

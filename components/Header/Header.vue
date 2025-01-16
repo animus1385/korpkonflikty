@@ -190,7 +190,7 @@
                 </nav>
 
                 <NuxtLink
-                    class="header__btn-call btn"
+                    class="header__btn-call btn mobile btn--bg"
                     v-if="menuStore.link.url"
                     :to="menuStore.link.url"
                     :aria-label="menuStore.link.title"

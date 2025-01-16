@@ -1,7 +1,9 @@
 .command {
-    @apply desktop:py-[131px] mobile:py-[30px] mobile:bg-[#dbeafe] desktop:bg-white;
+    &__container {
+        @apply desktop:py-[131px] mobile:py-[30px] mobile:bg-[#dbeafe] desktop:bg-white mb-[40px] rounded-[16px] overflow-hidden;
+    }
     &__content {
-        @apply flex flex-col auto-cols-max  desktop:bg-[#dbeafe] rounded-[16px] overflow-hidden p-0;
+        @apply flex flex-col auto-cols-max  desktop:bg-[#dbeafe] rounded-[16px]  p-0;
     }
     &__title {
         @apply mb-[12px];

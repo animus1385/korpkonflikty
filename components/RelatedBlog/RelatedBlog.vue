@@ -43,7 +43,7 @@
                     v-for="elem in props?.data?.fields.relatedBlogList.edges"
                     :key="elem.node.id"
                 >
-                    <NuxtLink :to="elem.node.uri" class="related-blog__elem-link">
+                    <NuxtLink :to="elem.node.uri" class="related-blog__elem-link" title="elem.node.title">
                         <h3 class="related-blog__title-elem">{{ elem.node.title }}</h3>
                         <NuxtImg
                             loading="lazy"

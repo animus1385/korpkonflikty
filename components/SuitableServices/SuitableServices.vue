@@ -59,7 +59,7 @@
                     v-for="elem in props?.data?.fields.suitableServicesList.edges"
                     :key="elem.node.id"
                 >
-                    <NuxtLink :to="elem.node.link" class="suitable-services__elem-link">
+                    <NuxtLink :to="elem.node.link" class="suitable-services__elem-link" :title="elem.node.title">
                         <h3 class="suitable-services__title-elem">{{ elem.node.title }}</h3>
                         <p class="suitable-services__descr-elem">
                             {{ elem.node.pageBuilder.flexible[0].heroCustom.subtitle }}
