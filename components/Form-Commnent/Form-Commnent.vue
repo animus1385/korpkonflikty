@@ -6,25 +6,33 @@
                 <UForm class="form-commnent__form" :schema="schema" :state="state" @submit="onSubmit">
                     <div class="form-commnent__content">
                         <UFormGroup class="form-commnent form-commnent__comment" label="Ваш комментарий" name="comment">
-                            <UTextarea class="form-commnent__field-textarea" v-model="state.comment"
-                                placeholder="Иван Иванов" />
+                            <UTextarea class="form-commnent__field-textarea" v-model="state.comment" placeholder="Иван Иванов" />
                         </UFormGroup>
                         <div class="form-commnent__fileds-block">
                             <UFormGroup class="form-commnent__field-label form-commnent__name" label="Имя" name="name">
-                                <UInput class="form-commnent__field-input input-field" v-model="state.name"
-                                    placeholder="Иван Иванов" />
+                                <UInput class="form-commnent__field-input input-field" v-model="state.name" placeholder="Иван Иванов" />
                             </UFormGroup>
-                            <UFormGroup class="form-commnent__field-label form-commnent__email" label="E-mail"
-                                name="email">
-                                <UInput class="form-commnent__field-input input-field" v-model="state.email"
-                                    placeholder="example@mail.ru" />
+                            <UFormGroup class="form-commnent__field-label form-commnent__email" label="E-mail" name="email">
+                                <UInput
+                                    class="form-commnent__field-input input-field"
+                                    v-model="state.email"
+                                    placeholder="example@mail.ru"
+                                />
                             </UFormGroup>
                             <div class="form-commnent__bottom">
                                 <UFormGroup class="form-commnent__field-label form-commnent__check" name="check">
-                                    <UCheckbox v-model="state.check"
-                                        label="Отправляя данные, вы соглашаетесь с Политикой обработки данных " />
+                                    <UCheckbox
+                                        v-model="state.check"
+                                        label="Отправляя данные, вы соглашаетесь с Политикой обработки данных "
+                                    />
                                 </UFormGroup>
-                                <UButton :loading="loadingSend" class="form-commnent__btn btn" type="submit" aria-label="Кнопка отправить комментарий"> Отправить
+                                <UButton
+                                    :loading="loadingSend"
+                                    class="form-commnent__btn btn"
+                                    type="submit"
+                                    aria-label="Кнопка отправить комментарий"
+                                >
+                                    Отправить
                                 </UButton>
                             </div>
                         </div>
@@ -51,7 +59,7 @@
 import { object, string, boolean } from 'yup';
 const props = defineProps<{ data: any; pageId: any }>();
 const { $api } = useNuxtApp();
-const toast = useToast()
+const toast = useToast();
 const loadingSend = ref(false);
 
 const schema = object({
@@ -68,57 +76,56 @@ const state = reactive({
     check: false,
 });
 
-const { status, error } = useAsyncData(
-    'createComment',
-    () => $api.post.sendComment(state.name, state.email, props.pageId, state.comment), {
+const { status, error } = useAsyncData('createComment', () => $api.post.sendComment(state.name, state.email, props.pageId, state.comment), {
     server: false,
     immediate: false,
-    watch: [loadingSend]
-}
-);
+    watch: [loadingSend],
+});
 
 watch(status, (e) => {
     if (e == 'success' && loadingSend.value) {
         toast.add({
-            icon: "i-heroicons-check-circle", timeout: 50000, title: 'Успешно', description: 'Коментарий отправлен! на модерацию!', 'closeButton': {
-                color: 'white'
+            icon: 'i-heroicons-check-circle',
+            timeout: 50000,
+            title: 'Успешно',
+            description: 'Коментарий отправлен! на модерацию!',
+            closeButton: {
+                color: 'white',
             },
             ui: {
                 title: 'text-white',
                 description: 'text-white',
                 background: 'bg-green-500',
                 progress: {
-                    background: 'bg-white'
+                    background: 'bg-white',
                 },
                 icon: {
-                    color: 'text-white'
-                }
-            }
-
-        })
+                    color: 'text-white',
+                },
+            },
+        });
         loadingSend.value = false;
     } else if (e == 'error' && !loadingSend.value) {
         toast.add({
-            title: `Ошибка  ${error?.value?.statusCode}`, description: error?.value?.message,
-            icon: "carbon:close-filled",
+            title: `Ошибка  ${error?.value?.statusCode}`,
+            description: error?.value?.message,
+            icon: 'carbon:close-filled',
             ui: {
                 title: 'text-white',
                 description: 'text-white',
                 background: 'bg-red-500',
                 progress: {
-                    background: 'bg-white'
+                    background: 'bg-white',
                 },
                 icon: {
-                    color: 'text-white'
-                }
-            }
-        })
+                    color: 'text-white',
+                },
+            },
+        });
         loadingSend.value = false;
     }
-
-})
+});
 function onSubmit() {
-
     loadingSend.value = true;
 }
 </script>

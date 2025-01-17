@@ -42,7 +42,6 @@
     }
     &__title-elem {
         font-family: var(--second-family);
-        line-height: 120%;
         letter-spacing: -0.05em;
         @apply desktop:text-[35px] text-white font-bold mobile:text-[20px] line-clamp-2;
     }

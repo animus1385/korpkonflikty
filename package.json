@@ -24,6 +24,7 @@
     "maska": "^3.0.4",
     "nuxt": "^3.14.1592",
     "nuxt-graphql-request": "^8.1.1",
+    "nuxt-schema-org": "^4.0.4",
     "nuxt-swiper": "^2.0.0",
     "nuxt-viewport": "^2.2.0",
     "pinia": "^2.3.0",

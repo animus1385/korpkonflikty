@@ -1,10 +1,11 @@
 export default defineNuxtRouteMiddleware((to, from) => {
     const storeCommon: any = useCommonStore();
     const storeMenu = useMenuStore();
-    let anchorTo = to.hash;
-    storeMenu.burger = false;
-    storeCommon.popoverHeader = false;
+
     watchEffect(() => {
+        let anchorTo = to.hash;
+        storeMenu.burger = false;
+        storeCommon.popoverHeader = false;
         if (storeCommon.statusLoading == 'success') {
             storeCommon.loader = false;
         } else if (storeCommon.statusLoading == 'pending') {

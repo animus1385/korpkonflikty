@@ -7,14 +7,17 @@
         }"
     >
         <div class="container">
-            <UBreadcrumb class="breadcrumbs" :links="breadcrumbs" />
+            <UBreadcrumb class="breadcrumbs" :links="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+                <template #default="{ link }">
+                    <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">{{ link.label }}</div>
+                </template></UBreadcrumb
+            >
         </div>
     </div>
     <Flexible v-if="status == 'success' && data" :data="data.flexible" />
 </template>
 
 <script setup lang="ts">
-import { useBreadcrumbs } from '~/composables/useBreadcrumbs';
 import type { IBlockFlexible } from '~/types/blockFlexible';
 
 const { $api } = useNuxtApp();
@@ -62,7 +65,17 @@ const { data, status } = await useLazyAsyncData(
 );
 
 watchEffect(() => {
-    breadcrumbs.value = useBreadcrumbs(data.value?.seo?.breadcrumbs);
+    breadcrumbs.value = [
+        {
+            icon: 'i-heroicons-home',
+            to: '/',
+            'aria-label': 'хлебные крошки: Главная страница',
+        },
+        {
+            label: data?.value?.seo?.title,
+            'aria-label': `хлебные крошки: ${route.fullPath}`,
+        },
+    ];
     storeCommon.statusLoading = status.value;
 });
 

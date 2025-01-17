@@ -8,6 +8,13 @@
                 </p>
             </div>
             <div class="faq__right">
+                <SchemaOrgWebPage type="FAQPage" />
+                <SchemaOrgQuestion
+                    v-for="elem in props?.data?.fields?.list"
+                    :key="elem.title"
+                    :name="elem.title"
+                    :accepted-answer="elem.descr"
+                />
                 <UAccordion class="faq__accordion accordion" variant="ghost" size="xl" color="black" :items="props?.data?.fields?.list">
                     <template #default="{ item, open }">
                         <UButton color="gray" variant="ghost" class="accordion__btn" :aria-label="item.title">

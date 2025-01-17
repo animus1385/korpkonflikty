@@ -20,7 +20,7 @@
                     >{{ props?.data?.fields?.btn.title }}</NuxtLink
                 >
             </div>
-            <NuxtImg
+            <NuxtPicture
                 preload
                 format="webp"
                 class="hero__img"

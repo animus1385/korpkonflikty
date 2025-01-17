@@ -1,5 +1,5 @@
 .hero-blog {
-    @apply py-[20px];
+    @apply py-[20px] desktop:mb-[60px] mobile:mb-[20px];
 
     &__container {
         @apply grid desktop:grid-cols-[1fr_400px]  mobile:grid-cols-1 desktop:grid-rows-[auto_535px]  desktop:gap-[62px] mobile:gap-[20px];
@@ -8,10 +8,10 @@
         @apply desktop:p-[60px_51px] mobile:p-[20px_0px]  relative z-[2];
     }
     &__img:deep() {
-        @apply flex justify-center desktop:absolute inset-0 object-cover w-full h-full;
+        @apply flex justify-center desktop:absolute inset-0 object-cover w-full h-full ;
     }
     &__img-block {
-        @apply desktop:bg-black  rounded-[20px] overflow-hidden relative flex flex-col-reverse;
+        @apply desktop:bg-black  rounded-[20px] overflow-hidden relative flex flex-col-reverse ;
         &:before {
             content: '';
             @apply desktop:absolute inset-0  z-[2] bg-gradient-to-b to-[#0000008f] from-transparent;

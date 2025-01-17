@@ -1,7 +1,11 @@
 <template>
     <div class="breadcrumbs-block" v-if="breadcrumbs">
         <div class="container">
-            <UBreadcrumb class="breadcrumbs" :links="breadcrumbs" />
+            <UBreadcrumb class="breadcrumbs" :links="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+                <template #default="{ link }">
+                    <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">{{ link.label }}</div>
+                </template>
+            </UBreadcrumb>
         </div>
     </div>
     <HeroBlog :data="data?.postInfo" />
@@ -10,7 +14,6 @@
 </template>
 
 <script setup lang="ts">
-import { useBreadcrumbs } from '~/composables/useBreadcrumbs';
 import type { IBlockFlexible } from '~/types/blockFlexible';
 
 const route = useRoute();
@@ -21,7 +24,7 @@ const store = {
     blog: useBlogStore(),
 };
 const slug = route.params.slug as string;
-const breadcrumbs = ref<any>(null);
+const breadcrumbs = ref<any>();
 
 const { data, status } = await useLazyAsyncData(
     'getPost',
@@ -40,8 +43,9 @@ const { data, status } = await useLazyAsyncData(
                 const key = name[0].toLowerCase() + name.slice(1);
 
                 let fields = el[key] ? el[key] : {};
+
                 if (name == 'FormCommentCommon') {
-                    fields = e.comments;
+                    fields = e.page.comments;
                 }
                 return {
                     pageId: e.pageId,
@@ -72,8 +76,23 @@ onMounted(async () => {
     await store.blog.viewPost(slug);
 });
 watchEffect(async () => {
-    breadcrumbs.value = useBreadcrumbs(data.value?.seo?.breadcrumbs);
     storeCommon.statusLoading = status.value;
+    breadcrumbs.value = [
+        {
+            icon: 'i-heroicons-home',
+            to: '/',
+            'aria-label': 'хлебные крошки: Главная страница',
+        },
+        {
+            label: 'Блог',
+            to: '/blog/',
+            'aria-label': 'хлебные крошки: Блог',
+        },
+        {
+            label: data?.value?.postInfo?.title,
+            'aria-label': `хлебные крошки: ${route.fullPath}`,
+        },
+    ];
 });
 useHead({
     title: data?.value?.seo?.title,

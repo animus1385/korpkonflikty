@@ -15,7 +15,7 @@
                             :type="field.type"
                             class="form-2__field-input input-field"
                             v-maska="
-                                field.type == 'text' && (field.property.includes('phone') || field.property.includes('tel'))
+                                field.type == 'text' && (field.property.toLowerCase().includes('phone') || field.property.toLowerCase().includes('tel'))
                                     ? '+7 (###) ### ##-##'
                                     : false
                             "

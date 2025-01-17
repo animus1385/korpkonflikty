@@ -5,7 +5,6 @@
             class="clients__list"
             :slides-per-view="5"
             :modules="[Autoplay]"
-            :loop="true"
             :autoplay="{
                 delay: 1000,
                 disableOnInteraction: false,
@@ -13,6 +12,7 @@
             :breakpoints="{
                 320: {
                     slidesPerView: 1,
+                    initialSlide: 2,
                 },
                 768: {
                     slidesPerView: 3,

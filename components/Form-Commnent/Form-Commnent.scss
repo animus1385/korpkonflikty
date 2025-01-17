@@ -8,7 +8,7 @@
         @apply grid gap-[38px];
     }
     &__block-enter {
-        @apply grid desktop:gap-[40px] mobile:gap-[20px] bg-[#dbeafe] rounded-[40px] desktop:p-[60px_133px] p-[40px_20px];
+        @apply grid desktop:gap-[40px] mobile:gap-[20px] bg-[#dbeafe] rounded-[40px] desktop:p-[60px] p-[40px_20px];
     }
     &__content {
         @apply grid desktop:grid-cols-[1fr_minmax(auto,490px)] desktop:gap-[40px] mobile:gap-[20px];
