@@ -28,7 +28,7 @@ const store = {
 const slug = route.params.slug as string;
 const breadcrumbs = ref<any>();
 
-const { data, status } = await useAsyncData(
+const { data, status } = useAsyncData(
     'getPost',
     async () => {
         const flexible = await $api.getSettingsAll();
@@ -102,6 +102,8 @@ useHead({
         { name: 'description', content: data?.value?.seo?.metaDesc },
         { name: 'robots', content: `${data?.value?.seo?.metaRobotsNofollow} ${data?.value?.seo?.metaRobotsNoindex}` },
         { name: 'keywords', content: data?.value?.seo?.metaKeywords },
+        { name: 'author', content: data.value?.postInfo.contentPost?.authorPost },
+        { name: 'publisher', content: data.value?.postInfo.contentPost?.authorPost },
     ],
     link: [
         {

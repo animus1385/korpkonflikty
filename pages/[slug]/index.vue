@@ -26,7 +26,7 @@ const storeCommon = useCommonStore();
 const slug = route.params.slug as string;
 const breadcrumbs = ref<any>(null);
 
-const { data, status } = await useAsyncData(
+const { data, status } =  useAsyncData(
     `get-${slug}`,
     async () => {
         const flexible = await $api.getSettingsAll();
