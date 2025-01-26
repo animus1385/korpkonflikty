@@ -25,7 +25,7 @@ const route = useRoute();
 const slug = route.params.slug as string;
 const breadcrumbs = ref<any>(null);
 const storeCommon = useCommonStore();
-const { data, status } = await useAsyncData(
+const { data, status } = await useLazyAsyncData(
     'getService',
     async () => {
         const flexible = await $api.getSettingsAll();
