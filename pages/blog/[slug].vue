@@ -28,7 +28,7 @@ const store = {
 const slug = route.params.slug as string;
 const breadcrumbs = ref<any>();
 
-const { data, status } = useAsyncData(
+const { data, status } = await useAsyncData(
     'getPost',
     async () => {
         const flexible = await $api.getSettingsAll();
