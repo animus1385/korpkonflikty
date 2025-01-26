@@ -1,7 +1,7 @@
 <template>
     <div
         class="breadcrumbs-block"
-        v-if="breadcrumbs"
+        v-if="breadcrumbs && status == 'success' && data"
         :class="{
             HeroCustom: data?.flexible[0].name == 'HeroCustom',
         }"
@@ -25,7 +25,7 @@ const route = useRoute();
 const slug = route.params.slug as string;
 const breadcrumbs = ref<any>(null);
 const storeCommon = useCommonStore();
-const { data, status } =  useLazyAsyncData(
+const { data, status } = useLazyAsyncData(
     'getService',
     async () => {
         const flexible = await $api.getSettingsAll();
