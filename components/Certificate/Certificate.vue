@@ -22,40 +22,42 @@
                     </UButton>
                 </div>
             </div>
-            <swiper-container
-                class="certificate__swiper"
-                ref="swiperRef"
-                :slides-per-view="4"
-                :breakpoints="{
-                    320: {
-                        slidesPerView: 1.5,
-                        spaceBetween: 10,
-                    },
-                    768: {
-                        slidesPerView: 3,
-                        spaceBetween: 20,
-                    },
-                    1440: {
-                        slidesPerView: 4,
-                        spaceBetween: 50,
-                    },
-                    1920: {
-                        slidesPerView: 5,
-                        spaceBetween: 50,
-                    },
-                }"
-            >
-                <swiper-slide v-for="(elem, index) in props.data.fields.listImg" :key="`certificate-${index}`">
-                    <div class="certificate__elem">
-                        <NuxtImg
-                            loading="lazy"
-                            :src="elem.img.node.sourceUrl"
-                            @click="setDataPopup(elem.img.node.sourceUrl)"
-                            :alt="`cover-video-${index}`"
-                        ></NuxtImg>
-                    </div>
-                </swiper-slide>
-            </swiper-container>
+            <ClientOnly>
+                <swiper-container
+                    class="certificate__swiper"
+                    ref="swiperRef"
+                    :slides-per-view="4"
+                    :breakpoints="{
+                        320: {
+                            slidesPerView: 1.5,
+                            spaceBetween: 10,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                        1440: {
+                            slidesPerView: 4,
+                            spaceBetween: 50,
+                        },
+                        1920: {
+                            slidesPerView: 5,
+                            spaceBetween: 50,
+                        },
+                    }"
+                >
+                    <swiper-slide v-for="(elem, index) in props.data.fields.listImg" :key="`certificate-${index}`">
+                        <div class="certificate__elem">
+                            <NuxtImg
+                                loading="lazy"
+                                :src="elem.img.node.sourceUrl"
+                                @click="setDataPopup(elem.img.node.sourceUrl)"
+                                :alt="`cover-video-${index}`"
+                            ></NuxtImg>
+                        </div>
+                    </swiper-slide>
+                </swiper-container>
+            </ClientOnly>
             <div class="certificate__nav-btns" v-if="$viewport.isLessThan('tablet')">
                 <UButton
                     class="certificate__nav-btn"

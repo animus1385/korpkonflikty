@@ -30,86 +30,90 @@
                     <UButton class="rewiew__nav-btn" @click="swiper.next()" variant="ghost" icon="custom-icons:arrow-slide-next"> </UButton>
                 </div>
             </div>
-            <swiper-container
-                class="rewiew__swiper"
-                ref="swiperReviewRef"
-                v-if="activeBtn == 'img'"
-                :slides-per-view="4"
-                :breakpoints="{
-                    320: {
-                        slidesPerView: 1.5,
-                        spaceBetween: 10,
-                    },
-                    768: {
-                        slidesPerView: 3,
-                        spaceBetween: 20,
-                    },
-                    1280: {
-                        slidesPerView: 4,
-                        spaceBetween: 50,
-                    },
-                    1440: {
-                        slidesPerView: 5,
-                        spaceBetween: 50,
-                    },
-                }"
-            >
-                <swiper-slide v-for="(elem, index) in props.data.fields.listImg" :key="elem.img.node.id">
-                    <div class="rewiew__elem">
-                        <NuxtImg
-                            loading="lazy"
-                            :src="elem.img.node.sourceUrl"
-                            @click="
-                                setDataPopup({
-                                    type: activeBtn,
-                                    value: elem.img.node.sourceUrl,
-                                })
-                            "
-                            :alt="`cover-img-${index}`"
-                        ></NuxtImg>
-                    </div>
-                </swiper-slide>
-            </swiper-container>
-            <swiper-container
-                class="rewiew__swiper"
-                ref="swiperVideoRef"
-                v-if="activeBtn == 'video'"
-                :slides-per-view="4"
-                :breakpoints="{
-                    320: {
-                        slidesPerView: 1.5,
-                        spaceBetween: 10,
-                    },
-                    768: {
-                        slidesPerView: 3,
-                        spaceBetween: 20,
-                    },
-                    1440: {
-                        slidesPerView: 4,
-                        spaceBetween: 50,
-                    },
-                    1920: {
-                        slidesPerView: 5,
-                        spaceBetween: 50,
-                    },
-                }"
-            >
-                <swiper-slide v-for="(elem, index) in props.data.fields.listVideo" :key="`video-review-${index}`">
-                    <div class="rewiew__elem">
-                        <NuxtImg
-                            loading="lazy"
-                            :src="elem.cover.node.sourceUrl"
-                            @click="
-                                setDataPopup({
-                                    type: activeBtn,
-                                    value: elem.videoElem,
-                                })
-                            "
-                            :alt="`cover-video-${index}`"
-                        ></NuxtImg>
-                    </div>
-                </swiper-slide>
-            </swiper-container>
+            <ClientOnly>
+                <swiper-container
+                    class="rewiew__swiper"
+                    ref="swiperReviewRef"
+                    v-if="activeBtn == 'img'"
+                    :slides-per-view="4"
+                    :breakpoints="{
+                        320: {
+                            slidesPerView: 1.5,
+                            spaceBetween: 10,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                        1280: {
+                            slidesPerView: 4,
+                            spaceBetween: 50,
+                        },
+                        1440: {
+                            slidesPerView: 5,
+                            spaceBetween: 50,
+                        },
+                    }"
+                >
+                    <swiper-slide v-for="(elem, index) in props.data.fields.listImg" :key="elem.img.node.id">
+                        <div class="rewiew__elem">
+                            <NuxtImg
+                                loading="lazy"
+                                :src="elem.img.node.sourceUrl"
+                                @click="
+                                    setDataPopup({
+                                        type: activeBtn,
+                                        value: elem.img.node.sourceUrl,
+                                    })
+                                "
+                                :alt="`cover-img-${index}`"
+                            ></NuxtImg>
+                        </div>
+                    </swiper-slide>
+                </swiper-container>
+            </ClientOnly>
+            <ClientOnly>
+                <swiper-container
+                    class="rewiew__swiper"
+                    ref="swiperVideoRef"
+                    v-if="activeBtn == 'video'"
+                    :slides-per-view="4"
+                    :breakpoints="{
+                        320: {
+                            slidesPerView: 1.5,
+                            spaceBetween: 10,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                        1440: {
+                            slidesPerView: 4,
+                            spaceBetween: 50,
+                        },
+                        1920: {
+                            slidesPerView: 5,
+                            spaceBetween: 50,
+                        },
+                    }"
+                >
+                    <swiper-slide v-for="(elem, index) in props.data.fields.listVideo" :key="`video-review-${index}`">
+                        <div class="rewiew__elem">
+                            <NuxtImg
+                                loading="lazy"
+                                :src="elem.cover.node.sourceUrl"
+                                @click="
+                                    setDataPopup({
+                                        type: activeBtn,
+                                        value: elem.videoElem,
+                                    })
+                                "
+                                :alt="`cover-video-${index}`"
+                            ></NuxtImg>
+                        </div>
+                    </swiper-slide>
+                </swiper-container>
+            </ClientOnly>
             <div class="rewiew__nav-btns" v-if="$viewport.isLessThan('tablet')">
                 <UButton
                     class="rewiew__nav-btn"

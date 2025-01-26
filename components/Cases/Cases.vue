@@ -2,42 +2,44 @@
     <section class="cases" id="cases" v-if="props?.data.fields">
         <div class="cases__container container">
             <h2 class="cases__title title-level-2">{{ props?.data?.fields?.title }}</h2>
-            <swiper-container
-                class="cases__btn-list"
-                :breakpoints="{
-                    320: {
-                        slidesPerView: 2,
-                    },
-                    480: {
-                        slidesPerView: 2.5,
-                    },
-                    768: {
-                        slidesPerView: 3.5,
-                    },
-                    1024: {
-                        slidesPerView: 4.5,
-                    },
-                    1280: {
-                        slidesPerView: 6,
-                    },
-                }"
-            >
-                <swiper-slide
-                    class="cases__btn-elem"
-                    v-for="(elem, index) in props?.data?.fields?.casesCommonList"
-                    :key="`cases-btn-${index + 1}`"
-                    @click="active = index"
+            <ClientOnly>
+                <swiper-container
+                    class="cases__btn-list"
+                    :breakpoints="{
+                        320: {
+                            slidesPerView: 2,
+                        },
+                        480: {
+                            slidesPerView: 2.5,
+                        },
+                        768: {
+                            slidesPerView: 3.5,
+                        },
+                        1024: {
+                            slidesPerView: 4.5,
+                        },
+                        1280: {
+                            slidesPerView: 6,
+                        },
+                    }"
                 >
-                    <UButton
-                        class="btn cases__btn"
-                        :aria-lavel="`Кнопка Кейс ${index + 1}`"
-                        :class="{
-                            'btn--dont-active': active !== index,
-                        }"
-                        >Кейс {{ index + 1 }}</UButton
+                    <swiper-slide
+                        class="cases__btn-elem"
+                        v-for="(elem, index) in props?.data?.fields?.casesCommonList"
+                        :key="`cases-btn-${index + 1}`"
+                        @click="active = index"
                     >
-                </swiper-slide>
-            </swiper-container>
+                        <UButton
+                            class="btn cases__btn"
+                            :aria-lavel="`Кнопка Кейс ${index + 1}`"
+                            :class="{
+                                'btn--dont-active': active !== index,
+                            }"
+                            >Кейс {{ index + 1 }}</UButton
+                        >
+                    </swiper-slide>
+                </swiper-container>
+            </ClientOnly>
             <div class="info-case">
                 <div class="info-case__left">
                     <h3 class="info-case__title">{{ activeCases.title }}</h3>
