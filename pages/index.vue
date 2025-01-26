@@ -8,7 +8,7 @@ import type { IBlockFlexible } from '~/types/blockFlexible';
 const { $api } = useNuxtApp();
 const storeCommon = useCommonStore();
 
-const { data, status } = useLazyAsyncData(
+const { data, status } = useAsyncData(
     'getPage',
     async () => {
         const flexible = await $api.getSettingsAll();
