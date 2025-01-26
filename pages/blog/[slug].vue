@@ -1,15 +1,17 @@
 <template>
-    <div class="breadcrumbs-block" v-if="breadcrumbs">
+    <div class="breadcrumbs-block" v-if="breadcrumbs && status == 'success' && data">
         <div class="container">
             <UBreadcrumb class="breadcrumbs" :links="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
                 <template #default="{ link }">
-                    <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">{{ link.label }}</div>
+                    <span itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+                        {{ link.label }}
+                    </span>
                 </template>
             </UBreadcrumb>
         </div>
     </div>
-    <HeroBlog :data="data?.postInfo" />
-    <ScharedSocial :data="data?.postInfo.contentPost" />
+    <HeroBlog v-if="status == 'success' && data" :data="data?.postInfo" />
+    <ScharedSocial v-if="status == 'success' && data" :data="data?.postInfo.contentPost" />
     <Flexible v-if="status == 'success' && data" :data="data.flexible" />
 </template>
 
@@ -26,7 +28,7 @@ const store = {
 const slug = route.params.slug as string;
 const breadcrumbs = ref<any>();
 
-const { data, status } = await useLazyAsyncData(
+const { data, status } = useLazyAsyncData(
     'getPost',
     async () => {
         const flexible = await $api.getSettingsAll();

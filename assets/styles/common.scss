@@ -43,7 +43,7 @@ body {
 }
 
 .title-level-2 {
-    @apply font-bold desktop:text-[46px] text-[#242527] mobile:text-[30px];
+    @apply font-bold desktop:text-[46px] text-[#242527] mobile:text-[25px];
     font-family: var(--second-family);
 }
 
@@ -81,7 +81,20 @@ body {
     }
     .breadcrumbs {
         @apply desktop:p-[12px_20px] mobile:p-[10px_10px] bg-[#EDF5FF] max-w-max  rounded-[32px] desktop:min-h-[48px];
+        li {
+            &:not(:last-child) {
+                @apply min-w-min;
 
+                a {
+                    @apply flex items-center;
+                }
+            }
+            &:last-child {
+                span {
+                    @apply line-clamp-1;
+                }
+            }
+        }
         span {
             @apply font-light;
         }
