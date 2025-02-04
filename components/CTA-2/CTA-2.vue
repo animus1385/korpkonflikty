@@ -13,6 +13,7 @@
                     color="white"
                     :aria-label="props?.data?.fields?.btn.title"
                     :to="props?.data?.fields?.btn.url"
+                    @click="props.data.fields.yandexMetrikaList ? includeMetrika : false"
                     >{{ props?.data?.fields?.btn.title }}</NuxtLink
                 >
             </div>
@@ -22,6 +23,14 @@
 
 <script setup lang="ts">
 const props = defineProps<{ data: any }>();
+const { reachGoal } = useYandexMetrika();
+
+function includeMetrika() {
+    for (let i = 0; i < props.data.fields.yandexMetrikaList.length; i++) {
+        const elem = props.data.fields.yandexMetrikaList[i];
+        reachGoal(elem.name);
+    }
+}
 </script>
 
 <style scoped lang="scss">

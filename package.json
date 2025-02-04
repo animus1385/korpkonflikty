@@ -27,6 +27,7 @@
     "nuxt-schema-org": "^4.0.4",
     "nuxt-swiper": "^2.0.0",
     "nuxt-viewport": "^2.2.0",
+    "nuxt-yandex-metrika": "^1.2.9",
     "pinia": "^2.3.0",
     "vue": "^3.5.13",
     "vue-yandex-maps": "^2.1.2",

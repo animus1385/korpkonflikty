@@ -14,7 +14,7 @@
                 </NuxtImg>
                 <div class="hero-blog__img-info">
                     <time class="hero-blog__date" v-if="props.data?.date" :datetime="dayjs(props.data?.date).utc().toString()">
-                        {{ dayjs(props.data?.date).format('DD.MM.YYYY') }}
+                        {{ dayjs(props.data?.modified).format('DD.MM.YYYY') }}
                     </time>
                     <span class="hero-blog__name" v-if="props.data?.contentPost?.authorPost">
                         {{ props.data?.contentPost?.authorPost }}</span

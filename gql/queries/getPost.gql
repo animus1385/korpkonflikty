@@ -6,6 +6,7 @@ query getPost($ID: ID!) {
         postViews
         date
         postId
+        modified
         featuredImage {
             node {
                 sourceUrl
@@ -156,6 +157,9 @@ query getPost($ID: ID!) {
                         }
                         descr
                         title
+                        yandexMetrikaList {
+                            name
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleAboutCommonLayout {
@@ -249,6 +253,9 @@ query getPost($ID: ID!) {
                             url
                         }
                         descr
+                        yandexMetrikaList {
+                            name
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleRewiewCommonLayout {
@@ -304,6 +311,9 @@ query getPost($ID: ID!) {
                             }
                         }
                         title
+                        yandexMetrikaList {
+                            name
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleBlogContentCustomLayout {
@@ -326,6 +336,9 @@ query getPost($ID: ID!) {
                         successMessage
                         nameBtn
                         cf7FormDynamicFields
+                        yandexMetrikaList {
+                            name
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleForm2CustomLayout {
@@ -335,6 +348,9 @@ query getPost($ID: ID!) {
                         successMessage
                         nameBtn
                         cf7FormDynamicFields
+                        yandexMetrikaList {
+                            name
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleFormCommentCommonLayout {

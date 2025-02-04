@@ -108,6 +108,9 @@ query getLayout {
                 nameBtn
                 successMessage
                 cf7FormDynamicFields
+                yandexMetrikaList {
+                    name
+                }
             }
         }
     }

@@ -25,29 +25,6 @@ export default defineNuxtConfig({
             charset: 'utf-8',
             meta: [],
             link: [],
-            script: [
-                {
-                    type: 'text/javascript',
-                    innerHTML: `   (function(m,e,t,r,i,k,a){m[i]=m[i]function(){(m[i].a=m[i].a[]).push(arguments)};
-                       m[i].l=1*new Date();
-                       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-                       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-                       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-                       ym(99769403, "init", {
-                            clickmap:true,
-                            trackLinks:true,
-                            accurateTrackBounce:true,
-                            webvisor:true
-                       });
-                    `,
-                },
-            ],
-            noscript: [
-                {
-                    children: `<div><img src="https://mc.yandex.ru/watch/99769403" style="position:absolute; left:-9999px;" alt="" /></div>`,
-                },
-            ],
         },
         baseURL: '/',
     },
@@ -72,9 +49,17 @@ export default defineNuxtConfig({
         '@nuxtjs/robots',
         '@nuxtjs/sitemap',
         'nuxt-schema-org',
+        'nuxt-yandex-metrika',
     ],
     tailwindcss: {
         viewer: false,
+    },
+    yandexMetrika: {
+        id: '99769403',
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
     },
     yandexMaps: {
         apikey: '985b6d39-07bb-4745-87b0-a0fec1b0c094',

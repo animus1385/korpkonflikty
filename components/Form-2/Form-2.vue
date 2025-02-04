@@ -15,7 +15,8 @@
                             :type="field.type"
                             class="form-2__field-input input-field"
                             v-maska="
-                                field.type == 'text' && (field.property.toLowerCase().includes('phone') || field.property.toLowerCase().includes('tel'))
+                                field.type == 'text' &&
+                                (field.property.toLowerCase().includes('phone') || field.property.toLowerCase().includes('tel'))
                                     ? '+7 (###) ### ##-##'
                                     : false
                             "
@@ -25,7 +26,9 @@
                         <UCheckbox v-else v-model="filedState[field.property]" :label="field.label" />
                     </UFormGroup>
                 </div>
-                <UButton :loading="loadingSend" class="form-2__btn btn" type="submit" :aria-label="`Кнопка ${props.data.fields.nameBtn}`"> {{ props.data.fields.nameBtn }} </UButton>
+                <UButton :loading="loadingSend" class="form-2__btn btn" type="submit" :aria-label="`Кнопка ${props.data.fields.nameBtn}`">
+                    {{ props.data.fields.nameBtn }}
+                </UButton>
             </UForm>
         </div>
         <Teleport to="body">
@@ -61,6 +64,7 @@ const rePhoneNumber = /^\+7\s?\(?\d{3}\)?\s?\d{3}\s[-\s]?\d{2}[-\s]?\d{2}$/;
 const runtimeConfig = useRuntimeConfig();
 const loadingSend = ref(false);
 const successActive = ref(false);
+const { reachGoal } = useYandexMetrika();
 const fields = ref(JSON.parse(props.data.fields.cf7FormDynamicFields));
 const fieldsSchema = computed<any>(() => {
     const schemaArr: any = {};
@@ -107,6 +111,10 @@ async function onSubmit(e: any) {
     });
     loadingSend.value = true;
 
+    for (let i = 0; i < props.data.yandexMetrikaList.length; i++) {
+        const elem = props.data.yandexMetrikaList[i];
+        reachGoal(elem.name);
+    }
     await fetch(`${runtimeConfig.public.websiteAdmin}/wp-json/contact-form-7/v1/contact-forms/${props.data.fields?.id}/feedback`, {
         method: 'POST',
         body: formData,

@@ -136,6 +136,9 @@ query getPostServices($ID: ID!) {
                         }
                         descr
                         title
+                        yandexMetrikaList {
+                            name
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleAboutCommonLayout {
@@ -229,6 +232,9 @@ query getPostServices($ID: ID!) {
                             url
                         }
                         descr
+                        yandexMetrikaList {
+                            name
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleRewiewCommonLayout {
@@ -284,6 +290,9 @@ query getPostServices($ID: ID!) {
                             }
                         }
                         title
+                        yandexMetrikaList {
+                            name
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleBlogContentCustomLayout {
@@ -305,6 +314,9 @@ query getPostServices($ID: ID!) {
                         successMessage
                         nameBtn
                         cf7FormDynamicFields
+                        yandexMetrikaList {
+                            name
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleForm2CustomLayout {
@@ -314,6 +326,9 @@ query getPostServices($ID: ID!) {
                         successMessage
                         nameBtn
                         cf7FormDynamicFields
+                        yandexMetrikaList {
+                            name
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleFormCommentCommonLayout {

@@ -127,6 +127,9 @@ query getPage($ID: ID!) {
                         }
                         descr
                         title
+                        yandexMetrikaList {
+                            name
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleAboutCommonLayout {
@@ -220,6 +223,9 @@ query getPage($ID: ID!) {
                             url
                         }
                         descr
+                        yandexMetrikaList {
+                            name
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleRewiewCommonLayout {
@@ -275,6 +281,9 @@ query getPage($ID: ID!) {
                             }
                         }
                         title
+                        yandexMetrikaList {
+                            name
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleForm1CustomLayout {
@@ -287,6 +296,9 @@ query getPage($ID: ID!) {
                         successMessage
                         nameBtn
                         cf7FormDynamicFields
+                        yandexMetrikaList {
+                            name
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleForm2CustomLayout {
@@ -296,6 +308,9 @@ query getPage($ID: ID!) {
                         successMessage
                         nameBtn
                         cf7FormDynamicFields
+                        yandexMetrikaList {
+                            name
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleFormCommentCommonLayout {

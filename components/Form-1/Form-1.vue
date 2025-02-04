@@ -1,6 +1,5 @@
 <template>
     <section class="form-1" v-if="props.data.fields.cf7FormDynamicFields">
-
         <div class="form-1__container container">
             <div class="form-1__content">
                 <div class="form-1__left" v-if="props?.data.fields.title">
@@ -21,7 +20,8 @@
                                 :type="field.type"
                                 class="form-1__field-input input-field"
                                 v-maska="
-                                    field.type == 'text' && (field.property.toLowerCase().includes('phone') || field.property.toLowerCase().includes('tel'))
+                                    field.type == 'text' &&
+                                    (field.property.toLowerCase().includes('phone') || field.property.toLowerCase().includes('tel'))
                                         ? '+7 (###) ### ##-##'
                                         : false
                                 "
@@ -31,7 +31,14 @@
                             <UCheckbox v-else v-model="filedState[field.property]" :label="field.label" />
                         </UFormGroup>
 
-                        <UButton :loading="loadingSend" class="form-1__btn btn" type="submit" :aria-label="`Кнопка ${props.data.fields.nameBtn}`" > {{ props.data.fields.nameBtn }} </UButton>
+                        <UButton
+                            :loading="loadingSend"
+                            class="form-1__btn btn"
+                            type="submit"
+                            :aria-label="`Кнопка ${props.data.fields.nameBtn}`"
+                        >
+                            {{ props.data.fields.nameBtn }}
+                        </UButton>
                     </div>
                 </UForm>
             </div>
@@ -70,7 +77,7 @@ const rePhoneNumber = /^\+7\s?\(?\d{3}\)?\s?\d{3}\s[-\s]?\d{2}[-\s]?\d{2}$/;
 const loadingSend = ref(false);
 const successActive = ref(false);
 const runtimeConfig = useRuntimeConfig();
-
+const { reachGoal } = useYandexMetrika();
 const fields = ref(JSON.parse(props.data.fields.cf7FormDynamicFields));
 const fieldsSchema = computed<any>(() => {
     const schemaArr: any = {};
@@ -116,7 +123,10 @@ async function onSubmit(e: any) {
         formData.append(e[0], e[1]);
     });
     loadingSend.value = true;
-
+    for (let i = 0; i < props.data.yandexMetrikaList.length; i++) {
+        const elem = props.data.yandexMetrikaList[i];
+        reachGoal(elem.name);
+    }
     await fetch(`${runtimeConfig.public.websiteAdmin}/wp-json/contact-form-7/v1/contact-forms/${props.data.fields?.id}/feedback`, {
         method: 'POST',
         body: formData,

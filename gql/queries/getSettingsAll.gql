@@ -112,6 +112,9 @@ query NewQuery {
                         sourceUrl
                     }
                 }
+                yandexMetrikaList {
+                    name
+                }
             }
             cta2Common {
                 img {
@@ -126,6 +129,9 @@ query NewQuery {
                     url
                     title
                 }
+                yandexMetrikaList {
+                    name
+                }
             }
             ctaTelegramCommon {
                 descr
@@ -138,6 +144,9 @@ query NewQuery {
                     node {
                         sourceUrl
                     }
+                }
+                yandexMetrikaList {
+                    name
                 }
             }
             faqCommon {
@@ -199,6 +208,9 @@ query NewQuery {
                 nameBtn
                 successMessage
                 cf7FormDynamicFields
+                yandexMetrikaList {
+                    name
+                }
             }
             mapCommon {
                 centerX

@@ -81,7 +81,7 @@
 import { object, string, boolean } from 'yup';
 const props = defineProps<{ data: any }>();
 const rePhoneNumber = /^\+7\s?\(?\d{3}\)?\s?\d{3}\s[-\s]?\d{2}[-\s]?\d{2}$/;
-
+const { reachGoal } = useYandexMetrika();
 const route = useRoute();
 const runtimeConfig = useRuntimeConfig();
 const fields = ref(JSON.parse(props.data.cf7FormDynamicFields));
@@ -153,7 +153,11 @@ async function onSubmit(e: any) {
         formData.append(e[0], e[1]);
     });
     loadingSend.value = true;
-
+   
+    for (let i = 0; i < props.data.yandexMetrikaList.length; i++) {
+        const elem = props.data.yandexMetrikaList[i];
+        reachGoal(elem.name);
+    }
     await fetch(`${runtimeConfig.public.websiteAdmin}/wp-json/contact-form-7/v1/contact-forms/${props.data?.id}/feedback`, {
         method: 'POST',
         body: formData,
