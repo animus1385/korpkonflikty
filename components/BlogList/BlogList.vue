@@ -9,8 +9,8 @@
                             <NuxtImg fit="fill" loading="lazy" format="webp" class="blog-list__picture"
                                 :src="elem.node.featuredImage.node.sourceUrl" :alt="elem.node.title" />
                             <div class="blog-list__name-block">
-                                <time :datetime="dayjs(elem.node.date).utc().toString()"> {{
-                                    dayjs(elem.node.date).format('DD.MM.YYYY') }} </time>
+                                <time :datetime="dayjs(elem.node.modified).utc().toString()"> {{
+                                    dayjs(elem.node.modified).format('DD.MM.YYYY') }} </time>
                                 <span class="blog-list__name">{{ elem.node.contentPost.contentPost.authorPost
                                     }}</span>
                             </div>

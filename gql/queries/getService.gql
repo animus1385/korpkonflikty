@@ -375,6 +375,7 @@ query getPostServices($ID: ID!) {
                                         title
                                         uri
                                         date
+                                        modified
                                         featuredImage {
                                             node {
                                                 sourceUrl

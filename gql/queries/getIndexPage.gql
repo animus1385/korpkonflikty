@@ -416,6 +416,7 @@ query getPage($ID: ID!) {
                                         }
                                     }
                                     date
+                                    modified
                                 }
                             }
                         }

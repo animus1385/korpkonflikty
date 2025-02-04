@@ -50,8 +50,8 @@
                             >
                             </NuxtImg>
                             <div class="related-blog__date">
-                                <time :datetime="dayjs(elem.node.date).utc().toString()">
-                                    {{ dayjs(elem.node.date).format('DD.MM.YYYY') }}
+                                <time :datetime="dayjs(elem.node.modified).utc().toString()">
+                                    {{ dayjs(elem.node.modified).format('DD.MM.YYYY') }}
                                 </time>
                             </div>
                             <div class="related-blog__name">{{ elem.node.contentPost.contentPost.authorPost }}</div>

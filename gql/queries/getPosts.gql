@@ -4,6 +4,7 @@ query getPosts($offset: Int!, $size: Int!) {
             node {
                 title
                 date
+                modified
                 uri
                 postViews
                 featuredImage {
