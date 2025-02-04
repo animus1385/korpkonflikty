@@ -17,8 +17,9 @@
         @apply text-[#242527] text-[21px] font-semibold;
     }
     swiper-container {
+        @apply desktop:h-auto;
         &::part(container) {
-            @apply mobile:overflow-visible desktop:overflow-hidden tablet:h-auto mobile:h-[400px]   px-[10px];
+            @apply mobile:overflow-visible desktop:overflow-hidden    px-[10px];
         }
         &::part(wrapper) {
             @apply items-center py-[15px];
@@ -40,10 +41,17 @@
         font-family: var(--font-family);
         line-height: 152%;
         letter-spacing: -0.01em;
-        @apply desktop:text-[20px] font-semibold mb-[20px] text-black mobile:text-[18px] line-clamp-3;
+        @apply desktop:text-[20px] font-semibold  text-black mobile:text-[18px] line-clamp-2;
+    }
+    &__nav-btn:deep() {
+        @apply w-[60px] h-[44px] p-[11px_17px];
+        box-shadow: 1px 4px 12px -1px rgba(36, 37, 39, 0.05);
+        svg {
+            @apply w-full h-full;
+        }
     }
     &__img:deep() {
-        @apply flex tablet:min-h-[192px] mobile:min-h-[200px] bg-[#52525b] rounded-[16px] mb-[26px] w-full h-full object-cover;
+        @apply flex tablet:min-h-[192px] mobile:max-h-[200px] bg-[#52525b] rounded-[16px]  w-full h-full object-cover;
     }
     &__subtitle {
         @apply flex justify-center font-normal desktop:text-[18px] mobile:text-[14px] text-center text-[#52525b] desktop:mb-[68px] mb-[43px];
@@ -55,6 +63,6 @@
         font-family: var(--font-family);
     }
     &__elem-link {
-        @apply h-full p-[24px] rounded-[16px] bg-[#dbeafe] flex flex-col;
+        @apply h-full p-[24px] rounded-[16px] bg-[#dbeafe] grid gap-[15px];
     }
 }

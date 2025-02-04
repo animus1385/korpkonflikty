@@ -5,6 +5,7 @@
             <span class="related-blog__subtitle">{{ props?.data.fields.descr }}</span>
             <ClientOnly>
                 <swiper-container
+                    ref="swiperRef"
                     :breakpoints="{
                         320: {
                             slidesPerView: 1,
@@ -37,13 +38,8 @@
                     }"
                     class="related-blog__swiper"
                 >
-                    <swiper-slide
-                        class="related-blog__elem"
-                        ref="swiperRef"
-                        v-for="elem in props?.data?.fields.relatedBlogList.edges"
-                        :key="elem.node.id"
-                    >
-                        <NuxtLink :to="elem.node.uri" class="related-blog__elem-link" title="elem.node.title">
+                    <swiper-slide class="related-blog__elem" v-for="elem in props?.data?.fields.relatedBlogList.edges" :key="elem.node.id">
+                        <NuxtLink :to="elem.node.uri" class="related-blog__elem-link" :title="elem.node.title">
                             <h3 class="related-blog__title-elem">{{ elem.node.title }}</h3>
                             <NuxtImg
                                 loading="lazy"

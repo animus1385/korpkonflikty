@@ -13,8 +13,8 @@
             @apply desktopMedium:min-h-max mobile:min-h-[280px];
         }
     }
-  
-     swiper-slide {
+
+    swiper-slide {
         @apply cursor-pointer transition-transform h-auto;
         &:hover {
             @apply scale-105;
@@ -38,17 +38,16 @@
     }
     &__elem-link {
         box-shadow: 3px 6px 15px 0 rgba(36, 37, 39, 0.05);
-        @apply rounded-[30px] overflow-hidden p-[40px] shadow-[3px_6px_15px_0_#2425270d] h-full grid grid-rows-[100px]  gap-[20px]  bg-gradient-to-l from-[#474747] to-[#222];
+        @apply rounded-[30px] overflow-hidden p-[40px] shadow-[3px_6px_15px_0_#2425270d] grid  gap-[20px] h-full   bg-gradient-to-l from-[#474747] to-[#222];
     }
     &__title-elem {
         font-family: var(--second-family);
         letter-spacing: -0.05em;
-        @apply desktop:text-[35px] text-white font-bold mobile:text-[20px] line-clamp-2;
+        @apply desktop:text-[32px] text-white font-bold mobile:text-[20px] line-clamp-2;
     }
     &__descr-elem {
         font-family: var(--second-family);
-        line-height: 167%;
-        @apply desktop:text-[18px] mobile:text-[14px] font-semibold text-white line-clamp-4  mb-[10px];
+        @apply desktop:text-[18px] mobile:text-[14px] font-semibold text-white line-clamp-3 h-fit;
     }
     &__btn-elem {
         font-family: var(--font-family);
