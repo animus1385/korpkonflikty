@@ -46,7 +46,7 @@
         }
     }
     &__img {
-        @apply desktop:w-[254px] desktop:h-auto mobile:h-[170px] object-cover desktop:object-center mobile:object-top;
+        @apply desktop:w-[254px] desktop:h-auto mobile:h-[170px] object-cover ;
         background: #dbeafe;
     }
     &__top {
