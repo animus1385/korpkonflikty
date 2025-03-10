@@ -34,8 +34,14 @@ export default defineNuxtPlugin(() => {
             try {
                 const res = await $graphql?.default?.request(GET_PAGE, { ID: name });
                 if (res.page == null) {
+                    showError({
+                        statusCode: 404,
+                        statusMessage: "Страница не найдена",
+                        message: "Страница не найдена",
+                    });
                     throw createError({
                         statusCode: 404,
+                        statusMessage: "Страница не найдена",
                         message: "Страница не найдена",
                     });
                 }
@@ -91,9 +97,13 @@ export default defineNuxtPlugin(() => {
                     result = res;
 
                     if (res?.post == null) {
+                        showError({
+                            statusCode: 404,
+                            statusMessage: "Страница не найдена",
+                        });
                         throw createError({
                             statusCode: 404,
-                            message: "Страница не найдена",
+                            statusMessage: "Страница не найдена",
                         });
                     }
                     result = {
