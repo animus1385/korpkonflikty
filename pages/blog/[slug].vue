@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import type { IBlockFlexible } from '~/types/blockFlexible';
+import type { IBlockFlexible } from "~/types/blockFlexible";
 
 const route = useRoute();
 const { $api } = useNuxtApp();
@@ -29,7 +29,7 @@ const slug = route.params.slug as string;
 const breadcrumbs = ref<any>();
 
 const { data, status } = await useLazyAsyncData(
-    'getPost',
+    "getPost",
     async () => {
         const flexible = await $api.getSettingsAll();
         const page = await $api.post.getPost(slug);
@@ -41,12 +41,12 @@ const { data, status } = await useLazyAsyncData(
     {
         transform: (e: any) => {
             const transform = e.page.flexible.map((el: any) => {
-                const name = el.fieldGroupName.replace(/(PageBuilderFlexible)(.*)(Layout)/g, '$2');
+                const name = el.fieldGroupName.replace(/(PageBuilderFlexible)(.*)(Layout)/g, "$2");
                 const key = name[0].toLowerCase() + name.slice(1);
 
                 let fields = el[key] ? el[key] : {};
 
-                if (name == 'FormCommentCommon') {
+                if (name == "FormCommentCommon") {
                     fields = e.page.comments;
                 }
                 return {
@@ -74,6 +74,16 @@ const { data, status } = await useLazyAsyncData(
         },
     }
 );
+onMounted(() => {
+    if (!data.value) {
+        throw createError({
+            statusCode: 404,
+            statusMessage: "Страница не найдена",
+            message: "Страница не найдена",
+        });
+    }
+});
+
 onMounted(async () => {
     await store.blog.viewPost(slug);
 });
@@ -81,33 +91,33 @@ watchEffect(async () => {
     storeCommon.statusLoading = status.value;
     breadcrumbs.value = [
         {
-            icon: 'i-heroicons-home',
-            to: '/',
-            'aria-label': 'хлебные крошки: Главная страница',
+            icon: "i-heroicons-home",
+            to: "/",
+            "aria-label": "хлебные крошки: Главная страница",
         },
         {
-            label: 'Блог',
-            to: '/blog/',
-            'aria-label': 'хлебные крошки: Блог',
+            label: "Блог",
+            to: "/blog/",
+            "aria-label": "хлебные крошки: Блог",
         },
         {
             label: data?.value?.postInfo?.title,
-            'aria-label': `хлебные крошки: ${route.fullPath}`,
+            "aria-label": `хлебные крошки: ${route.fullPath}`,
         },
     ];
 });
 useHead({
     title: data?.value?.seo?.title,
     meta: [
-        { name: 'description', content: data?.value?.seo?.metaDesc },
-        { name: 'robots', content: `${data?.value?.seo?.metaRobotsNofollow} ${data?.value?.seo?.metaRobotsNoindex}` },
-        { name: 'keywords', content: data?.value?.seo?.metaKeywords },
-        { name: 'author', content: data.value?.postInfo.contentPost?.authorPost },
-        { name: 'publisher', content: data.value?.postInfo.contentPost?.authorPost },
+        { name: "description", content: data?.value?.seo?.metaDesc },
+        { name: "robots", content: `${data?.value?.seo?.metaRobotsNofollow} ${data?.value?.seo?.metaRobotsNoindex}` },
+        { name: "keywords", content: data?.value?.seo?.metaKeywords },
+        { name: "author", content: data.value?.postInfo.contentPost?.authorPost },
+        { name: "publisher", content: data.value?.postInfo.contentPost?.authorPost },
     ],
     link: [
         {
-            rel: 'canonical',
+            rel: "canonical",
             href: data?.value?.seo?.canonical,
         },
     ],

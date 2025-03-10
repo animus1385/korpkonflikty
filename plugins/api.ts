@@ -33,18 +33,6 @@ export default defineNuxtPlugin(() => {
 
             try {
                 const res = await $graphql?.default?.request(GET_PAGE, { ID: name });
-                if (res.page == null) {
-                    showError({
-                        statusCode: 404,
-                        statusMessage: "Страница не найдена",
-                        message: "Страница не найдена",
-                    });
-                    throw createError({
-                        statusCode: 404,
-                        statusMessage: "Страница не найдена",
-                        message: "Страница не найдена",
-                    });
-                }
 
                 result = {
                     flexible: res.page.pageBuilder.flexible,
@@ -96,16 +84,7 @@ export default defineNuxtPlugin(() => {
                     const res = await $graphql?.default?.request(GET_POST, { ID: slug });
                     result = res;
 
-                    if (res?.post == null) {
-                        showError({
-                            statusCode: 404,
-                            statusMessage: "Страница не найдена",
-                        });
-                        throw createError({
-                            statusCode: 404,
-                            statusMessage: "Страница не найдена",
-                        });
-                    }
+            
                     result = {
                         postInfo: {
                             uri: res.post.uri,
@@ -161,16 +140,6 @@ export default defineNuxtPlugin(() => {
                 try {
                     const res = await $graphql?.default?.request(GET_POST_SERVICE, { ID: slug });
 
-                    if (res?.postService == null) {
-                        showError({
-                            statusCode: 404,
-                            statusMessage: "Страница не найдена",
-                        });
-                        throw createError({
-                            statusCode: 404,
-                            statusMessage: "Страница не найдена",
-                        });
-                    }
                     result = {
                         flexible: res.postService.pageBuilder.flexible,
                         seo: res.postService.seo,

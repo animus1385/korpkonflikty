@@ -3,13 +3,13 @@
 </template>
 
 <script setup lang="ts">
-import type { IBlockFlexible } from '~/types/blockFlexible';
+import type { IBlockFlexible } from "~/types/blockFlexible";
 
 const { $api } = useNuxtApp();
 const storeCommon = useCommonStore();
 
 const { data, status } = await useLazyAsyncData(
-    'getPage',
+    "getPage",
     async () => {
         const flexible = await $api.getSettingsAll();
         const page = await $api.getPage(`/`);
@@ -21,7 +21,7 @@ const { data, status } = await useLazyAsyncData(
     {
         transform: (e: any) => {
             const transform = e.page.flexible.map((el: any) => {
-                const name = el.fieldGroupName.replace(/(PageBuilderFlexible)(.*)(Layout)/g, '$2');
+                const name = el.fieldGroupName.replace(/(PageBuilderFlexible)(.*)(Layout)/g, "$2");
                 const key = name[0].toLowerCase() + name.slice(1);
 
                 return {
@@ -45,19 +45,20 @@ const { data, status } = await useLazyAsyncData(
         },
     }
 );
+
 watchEffect(() => {
     storeCommon.statusLoading = status.value;
 });
 useHead({
     title: data?.value?.seo?.title,
     meta: [
-        { name: 'description', content: data?.value?.seo?.metaDesc },
-        { name: 'robots', content: `${data?.value?.seo?.metaRobotsNofollow} ${data?.value?.seo?.metaRobotsNoindex}` },
-        { name: 'keywords', content: data?.value?.seo?.metaKeywords },
+        { name: "description", content: data?.value?.seo?.metaDesc },
+        { name: "robots", content: `${data?.value?.seo?.metaRobotsNofollow} ${data?.value?.seo?.metaRobotsNoindex}` },
+        { name: "keywords", content: data?.value?.seo?.metaKeywords },
     ],
     link: [
         {
-            rel: 'canonical',
+            rel: "canonical",
             href: data?.value?.seo?.canonical,
         },
     ],
