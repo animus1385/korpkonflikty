@@ -1,17 +1,17 @@
-import axios from 'axios';
-import allQuery from '../gql/queries/getSettingsAll.gql';
-import GET_PAGE from '../gql/queries/getIndexPage.gql';
-import type { Api } from '../types/api';
-import GET_POST from '../gql/queries/getPost.gql';
-import VIEW_POST from '../gql/mutations/setPostViews.gql';
-import { CREATE_COMMENT } from '~/gql/mutations/createComment';
-import GET_POSTS from '~/gql/queries/getPosts.gql';
-import GET_POST_SERVICE from '~/gql/queries/getService.gql';
-import GET_LAYOUT from '~/gql/queries/getLayout.gql';
-import GET_SITEMAP from '~/gql/queries/getSitemap.gql';
-import GET_SEO_PAGE from '~/gql/queries/getSeoPage.gql';
-import GET_SEO_POST from '~/gql/queries/getSeoPost.gql';
-import GET_SEO_SERVICE from '~/gql/queries/getSeoServices.gql';
+import axios from "axios";
+import allQuery from "../gql/queries/getSettingsAll.gql";
+import GET_PAGE from "../gql/queries/getIndexPage.gql";
+import type { Api } from "../types/api";
+import GET_POST from "../gql/queries/getPost.gql";
+import VIEW_POST from "../gql/mutations/setPostViews.gql";
+import { CREATE_COMMENT } from "~/gql/mutations/createComment";
+import GET_POSTS from "~/gql/queries/getPosts.gql";
+import GET_POST_SERVICE from "~/gql/queries/getService.gql";
+import GET_LAYOUT from "~/gql/queries/getLayout.gql";
+import GET_SITEMAP from "~/gql/queries/getSitemap.gql";
+import GET_SEO_PAGE from "~/gql/queries/getSeoPage.gql";
+import GET_SEO_POST from "~/gql/queries/getSeoPost.gql";
+import GET_SEO_SERVICE from "~/gql/queries/getSeoServices.gql";
 
 export default defineNuxtPlugin(() => {
     const config = useRuntimeConfig();
@@ -33,14 +33,10 @@ export default defineNuxtPlugin(() => {
 
             try {
                 const res = await $graphql?.default?.request(GET_PAGE, { ID: name });
-                if (!res) {
-                    showError({
-                        statusCode: 404,
-                        statusMessage: 'Страница не найдена',
-                    });
+                if (res.page == null) {
                     throw createError({
                         statusCode: 404,
-                        statusMessage: 'Страница не найдена',
+                        message: "Страница не найдена",
                     });
                 }
 
@@ -95,13 +91,9 @@ export default defineNuxtPlugin(() => {
                     result = res;
 
                     if (res?.post == null) {
-                        showError({
-                            statusCode: 404,
-                            statusMessage: 'Страница не найдена',
-                        });
                         throw createError({
                             statusCode: 404,
-                            statusMessage: 'Страница не найдена',
+                            message: "Страница не найдена",
                         });
                     }
                     result = {
@@ -131,7 +123,7 @@ export default defineNuxtPlugin(() => {
                         query: CREATE_COMMENT,
                         variables: { author, authorEmail, commentOn, content },
                         headers: {
-                            'Content-Type': 'application/json',
+                            "Content-Type": "application/json",
                         },
                     });
                     result = res;
@@ -162,11 +154,11 @@ export default defineNuxtPlugin(() => {
                     if (res?.postService == null) {
                         showError({
                             statusCode: 404,
-                            statusMessage: 'Страница не найдена',
+                            statusMessage: "Страница не найдена",
                         });
                         throw createError({
                             statusCode: 404,
-                            statusMessage: 'Страница не найдена',
+                            statusMessage: "Страница не найдена",
                         });
                     }
                     result = {

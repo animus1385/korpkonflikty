@@ -1,18 +1,14 @@
 User-agent: *
-
-Disallow: /*?
-Disallow: /wp-json/*
 Allow: /img/*.png$
 Allow: /img/*.svg$
 Allow: /img/*.jpg$
 Allow: /img/*.webp$
-Allow: /img/*.webp$
 Allow: /*.js$
 Allow: /*.css$
+Disallow: /*?
+Disallow: /wp-json/*
 
 User-agent: Yandex
-Disallow: /*?
-Disallow: /wp-json/*
 Allow: /img/*.png$
 Allow: /img/*.svg$
 Allow: /img/*.jpg$
@@ -20,7 +16,9 @@ Allow: /img/*.webp$
 Allow: /img/*.webp$
 Allow: /*.js$
 Allow: /*.css$
-
+Disallow: *.json
+Disallow: /*?
+Disallow: /wp-json/*
 Clean-param: utm&etext
 
 Sitemap: https://korp-konflikty.ru/sitemap.xml
