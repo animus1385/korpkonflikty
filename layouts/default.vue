@@ -16,29 +16,31 @@
 <script setup lang="ts">
 const menuStore = useMenuStore();
 const storeCommon = useCommonStore();
+const route = useRoute();
+const slug = route.params.slug as string;
 
 onMounted(() => {
     menuStore.getLayout();
 });
 
-setTimeout(() => {
+if (slug.includes("contacts") || slug == "/") {
     useSchemaOrg([
         defineOrganization({
-            url: menuStore.siteUrl,
+            url: "https://korp-konflikty.ru/",
             logo: "/favicon.ico",
-            name: menuStore.siteName,
+            name: "Корпоративные конфликты",
             address: {
                 "@type": "PostalAddress",
-                addressCountry: menuStore.footer.address.addressCountry,
-                postalCode: menuStore.footer.address.postalCode,
-                streetAddress: menuStore.footer.address.streetAddress,
-                addressLocality: menuStore.footer.address.addressLocality,
+                addressCountry: "Россия",
+                postalCode: "125047",
+                streetAddress: "4-й Лесной пер., д. 4, офис 532",
+                addressLocality: "Москва",
             },
-            telephone: menuStore.footer.tel.title,
-            email: menuStore.footer.mail.title,
+            telephone: "+7 928 420 78 69",
+            email: "rop@iktmail.ru",
         }),
     ]);
-}, 1500);
+}
 </script>
 
 <style scoped></style>
