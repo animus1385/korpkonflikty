@@ -24,13 +24,13 @@
                 }}</NuxtLink>
                 <NuxtLink
                     class="footer__address"
-                    :to="menuStore.footer.address.url"
-                    :aria-label="menuStore.footer.address.title"
-                    :target="menuStore.footer.address.target"
-                    v-if="menuStore.footer.address.url"
+                    :to="menuStore.footer.address.link.url"
+                    :aria-label="menuStore.footer.address.link.title"
+                    :target="menuStore.footer.address.link.target"
+                    v-if="menuStore.footer.address.link"
                 >
                     <Icon class="footer__icon" name="custom-icons:ping" />
-                    <span> {{ menuStore.footer.address.title }}</span>
+                    <span> {{ menuStore.footer.address.link.title }}</span>
                 </NuxtLink>
                 <div class="footer__connect">
                     <NuxtLink

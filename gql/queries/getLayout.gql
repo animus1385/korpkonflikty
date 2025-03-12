@@ -59,9 +59,15 @@ query getLayout {
             }
             footer {
                 address {
-                    title
-                    url
-                    target
+                    link {
+                        title
+                        url
+                        target
+                    }
+                    addressLocality
+                    streetAddress
+                    postalCode
+                    addressCountry
                 }
                 email {
                     title

@@ -61,6 +61,7 @@ import type { IBlockFlexible } from "~/types/blockFlexible";
 const { $api } = useNuxtApp();
 const route = useRoute();
 const storeCommon = useCommonStore();
+const menuStore = useMenuStore();
 const slug = route.params.slug as string;
 
 const { data, status } = await useLazyAsyncData(
@@ -139,18 +140,18 @@ useHead({
 if (slug.includes("contacts")) {
     useSchemaOrg([
         defineOrganization({
-            url: data?.value?.seo?.opengraphSiteName,
+            url: data?.value?.seo?.opengraphUrl,
             logo: "/favicon.ico",
-            name: data?.value?.seo?.opengraphDescription,
+            name: data?.value?.seo?.opengraphSiteName,
             address: {
                 "@type": "PostalAddress",
-                addressCountry: "Россия",
-                postalCode: "197373",
-                streetAddress: "Красная., 58, корп. 1",
-                addressLocality: "Краснодар",
+                addressCountry: menuStore.footer.address.addressCountry,
+                postalCode: menuStore.footer.address.postalCode,
+                streetAddress: menuStore.footer.address.streetAddress,
+                addressLocality: menuStore.footer.address.addressLocality,
             },
-            telephone: "+7 123 123 12 12",
-            email: "example@example.ru",
+            telephone: menuStore.footer.tel.title,
+            email: menuStore.footer.mail.title,
         }),
     ]);
 }
