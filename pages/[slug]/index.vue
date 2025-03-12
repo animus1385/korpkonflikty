@@ -28,11 +28,13 @@
                             <span itemprop="name" v-if="!elem.homeActive">{{ elem.name }}</span>
                             <UIcon v-else name="i-heroicons-home" class="breadcrumbs__icon" />
                             <meta itemprop="position" :content="`${index + 1}`" />
+                            <meta itemprop="name" :content="elem.name" />
                         </NuxtLink>
                         <div v-else>
                             <div class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                                 <span itemprop="name">{{ elem.name }}</span>
                                 <meta itemprop="position" :content="`${index + 1}`" />
+                                <meta itemprop="name" :content="elem.name" />
                             </div>
                         </div>
                         <UIcon
