@@ -98,6 +98,7 @@ export default defineNuxtPlugin(() => {
                         flexible: res.post.pageBuilder.flexible,
                         comments: res.post.comments.edges,
                         seo: res.post.seo,
+                        breadcrumbs: res.post.pageBuilder.customBreadcrumbs,
                     };
                 } catch (e) {
                     console.error(`текст ошибки ${e}`);
@@ -143,6 +144,7 @@ export default defineNuxtPlugin(() => {
                     result = {
                         flexible: res.postService.pageBuilder.flexible,
                         seo: res.postService.seo,
+                        breadcrumbs: res.postService.pageBuilder.customBreadcrumbs,
                     };
                 } catch (e) {
                     console.error(`текст ошибки ${e}`);

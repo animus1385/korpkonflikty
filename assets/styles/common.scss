@@ -98,6 +98,7 @@ body {
             @apply w-[20px] h-[20px]  opacity-50;
         }
         &__elem {
+            @apply flex  gap-[10px];
             &.active {
                 span {
                     @apply text-[#2387c0];
