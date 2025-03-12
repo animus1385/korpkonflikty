@@ -43,7 +43,7 @@
                         </UButton>
                         <Transition name="accordion-slide">
                             <div
-                                v-if="item.defaultOpen"
+                                v-show="item.defaultOpen"
                                 class="accordion__text-body"
                                 itemscope
                                 itemprop="acceptedAnswer"
