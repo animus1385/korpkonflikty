@@ -19,6 +19,8 @@ export const useMenuStore = defineStore("menu-store", {
             address: {},
         },
         modal: {},
+        siteName: "",
+        siteUrl: "",
     }),
 
     actions: {
@@ -46,6 +48,8 @@ export const useMenuStore = defineStore("menu-store", {
             this.footer.address.streetAddress = data.settingsAll.gQLSettings.footer.address.streetAddress;
             this.footer.address.postalCode = data.settingsAll.gQLSettings.footer.address.postalCode;
             this.footer.address.addressCountry = data.settingsAll.gQLSettings.footer.address.addressCountry;
+            this.footer.siteUrl = data.seo.schema.siteUrl;
+            this.footer.siteName = data.seo.schema.siteName;
         },
     },
     getters: {

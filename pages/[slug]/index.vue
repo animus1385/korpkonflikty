@@ -113,7 +113,6 @@ onMounted(() => {
 });
 
 watchEffect(() => {
-    console.log(data.value?.seo);
     storeCommon.statusLoading = status.value;
 });
 
@@ -137,23 +136,5 @@ useHead({
         },
     ],
 });
-if (slug.includes("contacts")) {
-    useSchemaOrg([
-        defineOrganization({
-            url: data?.value?.seo?.opengraphUrl,
-            logo: "/favicon.ico",
-            name: data?.value?.seo?.opengraphSiteName,
-            address: {
-                "@type": "PostalAddress",
-                addressCountry: menuStore.footer.address.addressCountry,
-                postalCode: menuStore.footer.address.postalCode,
-                streetAddress: menuStore.footer.address.streetAddress,
-                addressLocality: menuStore.footer.address.addressLocality,
-            },
-            telephone: menuStore.footer.tel.title,
-            email: menuStore.footer.mail.title,
-        }),
-    ]);
-}
 </script>
 <style scoped></style>

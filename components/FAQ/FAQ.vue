@@ -14,13 +14,6 @@
                 </p>
             </div>
             <div class="faq__right">
-                <SchemaOrgWebPage type="FAQPage" />
-                <SchemaOrgQuestion
-                    v-for="elem in props?.data?.fields?.list"
-                    :key="elem.title"
-                    :name="elem.title"
-                    :accepted-answer="elem.descr"
-                />
                 <UAccordion
                     itemscope
                     itemprop="mainEntity"

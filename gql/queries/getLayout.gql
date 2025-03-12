@@ -17,6 +17,12 @@ query getLayout {
             }
         }
     }
+    seo {
+        schema {
+            siteName
+            siteUrl
+        }
+    }
     settingsAll {
         gQLSettings {
             headerRemove {
