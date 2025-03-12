@@ -17,13 +17,11 @@
 const menuStore = useMenuStore();
 const storeCommon = useCommonStore();
 const route = useRoute();
-const slug = route.params.slug as string;
 
 onMounted(() => {
     menuStore.getLayout();
 });
-
-if (slug.includes("contacts") || slug == "/") {
+if (route.fullPath.includes("contacts") || route.fullPath == "/") {
     useSchemaOrg([
         defineOrganization({
             url: "https://korp-konflikty.ru/",
