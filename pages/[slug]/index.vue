@@ -33,9 +33,11 @@
 
                         <div v-else class="breadcrumbs__item">
                             <div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                                <span>{{ elem.name }}</span>
-                                <meta itemprop="position" :content="`${index + 1}`" />
-                                <meta itemprop="name" :content="elem.name" />
+                                <div itemprop="item">
+                                    <span>{{ elem.name }}</span>
+                                    <meta itemprop="position" :content="`${index + 1}`" />
+                                    <meta itemprop="name" :content="elem.name" />
+                                </div>
                             </div>
                             <UIcon
                                 v-if="index !== data.breadcrumbs.length - 1"
