@@ -21,7 +21,7 @@ onMounted(() => {
     menuStore.getLayout();
 });
 
-if (menuStore.siteUrl && menuStore.siteName) {
+setTimeout(() => {
     useSchemaOrg([
         defineOrganization({
             url: menuStore.siteUrl,
@@ -38,7 +38,7 @@ if (menuStore.siteUrl && menuStore.siteName) {
             email: menuStore.footer.mail.title,
         }),
     ]);
-}
+}, 1500);
 </script>
 
 <style scoped></style>
