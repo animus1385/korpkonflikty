@@ -9,9 +9,9 @@
         <div class="container">
             <UBreadcrumb class="breadcrumbs" :links="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
                 <template #default="{ link, index }">
-                    <div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <div itemprop="item" href="https://example.com/books">
-                            <span itemprop="text">{{ link.label }}</span>
+                    <div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" >
+                        <div itemprop="item" :href="link.label" :itemid="link.label">
+                            <span itemprop="name">{{ link.label }}</span>
                             <meta itemprop="position" :content="index + 1" />
                         </div>
                     </div> </template
