@@ -7,13 +7,13 @@
         }"
     >
         <div class="container">
-            <UBreadcrumb class="breadcrumbs" :links="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <UBreadcrumb class="breadcrumbs" :links="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
                 <template #default="{ link, index }">
-                    <div temprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                         <div itemprop="item" href="https://example.com/books">
                             <span itemprop="text">{{ link.label }}</span>
+                            <meta itemprop="position" :content="index + 1" />
                         </div>
-                        <meta itemprop="position" :content="index" />
                     </div> </template
             ></UBreadcrumb>
         </div>
