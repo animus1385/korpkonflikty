@@ -8,10 +8,14 @@
     >
         <div class="container">
             <UBreadcrumb class="breadcrumbs" :links="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
-                <template #default="{ link }">
-                    <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">{{ link.label }}</div>
-                </template></UBreadcrumb
-            >
+                <template #default="{ link, index }">
+                    <div temprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <div itemprop="item" href="https://example.com/books">
+                            <span itemprop="text">{{ link.label }}</span>
+                        </div>
+                        <meta itemprop="position" :content="index" />
+                    </div> </template
+            ></UBreadcrumb>
         </div>
     </div>
     <Flexible v-if="status == 'success' && data" :data="data.flexible" />

@@ -16,7 +16,6 @@ Allow: /img/*.webp$
 Allow: /img/*.webp$
 Allow: /*.js$
 Allow: /*.css$
-Disallow: *.json
 Disallow: /*?
 Disallow: /wp-json/*
 Clean-param: utm&etext

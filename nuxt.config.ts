@@ -1,78 +1,78 @@
-import { screensNuxtImage } from './config/screens';
+import { screensNuxtImage } from "./config/screens";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    compatibilityDate: '2024-04-03',
+    compatibilityDate: "2024-04-03",
     devtools: { enabled: true },
     colorMode: {
-        classSuffix: '',
-        preference: 'light',
+        classSuffix: "",
+        preference: "light",
     },
     ssr: true,
     sitemap: {
-        sources: ['/api/__sitemap__/urls'],
+        sources: ["/api/__sitemap__/urls"],
     },
     site: {
         url: process.env.WEB_SITE,
-        name: 'Корпоратиные конфликты',
+        name: "Корпоратиные конфликты",
     },
     app: {
         head: {
             htmlAttrs: {
-                lang: 'ru',
+                lang: "ru",
             },
-            title: 'Корпоратиные конфликты',
-            charset: 'utf-8',
+            title: "Корпоратиные конфликты",
+            charset: "utf-8",
             meta: [],
             link: [],
         },
-        baseURL: '/',
+        baseURL: "/",
     },
 
-    css: ['@/assets/styles/styles.scss'],
+    css: ["@/assets/styles/styles.scss"],
 
     typescript: {
         strict: true,
         typeCheck: false,
     },
     modules: [
-        '@nuxt/devtools',
-        '@nuxt/image',
-        '@nuxt/ui',
-        'nuxt-swiper',
-        '@nuxt/icon',
-        '@pinia/nuxt',
-        'vue-yandex-maps/nuxt',
-        'dayjs-nuxt',
-        'nuxt-graphql-request',
-        'nuxt-viewport',
-        '@nuxtjs/robots',
-        '@nuxtjs/sitemap',
-        'nuxt-schema-org',
-        'nuxt-yandex-metrika',
+        "@nuxt/devtools",
+        "@nuxt/image",
+        "@nuxt/ui",
+        "nuxt-swiper",
+        "@nuxt/icon",
+        "@pinia/nuxt",
+        "vue-yandex-maps/nuxt",
+        "dayjs-nuxt",
+        "nuxt-graphql-request",
+        "nuxt-viewport",
+        "@nuxtjs/robots",
+        "@nuxtjs/sitemap",
+        "nuxt-schema-org",
+        "nuxt-yandex-metrika",
     ],
     tailwindcss: {
         viewer: false,
     },
     yandexMetrika: {
-        id: '99769403',
+        id: "99769403",
         clickmap: true,
         trackLinks: true,
         accurateTrackBounce: true,
         webvisor: true,
     },
     yandexMaps: {
-        apikey: '985b6d39-07bb-4745-87b0-a0fec1b0c094',
+        apikey: "985b6d39-07bb-4745-87b0-a0fec1b0c094",
     },
     viewport: {
         breakpoints: screensNuxtImage,
     },
     icon: {
-        mode: 'svg',
+        mode: "svg",
         customCollections: [
             {
-                prefix: 'custom-icons',
-                dir: './assets/custom-icons',
+                prefix: "custom-icons",
+                dir: "./assets/custom-icons",
             },
         ],
     },
@@ -84,7 +84,7 @@ export default defineNuxtConfig({
         },
     },
     build: {
-        transpile: ['nuxt-graphql-request'],
+        transpile: ["nuxt-graphql-request"],
     },
     graphql: {
         clients: {
@@ -97,7 +97,7 @@ export default defineNuxtConfig({
         css: {
             preprocessorOptions: {
                 scss: {
-                    api: 'modern', // or "modern"
+                    api: "modern", // or "modern"
                 },
             },
         },
