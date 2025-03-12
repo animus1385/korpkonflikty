@@ -18,7 +18,13 @@
                         itemtype="https://schema.org/ListItem"
                     >
                         <div v-if="!elem.disableLink" class="breadcrumbs__item">
-                            <NuxtLink itemprop="item" :to="elem.url" :href="elem.url" :aria-label="elem.name">
+                            <NuxtLink
+                                itemprop="item"
+                                :to="elem.url"
+                                :href="elem.url"
+                                :aria-label="elem.name"
+                                itemtype="https://schema.org/WebPage"
+                            >
                                 <span v-if="!elem.homeActive">{{ elem.name }}</span>
                                 <UIcon v-else name="i-heroicons-home" class="breadcrumbs__icon" />
                                 <meta itemprop="position" :content="`${index + 1}`" />
@@ -31,14 +37,10 @@
                             />
                         </div>
 
-                        <div v-else class="breadcrumbs__item">
-                            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                                <div itemprop="item">
-                                    <span>{{ elem.name }}</span>
-                                    <meta itemprop="position" :content="`${index + 1}`" />
-                                    <meta itemprop="name" :content="elem.name" />
-                                </div>
-                            </div>
+                        <div v-else class="breadcrumbs__item" itemprop="item">
+                            <span>{{ elem.name }}</span>
+                            <meta itemprop="position" :content="`${index + 1}`" />
+                            <meta itemprop="name" :content="elem.name" />
                             <UIcon
                                 v-if="index !== data.breadcrumbs.length - 1"
                                 name="custom-icons:arrow-right-breadcrumbs"
