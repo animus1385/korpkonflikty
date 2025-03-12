@@ -61,7 +61,6 @@ import type { IBlockFlexible } from "~/types/blockFlexible";
 const { $api } = useNuxtApp();
 const route = useRoute();
 const storeCommon = useCommonStore();
-const menuStore = useMenuStore();
 const slug = route.params.slug as string;
 
 const { data, status } = await useLazyAsyncData(

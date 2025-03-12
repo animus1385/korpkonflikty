@@ -54,7 +54,6 @@ import type { IBlockFlexible } from "~/types/blockFlexible";
 const { $api } = useNuxtApp();
 const route = useRoute();
 const slug = route.params.slug as string;
-const breadcrumbs = ref<any>(null);
 const storeCommon = useCommonStore();
 const { data, status } = await useLazyAsyncData(
     "getService",

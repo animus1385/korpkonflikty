@@ -17,9 +17,8 @@
 const menuStore = useMenuStore();
 const storeCommon = useCommonStore();
 
-onMounted( async() => {
-   await menuStore.getLayout();
-});
+menuStore.getLayout();
+
 useSchemaOrg([
     defineOrganization({
         url: menuStore.siteUrl,
