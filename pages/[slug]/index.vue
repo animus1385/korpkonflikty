@@ -136,5 +136,23 @@ useHead({
         },
     ],
 });
+if (slug.includes("contacts")) {
+    useSchemaOrg([
+        defineOrganization({
+            url: data?.value?.seo?.opengraphSiteName,
+            logo: "/favicon.ico",
+            name: data?.value?.seo?.opengraphDescription,
+            address: {
+                "@type": "PostalAddress",
+                addressCountry: "Россия",
+                postalCode: "197373",
+                streetAddress: "Красная., 58, корп. 1",
+                addressLocality: "Краснодар",
+            },
+            telephone: "+7 123 123 12 12",
+            email: "example@example.ru",
+        }),
+    ]);
+}
 </script>
 <style scoped></style>

@@ -11,7 +11,6 @@
         <loader v-if="storeCommon.loader"></loader>
         <UModals />
     </div>
-
 </template>
 
 <script setup lang="ts">
@@ -21,6 +20,7 @@ const storeCommon = useCommonStore();
 onMounted(() => {
     menuStore.getLayout();
 });
+
 </script>
 
 <style scoped></style>
