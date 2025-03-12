@@ -9,13 +9,12 @@
         <div class="container">
             <UBreadcrumb class="breadcrumbs" :links="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
                 <template #default="{ link, index }">
-                    <div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" >
-                        <div itemprop="item" :href="link.label" :itemid="link.label">
-                            <span itemprop="name">{{ link.label }}</span>
-                            <meta itemprop="position" :content="index + 1" />
-                        </div>
-                    </div> </template
-            ></UBreadcrumb>
+                    <div itemprop="item" :href="link.label">
+                        <span itemprop="name">{{ link.label }}</span>
+                        <meta itemprop="position" :content="index + 1" />
+                    </div>
+                </template>
+            </UBreadcrumb>
         </div>
     </div>
     <Flexible v-if="status == 'success' && data" :data="data.flexible" />
@@ -83,10 +82,16 @@ watchEffect(() => {
             icon: "i-heroicons-home",
             to: "/",
             "aria-label": "хлебные крошки: Главная страница",
+            itemprop: "itemListElement",
+            itemscope: true,
+            itemtype: "https://schema.org/ListItem",
         },
         {
             label: data?.value?.seo?.title,
             "aria-label": `хлебные крошки: ${route.fullPath}`,
+            itemprop: "itemListElement",
+            itemscope: true,
+            itemtype: "https://schema.org/ListItem",
         },
     ];
     storeCommon.statusLoading = status.value;
