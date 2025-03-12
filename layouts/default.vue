@@ -26,10 +26,11 @@ if (route.fullPath.includes("contacts") || route.fullPath == "/") {
         defineOrganization({
             url: "https://korp-konflikty.ru/",
             logo: "/favicon.ico",
+            image: "/favicon.ico",
             name: "Корпоративные конфликты",
             address: {
                 "@type": "PostalAddress",
-                addressCountry: "Россия",
+                addressCountry: "RU",
                 postalCode: "125047",
                 streetAddress: "4-й Лесной пер., д. 4, офис 532",
                 addressLocality: "Москва",
