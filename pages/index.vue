@@ -55,6 +55,12 @@ useHead({
         { name: "description", content: data?.value?.seo?.metaDesc },
         { name: "robots", content: `${data?.value?.seo?.metaRobotsNofollow} ${data?.value?.seo?.metaRobotsNoindex}` },
         { name: "keywords", content: data?.value?.seo?.metaKeywords },
+        { property: "og:url", content: data?.value?.seo?.opengraphUrl },
+        { property: "og:type", content: "website" },
+        { property: "og:image", content: "/favicon.ico" },
+        { property: "og:title", content: data?.value?.seo?.title },
+        { property: "og:site_name", content: data?.value?.seo?.opengraphSiteName },
+        { property: "og:description", content: data?.value?.seo?.opengraphDescription },
     ],
     link: [
         {

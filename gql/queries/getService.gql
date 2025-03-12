@@ -9,16 +9,21 @@ query getPostServices($ID: ID!) {
             }
         }
         seo {
+            opengraphUrl
+            opengraphType
+            opengraphTitle
             title
+            opengraphSiteName
+            opengraphPublisher
+            opengraphPublishedTime
+            opengraphModifiedTime
+            opengraphDescription
+            opengraphAuthor
             metaDesc
             canonical
-            breadcrumbs {
-                url
-                text
-            }
-            metaRobotsNoindex
-            metaRobotsNofollow
             metaKeywords
+            metaRobotsNofollow
+            metaRobotsNoindex
         }
         pageBuilder {
             fieldGroupName

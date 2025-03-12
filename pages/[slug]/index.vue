@@ -37,7 +37,7 @@
                             />
                         </div>
 
-                        <div v-else class="breadcrumbs__item" itemprop="item">
+                        <div v-else class="breadcrumbs__item" itemprop="item" :itemid="elem.url">
                             <span>{{ elem.name }}</span>
                             <meta itemprop="position" :content="`${index + 1}`" />
                             <meta itemprop="name" :content="elem.name" />
@@ -62,7 +62,6 @@ const { $api } = useNuxtApp();
 const route = useRoute();
 const storeCommon = useCommonStore();
 const slug = route.params.slug as string;
-const breadcrumbs = ref<any>(null);
 
 const { data, status } = await useLazyAsyncData(
     `get-${slug}`,
@@ -113,6 +112,7 @@ onMounted(() => {
 });
 
 watchEffect(() => {
+    console.log(data.value?.seo);
     storeCommon.statusLoading = status.value;
 });
 
@@ -122,6 +122,12 @@ useHead({
         { name: "description", content: data?.value?.seo?.metaDesc },
         { name: "robots", content: `${data?.value?.seo?.metaRobotsNofollow} ${data?.value?.seo?.metaRobotsNoindex}` },
         { name: "keywords", content: data?.value?.seo?.metaKeywords },
+        { property: "og:url", content: data?.value?.seo?.opengraphUrl },
+        { property: "og:type", content: "website" },
+        { property: "og:image", content: "/favicon.ico" },
+        { property: "og:title", content: data?.value?.seo?.title },
+        { property: "og:site_name", content: data?.value?.seo?.opengraphSiteName },
+        { property: "og:description", content: data?.value?.seo?.opengraphDescription },
     ],
     link: [
         {

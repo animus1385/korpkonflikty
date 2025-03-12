@@ -133,6 +133,12 @@ useHead({
         { name: "keywords", content: data?.value?.seo?.metaKeywords },
         { name: "author", content: data.value?.postInfo.contentPost?.authorPost },
         { name: "publisher", content: data.value?.postInfo.contentPost?.authorPost },
+        { property: "og:url", content: data?.value?.seo?.opengraphUrl },
+        { property: "og:type", content: "website" },
+        { property: "og:image", content: "/favicon.ico" },
+        { property: "og:title", content: data?.value?.seo?.title },
+        { property: "og:site_name", content: data?.value?.seo?.opengraphSiteName },
+        { property: "og:description", content: data?.value?.seo?.opengraphDescription },
     ],
     link: [
         {
