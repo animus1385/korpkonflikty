@@ -1,20 +1,51 @@
 <template>
     <div
         class="breadcrumbs-block"
-        v-if="breadcrumbs && status == 'success' && data"
+        v-if="data?.breadcrumbs && status == 'success' && data"
         :class="{
             HeroCustom: data?.flexible[0].name == 'HeroCustom',
         }"
     >
         <div class="container">
-            <UBreadcrumb class="breadcrumbs" :links="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
-                <template #default="{ link, index }">
-                    <div itemprop="item" :href="link.label">
-                        <span itemprop="name">{{ link.label }}</span>
-                        <meta itemprop="position" :content="index + 1" />
-                    </div>
-                </template>
-            </UBreadcrumb>
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li
+                        class="breadcrumbs__elem"
+                        :class="{ active: elem.url.includes(route.fullPath) }"
+                        v-for="(elem, index) in data.breadcrumbs"
+                    >
+                        <div class="breadcrumbs__item" v-if="!elem.disableLink" " :aria-label="elem.name">
+                            <NuxtLink :to="elem.url">
+                                <div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                    <div itemprop="item" :href="elem.url">
+                                        <span itemprop="name" v-if="!elem.homeActive">{{ elem.name }}</span>
+                                        <UIcon v-else name="i-heroicons-home" class="breadcrumbs__icon" />
+                                    </div>
+                                </div>
+                                <meta itemprop="position" :content="`${index + 1}`" />
+                            </NuxtLink>
+                            <UIcon
+                                v-if="index !== data.breadcrumbs.length - 1"
+                                name="custom-icons:arrow-right-breadcrumbs"
+                                class="breadcrumbs__icon-arrow"
+                            />
+                        </div>
+                        <div v-else>
+                            <div class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                <div itemprop="item" :href="elem.url">
+                                    <span itemprop="name">{{ elem.name }}</span>
+                                </div>
+                            </div>
+                            <meta itemprop="position" :content="`${index + 1}`" />
+                            <UIcon
+                                v-if="index !== data.breadcrumbs.length - 1"
+                                name="custom-icons:arrow-right-breadcrumbs"
+                                class="breadcrumbs__icon-arrow"
+                            />
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     <Flexible v-if="status == 'success' && data" :data="data.flexible" />
@@ -62,6 +93,7 @@ const { data, status } = await useLazyAsyncData(
             return {
                 flexible: difference,
                 seo: e.page.seo,
+                breadcrumbs: e.page.breadcrumbs,
             };
         },
     }
@@ -77,23 +109,6 @@ onMounted(() => {
 });
 
 watchEffect(() => {
-    breadcrumbs.value = [
-        {
-            icon: "i-heroicons-home",
-            to: "/",
-            "aria-label": "хлебные крошки: Главная страница",
-            itemprop: "itemListElement",
-            itemscope: true,
-            itemtype: "https://schema.org/ListItem",
-        },
-        {
-            label: data?.value?.seo?.title,
-            "aria-label": `хлебные крошки: ${route.fullPath}`,
-            itemprop: "itemListElement",
-            itemscope: true,
-            itemtype: "https://schema.org/ListItem",
-        },
-    ];
     storeCommon.statusLoading = status.value;
 });
 

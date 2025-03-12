@@ -12,7 +12,14 @@ query getPage($ID: ID!) {
             metaRobotsNofollow
             metaKeywords
         }
+
         pageBuilder {
+            customBreadcrumbs {
+                name
+                url
+                homeActive
+                disableLink
+            }
             flexible {
                 fieldGroupName
                 ... on PageBuilderFlexibleHeroCustomLayout {

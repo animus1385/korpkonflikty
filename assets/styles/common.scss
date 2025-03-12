@@ -77,11 +77,36 @@ body {
             span {
                 @apply text-white;
             }
+            &__icon,
+            &__icon-arrow {
+                @apply text-white;
+            }
         }
     }
     .breadcrumbs {
         @apply desktop:p-[12px_20px] mobile:p-[10px_10px] bg-[#EDF5FF] max-w-max  rounded-[32px] desktop:min-h-[48px];
-        li {
+        &__list {
+            @apply flex gap-[10px] items-center;
+        }
+        &__icon {
+            @apply w-[20px] h-[20px]  opacity-50;
+            &:hover {
+                @apply opacity-100;
+            }
+        }
+        &__icon-arrow {
+            @apply w-[20px] h-[20px]  opacity-50;
+        }
+        &__elem {
+            &.active {
+                span {
+                    @apply text-[#2387c0];
+                }
+            }
+        }
+        &__item {
+            @apply flex gap-[10px];
+
             &:not(:last-child) {
                 @apply min-w-min;
 

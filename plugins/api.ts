@@ -37,6 +37,7 @@ export default defineNuxtPlugin(() => {
                 result = {
                     flexible: res.page.pageBuilder.flexible,
                     seo: res.page.seo,
+                    breadcrumbs: res.page.pageBuilder.customBreadcrumbs,
                 };
             } catch (e) {
                 console.error(`текст ошибки ${e}`);
@@ -84,7 +85,6 @@ export default defineNuxtPlugin(() => {
                     const res = await $graphql?.default?.request(GET_POST, { ID: slug });
                     result = res;
 
-            
                     result = {
                         postInfo: {
                             uri: res.post.uri,

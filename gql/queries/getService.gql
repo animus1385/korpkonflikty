@@ -22,6 +22,12 @@ query getPostServices($ID: ID!) {
         }
         pageBuilder {
             fieldGroupName
+            customBreadcrumbs {
+                name
+                url
+                homeActive
+                disableLink
+            }
             flexible {
                 fieldGroupName
                 ... on PageBuilderFlexibleHeroCustomLayout {
