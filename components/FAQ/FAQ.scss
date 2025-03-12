@@ -21,6 +21,7 @@
 }
 
 .accordion {
+    @apply flex flex-col h-full;
     &__text-body {
         font-family: var(--second-family);
         font-weight: 500;
@@ -29,7 +30,7 @@
         @apply desktop:pb-[74px] mobile:pb-[30px] desktop:text-[16px] mobile:text-[14px];
     }
     &__btn {
-        @apply p-[15px_0px]  rounded-none;
+        @apply p-[15px_0px]  rounded-none  w-full;
         &:hover {
             @apply bg-transparent;
         }
@@ -51,4 +52,27 @@
             stroke: #2387c0;
         }
     }
+    &__elem {
+        &.active {
+            @apply h-full;
+        }
+    }
+}
+.accordion-slide-enter-active,
+.accordion-slide-leave-active {
+    transition: all .5s linear;
+}
+
+.accordion-slide-enter-from,
+.accordion-slide-leave-to {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+}
+
+.accordion-slide-enter-to,
+.accordion-slide-leave-from {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
 }

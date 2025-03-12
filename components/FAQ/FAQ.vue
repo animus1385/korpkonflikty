@@ -1,11 +1,5 @@
 <template>
-    <section
-        itemscope
-        itemtype="https://schema.org/FAQPage"
-        class="faq"
-        id="faq"
-        v-if="props?.data.name == 'FaqCommon' || (props?.data.name == 'FaqCustom' && props?.data.fields)"
-    >
+    <section class="faq" id="faq" v-if="props?.data.name == 'FaqCommon' || (props?.data.name == 'FaqCustom' && props?.data.fields)">
         <div class="faq__container container">
             <div class="faq__left">
                 <h2 class="faq__title title-level-2">{{ props?.data?.fields?.title }}</h2>
@@ -14,36 +8,54 @@
                 </p>
             </div>
             <div class="faq__right">
-                <UAccordion
+                <ul
                     itemscope
-                    itemprop="mainEntity"
-                    itemtype="https://schema.org/Question"
+                    itemtype="https://schema.org/FAQPage"
                     class="faq__accordion accordion"
                     variant="ghost"
                     size="xl"
                     color="black"
-                    :items="props?.data?.fields?.list"
                 >
-                    <template #default="{ item, open }">
-                        <UButton color="gray" variant="ghost" class="accordion__btn" :aria-label="item.title">
-                            <span itemprop="name" class="accordion__btn-text"> {{ item.title }}</span>
+                    <li
+                        class="accordion__elem"
+                        itemscope
+                        itemprop="mainEntity"
+                        itemtype="https://schema.org/Question"
+                        v-for="item in props?.data?.fields?.list"
+                        :key="item.title"
+                        :class="{ active: item.defaultOpen }"
+                    >
+                        <UButton
+                            color="gray"
+                            variant="ghost"
+                            class="accordion__btn"
+                            :aria-label="item.title"
+                            @click="toggleAccordion(item)"
+                        >
+                            <span class="accordion__btn-text" itemprop="name"> {{ item.title }}</span>
 
                             <template #trailing>
                                 <UIcon
-                                    :name="!open ? 'i-heroicons-plus' : 'i-heroicons-minus'"
+                                    :name="!item.defaultOpen ? 'i-heroicons-plus' : 'i-heroicons-minus'"
                                     class="accordion__btn-icon w-5 h-5 ms-auto transform transition-transform duration-200"
                                 />
                             </template>
                         </UButton>
-                    </template>
-                    <template #item="{ item }">
-                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                            <p class="accordion__text-body"  itemprop="text">
-                                {{ item.descr }}
-                            </p>
-                        </div>
-                    </template>
-                </UAccordion>
+                        <Transition name="accordion-slide">
+                            <div
+                                v-if="item.defaultOpen"
+                                class="accordion__text-body"
+                                itemscope
+                                itemprop="acceptedAnswer"
+                                itemtype="https://schema.org/Answer"
+                            >
+                                <p itemprop="text">
+                                    {{ item.descr }}
+                                </p>
+                            </div>
+                        </Transition>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
@@ -51,6 +63,15 @@
 
 <script setup lang="ts">
 const props = defineProps<{ data: any }>();
+
+function toggleAccordion(target: any) {
+    props?.data?.fields?.list.forEach((e: any) => {
+        e.defaultOpen = false;
+        if (e.title == target.title) {
+            target.defaultOpen = !target.defaultOpen;
+        }
+    });
+}
 </script>
 
 <style scoped lang="scss">

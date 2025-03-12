@@ -217,6 +217,7 @@ query getPage($ID: ID!) {
                     faqCustom {
                         title
                         list {
+                            defaultOpen
                             descr
                             title
                         }
