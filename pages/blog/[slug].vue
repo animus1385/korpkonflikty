@@ -147,4 +147,18 @@ useHead({
         },
     ],
 });
+useSchemaOrg([
+    defineArticle({
+        publisher: {
+            "@type": "Organization",
+            name: data?.value?.seo?.opengraphSiteName,
+            logo: "/favicon.ico",
+        },
+        headline: data?.value?.seo?.title,
+        articleBody: data?.value?.seo?.opengraphDescription,
+        mainEntityOfPage: data?.value?.seo?.opengraphUrl,
+        datePublished: data?.value?.postInfo?.modified,
+        image: [data?.value?.postInfo?.img],
+    }),
+]);
 </script>
