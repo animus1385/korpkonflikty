@@ -101,16 +101,13 @@ const { data, status } = await useLazyAsyncData(
         },
     }
 );
-onMounted(() => {
-    if (!data.value) {
-        throw createError({
-            statusCode: 404,
-            statusMessage: "Страница не найдена",
-            message: "Страница не найдена",
-        });
-    }
-});
-
+if (!data.value) {
+    throw createError({
+        statusCode: 404,
+        statusMessage: "Страница не найдена",
+        message: "Страница не найдена",
+    });
+}
 watchEffect(() => {
     storeCommon.statusLoading = status.value;
 });
