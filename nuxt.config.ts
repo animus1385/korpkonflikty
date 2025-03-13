@@ -60,6 +60,7 @@ export default defineNuxtConfig({
         trackLinks: true,
         accurateTrackBounce: true,
         webvisor: true,
+        trackHash: true,
     },
     yandexMaps: {
         apikey: "985b6d39-07bb-4745-87b0-a0fec1b0c094",
