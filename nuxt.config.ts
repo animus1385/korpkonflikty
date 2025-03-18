@@ -29,7 +29,7 @@ export default defineNuxtConfig({
         baseURL: "/",
     },
     server: {
-        port: 3000,
+        port: 10000,
         host: "0.0.0.0",
     },
     css: ["@/assets/styles/styles.scss"],
