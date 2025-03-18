@@ -1,7 +1,7 @@
 module.exports = {
     apps: [
         {
-            name: 'korp-konflikty',
+            name: 'korp-konflikty.ru',
             port: '3000',
             exec_mode: 'cluster',
             instances: 'max',
