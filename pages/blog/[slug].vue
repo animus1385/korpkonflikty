@@ -109,19 +109,18 @@ const { data, status } = await useLazyAsyncData(
         },
     }
 );
-if (!data.value) {
-    throw createError({
-        statusCode: 404,
-        statusMessage: "Страница не найдена",
-        message: "Страница не найдена",
-    });
-}
 
 onMounted(async () => {
     await store.blog.viewPost(slug);
 });
 watchEffect(async () => {
     storeCommon.statusLoading = status.value;
+    if (!data.value) {
+        throw createError({
+            statusCode: 404,
+            message: "Страница не найдена",
+        });
+    }
 });
 useHead({
     title: data?.value?.seo?.title,
