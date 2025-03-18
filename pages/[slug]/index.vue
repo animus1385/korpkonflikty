@@ -104,7 +104,7 @@ const { data, status } = await useLazyAsyncData(
 
 watchEffect(() => {
     storeCommon.statusLoading = status.value;
-    if (!data.value) {
+    if (status.value == "error") {
         throw createError({
             statusCode: 404,
             message: "Страница не найдена",
