@@ -51,7 +51,7 @@
                             </NuxtImg>
                             <div class="related-blog__date">
                                 <time :datetime="dayjs(elem.node.modified).utc().toString()">
-                                    {{ dayjs(elem.node.modified).format('DD.MM.YYYY') }}
+                                    {{ dayjs(elem.node.modified).format("DD.MM.YYYY") }}
                                 </time>
                             </div>
                             <div class="related-blog__name">{{ elem.node.contentPost.contentPost.authorPost }}</div>
@@ -77,8 +77,12 @@
                 >
                 </UButton>
             </div>
-            <NuxtLink v-if="rops?.data?.fields.btnBlog" :to="props?.data?.fields.btnBlog.url ?? /blog/" :target="props?.data?.fields.btnBlog.target" class="related-blog__btn btn btn--bg">
-                <span>{{  props?.data?.fields.btnBlog.title ?? 'Все статьи' }}</span>
+            <NuxtLink
+                :to="props?.data?.fields.btnBlog ? props?.data?.fields.btnBlog.url : /blog/"
+                :target="props?.data?.fields.btnBlog ? props?.data?.fields.btnBlog.target : false"
+                class="related-blog__btn btn btn--bg"
+            >
+                <span>{{ props?.data?.fields.btnBlog ? props?.data?.fields.btnBlog.title : "Все статьи" }}</span>
                 <Icon name="custom-icons:arrow" />
             </NuxtLink>
         </div>
@@ -94,5 +98,5 @@ const swiper = useSwiper(swiperRef);
 </script>
 
 <style scoped lang="scss">
-@forward './RelatedBlog.scss';
+@forward "./RelatedBlog.scss";
 </style>
