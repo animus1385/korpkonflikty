@@ -433,6 +433,11 @@ query getPage($ID: ID!) {
                                 }
                             }
                         }
+                        btnBlog {
+                            url
+                            title
+                            target
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleBlogListCommonLayout {

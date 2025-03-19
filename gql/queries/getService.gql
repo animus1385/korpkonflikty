@@ -421,6 +421,11 @@ query getPostServices($ID: ID!) {
                                 }
                             }
                         }
+                        btnBlog {
+                            url
+                            title
+                            target
+                        }
                     }
                 }
                 ... on PageBuilderFlexibleMapCommonLayout {
