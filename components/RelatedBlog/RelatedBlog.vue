@@ -77,7 +77,7 @@
                 >
                 </UButton>
             </div>
-            <NuxtLink :to="props?.data?.fields.btnBlog.url ?? /blog/" :target="props?.data?.fields.btnBlog.target" class="related-blog__btn btn btn--bg">
+            <NuxtLink v-if="rops?.data?.fields.btnBlog" :to="props?.data?.fields.btnBlog.url ?? /blog/" :target="props?.data?.fields.btnBlog.target" class="related-blog__btn btn btn--bg">
                 <span>{{  props?.data?.fields.btnBlog.title ?? 'Все статьи' }}</span>
                 <Icon name="custom-icons:arrow" />
             </NuxtLink>
