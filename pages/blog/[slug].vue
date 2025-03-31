@@ -31,12 +31,14 @@
 								class="breadcrumbs__icon-arrow" />
 							<meta itemprop="position" :content="`${index + 1}`" />
 							<meta itemprop="name" :content="elem.name" />
+              <meta itemprop="item.id" :content="elem.url" />
 						</div>
 
 						<div v-else class="breadcrumbs__item" itemprop="item" :itemid="elem.url">
 							<span>{{ elem.name }}</span>
 							<meta itemprop="position" :content="`${index + 1}`" />
 							<meta itemprop="name" :content="elem.name" />
+              <meta itemprop="item.id" :content="elem.url" />
 							<UIcon
 								v-if="index !== data.breadcrumbs.length - 1"
 								name="custom-icons:arrow-right-breadcrumbs"
