@@ -14,6 +14,8 @@ query NewQuery {
                     subtitle
                     icon {
                         node {
+                            webpSrcSet
+                            webpSourceUrl
                             sourceUrl
                             title
                         }
@@ -37,6 +39,8 @@ query NewQuery {
                     img {
                         node {
                             sourceUrl
+                            webpSrcSet
+                            webpSourceUrl
                         }
                     }
                 }
@@ -51,6 +55,8 @@ query NewQuery {
                     img {
                         node {
                             sourceUrl
+                            webpSrcSet
+                            webpSourceUrl
                         }
                     }
                 }
@@ -66,6 +72,8 @@ query NewQuery {
                             featuredImage {
                                 node {
                                     sourceUrl
+                                    webpSrcSet
+                                    webpSourceUrl
                                 }
                             }
                             pageBuilder {
@@ -91,11 +99,15 @@ query NewQuery {
                 img1 {
                     node {
                         sourceUrl
+                        webpSrcSet
+                        webpSourceUrl
                     }
                 }
                 img2 {
                     node {
                         sourceUrl
+                        webpSrcSet
+                        webpSourceUrl
                     }
                 }
                 title
@@ -110,6 +122,8 @@ query NewQuery {
                 bg {
                     node {
                         sourceUrl
+                        webpSrcSet
+                        webpSourceUrl
                     }
                 }
                 yandexMetrikaList {
@@ -120,6 +134,8 @@ query NewQuery {
                 img {
                     node {
                         sourceUrl
+                        webpSrcSet
+                        webpSourceUrl
                     }
                 }
                 title
@@ -143,6 +159,8 @@ query NewQuery {
                 img {
                     node {
                         sourceUrl
+                        webpSrcSet
+                        webpSourceUrl
                     }
                 }
                 yandexMetrikaList {
@@ -171,6 +189,8 @@ query NewQuery {
                         node {
                             id
                             sourceUrl
+                            webpSrcSet
+                            webpSourceUrl
                         }
                     }
                 }
@@ -179,6 +199,8 @@ query NewQuery {
                     cover {
                         node {
                             sourceUrl
+                            webpSrcSet
+                            webpSourceUrl
                         }
                     }
                 }
@@ -191,6 +213,8 @@ query NewQuery {
                         node {
                             id
                             sourceUrl
+                            webpSrcSet
+                            webpSourceUrl
                         }
                     }
                 }

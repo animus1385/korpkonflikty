@@ -6,6 +6,8 @@ query getPostServices($ID: ID!) {
         featuredImage {
             node {
                 sourceUrl
+                webpSrcSet
+                webpSourceUrl
             }
         }
         seo {
@@ -49,11 +51,15 @@ query getPostServices($ID: ID!) {
                         img {
                             node {
                                 sourceUrl
+                                webpSrcSet
+                                webpSourceUrl
                             }
                         }
                         bg {
                             node {
                                 sourceUrl
+                                webpSrcSet
+                                webpSourceUrl
                             }
                         }
                     }
@@ -72,6 +78,8 @@ query getPostServices($ID: ID!) {
                             icon {
                                 node {
                                     sourceUrl
+                                    webpSrcSet
+                                    webpSourceUrl
                                 }
                             }
                         }
@@ -107,11 +115,15 @@ query getPostServices($ID: ID!) {
                         img1 {
                             node {
                                 sourceUrl
+                                webpSrcSet
+                                webpSourceUrl
                             }
                         }
                         img2 {
                             node {
                                 sourceUrl
+                                webpSrcSet
+                                webpSourceUrl
                             }
                         }
                         title
@@ -139,6 +151,8 @@ query getPostServices($ID: ID!) {
                         bg {
                             node {
                                 sourceUrl
+                                webpSrcSet
+                                webpSourceUrl
                             }
                         }
                         btn {
@@ -178,6 +192,8 @@ query getPostServices($ID: ID!) {
                             img {
                                 node {
                                     sourceUrl
+                                    webpSrcSet
+                                    webpSourceUrl
                                 }
                             }
                         }
@@ -196,6 +212,8 @@ query getPostServices($ID: ID!) {
                             img {
                                 node {
                                     sourceUrl
+                                    webpSrcSet
+                                    webpSourceUrl
                                 }
                             }
                         }
@@ -263,6 +281,8 @@ query getPostServices($ID: ID!) {
                             img {
                                 node {
                                     sourceUrl
+                                    webpSrcSet
+                                    webpSourceUrl
                                 }
                             }
                         }
@@ -299,6 +319,8 @@ query getPostServices($ID: ID!) {
                         img {
                             node {
                                 sourceUrl
+                                webpSrcSet
+                                webpSourceUrl
                             }
                         }
                         title
@@ -391,6 +413,8 @@ query getPostServices($ID: ID!) {
                                         featuredImage {
                                             node {
                                                 sourceUrl
+                                                webpSrcSet
+                                                webpSourceUrl
                                             }
                                         }
                                         author {
@@ -462,6 +486,8 @@ query getPostServices($ID: ID!) {
                                 icon {
                                     node {
                                         sourceUrl
+                                        webpSrcSet
+                                        webpSourceUrl
                                     }
                                 }
                             }
@@ -474,6 +500,8 @@ query getPostServices($ID: ID!) {
                                 icon {
                                     node {
                                         sourceUrl
+                                        webpSrcSet
+                                        webpSourceUrl
                                     }
                                 }
                             }

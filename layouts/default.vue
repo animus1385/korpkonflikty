@@ -27,7 +27,7 @@ if (route.fullPath.includes("contacts") || route.fullPath == "/") {
             url: "https://korp-konflikty.ru/",
             logo: "/favicon.ico",
             image: "/favicon.ico",
-            name: "Корпоративные конфликты",
+            name: "Институт Корпоративных Технологий",
             address: {
                 "@type": "PostalAddress",
                 addressCountry: "RU",

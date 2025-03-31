@@ -93,6 +93,7 @@ export default defineNuxtPlugin(() => {
                             img: res.post.featuredImage.node.sourceUrl,
                             postViews: res.post.postViews,
                             contentPost: res.post.contentPost.contentPost,
+                            modified: res.post.modified
                         },
                         pageId: res.post.postId,
                         flexible: res.post.pageBuilder.flexible,

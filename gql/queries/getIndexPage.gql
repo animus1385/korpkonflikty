@@ -41,11 +41,15 @@ query getPage($ID: ID!) {
                         img {
                             node {
                                 sourceUrl
+                                webpSrcSet
+                                webpSourceUrl
                             }
                         }
                         bg {
                             node {
                                 sourceUrl
+                                webpSrcSet
+                                webpSourceUrl
                             }
                         }
                     }
@@ -64,6 +68,8 @@ query getPage($ID: ID!) {
                             icon {
                                 node {
                                     sourceUrl
+                                    webpSrcSet
+                                    webpSourceUrl
                                 }
                             }
                         }
@@ -99,11 +105,15 @@ query getPage($ID: ID!) {
                         img1 {
                             node {
                                 sourceUrl
+                                webpSrcSet
+                                webpSourceUrl
                             }
                         }
                         img2 {
                             node {
                                 sourceUrl
+                                webpSrcSet
+                                webpSourceUrl
                             }
                         }
                         title
@@ -131,6 +141,8 @@ query getPage($ID: ID!) {
                         bg {
                             node {
                                 sourceUrl
+                                webpSrcSet
+                                webpSourceUrl
                             }
                         }
                         btn {
@@ -170,6 +182,8 @@ query getPage($ID: ID!) {
                             img {
                                 node {
                                     sourceUrl
+                                    webpSrcSet
+                                    webpSourceUrl
                                 }
                             }
                         }
@@ -188,6 +202,8 @@ query getPage($ID: ID!) {
                             img {
                                 node {
                                     sourceUrl
+                                    webpSrcSet
+                                    webpSourceUrl
                                 }
                             }
                         }
@@ -255,6 +271,8 @@ query getPage($ID: ID!) {
                             img {
                                 node {
                                     sourceUrl
+                                    webpSrcSet
+                                    webpSourceUrl
                                 }
                             }
                         }
@@ -291,6 +309,8 @@ query getPage($ID: ID!) {
                         img {
                             node {
                                 sourceUrl
+                                webpSrcSet
+                                webpSourceUrl
                             }
                         }
                         title
@@ -376,6 +396,8 @@ query getPage($ID: ID!) {
                                 icon {
                                     node {
                                         sourceUrl
+                                        webpSrcSet
+                                        webpSourceUrl
                                     }
                                 }
                             }
@@ -399,6 +421,8 @@ query getPage($ID: ID!) {
                                 icon {
                                     node {
                                         sourceUrl
+                                        webpSrcSet
+                                        webpSourceUrl
                                     }
                                 }
                             }
@@ -420,6 +444,8 @@ query getPage($ID: ID!) {
                                         featuredImage {
                                             node {
                                                 sourceUrl
+                                                webpSrcSet
+                                                webpSourceUrl
                                             }
                                         }
                                         contentPost {

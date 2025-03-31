@@ -10,6 +10,8 @@ query getPost($ID: ID!) {
         featuredImage {
             node {
                 sourceUrl
+                webpSrcSet
+                webpSourceUrl
             }
         }
         contentPost {
@@ -59,11 +61,15 @@ query getPost($ID: ID!) {
                         img {
                             node {
                                 sourceUrl
+                                webpSrcSet
+                                webpSourceUrl
                             }
                         }
                         bg {
                             node {
                                 sourceUrl
+                                webpSrcSet
+                                webpSourceUrl
                             }
                         }
                     }
@@ -82,6 +88,8 @@ query getPost($ID: ID!) {
                             icon {
                                 node {
                                     sourceUrl
+                                    webpSrcSet
+                                    webpSourceUrl
                                 }
                             }
                         }
@@ -123,11 +131,15 @@ query getPost($ID: ID!) {
                         img1 {
                             node {
                                 sourceUrl
+                                webpSrcSet
+                                webpSourceUrl
                             }
                         }
                         img2 {
                             node {
                                 sourceUrl
+                                webpSrcSet
+                                webpSourceUrl
                             }
                         }
                         title
@@ -212,6 +224,8 @@ query getPost($ID: ID!) {
                             img {
                                 node {
                                     sourceUrl
+                                    webpSrcSet
+                                    webpSourceUrl
                                 }
                             }
                         }
@@ -279,6 +293,8 @@ query getPost($ID: ID!) {
                             img {
                                 node {
                                     sourceUrl
+                                    webpSrcSet
+                                    webpSourceUrl
                                 }
                             }
                         }
@@ -315,6 +331,8 @@ query getPost($ID: ID!) {
                         img {
                             node {
                                 sourceUrl
+                                webpSrcSet
+                                webpSourceUrl
                             }
                         }
                         title
@@ -407,6 +425,8 @@ query getPost($ID: ID!) {
                                         featuredImage {
                                             node {
                                                 sourceUrl
+                                                webpSrcSet
+                                                webpSourceUrl
                                             }
                                         }
                                         contentPost {

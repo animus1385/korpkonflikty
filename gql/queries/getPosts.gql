@@ -10,6 +10,8 @@ query getPosts($offset: Int!, $size: Int!) {
                 featuredImage {
                     node {
                         sourceUrl
+                        webpSrcSet
+                        webpSourceUrl
                     }
                 }
                 contentPost {

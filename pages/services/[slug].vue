@@ -20,7 +20,6 @@
                         <NuxtLink
                             itemprop="item"
                             :to="elem.url"
-                            :href="elem.url"
                             class="breadcrumbs__item"
                             v-if="!elem.disableLink"
                             :aria-label="elem.name"

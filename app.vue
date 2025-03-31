@@ -6,13 +6,10 @@
 <script setup lang="ts">
 useSchemaOrg([
     defineWebPage({
-        name: 'Корпоративные кофликты',
+        name: 'Институт Корпоративных Технологий',
     }),
     defineWebSite({
-        name: 'Корпоративные кофликты',
-    }),
-    defineOrganization({
-        name: 'TechCorp Solutions',
+        name: 'Институт Корпоративных Технологий',
     }),
 ]);
 </script>

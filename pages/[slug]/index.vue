@@ -21,7 +21,6 @@
                             <NuxtLink
                                 itemprop="item"
                                 :to="elem.url"
-                                :href="elem.url"
                                 :aria-label="elem.name"
                                 itemtype="https://schema.org/WebPage"
                             >

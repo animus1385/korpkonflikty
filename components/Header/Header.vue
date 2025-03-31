@@ -2,7 +2,7 @@
     <header class="header" v-if="menuStore.items">
         <div class="header__contaniner container">
             <NuxtLink class="header__logo" to="/" variant="ghost" aria-label="логотип" v-if="menuStore.logo">
-                <NuxtImg class="header__logo-img" loading="lazy" format="webp" :src="menuStore.logo" alt="header-logo"> </NuxtImg>
+                <NuxtImg class="header__logo-img" loading="lazy" format="svg" :src="menuStore.logo" alt="header-logo"> </NuxtImg>
             </NuxtLink>
             <nav class="header__nav">
                 <ul class="header__list" v-if="menuStore.items">
@@ -240,22 +240,22 @@ const commonStore = useCommonStore();
 const route = useRoute();
 
 const setIcon = (param: string) => {
-    let result = '';
+    let result = "";
     switch (param) {
-        case 'Вконтакте':
-            result = 'custom-icons:vk';
+        case "Вконтакте":
+            result = "custom-icons:vk";
             break;
-        case 'Дзен':
-            result = 'custom-icons:dzen';
+        case "Дзен":
+            result = "custom-icons:dzen";
             break;
-        case 'YouTube':
-            result = 'custom-icons:youtube';
+        case "YouTube":
+            result = "custom-icons:youtube";
             break;
-        case 'Telegram':
-            result = 'custom-icons:telegram';
+        case "Telegram":
+            result = "custom-icons:telegram";
             break;
-        case 'WhatsApp':
-            result = 'custom-icons:whats-app';
+        case "WhatsApp":
+            result = "custom-icons:whats-app";
             break;
     }
     return result;
@@ -263,5 +263,5 @@ const setIcon = (param: string) => {
 </script>
 
 <style scoped lang="scss">
-@forward './Header.scss';
+@forward "./Header.scss";
 </style>
