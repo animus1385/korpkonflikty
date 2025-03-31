@@ -20,8 +20,7 @@
 								itemprop="item"
 								:to="elem.url"
 								:aria-label="elem.name"
-								itemtype="https://schema.org/WebPage"
-								:itemid="elem.url">
+								itemtype="https://schema.org/WebPage">
 								<span v-if="!elem.homeActive">{{ elem.name }}</span>
 								<UIcon v-else name="i-heroicons-home" class="breadcrumbs__icon" />
 							</NuxtLink>
@@ -31,14 +30,14 @@
 								class="breadcrumbs__icon-arrow" />
 							<meta itemprop="position" :content="`${index + 1}`" />
 							<meta itemprop="name" :content="elem.name" />
-              <meta itemprop="item.id" :content="elem.url" />
+              <meta itemprop="id" :content="elem.url" />
 						</div>
 
-						<div v-else class="breadcrumbs__item" itemprop="item" :itemid="elem.url">
+						<div v-else class="breadcrumbs__item" itemprop="item">
 							<span>{{ elem.name }}</span>
 							<meta itemprop="position" :content="`${index + 1}`" />
 							<meta itemprop="name" :content="elem.name" />
-              <meta itemprop="item.id" :content="elem.url" />
+              <meta itemprop="id" :content="elem.url" />
 							<UIcon
 								v-if="index !== data.breadcrumbs.length - 1"
 								name="custom-icons:arrow-right-breadcrumbs"
