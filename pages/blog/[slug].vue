@@ -15,30 +15,28 @@
 						itemprop="itemListElement"
 						itemscope
 						itemtype="https://schema.org/ListItem">
-						<NuxtLink
-							itemprop="item"
-							:to="elem.url"
-							class="breadcrumbs__item"
-							v-if="!elem.disableLink"
-							:aria-label="elem.name">
-							<span itemprop="name" v-if="!elem.homeActive">{{ elem.name }}</span>
-							<UIcon v-else name="i-heroicons-home" class="breadcrumbs__icon" />
+						<div v-if="!elem.disableLink" class="breadcrumbs__item">
+							<NuxtLink itemprop="item" :to="elem.url" :aria-label="elem.name" itemtype="https://schema.org/WebPage">
+								<span v-if="!elem.homeActive">{{ elem.name }}</span>
+								<UIcon v-else name="i-heroicons-home" class="breadcrumbs__icon" />
+							</NuxtLink>
+							<UIcon
+								v-if="index !== data.breadcrumbs.length - 1"
+								name="custom-icons:arrow-right-breadcrumbs"
+								class="breadcrumbs__icon-arrow" />
 							<meta itemprop="position" :content="`${index + 1}`" />
-						</NuxtLink>
-						<div v-else>
-							<div
-								class="breadcrumbs__item"
-								itemprop="itemListElement"
-								itemscope
-								itemtype="https://schema.org/ListItem">
-								<span itemprop="name">{{ elem.name }}</span>
-								<meta itemprop="position" :content="`${index + 1}`" />
-							</div>
+							<meta itemprop="name" :content="elem.name" />
 						</div>
-						<UIcon
-							v-if="index !== data.breadcrumbs.length - 1"
-							name="custom-icons:arrow-right-breadcrumbs"
-							class="breadcrumbs__icon-arrow" />
+
+						<div v-else class="breadcrumbs__item" itemprop="item" :itemid="elem.url">
+							<span>{{ elem.name }}</span>
+							<meta itemprop="position" :content="`${index + 1}`" />
+							<meta itemprop="name" :content="elem.name" />
+							<UIcon
+								v-if="index !== data.breadcrumbs.length - 1"
+								name="custom-icons:arrow-right-breadcrumbs"
+								class="breadcrumbs__icon-arrow" />
+						</div>
 					</li>
 				</ul>
 			</div>
