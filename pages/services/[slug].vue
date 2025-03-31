@@ -28,7 +28,7 @@
 							<meta itemprop="name" :content="elem.name" />
 						</div>
 
-						<div v-else class="breadcrumbs__item" itemprop="item" :itemid="elem.url" :href='elem.url'>
+						<div v-else class="breadcrumbs__item" itemprop="item"  :href='elem.url'>
 							<span>{{ elem.name }}</span>
 							<meta itemprop="position" :content="`${index + 1}`" />
 							<meta itemprop="name" :content="elem.name" />
