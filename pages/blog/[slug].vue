@@ -139,7 +139,7 @@ useHead({
 		{ property: 'og:title', content: data?.value?.seo?.title },
 		{ property: 'og:site_name', content: data?.value?.seo?.opengraphSiteName },
 		{ property: 'og:description', content: data?.value?.seo?.opengraphDescription },
-		{ property: 'article:modified_time', content: data.value?.postInfo.modified },
+		{ 'http-equiv': 'Last-Modified', content: data.value?.postInfo.modified },
 	],
 	link: [
 		{
