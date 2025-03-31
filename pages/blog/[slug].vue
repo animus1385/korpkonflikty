@@ -16,7 +16,12 @@
 						itemscope
 						itemtype="https://schema.org/ListItem">
 						<div v-if="!elem.disableLink" class="breadcrumbs__item">
-							<NuxtLink itemprop="item" :to="elem.url" :aria-label="elem.name" itemtype="https://schema.org/WebPage">
+							<NuxtLink
+								itemprop="item"
+								:to="elem.url"
+								:aria-label="elem.name"
+								itemtype="https://schema.org/WebPage"
+								:itemid="elem.url">
 								<span v-if="!elem.homeActive">{{ elem.name }}</span>
 								<UIcon v-else name="i-heroicons-home" class="breadcrumbs__icon" />
 							</NuxtLink>
