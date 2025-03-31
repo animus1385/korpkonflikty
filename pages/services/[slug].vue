@@ -32,6 +32,7 @@
 							<span>{{ elem.name }}</span>
 							<meta itemprop="position" :content="`${index + 1}`" />
 							<meta itemprop="name" :content="elem.name" />
+              <meta itemprop="url" :content="elem.url" />
 							<UIcon
 								v-if="index !== data.breadcrumbs.length - 1"
 								name="custom-icons:arrow-right-breadcrumbs"
