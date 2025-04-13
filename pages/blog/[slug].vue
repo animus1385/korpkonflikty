@@ -148,6 +148,7 @@ useHead({
 		{ property: 'og:site_name', content: data?.value?.seo?.opengraphSiteName },
 		{ property: 'og:description', content: data?.value?.seo?.opengraphDescription },
 		{ 'http-equiv': 'Last-Modified', content: data.value?.postInfo.modified },
+    { 'name': 'last-modified', content: data.value?.postInfo.modified}
 	],
 	link: [
 		{
