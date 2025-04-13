@@ -91,10 +91,7 @@ const { data, status } = await useLazyAsyncData(
 
 			let difference = transform.map((x: any) => {
 				const current = Object.entries(e?.flexible).find(el => x.name.toLowerCase().includes(el[0].toLowerCase()))
-        if (data.value) {
-		      const headersContent = `/*\n  Last-Modified: ${data.value?.postInfo.modified}\n`
-		      fs.writeFileSync('dist/_headers', headersContent)
-	      }
+    
 				return {
 					pageId: x.pageId,
 					name: x.name,
@@ -154,7 +151,7 @@ useHead({
 		{ property: 'og:image', content: '/favicon.ico' },
 		{ property: 'og:title', content: data?.value?.seo?.title },
 		{ property: 'og:site_name', content: data?.value?.seo?.opengraphSiteName },
-		{ property: 'og:description', content: data?.value?.seo?.opengraphDescription }
+		{ property: 'og:description', content: data?.value?.seo?.opengraphDescription },
 	],
 	link: [
 		{
