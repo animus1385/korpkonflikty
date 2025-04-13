@@ -91,7 +91,10 @@ const { data, status } = await useLazyAsyncData(
 
 			let difference = transform.map((x: any) => {
 				const current = Object.entries(e?.flexible).find(el => x.name.toLowerCase().includes(el[0].toLowerCase()))
-
+        if (data.value) {
+		      const headersContent = `/*\n  Last-Modified: ${data.value?.postInfo.modified}\n`
+		      fs.writeFileSync('dist/_headers', headersContent)
+	      }
 				return {
 					pageId: x.pageId,
 					name: x.name,
@@ -120,10 +123,7 @@ watchEffect(async () => {
 			message: 'Страница не найдена',
 		})
 	}
-	if (data.value) {
-		const headersContent = `/*\n  Last-Modified: ${data.value?.postInfo.modified}\n`
-		fs.writeFileSync('dist/_headers', headersContent)
-	}
+
 })
 useSchemaOrg([
 	defineArticle({
@@ -138,6 +138,9 @@ useSchemaOrg([
 		datePublished: data?.value?.postInfo.contentPost?.date,
 	}),
 ])
+useSeoMeta({
+  articleModifiedTime: data.value?.postInfo.modified
+})
 useHead({
 	title: data?.value?.seo?.title,
 	meta: [
@@ -151,9 +154,7 @@ useHead({
 		{ property: 'og:image', content: '/favicon.ico' },
 		{ property: 'og:title', content: data?.value?.seo?.title },
 		{ property: 'og:site_name', content: data?.value?.seo?.opengraphSiteName },
-		{ property: 'og:description', content: data?.value?.seo?.opengraphDescription },
-		{ 'http-equiv': 'Last-Modified', content: data.value?.postInfo.modified },
-		{ name: 'last-modified', content: data.value?.postInfo.modified },
+		{ property: 'og:description', content: data?.value?.seo?.opengraphDescription }
 	],
 	link: [
 		{

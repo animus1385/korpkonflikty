@@ -8,6 +8,7 @@ export interface Api {
         getPost: (slug: string) => Promise<any[]>;
         sendComment: (author: string, authorEmail: string, commentOn: string, content: string) => Promise<any[]>;
         viewPost: (slug: string) => Promise<any[]>;
+        getAllModifiedPosts: () => Promise<any[]>;
     };
     services: {
         getService: (slug: string) => Promise<any[]>;

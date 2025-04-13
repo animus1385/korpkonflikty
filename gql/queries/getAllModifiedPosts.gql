@@ -1,0 +1,11 @@
+query getAllModifiedPosts {
+  posts {
+    edges {
+      node {
+        date
+        modified
+        uri
+      }
+    }
+  }
+}

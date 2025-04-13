@@ -12,6 +12,7 @@ import GET_SITEMAP from "~/gql/queries/getSitemap.gql";
 import GET_SEO_PAGE from "~/gql/queries/getSeoPage.gql";
 import GET_SEO_POST from "~/gql/queries/getSeoPost.gql";
 import GET_SEO_SERVICE from "~/gql/queries/getSeoServices.gql";
+import GET_ALL_MODIFIED_POST from "~/gql/queries/getAllModifiedPosts.gql";
 
 export default defineNuxtPlugin(() => {
     const config = useRuntimeConfig();
@@ -78,6 +79,17 @@ export default defineNuxtPlugin(() => {
                 }
                 return result;
             },
+            getAllModifiedPosts: async () => {
+              let result: any = {};
+
+              try {
+                  const res = await $graphql?.default?.request(GET_ALL_MODIFIED_POST);
+                  result = res;
+              } catch (e) {
+                  console.error(`Error fetching posts: ${e}`);
+              }
+              return result;
+          },
             getPost: async (slug: string) => {
                 let result: any = {};
 
