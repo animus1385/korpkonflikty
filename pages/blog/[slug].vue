@@ -16,11 +16,7 @@
 						itemscope
 						itemtype="https://schema.org/ListItem">
 						<div v-if="!elem.disableLink" class="breadcrumbs__item">
-							<NuxtLink
-								itemprop="item"
-								:to="elem.url"
-								:aria-label="elem.name"
-								itemtype="https://schema.org/WebPage">
+							<NuxtLink itemprop="item" :to="elem.url" :aria-label="elem.name" itemtype="https://schema.org/WebPage">
 								<span v-if="!elem.homeActive">{{ elem.name }}</span>
 								<UIcon v-else name="i-heroicons-home" class="breadcrumbs__icon" />
 							</NuxtLink>
@@ -33,7 +29,7 @@
 						</div>
 
 						<div v-else class="breadcrumbs__item">
-              <link itemprop="item" :href="elem.url" />
+							<link itemprop="item" :href="elem.url" />
 							<span>{{ elem.name }}</span>
 							<meta itemprop="position" :content="`${index + 1}`" />
 							<meta itemprop="name" :content="elem.name" />
@@ -124,7 +120,19 @@ watchEffect(async () => {
 		})
 	}
 })
-
+useSchemaOrg([
+	defineArticle({
+		headline: data?.value?.postInfo.contentPost?.title,
+		description: data?.value?.postInfo.contentPost?.description,
+		author: {
+			'@type': 'Person',
+			name: data?.value?.postInfo.contentPost?.authorPost,
+		},
+		image: data?.value?.postInfo.contentPost?.image,
+		dateModified: data?.value?.postInfo.modified,
+    datePublished: data?.value?.postInfo.contentPost?.date,
+	}),
+])
 useHead({
 	title: data?.value?.seo?.title,
 	meta: [
