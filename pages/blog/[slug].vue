@@ -49,6 +49,7 @@
 </template>
 
 <script setup lang="ts">
+import fs from 'fs'
 import type { IBlockFlexible } from '~/types/blockFlexible'
 
 const route = useRoute()
@@ -119,6 +120,10 @@ watchEffect(async () => {
 			message: 'Страница не найдена',
 		})
 	}
+	if (data.value) {
+		const headersContent = `/*\n  Last-Modified: ${data.value?.postInfo.modified}\n`
+		fs.writeFileSync('dist/_headers', headersContent)
+	}
 })
 useSchemaOrg([
 	defineArticle({
@@ -130,7 +135,7 @@ useSchemaOrg([
 		},
 		image: data?.value?.postInfo.contentPost?.image,
 		dateModified: data?.value?.postInfo.modified,
-    datePublished: data?.value?.postInfo.contentPost?.date,
+		datePublished: data?.value?.postInfo.contentPost?.date,
 	}),
 ])
 useHead({
@@ -148,7 +153,7 @@ useHead({
 		{ property: 'og:site_name', content: data?.value?.seo?.opengraphSiteName },
 		{ property: 'og:description', content: data?.value?.seo?.opengraphDescription },
 		{ 'http-equiv': 'Last-Modified', content: data.value?.postInfo.modified },
-    { 'name': 'last-modified', content: data.value?.postInfo.modified}
+		{ name: 'last-modified', content: data.value?.postInfo.modified },
 	],
 	link: [
 		{
